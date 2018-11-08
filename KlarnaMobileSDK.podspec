@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/klarna/klarna-mobile-sdk.git", :tag => s.version.to_s }
   s.source_files = "ios/KlarnaMobileSDK.framework/Headers/*.h"
   s.public_header_files = "ios/KlarnaMobileSDK.framework/Headers/*.h"
+  s.vendored_frameworks = "ios/KlarnaMobileSDK.framework"
   s.requires_arc = true
   s.swift_version = "4.2"
 end
