@@ -1,10 +1,9 @@
-# Klarna mobile SDK for iOS
+# Klarna mobile SDK for iOS & Android
 
-<br/>
+# iOS Integration 
 
----
-Klarna mobile SDK BETA, API subject to change.
+Pleased see document provided directly to you.
 
----
+# Android Integration 
 
-<br/>
+The SDK will be made available through our own Maven repo shortly. Meanwhile, we're providing an AAR you can integrate into your project directly. 
