@@ -164,6 +164,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import ObjectiveC;
+@import UIKit;
+@import WebKit;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -182,7 +184,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-/// Klarna Hybrid SDK entry point
+/// Klarna’s solution to integrating it’s products in a “hybrid” context (one in which Klarna’s)
+/// products are presented inside a merchant-owned web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @interface KlarnaHybridSDK : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -197,6 +200,14 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
+
+
+
+
+
+
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
