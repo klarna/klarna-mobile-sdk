@@ -1,4 +1,4 @@
-# Klarna Payments iOS SDK
+# Klarna mobile iOS SDK
 
 <br/>
 
