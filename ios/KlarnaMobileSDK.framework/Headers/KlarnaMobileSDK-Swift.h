@@ -163,6 +163,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # define SWIFT_DEPRECATED_OBJC(Msg) SWIFT_DEPRECATED_MSG(Msg)
 #endif
 #if __has_feature(modules)
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 @import WebKit;
@@ -183,31 +184,147 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@protocol KlarnaWebView;
+@protocol KlarnaHybridSDKEventListener;
 
 /// Klarna’s solution to integrating it’s products in a “hybrid” context (one in which Klarna’s)
 /// products are presented inside a merchant-owned web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @interface KlarnaHybridSDK : NSObject
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// \param webView A web view (either UIWebView or WKWebView) for Klarna’s SDK to operate on.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener OBJC_DESIGNATED_INITIALIZER;
+/// Notify Klarna Hybrid SDK when a new page will be loaded.
+- (void)newPageWillLoadIn:(id <KlarnaWebView> _Nonnull)webView;
+/// Verify with the SDK whether a web view navigation should be followed in your web view.
+/// If using a <code>UIWebView</code>, checking should be performed in:
+/// <code>webView(_: shouldStartLoadWith: navigationType:)</code>
+/// If using a <code>WKWebView</code>, checking should be perfomed in:
+/// webView(_: decidePolicyFor: decisionHandler:) wuth the <code>navigationAction</code>’s <code>reqeuest</code> propeerty.
+/// note:
+///
+/// If it is a page Klarna recognizes as one of its own (e.g. Klarna’s financing terms), the SDK
+/// will return false. You should block this navigation.
+/// If it’s a page Klarna doesn’t recognize, it’ll fall back to returning true. Your app should
+/// determine whether it wants to load the URL through its own heuristics.
+/// \param request the navigation action to handle
+///
+///
+/// returns:
+/// whether Hybrid SDK can handle this navigation action or not
+- (BOOL)shouldFollowNavigationWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
+/// Retrieve the SDK’s device ID for the app install.
+///
+/// returns:
+/// a unique ID, persistent throughout the app’s installation.
++ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT;
+/// To be called when the application is re-opened from a third-party application while the SDK
+/// is running.
+/// \param url URL that is passed in through deep link.
+///
+/// \param options Additional system-provided parameters (like source application bundle ID)
+///
++ (void)handleDeeplinkWithUrl:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@class KlarnaMobileSDKError;
+
+/// The merchant’s app can listen to Hybrid SDK events in the Hybrid SDK by implementing this
+/// protocol.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
+@protocol KlarnaHybridSDKEventListener
+/// Event to notify the merchant app that the following web view will present content that
+/// should be displayed in a full-screen format.
+/// \param webView Web view to be presented in fullscreen.
+///
+/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
+/// actions addressing this event are complete.
+///
+- (void)klarnaHybridSDKWillShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+/// Event to notify the merchant app merchant that content that should be presented in
+/// full-screen has been displayed.
+/// \param webView Web view that has presented full-screen content.
+///
+/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
+/// actions addressing this event are complete.
+///
+- (void)klarnaHybridSDKDidShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+/// Event to notify the merchant’s app that the full-screen content in the following web view
+/// will be removed, and the “original” contents will be displayed.
+/// \param webView Web view to be restored to original presentation.
+///
+/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
+/// actions addressing this event are complete
+///
+- (void)klarnaHybridSDKWillHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+/// Event to notify merchant that the full-screen content in the web view has been removed and
+/// it is now displaying “regular” content.
+/// \param webView Web View presenting original content.
+///
+/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
+/// actions addressing this event are complete
+///
+- (void)klarnaHybridSDKDidHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+/// Event to notify merchant that an error occured during Hybrid SDK usage.
+/// \param webView on which webview the failure happened.
+///
+/// \param error detail error.
+///
+- (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
 
 /// A KlarnaMobileSDKError describes an error that occurred during any of the stages within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 @interface KlarnaMobileSDKError : NSObject
+/// Unique name for this error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Description of the error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+/// Informs whether this error is fatal. If an error is fatal, the payment view should not be shown any further.
+@property (nonatomic, readonly) BOOL isFatal;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+@class UIView;
+
+/// General class that envelops UIWebView and WKWebView
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
+@protocol KlarnaWebView
+- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
+- (void)setScrollEnabled:(BOOL)enabled;
+- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
+- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+@end
 
 
 
 
+@interface UIWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
+- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
+- (void)setScrollEnabled:(BOOL)enabled;
+- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
+- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+@end
 
 
 
+
+@interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
+- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
+- (void)setScrollEnabled:(BOOL)enabled;
+- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
+- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
