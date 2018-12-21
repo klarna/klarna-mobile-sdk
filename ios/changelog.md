@@ -1,6 +1,10 @@
 
 # Changelog
 
+## 0.2.0-beta-3
+
+- Klarna mobile SDK BETA, API subject to change.
+
 ## 0.2.0-beta-2
 
 - Klarna mobile SDK BETA, API subject to change.
