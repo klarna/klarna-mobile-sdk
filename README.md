@@ -1,3 +1,9 @@
-Please see the "0.2.0-beta-3" branch
+# Klarna mobile SDK for iOS & Android
 
-https://github.com/klarna/klarna-mobile-sdk/tree/0.2.0-beta-3
+# iOS Integration 
+
+Pleased see document provided directly to you.
+
+# Android Integration 
+
+The SDK will be made available through our own Maven repo shortly. Meanwhile, we're providing an AAR you can integrate into your project directly. 
