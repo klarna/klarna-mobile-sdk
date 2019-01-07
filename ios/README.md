@@ -1,24 +1,6 @@
-# Klarna mobile iOS SDK
-
-<br/>
-
----
-Klarna mobile SDK BETA, API subject to change.
-
----
-
-<br/>
-
-
 ## Setup
 
-The Klarna mobile SDK is avaliable through Carthage and Cocoapods.
-
-* Using Carthage, add this to your Cartfile:
-
-    ```swift
-    github "klarna/klarna-mobile-sdk"
-    ```
+The Klarna mobile SDK is avaliable through Cocoapods.
 
 * Using Cocoapods, add this to your podspec:
 
@@ -33,6 +15,5 @@ The Klarna mobile SDK is avaliable through Carthage and Cocoapods.
     ```swift
     import KlarnaMobileSDK
     ```
-
 
 <br/>
