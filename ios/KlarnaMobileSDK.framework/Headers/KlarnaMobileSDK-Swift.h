@@ -335,6 +335,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 - (void)setScrollEnabled:(BOOL)enabled;
 - (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
 - (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
 @end
 
 
@@ -349,6 +350,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 - (void)setScrollEnabled:(BOOL)enabled;
 - (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
 - (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
 @end
 
 
@@ -363,6 +365,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 - (void)setScrollEnabled:(BOOL)enabled;
 - (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
 - (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
+- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
 @end
 
 #if __has_attribute(external_source_symbol)
