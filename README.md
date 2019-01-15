@@ -5,9 +5,9 @@
 Pleased see document provided directly to you.
 
 ###### Klarna Payments for iOS
-[Native Integration Guide ](https://github.com/klarna/klarna-mobile-sdk/KlarnaPaymentsiOS.md)
+[Native Integration Guide ](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsiOS.md)
 
-[Documentation for Swift & Objective-C](https://github.com/klarna/klarna-mobile-sdk/docs/ios/index.html)
+[Documentation for Swift & Objective-C](http://htmlpreview.github.com/klarna/klarna-mobile-sdk/docs/ios/index.html)
 
 
 # Android Integration 
