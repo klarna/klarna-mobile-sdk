@@ -4,6 +4,12 @@
 
 Pleased see document provided directly to you.
 
+###### Klarna Payments for iOS
+[Native Integration Guide ](https://github.com/klarna/klarna-mobile-sdk/KlarnaPaymentsiOS.md)
+
+[Documentation for Swift & Objective-C](https://github.com/klarna/klarna-mobile-sdk/docs/ios/index.html)
+
+
 # Android Integration 
 The Klarna Mobile SDK for Android is available in our Maven Repository, perform the following steps to add it to your application:
 

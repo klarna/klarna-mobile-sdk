@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KlarnaHybridSDK Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/KlarnaHybridSDK" class="dashAnchor"></a>
+    <a title="KlarnaHybridSDK Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
+        <p class="header-right"><a href="https://github.com/klarna/klarna-mobile-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        KlarnaHybridSDK Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaHybridSDK.html">KlarnaHybridSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaMobileSDKError.html">KlarnaMobileSDKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaPaymentsError.html">KlarnaPaymentsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK9AuthorizeSSvp">Authorize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK8FinalizeSSvp">Finalize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK10InitializeSSvp">Initialize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK4LoadSSvp">Load</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK8PayLaterSSvp">PayLater</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK6PayNowSSvp">PayNow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK11ReauthorizeSSvp">Reauthorize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK7SliceItSSvp">SliceIt</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWebView.html">UIWebView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/WKWebView.html">WKWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaHybridSDKEventListener.html">KlarnaHybridSDKEventListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaPaymentViewDelegate.html">KlarnaPaymentViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaWebView.html">KlarnaWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:15KlarnaMobileSDK0A13PaymentActiona">KlarnaPaymentAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:15KlarnaMobileSDK0A21PaymentMethodCategorya">KlarnaPaymentMethodCategory</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>KlarnaHybridSDK</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">KlarnaHybridSDK</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Klarna&rsquo;s solution to integrating it&rsquo;s products in a <q>hybrid</q> context (one in which Klarna&rsquo;s)
+products are presented inside a merchant-owned web view.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Initializer"></a>
+                <a name="//apple_ref/swift/Section/Public Initializer" class="dashAnchor"></a>
+                <a href="#/Public%20Initializer">
+                  <h3 class="section-name">Public Initializer</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)initWithWebView:returnUrl:eventListener:"></a>
+                    <a name="//apple_ref/swift/Method/init(webView:returnUrl:eventListener:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)initWithWebView:returnUrl:eventListener:">init(webView:returnUrl:eventListener:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize the Klarna Mobile SDK in hybrid mode.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">webView</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KlarnaWebView.html">KlarnaWebView</a></span><span class="p">,</span> <span class="nv">returnUrl</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">eventListener</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KlarnaHybridSDKEventListener.html">KlarnaHybridSDKEventListener</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>webView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A web view (either UIWebView or WKWebView) for Klarna&rsquo;s SDK to operate on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>returnUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Your app&rsquo;s custom URL scheme, specified in your app&rsquo;s <code>CFBundleURLSchemes</code> field in the Info.plist.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eventListener</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A listener that will receive events from the SDK.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Methods">
+                  <h3 class="section-name">Public Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)newPageWillLoadIn:"></a>
+                    <a name="//apple_ref/swift/Method/newPageWillLoad(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)newPageWillLoadIn:">newPageWillLoad(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Notify Klarna Hybrid SDK when a new page will be loaded.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">newPageWillLoad</span><span class="p">(</span><span class="k">in</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt"><a href="../Protocols/KlarnaWebView.html">KlarnaWebView</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)shouldFollowNavigationWithRequest:"></a>
+                    <a name="//apple_ref/swift/Method/shouldFollowNavigation(withRequest:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(im)shouldFollowNavigationWithRequest:">shouldFollowNavigation(withRequest:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify with the SDK whether a web view navigation should be followed in your web view.</p>
+
+<p>If using a <code>UIWebView</code>, checking should be performed in:
+ <code>webView(_: shouldStartLoadWith: navigationType:)</code></p>
+
+<p>If using a <code>WKWebView</code>, checking should be perfomed in:
+webView(_: decidePolicyFor: decisionHandler:) wuth the <code>navigationAction</code>&lsquo;s <code>reqeuest</code> propeerty.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    If it is a page Klarna recognizes as one of its own (e.g. Klarna’s financing terms), the SDK
+will return false. You should block this navigation.
+
+</div>
+
+<p>If it’s a page Klarna doesn’t recognize, it’ll fall back to returning true. Your app should
+determine whether it wants to load the URL through its own heuristics.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">shouldFollowNavigation</span><span class="p">(</span><span class="n">withRequest</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">URLRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>request</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the navigation action to handle</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>whether Hybrid SDK can handle this navigation action or not</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(cm)deviceIdentifier"></a>
+                    <a name="//apple_ref/swift/Method/deviceIdentifier()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(cm)deviceIdentifier">deviceIdentifier()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve the SDK&rsquo;s device ID for the app install.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deviceIdentifier</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a unique ID, persistent throughout the app&rsquo;s installation.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(cm)handleDeeplinkWithUrl:options:"></a>
+                    <a name="//apple_ref/swift/Method/handleDeeplink(withUrl:options:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@KlarnaMobileSDK@objc(cs)KlarnaHybridSDK(cm)handleDeeplinkWithUrl:options:">handleDeeplink(withUrl:options:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>To be called when the application is re-opened from a third-party application while the SDK
+is running.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">handleDeeplink</span><span class="p">(</span><span class="n">withUrl</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">options</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplication</span><span class="o">.</span><span class="kt">OpenURLOptionsKey</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL that is passed in through deep link.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Additional system-provided parameters (like source application bundle ID)</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/klarna/klarna-mobile-sdk" target="_blank" rel="external">Klarna Team Mobile SDK</a>. All rights reserved. (Last updated: 2019-01-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

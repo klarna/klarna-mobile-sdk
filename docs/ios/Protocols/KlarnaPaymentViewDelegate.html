@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KlarnaPaymentViewDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/KlarnaPaymentViewDelegate" class="dashAnchor"></a>
+    <a title="KlarnaPaymentViewDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
+        <p class="header-right"><a href="https://github.com/klarna/klarna-mobile-sdk"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        KlarnaPaymentViewDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaHybridSDK.html">KlarnaHybridSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaMobileSDKError.html">KlarnaMobileSDKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/KlarnaPaymentsError.html">KlarnaPaymentsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK9AuthorizeSSvp">Authorize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK8FinalizeSSvp">Finalize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK10InitializeSSvp">Initialize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK4LoadSSvp">Load</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK8PayLaterSSvp">PayLater</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK6PayNowSSvp">PayNow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK11ReauthorizeSSvp">Reauthorize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:15KlarnaMobileSDK7SliceItSSvp">SliceIt</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIWebView.html">UIWebView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/WKWebView.html">WKWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaHybridSDKEventListener.html">KlarnaHybridSDKEventListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaPaymentViewDelegate.html">KlarnaPaymentViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KlarnaWebView.html">KlarnaWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:15KlarnaMobileSDK0A13PaymentActiona">KlarnaPaymentAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:15KlarnaMobileSDK0A21PaymentMethodCategorya">KlarnaPaymentMethodCategory</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>KlarnaPaymentViewDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">KlarnaPaymentViewDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p><code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> delegate</p>
+
+<p>This is the merchant&rsquo;s interface to receive messages from <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Payment%20view%20intialized"></a>
+                <a name="//apple_ref/swift/Section/Payment view intialized" class="dashAnchor"></a>
+                <a href="#/Payment%20view%20intialized">
+                  <h3 class="section-name">Payment view intialized</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE11InitializedyyAA0adE0CF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentViewInitialized(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE11InitializedyyAA0adE0CF">klarnaPaymentViewInitialized(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Klarna payment view has been successfully initialized</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p><code>load(jsonData: String? = nil)</code> method can be called from this point.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentViewInitialized</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Payment%20category%20loaded"></a>
+                <a name="//apple_ref/swift/Section/Payment category loaded" class="dashAnchor"></a>
+                <a href="#/Payment%20category%20loaded">
+                  <h3 class="section-name">Payment category loaded</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE6LoadedyyAA0adE0CF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentViewLoaded(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE6LoadedyyAA0adE0CF">klarnaPaymentViewLoaded(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The specific payment category view has been loaded a second (or nth) time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentViewLoaded</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Payment%20category%20authorized"></a>
+                <a name="//apple_ref/swift/Section/Payment category authorized" class="dashAnchor"></a>
+                <a href="#/Payment%20category%20authorized">
+                  <h3 class="section-name">Payment category authorized</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved19authorizedWithToken16finalizeRequiredyAA0adE0C_SbSgSSSgAJtF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentView(_:approved:authorizedWithToken:finalizeRequired:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved19authorizedWithToken16finalizeRequiredyAA0adE0C_SbSgSSSgAJtF">klarnaPaymentView(_:approved:authorizedWithToken:finalizeRequired:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The specific payment category for the view has been authorized.
+Merchant can use the <code>authToken</code> to complete the order if finalize is not required.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentView</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">,</span> <span class="nv">approved</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?,</span> <span class="n">authorizedWithToken</span> <span class="nv">authToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">finalizeRequired</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>approved</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean value to indicate if authorize operation has been approved or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Authorization token to complete order if the order doesn&rsquo;t have to be finalized first.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>finalizeRequired</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If true, the merchant has to call finalize before completing the order.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved21reauthorizedWithTokenyAA0adE0C_SbSgSSSgtF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentView(_:approved:reauthorizedWithToken:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved21reauthorizedWithTokenyAA0adE0C_SbSgSSSgtF">klarnaPaymentView(_:approved:reauthorizedWithToken:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The specific payment category for the view has been reauthorized.
+Merchant can use the token to complete the order if finalize is not required.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentView</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">,</span> <span class="nv">approved</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?,</span> <span class="n">reauthorizedWithToken</span> <span class="nv">authToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>approved</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean value to indicate if reauthorize operation has been approved or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Authorization token to complete order if the order doesn&rsquo;t have to be finalized first.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Payment%20category%20finalized"></a>
+                <a name="//apple_ref/swift/Section/Payment category finalized" class="dashAnchor"></a>
+                <a href="#/Payment%20category%20finalized">
+                  <h3 class="section-name">Payment category finalized</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved18finalizedWithTokenyAA0adE0C_SbSgSSSgtF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentView(_:approved:finalizedWithToken:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_8approved18finalizedWithTokenyAA0adE0C_SbSgSSSgtF">klarnaPaymentView(_:approved:finalizedWithToken:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The specific payment category for the view has been finalized and the merchant can use the token to complete the order.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentView</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">,</span> <span class="nv">approved</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?,</span> <span class="n">finalizedWithToken</span> <span class="nv">authToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>approved</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean value to indicate if finalize operation has been approved or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Authorization token to complete the order.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Klarna%20payment%20view%20resized"></a>
+                <a name="//apple_ref/swift/Section/Klarna payment view resized" class="dashAnchor"></a>
+                <a href="#/Klarna%20payment%20view%20resized">
+                  <h3 class="section-name">Klarna payment view resized</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_15resizedToHeightyAA0adE0C_12CoreGraphics7CGFloatVtF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentView(_:resizedToHeight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_15resizedToHeightyAA0adE0C_12CoreGraphics7CGFloatVtF">klarnaPaymentView(_:resizedToHeight:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Klarna payment view has been resized to a new height.
+Merchant should update the view&rsquo;s height.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentView</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">,</span> <span class="n">resizedToHeight</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Height Klarna payment view should be resized to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Payment%20error%20occurred"></a>
+                <a name="//apple_ref/swift/Section/Payment error occurred" class="dashAnchor"></a>
+                <a href="#/Payment%20error%20occurred">
+                  <h3 class="section-name">Payment error occurred</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_15failedWithErroryAA0adE0C_AA0a8PaymentsJ0CtF"></a>
+                    <a name="//apple_ref/swift/Method/klarnaPaymentView(_:failedWithError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:15KlarnaMobileSDK0A19PaymentViewDelegateP06klarnadE0_15failedWithErroryAA0adE0C_AA0a8PaymentsJ0CtF">klarnaPaymentView(_:failedWithError:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a Klarna payment error occurred in any steps.
+Error can provide information about what happened and whether it&rsquo;s recoverable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">klarnaPaymentView</span><span class="p">(</span><span class="n">_</span> <span class="nv">paymentView</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></span><span class="p">,</span> <span class="n">failedWithError</span> <span class="nv">error</span><span class="p">:</span> <span class="kt"><a href="../Classes/KlarnaPaymentsError.html">KlarnaPaymentsError</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>paymentView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Source instance of the <code><a href="../Classes/KlarnaPaymentView.html">KlarnaPaymentView</a></code> the delegate is set on.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Klarna payment error occurred</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://github.com/klarna/klarna-mobile-sdk" target="_blank" rel="external">Klarna Team Mobile SDK</a>. All rights reserved. (Last updated: 2019-01-15)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
