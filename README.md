@@ -12,6 +12,6 @@ Pleased see document provided directly to you.
 
 # Android Integration 
 
-[Native Integration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
+[Native Integration Guide for Klarna Payments](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
 
 [Documentation for Android](http://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
