@@ -81,7 +81,7 @@ To render a payment method, create an instance of `PaymentView` either via XML o
 
 #### Code
 ```java
-final PaymentView paymentView = new PaymentView(this, PaymentCategory.PAY_LATER, callback);
+final PaymentView paymentView = new PaymentView(this, KlarnaPaymentCategory.PAY_LATER, callback);
 ```
 
 #### XML
