@@ -1,11 +1,11 @@
-# Klarna mobile SDK for iOS & Android
+# Klarna Mobile SDK for iOS & Android
 
 # iOS Integration 
 
 Pleased see document provided directly to you.
 
 # Android Integration 
-The Payments SDK is available as in our Maven Repository, perform the following steps to add it to your application:
+The Klarna Mobile SDK for Android is available in our Maven Repository, perform the following steps to add it to your application:
 
 1. Edit your application level `build.gradle` file and add the following repository to your `repositories` section:
 
