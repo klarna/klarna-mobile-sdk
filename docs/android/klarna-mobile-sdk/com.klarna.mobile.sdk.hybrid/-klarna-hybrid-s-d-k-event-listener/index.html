@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KlarnaHybridSDKEventListener - klarna-mobile-sdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">klarna-mobile-sdk</a>&nbsp;/&nbsp;<a href="../index.html">com.klarna.mobile.sdk.hybrid</a>&nbsp;/&nbsp;<a href="./index.html">KlarnaHybridSDKEventListener</a><br/>
+<br/>
+<h1>KlarnaHybridSDKEventListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">KlarnaHybridSDKEventListener</span></code>
+<p>Merchant can listen to Hybrid SDK events by implementing this protocol</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-klarna-hybrid-s-d-k-did-hide-fullscreen.html">KlarnaHybridSDKDidHideFullscreen</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">KlarnaHybridSDKDidHideFullscreen</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKDidHideFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/webView">webView</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/webkit/WebView.html"><span class="identifier">WebView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKDidHideFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/completion">completion</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Event to notify merchant that the full-screen content in the web view has been removed and
+it is now displaying "regular" content.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-klarna-hybrid-s-d-k-did-show-fullscreen.html">KlarnaHybridSDKDidShowFullscreen</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">KlarnaHybridSDKDidShowFullscreen</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKDidShowFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/webView">webView</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/webkit/WebView.html"><span class="identifier">WebView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKDidShowFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/completion">completion</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Event to notify the merchant app merchant that content that should be presented in
+full-screen has been displayed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-klarna-hybrid-s-d-k-failed.html">KlarnaHybridSDKFailed</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">KlarnaHybridSDKFailed</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKFailed(android.webkit.WebView, com.klarna.mobile.sdk.hybrid.KlarnaMobileSDKError)/webView">webView</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/webkit/WebView.html"><span class="identifier">WebView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKFailed(android.webkit.WebView, com.klarna.mobile.sdk.hybrid.KlarnaMobileSDKError)/error">error</span><span class="symbol">:</span>&nbsp;<a href="../-klarna-mobile-s-d-k-error/index.html"><span class="identifier">KlarnaMobileSDKError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Event to notify merchant that anything failed during Hybrid SDK usage</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-klarna-hybrid-s-d-k-will-hide-fullscreen.html">KlarnaHybridSDKWillHideFullscreen</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">KlarnaHybridSDKWillHideFullscreen</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKWillHideFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/webView">webView</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/webkit/WebView.html"><span class="identifier">WebView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKWillHideFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/completion">completion</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Event to notify the merchant's app that the full-screen content in the following web view
+will be removed, and the "original" contents will be displayed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-klarna-hybrid-s-d-k-will-show-fullscreen.html">KlarnaHybridSDKWillShowFullscreen</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">KlarnaHybridSDKWillShowFullscreen</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKWillShowFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/webView">webView</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/webkit/WebView.html"><span class="identifier">WebView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.hybrid.KlarnaHybridSDKEventListener$KlarnaHybridSDKWillShowFullscreen(android.webkit.WebView, kotlin.Function0((kotlin.Unit)))/completion">completion</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Event to notify the merchant app that the following web view will present content that should
+be displayed in a full-screen format</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

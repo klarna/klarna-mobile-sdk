@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KlarnaPaymentViewCallBack.onAuthorized - klarna-mobile-sdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">klarna-mobile-sdk</a>&nbsp;/&nbsp;<a href="../index.html">com.klarna.mobile.sdk.payments</a>&nbsp;/&nbsp;<a href="index.html">KlarnaPaymentViewCallBack</a>&nbsp;/&nbsp;<a href="./on-authorized.html">onAuthorized</a><br/>
+<br/>
+<h1>onAuthorized</h1>
+<a name="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)"></a>
+<code><span class="identifier">@MainThread</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onAuthorized</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/approved">approved</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/authToken">authToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/finalizedRequired">finalizedRequired</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/authorize.html">PaymentView.authorize</a> was successful.</p>
+<h3>Parameters</h3>
+<p><a name="view"></a>
+<code>view</code> - the payment-view</p>
+<p><a name="approved"></a>
+<code>approved</code> - the authorization result, approved or denied</p>
+<p><a name="authToken"></a>
+<code>authToken</code> - a token which allows you to place the order via a server side call, only returned if the authorization was approved.</p>
+<p><a name="finalizedRequired"></a>
+<code>finalizedRequired</code> - If true, the finalize has to be before completing the order.</p>
+</BODY>
+</HTML>

@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>KlarnaPaymentViewCallBack - klarna-mobile-sdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">klarna-mobile-sdk</a>&nbsp;/&nbsp;<a href="../index.html">com.klarna.mobile.sdk.payments</a>&nbsp;/&nbsp;<a href="./index.html">KlarnaPaymentViewCallBack</a><br/>
+<br/>
+<h1>KlarnaPaymentViewCallBack</h1>
+<code><span class="keyword">interface </span><span class="identifier">KlarnaPaymentViewCallBack</span></code>
+<p>Callback interface definition for events relevant to the payment process.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="on-authorized.html">onAuthorized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onAuthorized</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/approved">approved</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/authToken">authToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onAuthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String, kotlin.Boolean)/finalizedRequired">finalizedRequired</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/authorize.html">PaymentView.authorize</a> was successful.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-error-occurred.html">onErrorOccurred</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onErrorOccurred</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onErrorOccurred(com.klarna.mobile.sdk.payments.PaymentView, com.klarna.mobile.sdk.payments.KlarnaPaymentError)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onErrorOccurred(com.klarna.mobile.sdk.payments.PaymentView, com.klarna.mobile.sdk.payments.KlarnaPaymentError)/error">error</span><span class="symbol">:</span>&nbsp;<a href="../-klarna-payment-error/index.html"><span class="identifier">KlarnaPaymentError</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called when a payment error occurs in any steps. The <a href="../-klarna-payment-error/index.html">KlarnaPaymentError</a> can provide information about what happened and whether it’s recoverable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-finalized.html">onFinalized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onFinalized</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onFinalized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onFinalized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/approved">approved</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onFinalized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/authToken">authToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/finalize.html">PaymentView.finalize</a> was successful.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-initialized.html">onInitialized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onInitialized</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onInitialized(com.klarna.mobile.sdk.payments.PaymentView)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/initialize.html">PaymentView.initialize</a> was successful.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-loaded.html">onLoaded</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onLoaded</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onLoaded(com.klarna.mobile.sdk.payments.PaymentView)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/load.html">PaymentView.load</a> was successful.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-reauthorized.html">onReauthorized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onReauthorized</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onReauthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/view">view</span><span class="symbol">:</span>&nbsp;<a href="../-payment-view/index.html"><span class="identifier">PaymentView</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onReauthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/approved">approved</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack$onReauthorized(com.klarna.mobile.sdk.payments.PaymentView, kotlin.Boolean, kotlin.String)/authToken">authToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after <a href="../-payment-view/reauthorize.html">PaymentView.reauthorize</a> was successful.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PaymentView - klarna-mobile-sdk</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">klarna-mobile-sdk</a>&nbsp;/&nbsp;<a href="../index.html">com.klarna.mobile.sdk.payments</a>&nbsp;/&nbsp;<a href="./index.html">PaymentView</a><br/>
+<br/>
+<h1>PaymentView</h1>
+<code><span class="keyword">class </span><span class="identifier">PaymentView</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/widget/FrameLayout.html"><span class="identifier">FrameLayout</span></a></code>
+<p>A View which renders a payment options. It acts as an interface to methods relevant to the payment method category it’s rendering.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PaymentView</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$<init>(android.content.Context, kotlin.String, com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$<init>(android.content.Context, kotlin.String, com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack)/category">category</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$<init>(android.content.Context, kotlin.String, com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../-klarna-payment-view-call-back/index.html"><span class="identifier">KlarnaPaymentViewCallBack</span></a><span class="symbol">)</span></code>
+<p>Create a new <a href="./index.html">PaymentView</a> which can be manually place inside a <a href="#">ViewGroup</a>.</p>
+<code><span class="identifier">PaymentView</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$<init>(android.content.Context, android.util.AttributeSet)/context">context</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/content/Context.html"><span class="identifier">Context</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$<init>(android.content.Context, android.util.AttributeSet)/attrs">attrs</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/util/AttributeSet.html"><span class="identifier">AttributeSet</span></a><span class="symbol">?</span><span class="symbol">)</span></code>
+<p>A View which renders a payment options. It acts as an interface to methods relevant to the payment method category it’s rendering.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="category.html">category</a></p>
+</td>
+<td>
+<code><span class="keyword">var </span><span class="identifier">category</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span></code>
+<p>Category of payment method loaded in this view.
+The category can only be set once, any further attempts to update the token will be ignored.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="authorize.html">authorize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">authorize</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$authorize(kotlin.Boolean, kotlin.String)/autoFinalize">autoFinalize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a>&nbsp;<span class="symbol">=</span>&nbsp;false<span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$authorize(kotlin.Boolean, kotlin.String)/sessionData">sessionData</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Perform authorization. The result of this operation is delivered in <a href="#">KlarnaPaymentViewCallback.onAuthorized</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="finalize.html">finalize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">finalize</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$finalize(kotlin.String)/sessionData">sessionData</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Perform finalization. The result of this operation is delivered in <a href="#">KlarnaPaymentViewCallback.onFinalized</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="initialize.html">initialize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">initialize</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$initialize(kotlin.String, kotlin.String)/clientToken">clientToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$initialize(kotlin.String, kotlin.String)/returnURL">returnURL</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Initializes this PaymentView. The result of this operation is delivered in <a href="#">KlarnaPaymentViewCallback.onInitialized</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-available.html">isAvailable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isAvailable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Check if this PaymentView is available and can be presented.
+<strong><em>False</em></strong> would signal that this PaymentView can't be used any more and should not be displayed to the user (the contents will be blank).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-loaded.html">isLoaded</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isLoaded</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Check if the view has finished loading following a call to <a href="load.html">load</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="load.html">load</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">load</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$load(kotlin.String)/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Performs a pre-assessment for this payment-view. The result of this operation is delivered in <a href="#">KlarnaPaymentViewCallback.onLoaded</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="reauthorize.html">reauthorize</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">reauthorize</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$reauthorize(kotlin.String)/sessionData">sessionData</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Perform reauthorizing. The result of this operation is delivered in <a href="#">KlarnaPaymentViewCallback.onReauthorized</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="register-payment-view-callback.html">registerPaymentViewCallback</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">registerPaymentViewCallback</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$registerPaymentViewCallback(com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../-klarna-payment-view-call-back/index.html"><span class="identifier">KlarnaPaymentViewCallBack</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Register a <a href="#">KlarnaPaymentViewCallback</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="unregister-payment-view-callback.html">unregisterPaymentViewCallback</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">unregisterPaymentViewCallback</span><span class="symbol">(</span><span class="identifier" id="com.klarna.mobile.sdk.payments.PaymentView$unregisterPaymentViewCallback(com.klarna.mobile.sdk.payments.KlarnaPaymentViewCallBack)/callback">callback</span><span class="symbol">:</span>&nbsp;<a href="../-klarna-payment-view-call-back/index.html"><span class="identifier">KlarnaPaymentViewCallBack</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Unregister a <a href="#">KlarnaPaymentViewCallback</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
