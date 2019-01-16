@@ -3,7 +3,7 @@
 # iOS Integration 
 ## Hybrid
 
-Pleased see document provided directly to you.
+Please see the document provided directly to you.
 
 ## Klarna Payments for iOS
 [Native Integration Guide and Example App](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsiOS.md)
