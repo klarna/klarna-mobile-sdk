@@ -165,6 +165,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import CoreGraphics;
 @import Foundation;
+@import JavaScriptCore;
 @import ObjectiveC;
 @import UIKit;
 @import WebKit;
@@ -184,6 +185,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="KlarnaMobileSDK",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
 
 
 
@@ -345,6 +348,10 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
 @interface UIWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 - (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
 - (void)setScrollEnabled:(BOOL)enabled;
@@ -352,6 +359,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 - (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
 - (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
 @end
+
+
 
 
 
