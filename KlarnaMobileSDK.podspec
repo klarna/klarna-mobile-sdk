@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KlarnaMobileSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.0.3"
   s.summary      = "Klarna mobile SDK for iOS"
   s.description  = <<-DESC
                    Klarna mobile SDK for iOS apps.
