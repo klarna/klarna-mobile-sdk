@@ -253,7 +253,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 /// \param completion A callback the merchant should use to let the Hybrid SDK know when any
 /// actions addressing this event are complete.
 ///
-- (void)klarnaHybridSDKWillShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+- (void)klarnaHybridSDKWillShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
 /// Event to notify the merchant app merchant that content that should be presented in
 /// full-screen has been displayed.
 /// \param webView Web view that has presented full-screen content.
@@ -261,7 +261,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 /// \param completion A callback the merchant should use to let the Hybrid SDK know when any
 /// actions addressing this event are complete.
 ///
-- (void)klarnaHybridSDKDidShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+- (void)klarnaHybridSDKDidShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
 /// Event to notify the merchant’s app that the full-screen content in the following web view
 /// will be removed, and the “original” contents will be displayed.
 /// \param webView Web view to be restored to original presentation.
@@ -269,7 +269,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 /// \param completion A callback the merchant should use to let the Hybrid SDK know when any
 /// actions addressing this event are complete
 ///
-- (void)klarnaHybridSDKWillHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+- (void)klarnaHybridSDKWillHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
 /// Event to notify merchant that the full-screen content in the web view has been removed and
 /// it is now displaying “regular” content.
 /// \param webView Web View presenting original content.
@@ -277,7 +277,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 /// \param completion A callback the merchant should use to let the Hybrid SDK know when any
 /// actions addressing this event are complete
 ///
-- (void)klarnaHybridSDKDidHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(SWIFT_NOESCAPE void (^ _Nonnull)(void))completion;
+- (void)klarnaHybridSDKDidHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
 /// Event to notify merchant that an error occured during Hybrid SDK usage.
 /// \param webView on which webview the failure happened.
 ///
@@ -334,11 +334,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentsError")
 /// General class that envelops UIWebView and WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
-- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
-- (void)setScrollEnabled:(BOOL)enabled;
-- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
-- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
-- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
 @end
 
 
@@ -352,13 +347,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
-@interface UIWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
-- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
-- (void)setScrollEnabled:(BOOL)enabled;
-- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
-- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
-- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
-@end
 
 
 
@@ -369,13 +357,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
-@interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
-- (UIView * _Nonnull)associatedView SWIFT_WARN_UNUSED_RESULT;
-- (void)setScrollEnabled:(BOOL)enabled;
-- (void)loadUrlRequest:(NSURLRequest * _Nonnull)request;
-- (void)loadHtmlString:(NSString * _Nonnull)htmlString baseURL:(NSURL * _Nullable)baseURL;
-- (void)scrollToRect:(CGRect)rect animated:(BOOL)animated;
-@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
