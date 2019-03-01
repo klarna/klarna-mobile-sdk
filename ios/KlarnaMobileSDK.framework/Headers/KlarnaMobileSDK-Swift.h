@@ -188,6 +188,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class NSDictionary;
+@class WKWebViewConfiguration;
+@class NSCoder;
+
+/// A sub-class of WKWebView, which don’t automatically adjust its scrollView’s contentOffset when there is a keyboard shown / hidden.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21IgnoreKeyboardWebView")
+@interface IgnoreKeyboardWebView : WKWebView
+/// https://github.com/WebKit/webkit/blob/master/Source/WebKit/UIProcess/API/Cocoa/WKWebView.mm#L3230
+/// Here we are overriding WKWebView’s function “_keyboardChangedWithInfo:adjustScrollView:”
+/// Always pass in <code>adjustScrollView</code> as <code>false</code>
+- (void)_keyboardChangedWithInfo:(NSDictionary * _Nonnull)keyboardInfo adjustScrollView:(BOOL)adjustScrollView;
+- (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 
 @protocol KlarnaWebView;
@@ -286,6 +301,39 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 - (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
+/// Console logging output levels.
+/// <ul>
+///   <li>
+///     off: No logging will occure.
+///   </li>
+///   <li>
+///     error: Log only error messages.
+///   </li>
+///   <li>
+///     verbose: Log all (debug + error) messages.
+///   </li>
+/// </ul>
+typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+  KlarnaLoggingLevelOff = 0,
+  KlarnaLoggingLevelError = 1,
+  KlarnaLoggingLevelVerbose = 2,
+};
+
+
+/// The top level interface for the SDK and all of its components.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
+@interface KlarnaMobileSDKCommon : NSObject
+/// MARK: - Life Cycle
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+/// MARK: - Logging
+/// Set logging level.
+/// The default logging level is <em>verbose</em>.
+/// \param loggingLevel Console log output level.
+///
++ (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel;
+@end
+
 
 /// A KlarnaMobileSDKError describes an error that occurred during any of the stages within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
@@ -301,7 +349,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
-@class NSCoder;
 
 /// A UIView rendering a payment method category.
 /// It acts as an interface to methods relevant to the payment method category it’s rendering.
