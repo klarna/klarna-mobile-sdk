@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "ios/KlarnaMobileSDK.framework/Headers/*.h"
   s.vendored_frameworks = "ios/KlarnaMobileSDK.framework"
   s.requires_arc = true
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 end
