@@ -1,0 +1,66 @@
+{
+    "meta": {
+        "version": "v0.2.0-4110b48d2a9",
+        "schema": "v1"
+    },
+    "configuration": {
+        "klarna-sdk": {
+            "initialization": {
+                "init-script-url": {
+                    "scheme": "https",
+                    "host": "x.klarnacdn.net",
+                    "path": "/mobile-sdk/wrapper-init-script/v0/script/v1/WrapperInitScript.js"
+                }
+            },
+            "payments": {
+                "wrapper-snippet-url": {
+                    "scheme": "https",
+                    "host": "x.klarnacdn.net",
+                    "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v0/index.html"
+                }
+            },
+            "hybrid": {},
+            "checkout": {},
+            "analytics": {
+                "test-endpoint-url": {
+                    "scheme": "https",
+                    "host": "evt-eu.staging.eu1.yaco.klarna.net",
+                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                },
+                "prod-endpoint-url": {
+                    "scheme": "https",
+                    "host": "evt.not-really-klarna.com",
+                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                },
+                "level": "error"
+            },
+            "dev-data": {
+                "test-endpoint-url": {
+                    "scheme": "https",
+                    "host": "evt-eu.staging.eu1.yaco.klarna.net",
+                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                },
+                "prod-endpoint-url": {
+                    "scheme": "https",
+                    "host": "evt.klarna.com",
+                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                }
+            },
+            "debugging": {
+                "console": {
+                    "level": "error",
+                    "privacy": "public",
+                    "log-endpoint-url": null
+                },
+                "webview": {
+                    "onload-debug-script-url": null
+                },
+                "android": {
+                    "make-webviews-debuggable": false
+                },
+                "ios": {}
+            },
+            "overrides": []
+        }
+    }
+}

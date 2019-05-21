@@ -216,20 +216,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// If using a <code>UIWebView</code>, checking should be performed in:
 /// <code>webView(_: shouldStartLoadWith: navigationType:)</code>
 /// If using a <code>WKWebView</code>, checking should be perfomed in:
-/// webView(_: decidePolicyFor: decisionHandler:) wuth the <code>navigationAction</code>’s <code>reqeuest</code> propeerty.
+/// webView(_: decidePolicyFor: decisionHandler:)
+/// with the <code>navigationAction</code>’s <code>request</code> property.
 /// note:
 ///
 /// If it is a page Klarna recognizes as one of its own (e.g. Klarna’s financing terms), the SDK
-/// will return false. You should block this navigation.
-/// If it’s a page Klarna doesn’t recognize, it’ll fall back to returning true. Your app should
+/// will return <code>false</code>. You should block this navigation.
+/// If it’s a page Klarna doesn’t recognize, it’ll fall back to returning <code>true</code>. Your app should
 /// determine whether it wants to load the URL through its own heuristics.
 /// \param request the navigation action to handle
 ///
 ///
 /// returns:
-/// whether Hybrid SDK can handle this navigation action or not
+/// Whether the Hybrid SDK deems that this navigation should be blocked or not.
 - (BOOL)shouldFollowNavigationWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
-/// Retrieve the SDK’s device ID for the app install.
+/// Retrieve the SDK’s Device ID for the app install.
 ///
 /// returns:
 /// a unique ID, persistent throughout the app’s installation.
@@ -247,8 +248,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 
 @class KlarnaMobileSDKError;
 
-/// The merchant’s app can listen to Hybrid SDK events in the Hybrid SDK by implementing this
-/// protocol.
+/// Your app should listen to SDK events in the from the Hybrid SDK by implementing this protocol.
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 @protocol KlarnaHybridSDKEventListener
 /// Event to notify the merchant app that the following web view will present content that
@@ -291,21 +291,13 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 - (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
-/// Console logging output levels.
-/// <ul>
-///   <li>
-///     off: No logging will occure.
-///   </li>
-///   <li>
-///     error: Log only error messages.
-///   </li>
-///   <li>
-///     verbose: Log all (debug + error) messages.
-///   </li>
-/// </ul>
+/// Level of logging to system console.
 typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+/// No logging will occur.
   KlarnaLoggingLevelOff = 0,
+/// Errors will be logged. Default.
   KlarnaLoggingLevelError = 1,
+/// All messages will be logged.
   KlarnaLoggingLevelVerbose = 2,
 };
 
@@ -318,7 +310,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// MARK: - Logging
 /// Set logging level.
-/// The default logging level is <em>verbose</em>.
+/// The default logging level is <code>error</code>.
 /// \param loggingLevel Console log output level.
 ///
 + (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel;
@@ -341,8 +333,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 
 @class NSCoder;
 
-/// A UIView rendering a payment method category.
-/// It acts as an interface to methods relevant to the payment method category it’s rendering.
+/// A <code>UIView</code> rendering one of Klarna’s Payment Method Categories.
+/// In addition to rendering a PMC. it also acts as an interface to perform operations on the
+/// PMC it’s rendering.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
@@ -385,8 +378,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
-
-
 @interface UIWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
 
@@ -397,8 +388,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -622,20 +621,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// If using a <code>UIWebView</code>, checking should be performed in:
 /// <code>webView(_: shouldStartLoadWith: navigationType:)</code>
 /// If using a <code>WKWebView</code>, checking should be perfomed in:
-/// webView(_: decidePolicyFor: decisionHandler:) wuth the <code>navigationAction</code>’s <code>reqeuest</code> propeerty.
+/// webView(_: decidePolicyFor: decisionHandler:)
+/// with the <code>navigationAction</code>’s <code>request</code> property.
 /// note:
 ///
 /// If it is a page Klarna recognizes as one of its own (e.g. Klarna’s financing terms), the SDK
-/// will return false. You should block this navigation.
-/// If it’s a page Klarna doesn’t recognize, it’ll fall back to returning true. Your app should
+/// will return <code>false</code>. You should block this navigation.
+/// If it’s a page Klarna doesn’t recognize, it’ll fall back to returning <code>true</code>. Your app should
 /// determine whether it wants to load the URL through its own heuristics.
 /// \param request the navigation action to handle
 ///
 ///
 /// returns:
-/// whether Hybrid SDK can handle this navigation action or not
+/// Whether the Hybrid SDK deems that this navigation should be blocked or not.
 - (BOOL)shouldFollowNavigationWithRequest:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
-/// Retrieve the SDK’s device ID for the app install.
+/// Retrieve the SDK’s Device ID for the app install.
 ///
 /// returns:
 /// a unique ID, persistent throughout the app’s installation.
@@ -653,8 +653,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 
 @class KlarnaMobileSDKError;
 
-/// The merchant’s app can listen to Hybrid SDK events in the Hybrid SDK by implementing this
-/// protocol.
+/// Your app should listen to SDK events in the from the Hybrid SDK by implementing this protocol.
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 @protocol KlarnaHybridSDKEventListener
 /// Event to notify the merchant app that the following web view will present content that
@@ -697,21 +696,13 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_")
 - (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
-/// Console logging output levels.
-/// <ul>
-///   <li>
-///     off: No logging will occure.
-///   </li>
-///   <li>
-///     error: Log only error messages.
-///   </li>
-///   <li>
-///     verbose: Log all (debug + error) messages.
-///   </li>
-/// </ul>
+/// Level of logging to system console.
 typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+/// No logging will occur.
   KlarnaLoggingLevelOff = 0,
+/// Errors will be logged. Default.
   KlarnaLoggingLevelError = 1,
+/// All messages will be logged.
   KlarnaLoggingLevelVerbose = 2,
 };
 
@@ -724,7 +715,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// MARK: - Logging
 /// Set logging level.
-/// The default logging level is <em>verbose</em>.
+/// The default logging level is <code>error</code>.
 /// \param loggingLevel Console log output level.
 ///
 + (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel;
@@ -747,8 +738,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 
 @class NSCoder;
 
-/// A UIView rendering a payment method category.
-/// It acts as an interface to methods relevant to the payment method category it’s rendering.
+/// A <code>UIView</code> rendering one of Klarna’s Payment Method Categories.
+/// In addition to rendering a PMC. it also acts as an interface to perform operations on the
+/// PMC it’s rendering.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
@@ -791,8 +783,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
-
-
 @interface UIWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
 
@@ -803,8 +793,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
