@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "KlarnaMobileSDK"
-  s.version      = "1.0.10"
-  s.summary      = "Klarna mobile SDK for iOS"
+  s.version      = "1.1.1"
+  s.summary      = "Klarna Mobile SDK for iOS"
   s.description  = <<-DESC
-                   Klarna mobile SDK for iOS apps.
+                   Klarna Mobile SDK for iOS apps.
                    DESC
   s.homepage     = "https://github.com/klarna/klarna-mobile-sdk.git"
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
