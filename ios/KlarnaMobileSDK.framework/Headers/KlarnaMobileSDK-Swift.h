@@ -198,12 +198,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @protocol KlarnaWebView;
 @protocol KlarnaHybridSDKEventListener;
 
-/// Klarna’s solution to integrating it’s products in a “hybrid” context (one in which Klarna’s)
+/// Klarna’s solution to integrating it’s products in a “hybrid” approach (one in which Klarna’s)
 /// products are presented inside a merchant-owned web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @interface KlarnaHybridSDK : NSObject
 /// Initialize the Klarna Mobile SDK in hybrid mode.
-/// \param webView A web view (either UIWebView or WKWebView) for Klarna’s SDK to operate on.
+/// \param webView A web view (either <code>UIWebView</code> or <code>WKWebView</code>) for Klarna’s SDK to operate on.
 ///
 /// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
@@ -317,48 +317,205 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 @end
 
 
-/// A KlarnaMobileSDKError describes an error that occurred during any of the stages within the SDK.
+/// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 @interface KlarnaMobileSDKError : NSObject
-/// Unique name for this error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-/// Description of the error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-/// Informs whether this error is fatal. If an error is fatal, the payment view should not be shown any further.
-@property (nonatomic, readonly) BOOL isFatal;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// An SDK error specific to the Klarna Payments component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
+@interface KlarnaPaymentError : KlarnaMobileSDKError
+@end
+
+@class KlarnaPaymentView;
+
+/// An object that will be notified of events happening to a <code>KlarnaPaymentView</code>
+/// If you’re integrating Klarna Payments natively, you’ll need to implement an instance of this
+/// listener and initialize the <code>KlarnaPaymentView</code> with it.
+/// warning:
+/// Make sure you listen to to <code>klarnaFailed(inPaymentView:withError:)</code> for potential
+/// fatal and non-fatal errors. If the error is not fatal, you can call the method again.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
+@protocol KlarnaPaymentEventListener
+/// The <code>initialize()</code> function for this payment view was successful.
+/// You can follow up by calling <code>load()</code> to render details for this method, or if this payment
+/// method is already authorized, <code>loadPaymentReview()</code>.
+/// \param paymentView The <code>KlarnaPaymentView</code> that was initialized.
+///
+- (void)klarnaInitializedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// The <code>load()</code> function for this payment view was successful.
+/// Payment view should be visible now. If the user chooses to pay with the payment method in
+/// this view, call <code>authorize()</code>.
+/// \param paymentView The <code>KlarnaPaymentView</code> that was loaded.
+///
+- (void)klarnaLoadedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// The <code>loadPaymentReview()</code> function for this payment view was successful.
+/// Payment view is rendering a description of what the payment method that was authorized.
+/// \param paymentView The <code>KlarnaPaymentView</code> that renders a payment review.
+///
+- (void)klarnaLoadedPaymentReviewWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// An authorization was performed for the payment method in the payment view.
+/// If you have an authorization token, you can create an order with your backend at this point.
+/// note:
+/// This method being called doesn’t necessarily mean that it was successful. You might need
+/// to call <code>finalize()</code>, you might need to correct an error or there might be a fatal error.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the authorized payment method.
+///
+/// \param approved Is the session approved? If true, you should also get an <code>authToken</code>.
+///
+/// \param authToken Authorization token.
+///
+/// \param finalizeRequired If true, <code>finalize()</code> needs to be called.
+///
+- (void)klarnaAuthorizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken finalizeRequired:(BOOL)finalizeRequired;
+/// A reauthorization was performed for the payment method in the payment view.
+/// If you have an authorization token, you can create an order with your backend at this point.
+/// If the order is changed after this point. Call the view’s <code>reauthorize()</code> instead
+/// of calling <code>authorize()</code> again.
+/// note:
+/// This method being called doesn’t mean that it was necessarily successful. If <code>klarnaAuthorized()</code>
+/// previously returned true for <code>finalizeRequired</code>, you need to still call <code>finalize()</code>. There
+/// might also be an error.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the reauthorized payment method.
+///
+/// \param approved Is the session reapproved? If true, you should also get a new <code>authToken</code>.
+///
+/// \param authToken Authorization token. You can use this to create an order.
+///
+- (void)klarnaReauthorizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken;
+/// The session for the payment method in this view has performed a finalize.
+/// If it’s approved and you have an authorization token, you can create an order.
+/// note:
+/// You need to check for the <code>authToken</code> to make sure the session is finalized.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the finalized payment method.
+///
+/// \param approved Is the session reapproved? If true, you should also get a new <code>authToken</code>.
+///
+/// \param authToken Authorization token. You can use this to create an order.
+///
+- (void)klarnaFinalizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken;
+/// Called when a Payment View resized internally.
+/// Update your constraints (or whatever solution you have) to match the layout.
+/// \param paymentView The <code>KlarnaPaymentView</code> that resized.
+///
+/// \param newHeight The new height in points.
+///
+- (void)klarnaResizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView to:(CGFloat)newHeight;
+/// Called if an error occured during some part of the flow.
+/// If the error’s <code>invalidFields</code> property contains field names and the error isn’t fatal, you can:
+/// <ol>
+///   <li>
+///     Prompt the user to get updated info for those fields.
+///   </li>
+///   <li>
+///     Call the same method with those updated fields as additional data.
+///   </li>
+/// </ol>
+/// warning:
+/// Errors may or may not be fatal. If the error is fatal the <code>KlarnaPaymentView</code> should not be
+/// displayed anymore.
+/// \param paymentView The <code>KlarnaPaymentView</code> that the error occured in.
+///
+/// \param error Error that occurred.
+///
+- (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
 @class NSCoder;
 
-/// A <code>UIView</code> rendering one of Klarna’s Payment Method Categories.
-/// In addition to rendering a PMC. it also acts as an interface to perform operations on the
-/// PMC it’s rendering.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-/// Klarna payment view does not support initialization from storyboard or xib files.
-/// note:
-///
-/// You should never need to initialize a <code>KlarnaPaymentView</code> yourself,
-/// Use <code>KlarnaPaymets</code>’s factory method to make a new instance of <code>KlarnaPaymentView</code>.
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
 
-
-
-
-
-/// A KlarnaPaymentError describes an error that occurred during any of the stages within the SDK.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentsError")
-@interface KlarnaPaymentsError : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Payment method category this view will be / is displaying.
+@property (nonatomic, readonly, copy) NSString * _Nonnull category;
+/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
+/// True by default. Once it becomes false, it will not become true again.
+@property (nonatomic, readonly) BOOL isLoaded;
+/// Informs whether this PaymentView’s content is loaded.
+/// Will be false until a successful load() call has been performed.
+@property (nonatomic, readonly) BOOL isAvalable;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param delegate A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Initialize the <code>KlarnaPaymentView</code>.
+/// note:
+///
+/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error.
+/// \param clientToken Client token received from Klarna when creating the session.
+///
+/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)initializeWithClientToken:(NSString * _Nonnull)clientToken returnUrl:(NSURL * _Nonnull)returnUrl;
+/// Performs a pre-assessment for this payment method category. Loads content into the
+/// <code>KlarnaPaymentView</code>.
+/// note:
+///
+/// Any existing content in the view (e.g. if you already called <code>load()</code> before) will be
+/// replaced.
+/// \param jsonData An optional string with order data to update the session. Formatted as JSON.
+///
+- (void)loadWithJsonData:(NSString * _Nullable)jsonData;
+/// Renders an overview of the payment terms that have been authorized.
+/// If your checkout offers the customer an opportunity to review the order after the payment
+/// step (e.g. an order review page) it can make sense to present the payment method the customer
+/// selected on a previous page.
+/// This gives the customer a change to review the payment method and its terms to the user.
+/// note:
+///
+/// Any existing content in the view (e.g. if you already called <code>load()</code> before) will be
+/// replaced.
+/// note:
+///
+/// Currently only specific payment methods and countries may be supported.
+/// warning:
+///
+/// The session should be authorized.
+- (void)loadPaymentReview;
+/// Authorizes the session and evaluates whether an order can be created.
+/// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
+/// \param autoFinalize An optional flag used to turn off auto-finalization for the direct bank transfer payment method.
+///
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)authorizeWithAutoFinalize:(BOOL)autoFinalize jsonData:(NSString * _Nullable)jsonData;
+/// Reauthorizes the session.
+/// Call this if session details (order or customer info) have changed after authorization.
+/// Merchant’s delegate will be called with successful/unsuccessful result of reauthorization.
+/// \param jsonData An optional json string to update the session.
+///
+- (void)reauthorizeWithJsonData:(NSString * _Nullable)jsonData;
+/// Finalizes the session.
+/// Call this if you called <code>authorize()</code> with <code>autoFinalize</code> set to <code>false</code> and results in
+/// <code>finalizeRequired</code> with a <code>true</code> value.
+/// Merchant’s delegate will be called with successful/unsuccessful result of finalization.
+/// note:
+///
+/// Method is called <code>finalise</code> with an “s” to avoid conflicts with the <code>NSObject</code> method of
+/// the same name.
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)finaliseWithJsonData:(NSString * _Nullable)jsonData;
 @end
 
 
@@ -603,12 +760,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @protocol KlarnaWebView;
 @protocol KlarnaHybridSDKEventListener;
 
-/// Klarna’s solution to integrating it’s products in a “hybrid” context (one in which Klarna’s)
+/// Klarna’s solution to integrating it’s products in a “hybrid” approach (one in which Klarna’s)
 /// products are presented inside a merchant-owned web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @interface KlarnaHybridSDK : NSObject
 /// Initialize the Klarna Mobile SDK in hybrid mode.
-/// \param webView A web view (either UIWebView or WKWebView) for Klarna’s SDK to operate on.
+/// \param webView A web view (either <code>UIWebView</code> or <code>WKWebView</code>) for Klarna’s SDK to operate on.
 ///
 /// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
@@ -722,48 +879,205 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 @end
 
 
-/// A KlarnaMobileSDKError describes an error that occurred during any of the stages within the SDK.
+/// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 @interface KlarnaMobileSDKError : NSObject
-/// Unique name for this error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-/// Description of the error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-/// Informs whether this error is fatal. If an error is fatal, the payment view should not be shown any further.
-@property (nonatomic, readonly) BOOL isFatal;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// An SDK error specific to the Klarna Payments component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
+@interface KlarnaPaymentError : KlarnaMobileSDKError
+@end
+
+@class KlarnaPaymentView;
+
+/// An object that will be notified of events happening to a <code>KlarnaPaymentView</code>
+/// If you’re integrating Klarna Payments natively, you’ll need to implement an instance of this
+/// listener and initialize the <code>KlarnaPaymentView</code> with it.
+/// warning:
+/// Make sure you listen to to <code>klarnaFailed(inPaymentView:withError:)</code> for potential
+/// fatal and non-fatal errors. If the error is not fatal, you can call the method again.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
+@protocol KlarnaPaymentEventListener
+/// The <code>initialize()</code> function for this payment view was successful.
+/// You can follow up by calling <code>load()</code> to render details for this method, or if this payment
+/// method is already authorized, <code>loadPaymentReview()</code>.
+/// \param paymentView The <code>KlarnaPaymentView</code> that was initialized.
+///
+- (void)klarnaInitializedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// The <code>load()</code> function for this payment view was successful.
+/// Payment view should be visible now. If the user chooses to pay with the payment method in
+/// this view, call <code>authorize()</code>.
+/// \param paymentView The <code>KlarnaPaymentView</code> that was loaded.
+///
+- (void)klarnaLoadedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// The <code>loadPaymentReview()</code> function for this payment view was successful.
+/// Payment view is rendering a description of what the payment method that was authorized.
+/// \param paymentView The <code>KlarnaPaymentView</code> that renders a payment review.
+///
+- (void)klarnaLoadedPaymentReviewWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView;
+/// An authorization was performed for the payment method in the payment view.
+/// If you have an authorization token, you can create an order with your backend at this point.
+/// note:
+/// This method being called doesn’t necessarily mean that it was successful. You might need
+/// to call <code>finalize()</code>, you might need to correct an error or there might be a fatal error.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the authorized payment method.
+///
+/// \param approved Is the session approved? If true, you should also get an <code>authToken</code>.
+///
+/// \param authToken Authorization token.
+///
+/// \param finalizeRequired If true, <code>finalize()</code> needs to be called.
+///
+- (void)klarnaAuthorizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken finalizeRequired:(BOOL)finalizeRequired;
+/// A reauthorization was performed for the payment method in the payment view.
+/// If you have an authorization token, you can create an order with your backend at this point.
+/// If the order is changed after this point. Call the view’s <code>reauthorize()</code> instead
+/// of calling <code>authorize()</code> again.
+/// note:
+/// This method being called doesn’t mean that it was necessarily successful. If <code>klarnaAuthorized()</code>
+/// previously returned true for <code>finalizeRequired</code>, you need to still call <code>finalize()</code>. There
+/// might also be an error.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the reauthorized payment method.
+///
+/// \param approved Is the session reapproved? If true, you should also get a new <code>authToken</code>.
+///
+/// \param authToken Authorization token. You can use this to create an order.
+///
+- (void)klarnaReauthorizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken;
+/// The session for the payment method in this view has performed a finalize.
+/// If it’s approved and you have an authorization token, you can create an order.
+/// note:
+/// You need to check for the <code>authToken</code> to make sure the session is finalized.
+/// \param paymentView The <code>KlarnaPaymentView</code> rendering the finalized payment method.
+///
+/// \param approved Is the session reapproved? If true, you should also get a new <code>authToken</code>.
+///
+/// \param authToken Authorization token. You can use this to create an order.
+///
+- (void)klarnaFinalizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView approved:(BOOL)approved authToken:(NSString * _Nullable)authToken;
+/// Called when a Payment View resized internally.
+/// Update your constraints (or whatever solution you have) to match the layout.
+/// \param paymentView The <code>KlarnaPaymentView</code> that resized.
+///
+/// \param newHeight The new height in points.
+///
+- (void)klarnaResizedWithPaymentView:(KlarnaPaymentView * _Nonnull)paymentView to:(CGFloat)newHeight;
+/// Called if an error occured during some part of the flow.
+/// If the error’s <code>invalidFields</code> property contains field names and the error isn’t fatal, you can:
+/// <ol>
+///   <li>
+///     Prompt the user to get updated info for those fields.
+///   </li>
+///   <li>
+///     Call the same method with those updated fields as additional data.
+///   </li>
+/// </ol>
+/// warning:
+/// Errors may or may not be fatal. If the error is fatal the <code>KlarnaPaymentView</code> should not be
+/// displayed anymore.
+/// \param paymentView The <code>KlarnaPaymentView</code> that the error occured in.
+///
+/// \param error Error that occurred.
+///
+- (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
 @class NSCoder;
 
-/// A <code>UIView</code> rendering one of Klarna’s Payment Method Categories.
-/// In addition to rendering a PMC. it also acts as an interface to perform operations on the
-/// PMC it’s rendering.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-/// Klarna payment view does not support initialization from storyboard or xib files.
-/// note:
-///
-/// You should never need to initialize a <code>KlarnaPaymentView</code> yourself,
-/// Use <code>KlarnaPaymets</code>’s factory method to make a new instance of <code>KlarnaPaymentView</code>.
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 @end
 
 
-
-
-
-
-/// A KlarnaPaymentError describes an error that occurred during any of the stages within the SDK.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentsError")
-@interface KlarnaPaymentsError : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Payment method category this view will be / is displaying.
+@property (nonatomic, readonly, copy) NSString * _Nonnull category;
+/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
+/// True by default. Once it becomes false, it will not become true again.
+@property (nonatomic, readonly) BOOL isLoaded;
+/// Informs whether this PaymentView’s content is loaded.
+/// Will be false until a successful load() call has been performed.
+@property (nonatomic, readonly) BOOL isAvalable;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param delegate A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Initialize the <code>KlarnaPaymentView</code>.
+/// note:
+///
+/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error.
+/// \param clientToken Client token received from Klarna when creating the session.
+///
+/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)initializeWithClientToken:(NSString * _Nonnull)clientToken returnUrl:(NSURL * _Nonnull)returnUrl;
+/// Performs a pre-assessment for this payment method category. Loads content into the
+/// <code>KlarnaPaymentView</code>.
+/// note:
+///
+/// Any existing content in the view (e.g. if you already called <code>load()</code> before) will be
+/// replaced.
+/// \param jsonData An optional string with order data to update the session. Formatted as JSON.
+///
+- (void)loadWithJsonData:(NSString * _Nullable)jsonData;
+/// Renders an overview of the payment terms that have been authorized.
+/// If your checkout offers the customer an opportunity to review the order after the payment
+/// step (e.g. an order review page) it can make sense to present the payment method the customer
+/// selected on a previous page.
+/// This gives the customer a change to review the payment method and its terms to the user.
+/// note:
+///
+/// Any existing content in the view (e.g. if you already called <code>load()</code> before) will be
+/// replaced.
+/// note:
+///
+/// Currently only specific payment methods and countries may be supported.
+/// warning:
+///
+/// The session should be authorized.
+- (void)loadPaymentReview;
+/// Authorizes the session and evaluates whether an order can be created.
+/// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
+/// \param autoFinalize An optional flag used to turn off auto-finalization for the direct bank transfer payment method.
+///
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)authorizeWithAutoFinalize:(BOOL)autoFinalize jsonData:(NSString * _Nullable)jsonData;
+/// Reauthorizes the session.
+/// Call this if session details (order or customer info) have changed after authorization.
+/// Merchant’s delegate will be called with successful/unsuccessful result of reauthorization.
+/// \param jsonData An optional json string to update the session.
+///
+- (void)reauthorizeWithJsonData:(NSString * _Nullable)jsonData;
+/// Finalizes the session.
+/// Call this if you called <code>authorize()</code> with <code>autoFinalize</code> set to <code>false</code> and results in
+/// <code>finalizeRequired</code> with a <code>true</code> value.
+/// Merchant’s delegate will be called with successful/unsuccessful result of finalization.
+/// note:
+///
+/// Method is called <code>finalise</code> with an “s” to avoid conflicts with the <code>NSObject</code> method of
+/// the same name.
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)finaliseWithJsonData:(NSString * _Nullable)jsonData;
 @end
 
 

@@ -1,6 +1,7 @@
 {
     "meta": {
-        "version": "v0.2.0-4110b48d2a9",
+        "version": "v0.3.2-c0d8829490d",
+        "updated": "2019-06-20T14:44:57.406Z",
         "schema": "v1"
     },
     "configuration": {
@@ -29,10 +30,10 @@
                 },
                 "prod-endpoint-url": {
                     "scheme": "https",
-                    "host": "evt.not-really-klarna.com",
+                    "host": "evt.klarna.com",
                     "path": "/v1/mobile-sdk/klarna-mobile-sdk"
                 },
-                "level": "error"
+                "level": "info"
             },
             "dev-data": {
                 "test-endpoint-url": {
