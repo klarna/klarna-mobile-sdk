@@ -12,7 +12,7 @@ Please see the document provided directly to you.
 
 
 # Android Integration 
-[![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/maven-metadata.xml.svg)]()
+[![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/maven-metadata.xml.svg)](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
 ### Hybrid
 
 Please see the document provided directly to you.
