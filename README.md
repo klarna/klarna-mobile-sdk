@@ -1,4 +1,4 @@
-# In-App SDK for iOS & Android
+# Klarna In-App SDK for iOS & Android
 
 The In-App SDK allows merchants to natively integrate Klarna’s products into their apps. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
 
