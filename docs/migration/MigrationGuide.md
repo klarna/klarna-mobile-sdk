@@ -15,8 +15,8 @@ The SDK no longer requires you to pass the application context. If you use the H
 #### New shared class for both Native & Hybrid
 `KlarnaMobileSDKCommon` is a new shared class that provides an API to:
 
-* Enable or disable logging with `klarnaMobileSDKCommon.setLoggingLevel(loggingLevel: KlarnaLoggingLevel)`.
-* Get an identifier with `klarnaMobileSDKCommon.deviceIdentifier(application: Application): String`.
+* Enable or disable logging with `KlarnaMobileSDKCommon.setLoggingLevel(loggingLevel: KlarnaLoggingLevel)`.
+* Get an identifier with `KlarnaMobileSDKCommon.deviceIdentifier(application: Application): String`.
 
 You can use this class regardless of which implementation you use, it supports both Native and Hybrid.
 
