@@ -22,7 +22,7 @@ You can use this class regardless of which implementation you use, it supports b
 
 ---
 
-#### Native
+### Native
 The following API classes, interfaces and methods has been changed:
 
 ##### `KlarnaPaymentsSDK`
@@ -47,7 +47,7 @@ The following API classes, interfaces and methods has been changed:
 
 ---
 
-#### Hybrid
+### Hybrid
 The following API classes, interfaces and methods has been changed:
 
 ##### `KlarnaHybridSDK`
