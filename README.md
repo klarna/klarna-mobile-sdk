@@ -10,17 +10,12 @@ These are our iOS-specific guides for the In-App SDK. We currently have guides t
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/ios)
 
-[API Documentation](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/ios/index.html)
-
-
 ## Android Integration 
 [![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/maven-metadata.xml.svg)](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
 
 These are our Android-specific guides for the In-App SDK. We currently have guides to get you started, to integrate Klarna Payments and to perform a hybrid integration.
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/android)
-
-[API Documentation](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
 
 ## Demo apps
 
@@ -32,6 +27,10 @@ These are our Android-specific guides for the In-App SDK. We currently have guid
 ## Deprecated Integration Guides
 If you are using an older version of the SDK (<2.0.0) you should refer to these integration guides and if you want to migrate to 2.0.0 or above you can use the [Migration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/migration/MigrationGuide.md) to see what has changed.
 
-* [iOS Native Integration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsiOS.md)
+### iOS
+* [Native Integration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsiOS.md)
+* [API Documentation](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/ios/index.html)
 
+### Android
 * [Android Native Integration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
+* [API Documentation](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
