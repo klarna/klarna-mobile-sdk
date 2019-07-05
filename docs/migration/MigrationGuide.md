@@ -1,8 +1,8 @@
-#Migration Guide for Klarna In-App SDK
+# Migration Guide for Klarna In-App SDK
 
-##Android
+## Android
 
-###Migrating from 1.x.x to 2.x.x - Overview
+### Migrating from 1.x.x to 2.x.x - Overview
 In version 2.0.0 changes were made to the API to make Klarna In-App SDK easier to use and faster to integrate. Method names were been changed to be more self explanatory and a step in the integration process was removed to make it even faster and simpler.
 
 Below are the changes required when migrating an existing application from Klarna In-App SDK 1.x.x to 2.x.x. Note that the code samples below are in Kotlin but the same changes applies if you have a Java application.
@@ -22,7 +22,7 @@ You can use this class regardless of which implementation you use, it supports b
 
 ---
 
-####Native
+#### Native
 The following API classes, interfaces and methods has been changed:
 
 ##### `KlarnaPaymentsSDK`
@@ -47,7 +47,7 @@ The following API classes, interfaces and methods has been changed:
 
 ---
 
-####Hybrid
+#### Hybrid
 The following API classes, interfaces and methods has been changed:
 
 ##### `KlarnaHybridSDK`
