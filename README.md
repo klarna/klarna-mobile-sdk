@@ -5,6 +5,7 @@ The In-App SDK allows merchants to natively integrate Klarna’s products into t
 [Read More About the SDK](https://developers.klarna.com/documentation/in-app)
 
 ## iOS Integration
+![Cocoapods](https://img.shields.io/cocoapods/v/KlarnaMobileSDK.svg)
 
 These are our iOS-specific guides for the In-App SDK. We currently have guides to get you started, to integrate Klarna Payments and to perform a hybrid integration.
 
@@ -17,7 +18,7 @@ These are our Android-specific guides for the In-App SDK. We currently have guid
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/android)
 
-## Demo apps
+## Demo Apps
 
 ### Native Integration
 * [iOS Demo App](https://github.com/klarna/kp-ios-example-app)

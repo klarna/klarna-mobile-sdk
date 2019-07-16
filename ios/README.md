@@ -1,19 +1,3 @@
-## Setup
+## Readme
 
-The Klarna mobile SDK is avaliable through Cocoapods.
-
-* Using Cocoapods, add this to your podspec:
-
-    ```swift
-    pod "KlarnaMobileSDK"
-    ```
-
-* Alternatively you can add the framework manually.
-
-* Import the framework and get started!
-
-    ```swift
-    import KlarnaMobileSDK
-    ```
-
-<br/>
+Moved. Please see [here](https://developers.klarna.com/documentation/in-app/ios).
