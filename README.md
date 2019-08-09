@@ -18,6 +18,9 @@ These are our Android-specific guides for the In-App SDK. We currently have guid
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/android)
 
+## React native integration
+[Guide for react native](https://github.com/klarna/react-native-klarna-inapp-sdk)
+
 ## Demo Apps
 
 ### Native Integration
