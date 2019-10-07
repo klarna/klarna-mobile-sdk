@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.0.6"
+    s.version      = "2.0.7"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -14,30 +14,24 @@ Pod::Spec.new do |s|
     s.swift_version = "5.0"
 
     
-    s.subspec 'xcode11beta7-swift51-fat' do |sb|
-        sb.source_files = "ios/xcode11beta7-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode11beta7-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode11beta7-swift51-fat/KlarnaMobileSDK.framework"
+    s.subspec 'xcode112beta1-swift51-fat' do |sb|
+        sb.source_files = "ios/xcode112beta1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.public_header_files = "ios/xcode112beta1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.vendored_frameworks = "ios/xcode112beta1-swift51-fat/KlarnaMobileSDK.framework"
     end        
     
-    s.subspec 'xcode11gmsseed1-swift51-fat' do |sb|
-        sb.source_files = "ios/xcode11gmsseed1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode11gmsseed1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode11gmsseed1-swift51-fat/KlarnaMobileSDK.framework"
+    s.subspec 'xcode111gm1-swift51-fat' do |sb|
+        sb.source_files = "ios/xcode111gm1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.public_header_files = "ios/xcode111gm1-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.vendored_frameworks = "ios/xcode111gm1-swift51-fat/KlarnaMobileSDK.framework"
     end        
     
-    s.subspec 'xcode102-swift5-fat' do |sb|
-        sb.source_files = "ios/xcode102-swift5-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode102-swift5-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode102-swift5-fat/KlarnaMobileSDK.framework"
-    end        
-    
-    s.subspec 'xcode11beta6-swift51-fat' do |sb|
-        sb.source_files = "ios/xcode11beta6-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode11beta6-swift51-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode11beta6-swift51-fat/KlarnaMobileSDK.framework"
+    s.subspec 'xcode103-swift5-fat' do |sb|
+        sb.source_files = "ios/xcode103-swift5-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.public_header_files = "ios/xcode103-swift5-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.vendored_frameworks = "ios/xcode103-swift5-fat/KlarnaMobileSDK.framework"
     end        
     
 
-    s.default_subspec = 'xcode102-swift5-fat'
+    s.default_subspec = 'xcode103-swift5-fat'
 end

@@ -1,4 +1,0 @@
-framework module KlarnaMobileSDK {
-  header "KlarnaMobileSDK-Swift.h"
-  requires objc
-}
