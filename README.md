@@ -28,6 +28,9 @@ These are our Android-specific guides for the In-App SDK. We currently have guid
 
 * [Android Demo App](https://github.com/klarna/kp-android-example-app)
 
+## Changelog
+[See full changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md)
+
 ## Deprecated Integration Guides
 If you are using an older version of the SDK (<2.0.0) you should refer to these integration guides and if you want to migrate to 2.0.0 or above you can use the [Migration Guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/migration/MigrationGuide.md) to see what has changed.
 
