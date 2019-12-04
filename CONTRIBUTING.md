@@ -1,9 +1,9 @@
 # Contributing to Klarna In-App SDK
-Thank you for reading this and taking time to contribute to Klarna Checkout SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+Thank you for reading this and taking time to contribute to Klarna In-App SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
 
 ## How can I contribute?
 ### Reporting Bugs
-This section will guide you through submitting a bug report for Klarna Checkout SDK.
+This section will guide you through submitting a bug report for Klarna In-App SDK.
 
 Before submitting a bug report, please check that the issue hasn't been reported before. If you find a *Closed* issue that seem to describe an issue that is similar to what you want to report, open a new issue and link to the original issue in the new one. When you have checked that the issue hasn't been reported before **fill out [the required template](https://github.com/klarna/klarna-mobile-sdk/blob/a55293185f73609df831a26ddff5a66033f21e55/.github/ISSUE_TEMPLATE/bug_report.md)** which will help us resolve the issue faster. 
 
@@ -18,7 +18,7 @@ Bugs that are submitted are tracked as [GitHub issues](https://guides.github.com
 * **Include relevant logs in the bug report** by putting it in a [code block](https://help.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github#multiple-lines), a [file attachment](https://help.github.com/en/github/managing-your-work-on-github/file-attachments-on-issues-and-pull-requests) or in a [gist](https://help.github.com/en/github/writing-on-github/creating-gists) and provide a link to that gist.
 * **Tell how recently you started having the issue.** When was the first time you experienced the issue and was it after updating the SDK version? Or has it always been a problem?
 * If the problem started happening recently, **can you reproduce it in an older version of the SDK?** What's the most recent version in which the problem doesn't happen?
-* **Can you reliably reproduce the issue?** If not, explain how often it occurs and under what conditions it normally happens. For example in what environment you are running Checkout.
+* **Can you reliably reproduce the issue?** If not, explain how often it occurs and under what conditions it normally happens. For example in what environment you are running.
 
 Include details about the device/emulator/simulator you are experiencing the issue on:
 
@@ -35,14 +35,14 @@ Enhancement suggestions are tracked as GitHub issues. To suggest an enhancement,
 * **Use a clear and descriptive title** for the enhancement.
 * **Provide a step-by-step description of the suggested enhancement** with as many details as possible.
 * **Describe the current behavior** and **explain which behavior you expected instead** and why.
-* **Provide screenshots and/or videos** that helps demonstrate the part of the Checkout SDK which the suggestion is related to. To screen record on a device connected to Android Studio or an emulator follow the steps [here](https://developer.android.com/studio/debug/am-video). To screen record on iOS follow the steps described [here](https://support.apple.com/en-us/HT207935).
-* **Explain why this enhancement would be useful** to most users of Klarna Checkout SDK.
+* **Provide screenshots and/or videos** that helps demonstrate the part of the SDK which the suggestion is related to. To screen record on a device connected to Android Studio or an emulator follow the steps [here](https://developer.android.com/studio/debug/am-video). To screen record on iOS follow the steps described [here](https://support.apple.com/en-us/HT207935).
+* **Explain why this enhancement would be useful** to most users of Klarna In-App SDK.
 * **List some other payment provider or apps where this enhancement exists.**
-* **Specify which version of Checkout SDK you are using.**
+* **Specify which version of Klarna In-App SDK you are using.**
 * **Specify the name and version of the OS you are using.**
 
 ### Contributing with Code
-Before contributing and if you are unsure about how the SDK or Checkout works you might want to read the documentation for [Klarna In-App SDK](https://developers.klarna.com/documentation/in-app/).
+Before contributing please read through the [Klarna In-App SDK documentation](https://developers.klarna.com/documentation/in-app/).
 
 #### Branching
 Prefix the branch you are going to work on depending on what you are working on (bug fix or feature). Use the following prefixes when creating a new branch:

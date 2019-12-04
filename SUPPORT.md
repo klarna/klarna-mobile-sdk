@@ -1,7 +1,8 @@
-# Klarna Checkout SDK Support
+# Klarna In-App SDK Support
 * Developer Documentation
-	* [Klarna Checkout](https://developers.klarna.com/documentation/klarna-checkout/)
-	* [Mobile Apps Integrations](https://developers.klarna.com/documentation/klarna-checkout/mobile-apps/)
+	* [Overview](https://developers.klarna.com/documentation/in-app/)
+	* [iOS](https://developers.klarna.com/documentation/in-app/ios/)
+	* [Android](https://developers.klarna.com/documentation/in-app/android/)
 * API Documentation
-	*  [Android](https://rawgit.com/klarna/kco-mobile-sdk/master/android/docs/index.html)
-	*  [iOS](https://cocoadocs.org/docsets/KlarnaCheckoutSDK/)
+	*  [iOS](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/ios/index.html)
+	*  [Android](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
