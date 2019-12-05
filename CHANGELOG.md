@@ -5,6 +5,9 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ## Android
+### [2.0.8] - 2019-12-05
+- Improvements of internal web view identification towards Klarna components.
+
 ### [2.0.7] - 2019-11-27
 - Fix rare crash with `NullPointerException` when invalid message is sent to the SDK.
 
