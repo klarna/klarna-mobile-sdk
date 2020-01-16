@@ -6,14 +6,14 @@
 
 The Klarna In-App SDK allows merchants to natively integrate Klarna’s products into their apps. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
 
-**Looking for Klarna Checkout?** Check out the [Klarna Checkout SDK](https://github.com/klarna/kco-mobile-sdk) repo on Github.
+**Looking for Klarna Checkout?** Check out the [Klarna Checkout SDK](https://github.com/klarna/kco-mobile-sdk) repo instead.
 
 ## Requirements
 * iOS 10 or later.
 * Android 4.4 or later.
 
 ## Support
-If you are having any issues using the SDK in your project, please create a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/klarna-mobile-sdk) tagged with `klarna-mobile-sdk`. If you think that something is wrong with the SDK itself, please create an issue.
+If you are having any issues using the SDK in your project, please create a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/klarna-inapp-sdk) tagged with `klarna-inapp-sdk`. If you think that something is wrong with the SDK itself, please create an issue.
 
 ### Developer Documentation
 
@@ -26,7 +26,7 @@ If you are having any issues using the SDK in your project, please create a ques
 *  [Android](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
 
 ## What Does Klarna In-App SDK Offer?
-Klarna In-App SDK offer two integration approaches: **Native integration** and **Hybrid integration**.
+Klarna In-App SDK offers two integration approaches: **Native integration** and **Hybrid integration**.
 
 Native integration allows fully native apps to add views with Klarna content to their app. We currently support Klarna Payments, allowing you to add payment views to your checkout and authorizing a session to create an order natively.
 
@@ -43,7 +43,7 @@ The SDK removes any possible friction in your app's checkout flow by leveraging 
 ## Overview
 
 ### Native Integration
-As previously mentioned Klarna Payments is supported in the native integration. The main idea behind Klarna Payments is to give merchants the ability offer Klarna’s payment methods to customers. Because Klarna doesn’t own the entire checkout flow, a check needs to be performed before an order is created. Our goal with this integration is to offer you the same simple development experience as you have on the web. As such, integrating Klarna Payments consists of four steps:
+As previously mentioned Klarna Payments is supported in the native integration. The main idea behind Klarna Payments is to give merchants the ability to offer Klarna’s payment methods to customers. Because Klarna doesn’t own the entire checkout flow, a check needs to be performed before an order is created. Our goal with this integration is to offer you the same simple development experience as you have on the web. As such, integrating Klarna Payments consists of four steps:
 
 1. Creating a session.
 2. Rendering the payment view.
@@ -126,21 +126,6 @@ Include details about the device/emulator/simulator you are experiencing the iss
 * **Which OS is this a problem in, iOS, Android or both?** What version(s)? Also add the appropriate label to the issue.
 * **Did you experience the issue in simulator/emulator or on real device(s)?**
 
-#### Suggesting Enhancements
-This section will guide you through how to submit enhancement suggestions. When creating enhancement suggestions please include as many details as possible and fill in [the template](https://github.com/klarna/klarna-mobile-sdk/blob/a55293185f73609df831a26ddff5a66033f21e55/.github/ISSUE_TEMPLATE/feature_request.md) with the steps that you imagine that you would take if the feature you're requesting existed.
-
-##### Submitting an Enhancement Suggestion
-Enhancement suggestions are tracked as GitHub issues. To suggest an enhancement, create an issue and provide the following information:
-
-* **Use a clear and descriptive title** for the enhancement.
-* **Provide a step-by-step description of the suggested enhancement** with as many details as possible.
-* **Describe the current behavior** and **explain which behavior you expected instead** and why.
-* **Provide screenshots and/or videos** that helps demonstrate the part of the SDK which the suggestion is related to. To screen record on a device connected to Android Studio or an emulator follow the steps [here](https://developer.android.com/studio/debug/am-video). To screen record on iOS follow the steps described [here](https://support.apple.com/en-us/HT207935).
-* **Explain why this enhancement would be useful** to most users of Klarna In-App SDK.
-* **List some other payment provider or apps where this enhancement exists.**
-* **Specify which version of Klarna In-App SDK you are using.**
-* **Specify the name and version of the OS you are using.**
-
 #### Contributing with Code
 Before contributing please read through the [Klarna In-App SDK documentation](https://developers.klarna.com/documentation/in-app/).
 
@@ -156,22 +141,11 @@ When creating a PR include as much information as possible about the type of enh
 * **A clear and descriptive title**.
 * **Description of the issue** if you are fixing a bug together with a link to the relevant issue or **background for introducing a new feature**.
 
-### Styleguides
-#### Git Commit Messages
-* Use imperative mood, i.e. write as if giving a command or instruction ("Add feature" instead of "Added feature").
-* Capitalize the first letter ("Add feature" instead of "add feature").
-* Limit the subject line to 50 characters or less.
-* Don't end the subject line with a period.
-* Reference issues and pull requests after the first line.
-* Use the body to explain *what* and *why* instead of *how* if subject is not exhaustive enough.
-
-#### Documentation Styleguide
-* Use [Markdown](https://daringfireball.net/projects/markdown/).
-
 ## License
 Copyright 2018 Klarna Bank AB
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
+       
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
