@@ -25,8 +25,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Device and version:**
  - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - SDK Version [e.g. 1.2.3]
+ - OS version: [e.g. iOS8.1]
+ - Klarna In-App SDK version [e.g. 1.2.3]
 
 **Additional context**
 Add any other context about the problem here.
