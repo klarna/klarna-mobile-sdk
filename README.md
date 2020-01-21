@@ -53,7 +53,7 @@ As previously mentioned Klarna Payments is supported in the native integration. 
 ![](https://developers.klarna.com/static/in-app/kp-diagram.png)
 
 ### Hybrid Integration
-Our iOS and Android SDKs hold weak references to your web views, don’t override any part of of your implementation or modify your web views in any way. Because of this, we ask you to perform some minor integration work to make your users’ experience as pleasant as possible. This consists of four steps:
+Our iOS and Android SDKs hold weak references to your web views, don’t override any part of your implementation or modify your web views in any way. Because of this, we ask you to perform some minor integration work to make your users’ experience as pleasant as possible. This consists of four steps:
 
 1. Initialization.
 2. Adding web views to the SDK.
