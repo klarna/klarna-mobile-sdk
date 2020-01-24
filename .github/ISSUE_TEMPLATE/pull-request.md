@@ -16,7 +16,7 @@ Why is this change required? What problem does it solve? If it fixes an open iss
 **How has the change been tested?**
 Describe in detail how you tested your changes. Include your testing environment, tests ran to see how your changes affects other areas of the code, etc.
 
-** Screenshots**
+**Screenshots**
 If applicable, add screenshots to help explain your changes.
 
 **Types of changes**
