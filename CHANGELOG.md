@@ -5,6 +5,12 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ## Android
+### [2.0.12] - 2020-01-30
+- Fixed a Proguard issue that would cause the payment view to not load.
+
+### [2.0.11] - 2020-01-28
+- Internal optimizations.
+
 ### [2.0.10] - 2020-01-14
 - Enabled cookies for internal web views.
 
