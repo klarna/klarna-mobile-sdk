@@ -4,6 +4,12 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.9] - 2020-02-14
+- Support for dark mode. 
+- Remove _all_ references and any support for UIWebView from the SDK.
+- Enhanced 3DSecure card flows.
+- Fixed some modal dialog presentation in iOS 13 and for iPads.
+
 ## Android
 ### [2.0.12] - 2020-01-30
 - Fixed a Proguard issue that would cause the payment view to not load.
