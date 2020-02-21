@@ -11,6 +11,12 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.0.14] - 2020-02-21
+- Overall performance and error handling improvements.
+
+### [2.0.13] - 2020-02-17
+- Fixed a crash with `JSONException` in `WrapperManager` when initializing the SDK.
+
 ### [2.0.12] - 2020-01-30
 - Fixed a Proguard issue that would cause the payment view to not load.
 
