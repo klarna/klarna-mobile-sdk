@@ -4,6 +4,9 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.10] - 2020-02-27
+- Fix crash related to the framework when exporting the app.
+
 ### [2.0.9] - 2020-02-14
 - Support for dark mode. 
 - Remove _all_ references and any support for UIWebView from the SDK.
