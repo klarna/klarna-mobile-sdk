@@ -16,6 +16,8 @@ For this release, we provide:
 
 | Name | Fat/slim | Xcode Ver. & Build No. | Swift Ver. | Swift Toolchain Ver. |  
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
+| `xcode-10.2-fat` | fat | 10.2 - 10E125 | 5.0| swiftlang-1001.0.69.5 clang-1001.0.46.3 |
+| `xcode-10.2-slim` | slim | 10.2 - 10E125 | 5.0| swiftlang-1001.0.69.5 clang-1001.0.46.3 |
 | `xcode-10.3-fat` | fat | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
 | `xcode-10.3-slim` | slim | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
 | `xcode-11.3.1-fat` | fat | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
@@ -29,9 +31,13 @@ want to use a different variant, update your Podfile to use a different subspec.
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.9'
+pod 'KlarnaMobileSDK/xcode-10.2-fat', '~> 2.0.10'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.9'
+pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.10'
+```
+
+```ruby
+pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.10'
 ```
