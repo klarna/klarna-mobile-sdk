@@ -1,9 +1,7 @@
 # Changelog
-All notable changes to Klarna Mobile SDK will be documented in this file.
+All notable changes to Klarna In-App SDK will be documented in this file.
 
 ## iOS
-Future releases will be documented in this section.
-
 ### [2.0.10] - 2020-02-27
 - Fix crash related to the framework when exporting the app.
 
@@ -14,6 +12,9 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.0.15] - 2020-03-20
+- Fix issue with showing fullscreen, primarlily affecting post purchase widgets.
+
 ### [2.0.14] - 2020-02-21
 - Overall performance and error handling improvements.
 
