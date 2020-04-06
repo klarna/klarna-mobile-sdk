@@ -20,24 +20,30 @@ For this release, we provide:
 | `xcode-10.2-slim` | slim | 10.2 - 10E125 | 5.0| swiftlang-1001.0.69.5 clang-1001.0.46.3 |
 | `xcode-10.3-fat` | fat | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
 | `xcode-10.3-slim` | slim | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
-| `xcode-11.3.1-fat` | fat | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
-| `xcode-11.3.1-slim` | slim | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
+| `xcode-11.3-fat` | fat | 11.3 - 11C29 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
+| `xcode-11.3-slim` | slim | 11.3 - 11C29 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
+| `xcode-11.4-fat` | fat | 11.4 - 11E146 | 5.2| swiftlang-1103.0.32.1 clang-1103.0.32.29 |
+| `xcode-11.4-slim` | slim | 11.4 - 11E146 | 5.2| swiftlang-1103.0.32.1 clang-1103.0.32.29 |
 
 
 ## Cocoapods
 
-This release defaults to using the latest, non-beta version `xcode-11.3.1-fat`. If you 
+This release defaults to using the latest, non-beta version `xcode-11.4-fat`. If you 
 want to use a different variant, update your Podfile to use a different subspec. E.g:
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-10.2-fat', '~> 2.0.10'
+pod 'KlarnaMobileSDK/xcode-10.2-fat', '~> 2.0.11'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.10'
+pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.11'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.10'
+pod 'KlarnaMobileSDK/xcode-11.3-fat', '~> 2.0.11'
+```
+
+```ruby
+pod 'KlarnaMobileSDK/xcode-11.4-fat', '~> 2.0.11'
 ```
