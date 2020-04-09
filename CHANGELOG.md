@@ -17,6 +17,10 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+
+### [2.0.16] - 2020-04-09
+- Fixed an issue with showing an error message inside the web view without hiding it.
+
 ### [2.0.15] - 2020-03-20
 - Fix issue with showing fullscreen, primarily affecting post purchase widgets.
 
