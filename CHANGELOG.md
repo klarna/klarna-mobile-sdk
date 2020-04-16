@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.12] - 2020-04-16
+- Overall performance improvements.
+
 ### [2.0.11] - 2020-03-26
 - Support Swift 5.2.
 
