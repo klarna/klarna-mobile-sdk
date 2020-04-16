@@ -423,6 +423,12 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 /// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 @interface KlarnaMobileSDKError : NSObject
+/// Unique name identifying this error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Description of the error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+/// Describes whether this error is fatal. This means some part of the flow failed permanently.
+@property (nonatomic, readonly) BOOL isFatal;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -432,6 +438,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 @interface KlarnaPaymentError : KlarnaMobileSDKError
+/// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
+/// Action the error occurred during.
+@property (nonatomic, readonly, copy) NSString * _Nonnull action;
 @end
 
 @class KlarnaPaymentView;
@@ -1080,6 +1090,12 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 /// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 @interface KlarnaMobileSDKError : NSObject
+/// Unique name identifying this error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Description of the error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+/// Describes whether this error is fatal. This means some part of the flow failed permanently.
+@property (nonatomic, readonly) BOOL isFatal;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1089,6 +1105,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 @interface KlarnaPaymentError : KlarnaMobileSDKError
+/// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
+/// Action the error occurred during.
+@property (nonatomic, readonly, copy) NSString * _Nonnull action;
 @end
 
 @class KlarnaPaymentView;
