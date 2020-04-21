@@ -84,6 +84,11 @@ These are our Android-specific guides for the In-App SDK. We currently have guid
 
 * [Android Demo App](https://github.com/klarna/kp-android-example-app)
 
+### Hybrid Integration
+* [iOS Demo App](https://github.com/klarna/HybridInAppSDKDemo)
+
+* [Android Demo App](https://github.com/klarna/hybrid-android-example-app)
+
 ## Changelog
 [See full changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md)
 
