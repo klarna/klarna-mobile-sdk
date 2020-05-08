@@ -12,9 +12,6 @@ The Klarna In-App SDK allows merchants to natively integrate Klarna’s products
 * iOS 10 or later.
 * Android 4.4 or later.
 
-## Support
-If you are having any issues using the SDK in your project, please create a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/klarna-inapp-sdk) tagged with `klarna-inapp-sdk`. If you think that something is wrong with the SDK itself, please create an issue.
-
 ### Developer Documentation
 
 * [Overview](https://developers.klarna.com/documentation/in-app/)
@@ -104,9 +101,15 @@ If you are using an older version of the SDK (<2.0.0) you should refer to these 
 * [API Documentation](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
 
 ## Contributing
-Thank you for reading this and taking time to contribute to Klarna In-App SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+
+### Support
+
+If you are having any issues using the SDK in your project or if you think that something is wrong with the SDK itself, please create an issue on [Github](https://github.com/klarna/klarna-mobile-sdk/issues) or report a bug by following the guidelines in the next section. 
 
 ### How can I contribute?
+
+Thank you for reading this and taking time to contribute to Klarna In-App SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+
 #### Reporting Bugs
 This section will guide you through submitting a bug report for Klarna In-App SDK.
 
