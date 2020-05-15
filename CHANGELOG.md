@@ -24,6 +24,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.17] - 2020-05-14
+- Fixed an issue with the `Context` instance being used to move or create separate web views.
+
 ### [2.0.16] - 2020-04-09
 - Fixed an issue with showing an error message inside the web view without hiding it.
 
