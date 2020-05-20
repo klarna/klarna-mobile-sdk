@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.14] - 2020-05-20
+- Fix crash related to universal framework.
+- Overall performance improvements.
+
 ### [2.0.13] - 2020-05-05
 - Support Xcode 11.4.1
 
