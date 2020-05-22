@@ -28,6 +28,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.18] - 2020-05-22
+- Lowered the minimum Android API level to 17(4.2 Jelly Bean).
+- Removed `READ_PHONE_STATE` permission usage and requirement.
+
 ### [2.0.17] - 2020-05-14
 - Fixed an issue with the `Context` instance being used to move or create separate web views.
 
