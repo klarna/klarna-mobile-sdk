@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.15] - 2020-05-26
+- Full framework with card scan.
+- Basic framework without card scan.
+
 ### [2.0.14] - 2020-05-20
 - Fix crash related to universal framework.
 - Overall performance improvements.
@@ -21,7 +25,7 @@ Future releases will be documented in this section.
 - Fix crash related to the framework when exporting the app.
 
 ### [2.0.9] - 2020-02-14
-- Support for dark mode. 
+- Support for dark mode.
 - Remove _all_ references and any support for UIWebView from the SDK.
 - Enhanced 3DSecure card flows.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
