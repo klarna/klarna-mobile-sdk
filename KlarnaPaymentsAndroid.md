@@ -47,10 +47,13 @@ The Klarna Mobile SDK for Android is available in our Maven Repository, perform 
     }
     ```
 
-2. Add a `implementation` dependency for the library:
+2. Add a `implementation` dependency for the library using one of the artifacts(basic/full):
 
     ```gradle
-    implementation ('com.klarna.mobile:sdk:2.0.18')
+    implementation ('com.klarna.mobile:sdk:2.0.19')
+    ```
+    ```gradle
+    implementation ('com.klarna.mobile:sdk-full:2.0.19')
     ```
 
 3. Register an `intent-filter` for the `Activity` hosting the checkout in your `AndroidManifest.xml` to support return URLs:

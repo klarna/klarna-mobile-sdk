@@ -28,6 +28,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.19] - 2020-05-27
+- Full artifact with card scan.
+- Default/basic artifact without card scan.
+
 ### [2.0.18] - 2020-05-22
 - Removed `READ_PHONE_STATE` permission usage and requirement.
 
