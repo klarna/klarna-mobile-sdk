@@ -1,4 +1,11 @@
 framework module KlarnaMobileSDK {
-  header "KlarnaMobileSDK-Swift.h"
-  requires objc
+  umbrella header "KlarnaMobileSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module KlarnaMobileSDK.Swift {
+    header "KlarnaMobileSDK-Swift.h"
+    requires objc
 }
