@@ -134,7 +134,7 @@ Include details about the device/emulator/simulator you are experiencing the iss
 * **Which OS is this a problem in, iOS, Android or both?** What version(s)? Also, add the appropriate label to the issue.
 * **Did you experience the issue in simulator/emulator or on real device(s)?**
 
-#### Contributing with Code
+#### Contributing to Code
 Before contributing, please read through the [Klarna In-App SDK documentation](https://developers.klarna.com/documentation/in-app/).
 
 ##### Branching
