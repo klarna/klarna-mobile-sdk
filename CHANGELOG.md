@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.16] - 2020-06-11
+- Overall performance improvements.
+
 ### [2.0.15] - 2020-05-26
 - Full framework with card scan.
 - Default/basic framework without card scan.
