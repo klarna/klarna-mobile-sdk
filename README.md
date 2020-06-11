@@ -4,7 +4,7 @@
 [![GitHub](https://img.shields.io/github/license/klarna/klarna-mobile-sdk)](https://github.com/klarna/klarna-mobile-sdk/blob/master/LICENSE)
 ![Platforms](https://img.shields.io/badge/platform-ios%20%7C%20android-lightgrey)
 
-The Klarna In-App SDK allows merchants to integrate Klarna’s products into their apps natively. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
+The Klarna In-App SDK allows merchants to integrate Klarna's products into their apps natively. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
 
 **Are you looking for Klarna Checkout?** Check out the [Klarna Checkout SDK](https://github.com/klarna/kco-mobile-sdk) repo instead.
 
@@ -32,15 +32,15 @@ Klarna In-App SDK offers two integration approaches: **Native integration** and 
 ### Why should you use the SDK?
 The SDK removes any possible friction in your app's checkout flow by leveraging native functionality in iOS and Android. Some of the things the SDK does are:
 
-* **Plays nicely with 3rd-party apps.** Many customers complete their purchase through their banking application or other 3rd-party apps. We make this experience seamless not just by opening these apps but also automatically returning your users when they’re done.
-* **Safeguards your users' identity.** The SDK adds an extra layer of security, lowering the risk of fraudulent purchases. It also ensures that your customer doesn’t have to write in any redundant info. (e.g., address or credentials) on successive purchases.
-* **Improves 3D Secure flow.** If certain payment methods require opening banking pages, we’ll display an in-app browser. Your customer can safely authenticate with their bank without ever leaving your app.
-* **Open links without making your customers leave your app.** As with 3D Secure, we open most resources in an in-app browser or a fullscreen overlay. This ensures that your customer doesn’t ever have to leave your app.
+* **Plays nicely with 3rd-party apps.** Many customers complete their purchase through their banking application or other 3rd-party apps. We make this experience seamless not just by opening these apps but also automatically returning your users when they're done.
+* **Safeguards your users' identity.** The SDK adds an extra layer of security, lowering the risk of fraudulent purchases. It also ensures that your customer doesn't have to write in any redundant info. (e.g., address or credentials) on successive purchases.
+* **Improves 3D Secure flow.** If certain payment methods require opening banking pages, we'll display an in-app browser. Your customer can safely authenticate with their bank without ever leaving your app.
+* **Open links without making your customers leave your app.** As with 3D Secure, we open most resources in an in-app browser or a fullscreen overlay. This ensures that your customer doesn't ever have to leave your app.
 
 ## Overview
 
 ### Native Integration
-As previously mentioned, Klarna Payments supports native integration. The main idea behind Klarna Payments is to give merchants the ability to offer Klarna’s payment methods to customers. Because Klarna doesn’t own the entire checkout flow, a check must be performed before an order is created. Our goal with this integration is to offer you the same simple development experience as you have on the web. As such, integrating Klarna Payments consists of four steps:
+As previously mentioned, Klarna Payments supports native integration. The main idea behind Klarna Payments is to give merchants the ability to offer Klarna's payment methods to customers. Because Klarna doesn't own the entire checkout flow, a check must be performed before an order is created. Our goal with this integration is to offer you the same simple development experience as you have on the web. As such, integrating Klarna Payments consists of four steps:
 
 1. Creating a session.
 2. Rendering the payment view.
@@ -50,7 +50,7 @@ As previously mentioned, Klarna Payments supports native integration. The main i
 ![](https://developers.klarna.com/static/in-app/kp-diagram.png)
 
 ### Hybrid Integration
-Our iOS and Android SDKs hold weak references to your web views, don’t override any part of your implementation or modify your web views in any way. Because of this, we ask you to perform some minor integration work to make your users’ experience as pleasant as possible. This consists of four steps:
+Our iOS and Android SDKs hold weak references to your web views, don't override any part of your implementation or modify your web views in any way. Because of this, we ask you to perform some minor integration work to make your users' experience as pleasant as possible. This consists of four steps:
 
 1. Initialization.
 2. Adding web views to the SDK.
