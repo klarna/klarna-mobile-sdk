@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.17] - 2020-06-12
+- Fixed an issue related to navigation between two fullscreen views.
+
 ### [2.0.16] - 2020-06-11
 - Overall performance improvements.
 
