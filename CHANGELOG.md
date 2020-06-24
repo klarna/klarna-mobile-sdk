@@ -5,7 +5,7 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ### [2.0.18] - 2020-06-24
-- Fixed an issue when keyboard appears in fullscreen views.
+- Fixed an issue with keyboard for OTP input field.
 
 ### [2.0.17] - 2020-06-12
 - Fixed an issue related to navigation between two fullscreen views.
