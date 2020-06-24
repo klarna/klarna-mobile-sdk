@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.18] - 2020-06-24
+- Fixed an issue when keyboard appears in fullscreen views.
+
 ### [2.0.17] - 2020-06-12
 - Fixed an issue related to navigation between two fullscreen views.
 
@@ -39,7 +42,7 @@ Future releases will be documented in this section.
 ## Android
 
 ### [2.0.20] - 2020-06-05
-- Fixed an issue when the payment view was having blank white space. 
+- Fixed an issue when the payment view was having blank white space.
 
 ### [2.0.19] - 2020-05-27
 - Full artifact with card scan.
