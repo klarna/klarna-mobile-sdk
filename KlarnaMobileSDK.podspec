@@ -38,6 +38,18 @@ Pod::Spec.new do |s|
         sb.vendored_frameworks = "ios/full/xcode-10.3-fat/KlarnaMobileSDK.framework"
     end 
     
+    s.subspec 'xcode-11.3.1-fat-basic' do |sb|
+        sb.source_files = "ios/xcode-11.3.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.public_header_files = "ios/xcode-11.3.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.vendored_frameworks = "ios/xcode-11.3.1-fat/KlarnaMobileSDK.framework"
+    end
+
+    s.subspec 'xcode-11.3.1-fat-full' do |sb|
+        sb.source_files = "ios/full/xcode-11.3.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.public_header_files = "ios/full/xcode-11.3.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
+        sb.vendored_frameworks = "ios/full/xcode-11.3.1-fat/KlarnaMobileSDK.framework"
+    end 
+    
     s.subspec 'xcode-11.4.1-fat-basic' do |sb|
         sb.source_files = "ios/xcode-11.4.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
         sb.public_header_files = "ios/xcode-11.4.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
