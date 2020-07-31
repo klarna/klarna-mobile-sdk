@@ -213,6 +213,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+@interface KlarnaEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @protocol KlarnaWebView;
 @class KlarnaMobileSDKError;
 
@@ -346,6 +354,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param options Additional system-provided parameters (like source application bundle ID)
 ///
 + (void)handleDeeplinkWithUrl:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_DEPRECATED_MSG("SDK does not need this to be called anymore. Will be removed in future releases.");
+/// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
+/// \param callback Closure to handle message events sent to merchants.
+///
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
 @end
 
 
@@ -929,6 +941,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+@interface KlarnaEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @protocol KlarnaWebView;
 @class KlarnaMobileSDKError;
 
@@ -1062,6 +1082,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param options Additional system-provided parameters (like source application bundle ID)
 ///
 + (void)handleDeeplinkWithUrl:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_DEPRECATED_MSG("SDK does not need this to be called anymore. Will be removed in future releases.");
+/// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
+/// \param callback Closure to handle message events sent to merchants.
+///
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
 @end
 
 
@@ -1649,6 +1673,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+@interface KlarnaEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @protocol KlarnaWebView;
 @class KlarnaMobileSDKError;
 
@@ -1782,6 +1814,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param options Additional system-provided parameters (like source application bundle ID)
 ///
 + (void)handleDeeplinkWithUrl:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_DEPRECATED_MSG("SDK does not need this to be called anymore. Will be removed in future releases.");
+/// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
+/// \param callback Closure to handle message events sent to merchants.
+///
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
 @end
 
 
@@ -2365,6 +2401,14 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+@interface KlarnaEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @protocol KlarnaWebView;
 @class KlarnaMobileSDKError;
 
@@ -2498,6 +2542,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param options Additional system-provided parameters (like source application bundle ID)
 ///
 + (void)handleDeeplinkWithUrl:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> * _Nonnull)options SWIFT_DEPRECATED_MSG("SDK does not need this to be called anymore. Will be removed in future releases.");
+/// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
+/// \param callback Closure to handle message events sent to merchants.
+///
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
 @end
 
 
