@@ -41,6 +41,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.23] - 2020-07-29
+- Added callback API for merchant events from Klarna components inside a WebView.
+
 ### [2.0.22] - 2020-07-14
 - Improved API for Java applications.
 - Fixed an issue with base64 encoding.
