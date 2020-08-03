@@ -4,7 +4,7 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
-### [2.0.19] - 2020-06-26
+### [2.0.19] - 2020-07-31
 - Overall performance improvements.
 
 ### [2.0.18] - 2020-06-24
