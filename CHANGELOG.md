@@ -41,6 +41,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.21] - 2020-06-17
+- Fixed an issue with internal browser URL parameter and navigation.
+
 ### [2.0.20] - 2020-06-05
 - Fixed an issue when the payment view was having blank white space.
 
