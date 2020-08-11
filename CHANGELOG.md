@@ -44,6 +44,17 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.23] - 2020-07-29
+- Added callback API for merchant events from Klarna components inside a WebView.
+
+### [2.0.22] - 2020-07-14
+- Improved API for Java applications.
+- Fixed an issue with base64 encoding.
+- Improved thread safety for WebView implementations.
+
+### [2.0.21] - 2020-06-17
+- Fixed an issue with internal browser URL parameter and navigation.
+
 ### [2.0.20] - 2020-06-05
 - Fixed an issue when the payment view was having blank white space.
 
