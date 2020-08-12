@@ -452,6 +452,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// OSM Placement View
+/// View starts off as completely empty/transparent. There is no content until
+/// <code>render()</code> is called.
+/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
+/// constraints (top, left, leading, trailing).
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
+@interface KlarnaOSMView_Beta : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -556,7 +569,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 - (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
@@ -659,6 +671,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
@@ -697,6 +711,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
+
+
+
 
 
 
@@ -1180,6 +1198,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// OSM Placement View
+/// View starts off as completely empty/transparent. There is no content until
+/// <code>render()</code> is called.
+/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
+/// constraints (top, left, leading, trailing).
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
+@interface KlarnaOSMView_Beta : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -1284,7 +1315,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 - (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
@@ -1387,6 +1417,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
@@ -1425,6 +1457,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
+
+
+
 
 
 
@@ -1912,6 +1948,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// OSM Placement View
+/// View starts off as completely empty/transparent. There is no content until
+/// <code>render()</code> is called.
+/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
+/// constraints (top, left, leading, trailing).
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
+@interface KlarnaOSMView_Beta : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -2016,7 +2065,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 - (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
@@ -2119,6 +2167,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
@@ -2157,6 +2207,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
+
+
+
 
 
 
@@ -2640,6 +2694,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class NSCoder;
+
+/// OSM Placement View
+/// View starts off as completely empty/transparent. There is no content until
+/// <code>render()</code> is called.
+/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
+/// constraints (top, left, leading, trailing).
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
+@interface KlarnaOSMView_Beta : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to the Klarna Payments component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -2744,7 +2811,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 - (void)klarnaFailedInPaymentView:(KlarnaPaymentView * _Nonnull)paymentView withError:(KlarnaPaymentError * _Nonnull)error;
 @end
 
-@class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @interface KlarnaPaymentView : UIView
@@ -2847,6 +2913,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
@@ -2885,6 +2953,10 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
+
+
+
 
 
 
