@@ -5,7 +5,7 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ### [2.0.20] - 2020-08-12
-- Basic support for static One site marketing - beta version
+- Basic support for static On site marketing - beta version
 
 ### [2.0.19] - 2020-07-31
 - Overall performance improvements.
