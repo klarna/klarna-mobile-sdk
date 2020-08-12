@@ -44,6 +44,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.24] - 2020-08-12
+- Basic support for static On site marketing - beta version
+
 ### [2.0.23] - 2020-07-29
 - Added callback API for merchant events from Klarna components inside a WebView.
 
