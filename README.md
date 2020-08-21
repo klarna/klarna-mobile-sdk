@@ -109,6 +109,8 @@ AAR files for the Android SDK can be found publicly on our CDN. These files are 
 * https<n/>://x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/`version`/sdk-`version`.aar
 * https<n/>://x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk-full/`version`/sdk-full-`version`.aar
 
+E.g. for Android SDK version 2.0.24 it is `https://x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/2.0.24/sdk-2.0.24.aar`
+
 ## Contributing
 
 ### Support
