@@ -16,40 +16,28 @@ For this release, we provide:
 
 | Name | Fat/slim | Xcode Ver. & Build No. | Swift Ver. | Swift Toolchain Ver. |  
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
-| `xcode-10.2-fat` | fat | 10.2 - 10E125 | 5.0| swiftlang-1001.0.69.5 clang-1001.0.46.3 |
-| `xcode-10.2-slim` | slim | 10.2 - 10E125 | 5.0| swiftlang-1001.0.69.5 clang-1001.0.46.3 |
 | `xcode-10.3-fat` | fat | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
 | `xcode-10.3-slim` | slim | 10.3 - 10G8 | 5.0.1| swiftlang-1001.0.82.4 clang-1001.0.46.5 |
 | `xcode-11.3.1-fat` | fat | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
 | `xcode-11.3.1-slim` | slim | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
-| `xcode-11.4.1-fat` | fat | 11.4.1 - 11E503a | 5.2.2| swiftlang-1103.0.32.6 clang-1103.0.32.51 |
-| `xcode-11.4.1-slim` | slim | 11.4.1 - 11E503a | 5.2.2| swiftlang-1103.0.32.6 clang-1103.0.32.51 |
-| `xcode-11.5-fat` | fat | 11.5 - 11E608c | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
-| `xcode-11.5-slim` | slim | 11.5 - 11E608c | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
+| `xcode-11.7-fat` | fat | 11.7 - 11E801a | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
+| `xcode-11.7-slim` | slim | 11.7 - 11E801a | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
 
 
 ## Cocoapods
 
-This release defaults to using the latest, non-beta version `xcode-11.5-fat`. If you 
+This release defaults to using the latest, non-beta version `xcode-11.7-fat`. If you 
 want to use a different variant, update your Podfile to use a different subspec. E.g:
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-10.2-fat', '~> 2.0.20'
+pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.21'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-10.3-fat', '~> 2.0.20'
+pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.21'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.20'
-```
-
-```ruby
-pod 'KlarnaMobileSDK/xcode-11.4.1-fat', '~> 2.0.20'
-```
-
-```ruby
-pod 'KlarnaMobileSDK/xcode-11.5-fat', '~> 2.0.20'
+pod 'KlarnaMobileSDK/xcode-11.7-fat', '~> 2.0.21'
 ```
