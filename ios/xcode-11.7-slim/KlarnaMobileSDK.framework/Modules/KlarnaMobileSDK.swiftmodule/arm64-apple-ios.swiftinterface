@@ -1,11 +1,8 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KlarnaMobileSDK
-import AVFoundation
 import AVKit
-import Accelerate
 import CommonCrypto
-import CoreML
 import Foundation
 import JavaScriptCore
 @_exported import KlarnaMobileSDK
@@ -13,10 +10,7 @@ import ObjectiveC
 import SafariServices
 import Swift
 import UIKit
-import VideoToolbox
-import Vision
 import WebKit
-import os.log
 import os
 @available(*, deprecated, message: "Use KlarnaHybridEventListener instead.")
 @objc public protocol KlarnaHybridSDKEventListener : AnyObject {
@@ -25,34 +19,6 @@ import os
   @objc func klarnaHybridSDKWillHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
   @objc func klarnaHybridSDKDidHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
   @objc func klarnaHybridSDKFailed(inWebView webView: KlarnaMobileSDK.KlarnaWebView, withError error: KlarnaMobileSDK.KlarnaMobileSDKError)
-}
-@_inheritsConvenienceInitializers @objc open class ScanBaseViewController : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @objc open func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
-  @objc open func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
-  @objc open func onCameraPermissionDenied(showedPrompt: Swift.Bool)
-  @objc open func useCurrentFrameNumber(errorCorrectedNumber: Swift.String?, currentFrameNumber: Swift.String) -> Swift.Bool
-  @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @objc get
-  }
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
-  }
-  @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @objc get
-  }
-  @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
-  }
-  @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewDidLayoutSubviews()
-  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
-  @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  @available(iOS 11.2, *)
-  open func blockingMlModel(fullCardImage: CoreGraphics.CGImage, roiRectangle: CoreGraphics.CGRect)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaMobileSDKCommon : ObjectiveC.NSObject {
   @objc public static func setLoggingLevel(_ loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel)
@@ -187,30 +153,6 @@ extension String {
   public static let PayNow: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let PayLater: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let SliceIt: KlarnaMobileSDK.KlarnaPaymentMethodCategory
-}
-@objc @_inheritsConvenienceInitializers final public class UIDotLoadingIndicator : UIKit.UIView {
-  @objc @IBInspectable final public var dotsCount: Swift.Int {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable final public var dotsRadius: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable final public var dotsSpacing: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc override final public var tintColor: UIKit.UIColor! {
-    @objc get
-    @objc set
-  }
-  final public func startAnimating()
-  final public func stopAnimating()
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc override final public func layoutSubviews()
-  @objc deinit
 }
 @objc public protocol KlarnaPaymentEventListener : AnyObject {
   @objc func klarnaInitialized(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
