@@ -188,7 +188,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -404,7 +406,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEP
 @end
 
 /// Level of logging to system console.
-typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
   KlarnaLoggingLevelOff = 0,
 /// Errors will be logged. Default.
@@ -665,6 +667,53 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
 @end
+
+
+
+
+
+
+
+@class UIImage;
+@class AVCaptureOutput;
+@class AVCaptureConnection;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
+@interface ScanBaseViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)onScannedCardWithNumber:(NSString * _Nonnull)number expiryYear:(NSString * _Nullable)expiryYear expiryMonth:(NSString * _Nullable)expiryMonth scannedImage:(UIImage * _Nullable)scannedImage;
+- (void)showCardNumber:(NSString * _Nonnull)number expiry:(NSString * _Nullable)expiry;
+- (void)onCameraPermissionDeniedWithShowedPrompt:(BOOL)showedPrompt;
+- (BOOL)useCurrentFrameNumberWithErrorCorrectedNumber:(NSString * _Nullable)errorCorrectedNumber currentFrameNumber:(NSString * _Nonnull)currentFrameNumber SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UIColor;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
+@interface UIDotLoadingIndicator : UIView
+@property (nonatomic) IBInspectable NSInteger dotsCount;
+@property (nonatomic) IBInspectable CGFloat dotsRadius;
+@property (nonatomic) IBInspectable CGFloat dotsSpacing;
+@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
 
 
 
@@ -890,7 +939,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import AVFoundation;
 @import CoreGraphics;
+@import CoreMedia;
 @import Foundation;
 @import ObjectiveC;
 @import UIKit;
@@ -1106,7 +1157,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEP
 @end
 
 /// Level of logging to system console.
-typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
   KlarnaLoggingLevelOff = 0,
 /// Errors will be logged. Default.
@@ -1367,6 +1418,53 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
 @end
+
+
+
+
+
+
+
+@class UIImage;
+@class AVCaptureOutput;
+@class AVCaptureConnection;
+@class NSBundle;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
+@interface ScanBaseViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)onScannedCardWithNumber:(NSString * _Nonnull)number expiryYear:(NSString * _Nullable)expiryYear expiryMonth:(NSString * _Nullable)expiryMonth scannedImage:(UIImage * _Nullable)scannedImage;
+- (void)showCardNumber:(NSString * _Nonnull)number expiry:(NSString * _Nullable)expiry;
+- (void)onCameraPermissionDeniedWithShowedPrompt:(BOOL)showedPrompt;
+- (BOOL)useCurrentFrameNumberWithErrorCorrectedNumber:(NSString * _Nullable)errorCorrectedNumber currentFrameNumber:(NSString * _Nonnull)currentFrameNumber SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)animated;
+- (void)viewDidDisappear:(BOOL)animated;
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class UIColor;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
+@interface UIDotLoadingIndicator : UIView
+@property (nonatomic) IBInspectable NSInteger dotsCount;
+@property (nonatomic) IBInspectable CGFloat dotsRadius;
+@property (nonatomic) IBInspectable CGFloat dotsSpacing;
+@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
 
 
 
