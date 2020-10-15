@@ -404,7 +404,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEP
 @end
 
 /// Level of logging to system console.
-typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
   KlarnaLoggingLevelOff = 0,
 /// Errors will be logged. Default.
@@ -1106,7 +1106,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEP
 @end
 
 /// Level of logging to system console.
-typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, closed) {
+typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
   KlarnaLoggingLevelOff = 0,
 /// Errors will be logged. Default.

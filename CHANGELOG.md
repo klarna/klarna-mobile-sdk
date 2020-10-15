@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.25] - 2020-10-28
+- UIWindow for Fullscreens are hidden when it's closed.
+
 ### [2.0.24] - 2020-10-23
 - Fixed issue that freeze the authorize flow when KPView was being dismissed.
 
