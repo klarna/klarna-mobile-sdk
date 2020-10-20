@@ -10,16 +10,16 @@ Future releases will be documented in this section.
 - Remove the word "basic" in subspecs for Cocoapods.
 - ABI Stability.
 
-### [2.0.25] - 2020-10-28
+### [2.0.25] - 2020-09-28
 - UIWindow for Fullscreens are hidden when it's closed.
 
-### [2.0.24] - 2020-10-23
+### [2.0.24] - 2020-09-23
 - Fixed issue that freeze the authorize flow when KPView was being dismissed.
 
-### [2.0.23] - 2020-10-22
+### [2.0.23] - 2020-09-22
 - Fixed issue when the fullscreen was dismissed.
 
-### [2.0.22] - 2020-10-16
+### [2.0.22] - 2020-09-16
 - Adds support for Xcode 12 and Swift 5.3.
 
 ### [2.0.21] - 2020-09-10
