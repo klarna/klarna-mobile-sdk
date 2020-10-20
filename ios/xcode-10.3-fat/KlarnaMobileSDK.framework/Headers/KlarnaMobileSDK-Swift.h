@@ -197,6 +197,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
+@interface KlarnaDebugEvent : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, closed) {
+  KlarnaDebugEventTypeLog = 0,
+  KlarnaDebugEventTypeNetwork = 1,
+  KlarnaDebugEventTypeMessage = 2,
+};
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
@@ -268,6 +281,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @protocol KlarnaHybridSDKEventListener;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData;
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// warning:
 /// This initializer is deprecated. Use the new one and just initialize the SDK and
@@ -341,6 +356,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param callback Closure to handle message events sent to merchants.
 ///
 - (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
+@interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
 
@@ -435,6 +455,24 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, closed) {
+  KlarnaOSMEnvironmentDemo = 0,
+  KlarnaOSMEnvironmentProduction = 1,
+  KlarnaOSMEnvironmentPlayground = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, closed) {
+  KlarnaOSMRegionEu = 0,
+  KlarnaOSMRegionNa = 1,
+  KlarnaOSMRegionOc = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
+  KlarnaOSMThemeDark = 0,
+  KlarnaOSMThemeLight = 1,
+  KlarnaOSMThemeAutomatic = 2,
+};
+
 @class NSCoder;
 
 /// OSM Placement View
@@ -442,8 +480,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// <code>render()</code> is called.
 /// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
 /// constraints (top, left, leading, trailing).
-SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
-@interface KlarnaOSMView_Beta : UIView
+SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
+@interface KlarnaOSMView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
@@ -645,6 +683,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
+@interface KlarnaPaymentViewDebug : KlarnaPaymentView
+@end
+
+
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
@@ -675,8 +718,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 
 
@@ -879,6 +930,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
+@interface KlarnaDebugEvent : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, closed) {
+  KlarnaDebugEventTypeLog = 0,
+  KlarnaDebugEventTypeNetwork = 1,
+  KlarnaDebugEventTypeMessage = 2,
+};
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
@@ -950,6 +1014,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @protocol KlarnaHybridSDKEventListener;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData;
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// warning:
 /// This initializer is deprecated. Use the new one and just initialize the SDK and
@@ -1023,6 +1089,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param callback Closure to handle message events sent to merchants.
 ///
 - (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
+@interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
 
@@ -1117,6 +1188,24 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, closed) {
+  KlarnaOSMEnvironmentDemo = 0,
+  KlarnaOSMEnvironmentProduction = 1,
+  KlarnaOSMEnvironmentPlayground = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, closed) {
+  KlarnaOSMRegionEu = 0,
+  KlarnaOSMRegionNa = 1,
+  KlarnaOSMRegionOc = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
+  KlarnaOSMThemeDark = 0,
+  KlarnaOSMThemeLight = 1,
+  KlarnaOSMThemeAutomatic = 2,
+};
+
 @class NSCoder;
 
 /// OSM Placement View
@@ -1124,8 +1213,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// <code>render()</code> is called.
 /// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
 /// constraints (top, left, leading, trailing).
-SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
-@interface KlarnaOSMView_Beta : UIView
+SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
+@interface KlarnaOSMView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
@@ -1327,6 +1416,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
+@interface KlarnaPaymentViewDebug : KlarnaPaymentView
+@end
+
+
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
@@ -1357,8 +1451,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 
 
@@ -1565,6 +1667,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
+@interface KlarnaDebugEvent : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, closed) {
+  KlarnaDebugEventTypeLog = 0,
+  KlarnaDebugEventTypeNetwork = 1,
+  KlarnaDebugEventTypeMessage = 2,
+};
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
@@ -1636,6 +1751,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @protocol KlarnaHybridSDKEventListener;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData;
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// warning:
 /// This initializer is deprecated. Use the new one and just initialize the SDK and
@@ -1709,6 +1826,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param callback Closure to handle message events sent to merchants.
 ///
 - (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
+@interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
 
@@ -1803,6 +1925,24 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, closed) {
+  KlarnaOSMEnvironmentDemo = 0,
+  KlarnaOSMEnvironmentProduction = 1,
+  KlarnaOSMEnvironmentPlayground = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, closed) {
+  KlarnaOSMRegionEu = 0,
+  KlarnaOSMRegionNa = 1,
+  KlarnaOSMRegionOc = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
+  KlarnaOSMThemeDark = 0,
+  KlarnaOSMThemeLight = 1,
+  KlarnaOSMThemeAutomatic = 2,
+};
+
 @class NSCoder;
 
 /// OSM Placement View
@@ -1810,8 +1950,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// <code>render()</code> is called.
 /// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
 /// constraints (top, left, leading, trailing).
-SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
-@interface KlarnaOSMView_Beta : UIView
+SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
+@interface KlarnaOSMView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
@@ -2013,6 +2153,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
+@interface KlarnaPaymentViewDebug : KlarnaPaymentView
+@end
+
+
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
@@ -2043,8 +2188,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 
 
@@ -2247,6 +2400,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
+@interface KlarnaDebugEvent : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, closed) {
+  KlarnaDebugEventTypeLog = 0,
+  KlarnaDebugEventTypeNetwork = 1,
+  KlarnaDebugEventTypeMessage = 2,
+};
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
@@ -2318,6 +2484,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @protocol KlarnaHybridSDKEventListener;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData;
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// warning:
 /// This initializer is deprecated. Use the new one and just initialize the SDK and
@@ -2391,6 +2559,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param callback Closure to handle message events sent to merchants.
 ///
 - (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
+@interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
 
@@ -2485,6 +2658,24 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, closed) {
+  KlarnaOSMEnvironmentDemo = 0,
+  KlarnaOSMEnvironmentProduction = 1,
+  KlarnaOSMEnvironmentPlayground = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, closed) {
+  KlarnaOSMRegionEu = 0,
+  KlarnaOSMRegionNa = 1,
+  KlarnaOSMRegionOc = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
+  KlarnaOSMThemeDark = 0,
+  KlarnaOSMThemeLight = 1,
+  KlarnaOSMThemeAutomatic = 2,
+};
+
 @class NSCoder;
 
 /// OSM Placement View
@@ -2492,8 +2683,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
 /// <code>render()</code> is called.
 /// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
 /// constraints (top, left, leading, trailing).
-SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaOSMView_Beta")
-@interface KlarnaOSMView_Beta : UIView
+SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
+@interface KlarnaOSMView : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
@@ -2695,6 +2886,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
+@interface KlarnaPaymentViewDebug : KlarnaPaymentView
+@end
+
+
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView
@@ -2725,8 +2921,16 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 
 
 
+
+
+
+
+
+
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
+
+
 
 
 

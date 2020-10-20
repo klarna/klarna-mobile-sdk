@@ -4,6 +4,12 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.26] - 2020-10-20
+Framework available using Swift Package Manager.
+Carthage support.
+Remove the word "basic" in subspecs for Cocoapods.
+ABI Stability.
+
 ### [2.0.25] - 2020-10-28
 - UIWindow for Fullscreens are hidden when it's closed.
 
