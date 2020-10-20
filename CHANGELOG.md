@@ -68,6 +68,9 @@ ABI Stability.
 
 ## Android
 
+### [2.0.27] - 2020-10-20
+- Minor stability improvements and bug fixes.
+
 ### [2.0.26] - 2020-10-19
 - Overall stability improvements and bug fixes.
 
