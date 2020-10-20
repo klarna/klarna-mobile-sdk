@@ -62,6 +62,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.26] - 2020-10-19
+- Overall stability improvements and bug fixes.
+
 ### [2.0.25] - 2020-09-03
 - Upgraded the target Android SDK version to 30
 - Enabled the file access for web views on Android SDK version 30 and above
