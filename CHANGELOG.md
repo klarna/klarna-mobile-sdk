@@ -68,6 +68,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.28] - 2020-10-21
+- Fix compile-time errors for some dependencies.
+
 ### [2.0.27] - 2020-10-20
 - Minor stability improvements and bug fixes.
 
