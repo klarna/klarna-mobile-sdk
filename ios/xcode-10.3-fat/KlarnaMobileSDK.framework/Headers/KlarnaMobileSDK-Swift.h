@@ -482,7 +482,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
@@ -1215,7 +1216,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
@@ -1952,7 +1954,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
@@ -2685,7 +2688,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, closed) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 

@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.28] - 2020-10-28
+- Support for Xcode 11.3.1.
+
 ### [2.0.27] - 2020-10-26
 - Fix redirections in the internal browser.
 
