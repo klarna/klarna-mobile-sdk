@@ -242,6 +242,8 @@ extension String {
   @objc func klarnaFailed(inWebView webView: KlarnaMobileSDK.KlarnaWebView, withError error: KlarnaMobileSDK.KlarnaMobileSDKError)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaOSMView : UIKit.UIView {
+  @objc dynamic public init()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
   public typealias RenderResult = (KlarnaMobileSDK.KlarnaMobileSDKError?) -> ()
   public var clientId: Swift.String?
   public var placementKey: Swift.String?
