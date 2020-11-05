@@ -74,6 +74,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.29] - 2020-11-04
+- Fixed an issue with Post Purchase in Hybrid integration.
+- Overall stability improvements.
+
 ### [2.0.28] - 2020-10-21
 - Fix compile-time errors for some dependencies.
 
