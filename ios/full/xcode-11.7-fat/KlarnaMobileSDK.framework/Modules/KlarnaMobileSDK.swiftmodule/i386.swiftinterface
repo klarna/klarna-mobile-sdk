@@ -308,6 +308,7 @@ extension String {
   public func clearWebViewCookies()
   public func clearWebViewCache()
   public func evaluateJS(_ script: Swift.String)
+  public func setTestCookie(name: Swift.String, value: Swift.String)
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }

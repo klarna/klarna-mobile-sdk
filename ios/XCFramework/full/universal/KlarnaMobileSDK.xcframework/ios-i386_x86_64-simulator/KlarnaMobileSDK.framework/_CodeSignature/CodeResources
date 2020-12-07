@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		FLEoGv+HJUkeOXAf+RChDqHi2Bc=
+		gOFGPREmcC/Xs6vzRwxMCIStW5Y=
 		</data>
 		<key>CardScan.storyboardc/Info.plist</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/objects-11.0+.nib</key>
 		<data>
-		GEEXcCBHU+Y9kS/8KDh0KxQQhV4=
+		piHKZSfEyUYAlur/EcUSjy2vleo=
 		</data>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/runtime.nib</key>
 		<data>
-		w8l6v6wzFJKqWrVYh/mQhHU1mU8=
+		+jlNQSCwnM7f3m4HIfdgqRPJERU=
 		</data>
 		<key>CardScan.storyboardc/scanCardViewController.nib/objects-11.0+.nib</key>
 		<data>
-		Apvd/t4+herO3VwApzkTTyx9M0s=
+		7g3pfr9ZrRuxNg+ZltDmR81/e7A=
 		</data>
 		<key>CardScan.storyboardc/scanCardViewController.nib/runtime.nib</key>
 		<data>
-		sH4ho+uvIVuX1weFWf+FKfQat24=
+		TI0X06MVTG1g0uPtRpS0IXEWROI=
 		</data>
 		<key>FindFour.mlmodelc/.gitkeep</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VM4JlVMQwadAAeyo4vYlSrk/KvE=
+		WfZcFHYBgHGl57deSvZbEPLfbA4=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -110,11 +110,11 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Ugsd6DUX2LlJRVZ0i81GWD2xXL8=
+		wBJlq0ZlVwzxCS/m4DrjPimC+p8=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KNP2tInB/E/BPykjQ2bxt0mpPy4=
+		XU2RLgGYU7kymj0ZDST/nzbc6d4=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -122,11 +122,11 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386.swiftinterface</key>
 		<data>
-		Ugsd6DUX2LlJRVZ0i81GWD2xXL8=
+		wBJlq0ZlVwzxCS/m4DrjPimC+p8=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		KNP2tInB/E/BPykjQ2bxt0mpPy4=
+		XU2RLgGYU7kymj0ZDST/nzbc6d4=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -134,11 +134,11 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		QPEQZE7Wf2k/w4mvKNQuli4+J1w=
+		hcycN8Qo4kqDmdhJkZZvqC5PiNk=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kEK6bDeC9JmE/xosuSvqUlfkQMI=
+		y/9k8+n8RyQavp5BKWHMwqKhWS0=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -146,11 +146,11 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		QPEQZE7Wf2k/w4mvKNQuli4+J1w=
+		hcycN8Qo4kqDmdhJkZZvqC5PiNk=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		kEK6bDeC9JmE/xosuSvqUlfkQMI=
+		y/9k8+n8RyQavp5BKWHMwqKhWS0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -179,11 +179,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FLEoGv+HJUkeOXAf+RChDqHi2Bc=
+			gOFGPREmcC/Xs6vzRwxMCIStW5Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			MLh41QWqstbxMBuZqh+1vwOICoDGqUIILwjgwdhNtoY=
+			IHsfeBA8MgHdnAaaTjchKPC7GAINHObP2DwQkx9TXFc=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/Info.plist</key>
@@ -201,44 +201,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GEEXcCBHU+Y9kS/8KDh0KxQQhV4=
+			piHKZSfEyUYAlur/EcUSjy2vleo=
 			</data>
 			<key>hash2</key>
 			<data>
-			893NWh+ALc5ASwxsSM05PjaJyNAv/kY5MzOHwHlE7l8=
+			SGEHSbaUoQKcC7rJfgqrLuay2w7FLbPP8ailIsQ/RiQ=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w8l6v6wzFJKqWrVYh/mQhHU1mU8=
+			+jlNQSCwnM7f3m4HIfdgqRPJERU=
 			</data>
 			<key>hash2</key>
 			<data>
-			vShgzEuip427nmndTKTsdJNeaaAnhTf/izH3rVqk0x0=
+			P9Jii7JoSMm4fIjXM9eUSLme75K5QsNcbw3l51dI1oo=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/scanCardViewController.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Apvd/t4+herO3VwApzkTTyx9M0s=
+			7g3pfr9ZrRuxNg+ZltDmR81/e7A=
 			</data>
 			<key>hash2</key>
 			<data>
-			rC8P2z+NQ8PRBTK1mLo64D31f8txySeWQk/TkOTIWuM=
+			xO7rlc2Vvz6a0rKN4a9I0uH0CFq0QR9QHs6VbVxArvA=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/scanCardViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sH4ho+uvIVuX1weFWf+FKfQat24=
+			TI0X06MVTG1g0uPtRpS0IXEWROI=
 			</data>
 			<key>hash2</key>
 			<data>
-			IUq2thprTUMaOHdZ1SxHTwrjAAPp7jgO1VkFI/LueMw=
+			ULToUUXQXkU9vHqgZsvfa1tuRA+Er8H+onzDfEGazhs=
 			</data>
 		</dict>
 		<key>FindFour.mlmodelc/.gitkeep</key>
@@ -454,22 +454,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ugsd6DUX2LlJRVZ0i81GWD2xXL8=
+			wBJlq0ZlVwzxCS/m4DrjPimC+p8=
 			</data>
 			<key>hash2</key>
 			<data>
-			vrxPiHA2A+AlCmzAY3t7D7u4yzwruB7Q2lqqMCdJvqs=
+			KsDF8DHWUERPnTzhn6aVq1jYYFiPol7UaYYiZT8pOiY=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KNP2tInB/E/BPykjQ2bxt0mpPy4=
+			XU2RLgGYU7kymj0ZDST/nzbc6d4=
 			</data>
 			<key>hash2</key>
 			<data>
-			xxq/fzI8DHzuAfY5yeQBXAtEb+IuXU+m1BM6yuk76p8=
+			jkhUrlrjc+CmAdC3Ina19msrNZdUVkHY1R/ZxUQFc4o=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386.swiftdoc</key>
@@ -487,22 +487,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ugsd6DUX2LlJRVZ0i81GWD2xXL8=
+			wBJlq0ZlVwzxCS/m4DrjPimC+p8=
 			</data>
 			<key>hash2</key>
 			<data>
-			vrxPiHA2A+AlCmzAY3t7D7u4yzwruB7Q2lqqMCdJvqs=
+			KsDF8DHWUERPnTzhn6aVq1jYYFiPol7UaYYiZT8pOiY=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KNP2tInB/E/BPykjQ2bxt0mpPy4=
+			XU2RLgGYU7kymj0ZDST/nzbc6d4=
 			</data>
 			<key>hash2</key>
 			<data>
-			xxq/fzI8DHzuAfY5yeQBXAtEb+IuXU+m1BM6yuk76p8=
+			jkhUrlrjc+CmAdC3Ina19msrNZdUVkHY1R/ZxUQFc4o=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -520,22 +520,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QPEQZE7Wf2k/w4mvKNQuli4+J1w=
+			hcycN8Qo4kqDmdhJkZZvqC5PiNk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0dkbQM8fVvehoJVdaCtX3udbuOt1DTPB/dRamB+wGZE=
+			Zw5OFZiHByl0DH46EtgVZZh+UrC+2LVS72AYYh37Qjg=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kEK6bDeC9JmE/xosuSvqUlfkQMI=
+			y/9k8+n8RyQavp5BKWHMwqKhWS0=
 			</data>
 			<key>hash2</key>
 			<data>
-			7eJmJaQjwZbfZ9g521Cl+6qfh9TG/srfTj0yC0cG5Vs=
+			RYmymOaN7atnI6q0dom30jYdrecxXG/2Cv4w2kyInDo=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -553,22 +553,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QPEQZE7Wf2k/w4mvKNQuli4+J1w=
+			hcycN8Qo4kqDmdhJkZZvqC5PiNk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0dkbQM8fVvehoJVdaCtX3udbuOt1DTPB/dRamB+wGZE=
+			Zw5OFZiHByl0DH46EtgVZZh+UrC+2LVS72AYYh37Qjg=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kEK6bDeC9JmE/xosuSvqUlfkQMI=
+			y/9k8+n8RyQavp5BKWHMwqKhWS0=
 			</data>
 			<key>hash2</key>
 			<data>
-			7eJmJaQjwZbfZ9g521Cl+6qfh9TG/srfTj0yC0cG5Vs=
+			RYmymOaN7atnI6q0dom30jYdrecxXG/2Cv4w2kyInDo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
