@@ -80,6 +80,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.31] - 2020-12-08
+- Internal optimizations and stability improvements.
+
 ### [2.0.30] - 2020-12-03
 - Overall stability improvements.
 
