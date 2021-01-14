@@ -80,6 +80,11 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.32] - 2021-01-13
+- Internal optimizations.
+- Updated SDK resources to prevent conflicts.
+- Migrated dependencies to AndroidX.
+
 ### [2.0.31] - 2020-12-08
 - Internal optimizations and stability improvements.
 
