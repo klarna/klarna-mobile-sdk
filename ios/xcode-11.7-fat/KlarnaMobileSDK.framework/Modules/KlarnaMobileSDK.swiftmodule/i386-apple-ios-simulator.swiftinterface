@@ -228,6 +228,7 @@ extension String {
   public static let PayNow: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let PayLater: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let SliceIt: KlarnaMobileSDK.KlarnaPaymentMethodCategory
+  public static let PayInParts: KlarnaMobileSDK.KlarnaPaymentMethodCategory
 }
 @objc public protocol KlarnaPaymentEventListener : AnyObject {
   @objc func klarnaInitialized(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
