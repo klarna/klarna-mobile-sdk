@@ -262,6 +262,7 @@ extension String {
   public static let PayNow: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let PayLater: KlarnaMobileSDK.KlarnaPaymentMethodCategory
   public static let SliceIt: KlarnaMobileSDK.KlarnaPaymentMethodCategory
+  public static let PayInParts: KlarnaMobileSDK.KlarnaPaymentMethodCategory
 }
 @objc @_inheritsConvenienceInitializers final public class UIDotLoadingIndicator : UIKit.UIView {
   @objc @IBInspectable final public var dotsCount: Swift.Int {

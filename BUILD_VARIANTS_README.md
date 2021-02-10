@@ -16,29 +16,23 @@ For this release, we provide:
 
 | Name | Fat/slim | Xcode Ver. & Build No. | Swift Ver. | Swift Toolchain Ver. |
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
-| `xcode-11.3.1-fat` | fat | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
-| `xcode-11.3.1-slim` | slim | 11.3.1 - 11C505 | 5.1.3| swiftlang-1100.0.282.1 clang-1100.0.33.15 |
 | `xcode-11.7-fat` | fat | 11.7 - 11E801a | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
 | `xcode-11.7-slim` | slim | 11.7 - 11E801a | 5.2.4| swiftlang-1103.0.32.9 clang-1103.0.32.53 |
-| `xcode-12.2-fat` | fat | 12.2 - 12B45b | 5.3.1| swiftlang-1200.0.41 clang-1200.0.32.8 |
-| `xcode-12.2-slim` | slim | 12.2 - 12B45b | 5.3.1| swiftlang-1200.0.41 clang-1200.0.32.8 |
+| `xcode-12.3-fat` | fat | 12.3 - 12C33 | 5.3.2| swiftlang-1200.0.45 clang-1200.0.32.28 |
+| `xcode-12.3-slim` | slim | 12.3 - 12C33 | 5.3.2| swiftlang-1200.0.45 clang-1200.0.32.28 |
 
 
 ## Cocoapods
 
-This release defaults to using the latest, non-beta version `xcode-12.2-fat`. If you
+This release defaults to using the latest, non-beta version `xcode-12.3-fat`. If you
 want to use a different variant, update your Podfile to use a different subspec. E.g:
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-11.3.1-fat', '~> 2.0.30'
+pod 'KlarnaMobileSDK/xcode-11.7-fat', '~> 2.0.31'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-11.7-fat', '~> 2.0.30'
-```
-
-```ruby
-pod 'KlarnaMobileSDK/xcode-12.2-fat', '~> 2.0.30'
+pod 'KlarnaMobileSDK/xcode-12.3-fat', '~> 2.0.31'
 ```
 

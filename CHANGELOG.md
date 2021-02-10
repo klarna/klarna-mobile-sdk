@@ -4,11 +4,14 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.31] - 2021-02-09
+- Overall performance improvements. 
+
 ### [2.0.30] - 2020-12-03
 - Overall performance improvements.
 
 ### [2.0.29] - 2020-11-19
-- Fix error: virtual filesystem overlay 
+- Fix error: virtual filesystem overlay
 
 ### [2.0.28] - 2020-10-28
 - Support for Xcode 11.3.1.

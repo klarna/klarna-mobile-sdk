@@ -1,7 +1,7 @@
 {
     "meta": {
-        "version": "v0.3.6-43bd9b46753",
-        "updated": "2020-01-29T10:20:24.884Z",
+        "version": "v1.0.0-4414449dbca",
+        "updated": "2021-01-25T13:02:46.193Z",
         "schema": "v1"
     },
     "configuration": {
@@ -10,28 +10,91 @@
                 "init-script-url": {
                     "scheme": "https",
                     "host": "x.klarnacdn.net",
-                    "path": "/mobile-sdk/wrapper-init-script/v0/script/v1/WrapperInitScript.js"
+                    "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
                 }
             },
             "payments": {
                 "wrapper-snippet-url": {
                     "scheme": "https",
                     "host": "x.klarnacdn.net",
-                    "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v0/index.html"
+                    "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
+                },
+                "message-bridge-url": {
+                    "scheme": "https",
+                    "host": "x.klarnacdn.net",
+                    "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
                 }
             },
             "hybrid": {},
             "checkout": {},
+            "osm": {
+                "enabled": true,
+                "urls": {
+                    "playground": {
+                        "eu": {
+                            "scheme": "https",
+                            "host": "osm-eu.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        },
+                        "na": {
+                            "scheme": "https",
+                            "host": "osm-na.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        },
+                        "oc": {
+                            "scheme": "https",
+                            "host": "osm-oc.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    "production": {
+                        "eu": {
+                            "scheme": "https",
+                            "host": "osm-eu.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        },
+                        "na": {
+                            "scheme": "https",
+                            "host": "osm-na.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        },
+                        "oc": {
+                            "scheme": "https",
+                            "host": "osm-oc.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    }
+                },
+                "url-overrides": [
+                    {
+                        "client-id": "fake-client-id",
+                        "playground": {
+                            "na": {
+                                "scheme": "https",
+                                "host": "osm-na-fake.playground.klarnaservices.com",
+                                "path": "/v3/messaging"
+                            }
+                        },
+                        "production": {
+                            "na": {
+                                "scheme": "https",
+                                "host": "osm-na-fake.klarnaservices.com",
+                                "path": "/v3/messaging"
+                            }
+                        }
+                    }
+                ]
+            },
             "analytics": {
                 "test-endpoint-url": {
                     "scheme": "https",
-                    "host": "evt-eu.staging.eu1.yaco.klarna.net",
-                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                    "host": "frontend-event-router-eu.staging.c2c.klarna.net",
+                    "path": "/v1/in-app"
                 },
                 "prod-endpoint-url": {
                     "scheme": "https",
-                    "host": "evt.klarna.com",
-                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
+                    "host": "eu.klarnaevt.com",
+                    "path": "/v1/in-app"
                 },
                 "level": "info"
             },
@@ -98,6 +161,11 @@
                     ],
                     "placeholders": ["%issuer%"]
                 }
+            ],
+            "blacklist-urls": [
+                "file:///Users/fake-klarna*",
+                "ftp*fake-klarna*",
+                "http*://www.fake-klarna.com*"
             ]
         }
     }
