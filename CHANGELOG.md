@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.32] - 2021-02-11
+- On site marketing available to Objective-C.
+
 ### [2.0.31] - 2021-02-09
 - Overall performance improvements. 
 
