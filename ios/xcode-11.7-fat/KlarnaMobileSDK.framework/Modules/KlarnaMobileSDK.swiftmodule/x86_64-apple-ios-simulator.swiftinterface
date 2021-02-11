@@ -135,8 +135,8 @@ extension String {
   @objc override dynamic public init()
   @objc deinit
 }
-public protocol KlarnaOSMViewEventListener : AnyObject {
-  func klarnaOSMViewResized(_ height: CoreGraphics.CGFloat)
+@objc public protocol KlarnaOSMViewEventListener : AnyObject {
+  @objc func klarnaOSMViewResized(_ height: CoreGraphics.CGFloat)
 }
 @objc extension NSObject {
 }
@@ -211,16 +211,18 @@ extension String {
   @objc dynamic public init()
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   public typealias RenderResult = (KlarnaMobileSDK.KlarnaMobileSDKError?) -> ()
-  public var clientId: Swift.String?
-  public var placementKey: Swift.String?
-  public var locale: Swift.String
+  @objc public var clientId: Swift.String?
+  @objc public var placementKey: Swift.String?
+  @objc public var locale: Swift.String
   public var purchaseAmount: Swift.Int?
-  weak public var hostViewController: UIKit.UIViewController?
-  public var environment: KlarnaMobileSDK.KlarnaOSMEnvironment
+  @objc weak public var hostViewController: UIKit.UIViewController?
+  @objc public var environment: KlarnaMobileSDK.KlarnaOSMEnvironment
   public var region: KlarnaMobileSDK.KlarnaOSMRegion?
-  public var theme: KlarnaMobileSDK.KlarnaOSMTheme
+  @objc public var theme: KlarnaMobileSDK.KlarnaOSMTheme
   weak public var delegate: KlarnaMobileSDK.KlarnaOSMViewEventListener?
-  public func render(callback: @escaping KlarnaMobileSDK.KlarnaOSMView.RenderResult)
+  @objc public func setPurchaseAmount(_ amount: Foundation.NSNumber?)
+  @objc public func setRegion(_ region: KlarnaMobileSDK.KlarnaOSMRegion)
+  @objc public func render(callback: @escaping KlarnaMobileSDK.KlarnaOSMView.RenderResult)
   @objc deinit
 }
 public typealias KlarnaPaymentMethodCategory = Swift.String

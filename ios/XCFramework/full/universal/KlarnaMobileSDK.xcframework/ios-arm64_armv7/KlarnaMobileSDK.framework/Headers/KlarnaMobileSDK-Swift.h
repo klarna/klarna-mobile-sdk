@@ -493,6 +493,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 };
 
 @class NSCoder;
+@class UIViewController;
+@class NSNumber;
 
 /// OSM Placement View
 /// View starts off as completely empty/transparent. There is no content until
@@ -504,6 +506,39 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+/// Merchant’s Client ID (required)
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Merchant’s Placement’s Key (required)
+@property (nonatomic, copy) NSString * _Nullable placementKey;
+/// Locale for the placement language (required, defaults to en-us).
+@property (nonatomic, copy) NSString * _Nonnull locale;
+/// View controller (or activity) that will be used to render placement
+/// details modally (required). Would be <code>hostActivity</code> on Android.
+@property (nonatomic, weak) UIViewController * _Nullable hostViewController;
+/// Environment for testing and production. Default will be demo
+@property (nonatomic) enum KlarnaOSMEnvironment environment;
+/// Theme for the widget.
+@property (nonatomic) enum KlarnaOSMTheme theme;
+- (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
+- (void)setRegion:(enum KlarnaOSMRegion)region;
+/// Called after the above properties are set. Renders the content in the
+/// placement. The view will update/style its contents at this stage.
+/// If a property is missing, an error will be returned. If rendering
+/// is disabled, an error will be returned. If a property is invalid, an error
+/// will be returned.
+/// \param callback Merchant-supplied callback to be used when placement is
+/// rendered or an error occurs. Called on main thread.
+///
+- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaMobileSDKError * _Nullable))callback;
+@end
+
+
+/// An object that will be notified of events happening to a <code>KlarnaOSMView</code>
+/// If you’re integrating KlarnaOSMView inside a view that needs to specify the content height,
+/// you’ll need to implement an instance of this listener.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_")
+@protocol KlarnaOSMViewEventListener
+- (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
 
@@ -1276,6 +1311,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 };
 
 @class NSCoder;
+@class UIViewController;
+@class NSNumber;
 
 /// OSM Placement View
 /// View starts off as completely empty/transparent. There is no content until
@@ -1287,6 +1324,39 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+/// Merchant’s Client ID (required)
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Merchant’s Placement’s Key (required)
+@property (nonatomic, copy) NSString * _Nullable placementKey;
+/// Locale for the placement language (required, defaults to en-us).
+@property (nonatomic, copy) NSString * _Nonnull locale;
+/// View controller (or activity) that will be used to render placement
+/// details modally (required). Would be <code>hostActivity</code> on Android.
+@property (nonatomic, weak) UIViewController * _Nullable hostViewController;
+/// Environment for testing and production. Default will be demo
+@property (nonatomic) enum KlarnaOSMEnvironment environment;
+/// Theme for the widget.
+@property (nonatomic) enum KlarnaOSMTheme theme;
+- (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
+- (void)setRegion:(enum KlarnaOSMRegion)region;
+/// Called after the above properties are set. Renders the content in the
+/// placement. The view will update/style its contents at this stage.
+/// If a property is missing, an error will be returned. If rendering
+/// is disabled, an error will be returned. If a property is invalid, an error
+/// will be returned.
+/// \param callback Merchant-supplied callback to be used when placement is
+/// rendered or an error occurs. Called on main thread.
+///
+- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaMobileSDKError * _Nullable))callback;
+@end
+
+
+/// An object that will be notified of events happening to a <code>KlarnaOSMView</code>
+/// If you’re integrating KlarnaOSMView inside a view that needs to specify the content height,
+/// you’ll need to implement an instance of this listener.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_")
+@protocol KlarnaOSMViewEventListener
+- (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
 
