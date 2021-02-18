@@ -89,6 +89,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.33] - 2021-02-18
+- Internal optimizations.
+- Fix obfuscation errors.
+
 ### [2.0.32] - 2021-01-13
 - Internal optimizations.
 - Updated SDK resources to prevent conflicts.
