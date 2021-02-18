@@ -199,6 +199,7 @@ extension String {
   public static let KlarnaOSMErrorNetworkError: Swift.String
   public static let KlarnaOSMErrorMissingRegion: Swift.String
   public static let KlarnaOSMErrorPlacementError: Swift.String
+  public static let KlarnaOSMErrorNoContent: Swift.String
 }
 @objc public protocol KlarnaHybridEventListener : AnyObject {
   @objc func klarnaWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
