@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.34] - 2021-03-02
+- Performance improvements: Removed a race condition that happens when the user has a slow network connection.
+
 ### [2.0.33] - 2021-02-18
 - Fix registerEventListener in hybrid integration.
 
