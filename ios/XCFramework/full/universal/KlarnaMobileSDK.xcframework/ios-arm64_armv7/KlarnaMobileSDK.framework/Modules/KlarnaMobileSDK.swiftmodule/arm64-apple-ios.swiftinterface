@@ -81,7 +81,7 @@ import os
 }
 @_hasMissingDesignatedInitializers @objc public class KlarnaPaymentError : KlarnaMobileSDK.KlarnaMobileSDKError {
   @objc final public let invalidFields: [Swift.String]?
-  @objc final public let action: KlarnaMobileSDK.KlarnaPaymentAction
+  @objc final public let action: KlarnaMobileSDK.KlarnaPaymentAction?
   @objc deinit
 }
 @available(*, deprecated, message: "Deprecated for the same class without an 's'.")
@@ -312,7 +312,7 @@ extension String {
   public func clearWebViewCookies()
   public func clearWebViewCache()
   public func evaluateJS(_ script: Swift.String)
-  public func setTestCookie(name: Swift.String, value: Swift.String)
+  public func addCookie(name: Swift.String, value: Swift.String)
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }

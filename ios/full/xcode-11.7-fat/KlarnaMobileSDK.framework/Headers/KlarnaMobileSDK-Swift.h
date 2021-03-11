@@ -551,7 +551,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 /// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
 /// Action the error occurred during.
-@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
 @class KlarnaPaymentView;
@@ -1388,7 +1388,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 /// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
 /// Action the error occurred during.
-@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
 @class KlarnaPaymentView;
@@ -2229,7 +2229,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 /// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
 /// Action the error occurred during.
-@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
 @class KlarnaPaymentView;
@@ -3066,7 +3066,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
 /// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
 /// Action the error occurred during.
-@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+@property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
 @class KlarnaPaymentView;
