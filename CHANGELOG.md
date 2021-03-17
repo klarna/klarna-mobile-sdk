@@ -96,6 +96,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.34] - 2021-03-11
+- WebRTC support.
+- Improved fullscreen implementation.
+
 ### [2.0.33] - 2021-02-18
 - Internal optimizations.
 - Fix obfuscation errors.
