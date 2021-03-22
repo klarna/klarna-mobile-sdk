@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.36] - 2021-03-22
+- Update analytics events.
+- 
 ### [2.0.35] - 2021-03-11
 - WebRTC support.
 - Log warning if methods are being called a second time before the call returned.
