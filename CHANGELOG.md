@@ -98,8 +98,11 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.0.35] - 2021-03-22
+- Revert WebRTC support and fullscreen improvements.
 
 ### [2.0.34] - 2021-03-11
+- :warning: **This version has some functionality issues**: Please use a newer version of the SDK. Future releases with new features will be cautiously checked to prevent these warnings.
 - WebRTC support.
 - Improved fullscreen implementation.
 
