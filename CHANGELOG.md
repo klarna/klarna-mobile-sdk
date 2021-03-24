@@ -6,8 +6,9 @@ Future releases will be documented in this section.
 
 ### [2.0.36] - 2021-03-22
 - Update analytics events.
-- 
+
 ### [2.0.35] - 2021-03-11
+- Fix bug on card scanning due to ITP restriction introduced on iOS 14.
 - WebRTC support.
 - Log warning if methods are being called a second time before the call returned.
 
