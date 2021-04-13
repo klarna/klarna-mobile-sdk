@@ -5,7 +5,7 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ### [2.0.37] - 2021-04-13
-- Support for M1 chips in XCFramework.
+- Support M1 chips in XCFramework.
 
 ### [2.0.36] - 2021-03-22
 - Update analytics events.
