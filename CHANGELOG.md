@@ -99,6 +99,11 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+
+### [2.0.36] - 2021-04-15
+- Fullscreen keyboard improvements.
+- Updated analytic events.
+
 ### [2.0.35] - 2021-03-22
 - Revert WebRTC support and fullscreen improvements.
 
