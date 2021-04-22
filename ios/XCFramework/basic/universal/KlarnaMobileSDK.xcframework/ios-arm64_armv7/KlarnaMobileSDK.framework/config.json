@@ -1,172 +1,271 @@
 {
     "meta": {
-        "version": "v1.0.0-4414449dbca",
-        "updated": "2021-01-25T13:02:46.193Z",
-        "schema": "v1"
+        "version": "v2.0.0-2bf107f58ec",
+        "updated": "2021-03-31T08:55:11.478Z",
+        "schema": "v2"
     },
-    "configuration": {
-        "klarna-sdk": {
-            "initialization": {
-                "init-script-url": {
-                    "scheme": "https",
-                    "host": "x.klarnacdn.net",
-                    "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
-                }
-            },
-            "payments": {
-                "wrapper-snippet-url": {
-                    "scheme": "https",
-                    "host": "x.klarnacdn.net",
-                    "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
-                },
-                "message-bridge-url": {
-                    "scheme": "https",
-                    "host": "x.klarnacdn.net",
-                    "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
-                }
-            },
-            "hybrid": {},
-            "checkout": {},
-            "osm": {
-                "enabled": true,
-                "urls": {
-                    "playground": {
-                        "eu": {
+    "config": {
+        "assets": [
+            {
+                "name": "sdk-init-script",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": ["aws"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
                             "scheme": "https",
-                            "host": "osm-eu.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
-                        },
-                        "na": {
-                            "scheme": "https",
-                            "host": "osm-na.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
-                        },
-                        "oc": {
-                            "scheme": "https",
-                            "host": "osm-oc.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "x.klarnacdn.net",
+                            "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
                         }
                     },
-                    "production": {
-                        "eu": {
-                            "scheme": "https",
-                            "host": "osm-eu.klarnaservices.com",
-                            "path": "/v3/messaging"
-                        },
-                        "na": {
-                            "scheme": "https",
-                            "host": "osm-na.klarnaservices.com",
-                            "path": "/v3/messaging"
-                        },
-                        "oc": {
-                            "scheme": "https",
-                            "host": "osm-oc.klarnaservices.com",
-                            "path": "/v3/messaging"
-                        }
-                    }
-                },
-                "url-overrides": [
                     {
-                        "client-id": "fake-client-id",
-                        "playground": {
-                            "na": {
-                                "scheme": "https",
-                                "host": "osm-na-fake.playground.klarnaservices.com",
-                                "path": "/v3/messaging"
-                            }
-                        },
-                        "production": {
-                            "na": {
-                                "scheme": "https",
-                                "host": "osm-na-fake.klarnaservices.com",
-                                "path": "/v3/messaging"
-                            }
+                        "alternatives": ["azure"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "z.klarnacdn.net",
+                            "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
                         }
                     }
                 ]
             },
+            {
+                "name": "sdk-message-bridge",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": ["aws"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.klarnacdn.net",
+                            "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
+                        }
+                    },
+                    {
+                        "alternatives": ["azure"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "z.klarnacdn.net",
+                            "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "kp-payments-wrapper",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": ["aws"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.klarnacdn.net",
+                            "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
+                        }
+                    },
+                    {
+                        "alternatives": ["azure"],
+                        "environments": ["staging", "playground", "production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "z.klarnacdn.net",
+                            "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
+                        }
+                    }
+                ]
+            }
+        ],
+        "analytics": [
+            {
+                "name": "klarna-evt-v1",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": ["aws"],
+                        "environments": ["production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "eu.klarnaevt.com",
+                            "path": "/v1/in-app"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["staging", "playground"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "frontend-event-router-eu.staging.c2c.klarna.net",
+                            "path": "/v1/in-app"
+                        }
+                    },
+                    {
+                        "alternatives": ["azure"],
+                        "environments": ["production"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "naz.klarnaevt.com",
+                            "path": "/v1/in-app"
+                        }
+                    },
+                    {
+                        "alternatives": ["azure"],
+                        "environments": ["staging", "playground"],
+                        "regions": ["eu", "na", "oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "naz.playground.klarnaevt.com",
+                            "path": "/v1/in-app"
+                        }
+                    }
+                ]
+            }
+        ],
+        "apis": [
+            {
+                "name": "osm-get-placement",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": ["aws"],
+                        "environments": ["production"],
+                        "regions": ["eu"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-eu.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["production"],
+                        "regions": ["na"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-na.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["production"],
+                        "regions": ["oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-oc.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["playground"],
+                        "regions": ["eu"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-eu.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["playground"],
+                        "regions": ["na"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-na.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["aws"],
+                        "environments": ["playground"],
+                        "regions": ["oc"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-oc.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    }
+                ]
+            }
+        ],
+        "featureToggles": {
+            "cardScanning": {
+                "enabled": true
+            },
+            "osm": {
+                "enabled": true
+            },
             "analytics": {
-                "test-endpoint-url": {
-                    "scheme": "https",
-                    "host": "frontend-event-router-eu.staging.c2c.klarna.net",
-                    "path": "/v1/in-app"
-                },
-                "prod-endpoint-url": {
-                    "scheme": "https",
-                    "host": "eu.klarnaevt.com",
-                    "path": "/v1/in-app"
-                },
-                "level": "info"
+                "logLevel": "info"
             },
-            "dev-data": {
-                "test-endpoint-url": {
-                    "scheme": "https",
-                    "host": "evt-eu.staging.eu1.yaco.klarna.net",
-                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
-                },
-                "prod-endpoint-url": {
-                    "scheme": "https",
-                    "host": "evt.klarna.com",
-                    "path": "/v1/mobile-sdk/klarna-mobile-sdk"
-                }
-            },
-            "debugging": {
-                "console": {
-                    "level": "error",
-                    "privacy": "public",
-                    "log-endpoint-url": null
-                },
-                "webview": {
-                    "onload-debug-script-url": null
-                },
-                "android": {
-                    "make-webviews-debuggable": false
-                },
-                "ios": {}
-            },
-            "overrides": [],
-            "features": {
-                "cardScanning": {
-                    "enabled": true
-                }
-            },
-            "texts": [
-                {
-                    "name": "paymentView.card.instructions.hold",
-                    "localizations": [
-                        {
-                            "locale": "default",
-                            "value": "Hold the front of your card up to the camera"
-                        }
-                    ],
-                    "placeholders": []
-                },
-                {
-                    "name": "paymentView.card.instructions.scanning",
-                    "localizations": [
-                        {
-                            "locale": "default",
-                            "value": "Scanning card"
-                        }
-                    ],
-                    "placeholders": []
-                },
-                {
-                    "name": "paymentView.card.instructions.success",
-                    "localizations": [
-                        {
-                            "locale": "default",
-                            "value": "%issuer% recognised"
-                        }
-                    ],
-                    "placeholders": ["%issuer%"]
-                }
-            ],
-            "blacklist-urls": [
+            "blacklistUrls": [
                 "file:///Users/fake-klarna*",
                 "ftp*fake-klarna*",
                 "http*://www.fake-klarna.com*"
             ]
-        }
+        },
+        "debugToggles": {
+            "console": {
+                "level": "error",
+                "privacy": "public",
+                "logEndpointUrl": null
+            },
+            "webview": {
+                "onLoadDebugScriptUrl": null
+            },
+            "android": {
+                "makeWebViewsDebuggable": false
+            },
+            "ios": {},
+            "overrides": {
+            }
+        },
+        "texts": [
+            {
+                "name": "paymentView.card.instructions.hold",
+                "localizations": [
+                    {
+                        "locale": "default",
+                        "value": "Hold the front of your card up to the camera"
+                    }
+                ],
+                "placeholders": []
+            },
+            {
+                "name": "paymentView.card.instructions.scanning",
+                "localizations": [
+                    {
+                        "locale": "default",
+                        "value": "Scanning card"
+                    }
+                ],
+                "placeholders": []
+            },
+            {
+                "name": "paymentView.card.instructions.success",
+                "localizations": [
+                    {
+                        "locale": "default",
+                        "value": "%issuer% recognised"
+                    }
+                ],
+                "placeholders": [
+                    "%issuer%"
+                ]
+            }
+        ]
     }
 }

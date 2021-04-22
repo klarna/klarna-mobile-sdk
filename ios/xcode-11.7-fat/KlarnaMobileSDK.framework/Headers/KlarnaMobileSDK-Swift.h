@@ -299,6 +299,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @end
 
 @protocol KlarnaHybridSDKEventListener;
+enum KlarnaResourceEndpoint : NSInteger;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
@@ -313,7 +314,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -321,7 +324,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
@@ -504,7 +509,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -677,7 +681,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
 /// note:
 ///
@@ -742,6 +748,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
+  KlarnaResourceEndpointAlternative1 = 0,
+  KlarnaResourceEndpointAlternative2 = 1,
+};
 
 
 /// General class that envelops WKWebView
@@ -1088,6 +1099,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @end
 
 @protocol KlarnaHybridSDKEventListener;
+enum KlarnaResourceEndpoint : NSInteger;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
@@ -1102,7 +1114,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -1110,7 +1124,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
@@ -1293,7 +1309,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -1466,7 +1481,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
 /// note:
 ///
@@ -1531,6 +1548,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
+  KlarnaResourceEndpointAlternative1 = 0,
+  KlarnaResourceEndpointAlternative2 = 1,
+};
 
 
 /// General class that envelops WKWebView
@@ -1881,6 +1903,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @end
 
 @protocol KlarnaHybridSDKEventListener;
+enum KlarnaResourceEndpoint : NSInteger;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
@@ -1895,7 +1918,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -1903,7 +1928,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
@@ -2086,7 +2113,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -2259,7 +2285,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
 /// note:
 ///
@@ -2324,6 +2352,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
+  KlarnaResourceEndpointAlternative1 = 0,
+  KlarnaResourceEndpointAlternative2 = 1,
+};
 
 
 /// General class that envelops WKWebView
@@ -2670,6 +2703,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 @end
 
 @protocol KlarnaHybridSDKEventListener;
+enum KlarnaResourceEndpoint : NSInteger;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
@@ -2684,7 +2718,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -2692,7 +2728,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
@@ -2875,7 +2913,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -3048,7 +3085,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
 /// note:
 ///
@@ -3113,6 +3152,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
+  KlarnaResourceEndpointAlternative1 = 0,
+  KlarnaResourceEndpointAlternative2 = 1,
+};
 
 
 /// General class that envelops WKWebView
