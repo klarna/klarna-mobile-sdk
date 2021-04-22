@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.38] - 2021-04-22
+- Support for alternative resources endpoint
+
 ### [2.0.37] - 2021-04-13
 - Support M1 chips in XCFramework.
 
