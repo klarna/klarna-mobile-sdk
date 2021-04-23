@@ -26,6 +26,15 @@ import os
   @objc func klarnaHybridSDKDidHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
   @objc func klarnaHybridSDKFailed(inWebView webView: KlarnaMobileSDK.KlarnaWebView, withError error: KlarnaMobileSDK.KlarnaMobileSDKError)
 }
+@objc public enum KlarnaResourceEndpoint : Swift.Int {
+  case alternative1
+  case alternative2
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public enum KlarnaOSMEnvironment : Swift.Int {
   case demo
   case production
@@ -180,8 +189,8 @@ extension String {
     @objc set
   }
   @available(*, deprecated, message: "Use the new initializer instead.")
-  @objc convenience dynamic public init(webView: KlarnaMobileSDK.KlarnaWebView, returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridSDKEventListener)
-  @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener)
+  @objc convenience dynamic public init(webView: KlarnaMobileSDK.KlarnaWebView, returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridSDKEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @objc dynamic public func addWebView(_ webView: KlarnaMobileSDK.KlarnaWebView)
   @objc dynamic public func newPageLoad(in webView: KlarnaMobileSDK.KlarnaWebView)
   @available(*, deprecated, message: "Use the `newPageLoad` instead.")
@@ -203,9 +212,9 @@ extension String {
   @objc dynamic public var isAvalable: Swift.Bool {
     @objc get
   }
-  @objc convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener)
+  @objc convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @available(*, deprecated, message: "Use the new initializer instead.")
-  @nonobjc convenience public init(clientToken: Swift.String, category: Swift.String, returnUrl: Foundation.URL, delegate: KlarnaMobileSDK.KlarnaPaymentViewDelegate)
+  @nonobjc convenience public init(clientToken: Swift.String, category: Swift.String, returnUrl: Foundation.URL, delegate: KlarnaMobileSDK.KlarnaPaymentViewDelegate, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @objc dynamic public func initialize(clientToken: Swift.String, returnUrl: Foundation.URL)
   @objc dynamic public func load(jsonData: Swift.String? = nil)
   @objc dynamic public func loadPaymentReview()
@@ -243,7 +252,7 @@ extension String {
   @objc func klarnaFailed(inWebView webView: KlarnaMobileSDK.KlarnaWebView, withError error: KlarnaMobileSDK.KlarnaMobileSDKError)
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaOSMView : UIKit.UIView {
-  @objc dynamic public init()
+  public init(resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   public typealias RenderResult = (KlarnaMobileSDK.KlarnaMobileSDKError?) -> ()
   @objc public var clientId: Swift.String?
@@ -316,6 +325,9 @@ extension String {
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }
+extension KlarnaMobileSDK.KlarnaResourceEndpoint : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaResourceEndpoint : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaResourceEndpoint : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaOSMEnvironment : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaOSMEnvironment : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaOSMEnvironment : Swift.RawRepresentable {}
