@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		57mfDxyvdcqpktRZksXdD/4RGww=
+		WScoirraaOhv0WYEndzzGx6smjY=
 		</data>
 		<key>CardScan.storyboardc/Info.plist</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/objects-11.0+.nib</key>
 		<data>
-		+Obz+n+vT0Lyr0leLYmdAm2XtTY=
+		yoAgR4x0nGhJfK5sXT5NFWRvr7I=
 		</data>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/runtime.nib</key>
 		<data>
-		WUO/UaSWo5GD1aAFGlTo1+rTKSw=
+		4HzEOkkh/gImbyCuQRNjl+Je180=
 		</data>
 		<key>CardScan.storyboardc/scanCardViewController.nib/objects-11.0+.nib</key>
 		<data>
-		Rbzp5idNZO7PnNIJDeABOivorsk=
+		Ve7mVFR6PpUWnIFCXNumXydvnn4=
 		</data>
 		<key>CardScan.storyboardc/scanCardViewController.nib/runtime.nib</key>
 		<data>
-		uV4WYbGpq7gfwzKAqA5OSMiDplc=
+		1rGNzsMbg3OBZdRq7fjVWiBXn0A=
 		</data>
 		<key>FindFour.mlmodelc/.gitkeep</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		43kT8B6Fcd/HJKsqtrJrjzxKEdg=
+		BnHV5+a8cM3Mfx6KSfSZ4JC01tU=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -207,11 +207,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			57mfDxyvdcqpktRZksXdD/4RGww=
+			WScoirraaOhv0WYEndzzGx6smjY=
 			</data>
 			<key>hash2</key>
 			<data>
-			waCBycc5lEpiAkZkDd+Ny4RsryINgVlT62FnCuLZzjw=
+			0eAOK1kpzGSzMrOtXer/T1eAFf6pOdDgIqN5zXv7Ftg=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/Info.plist</key>
@@ -229,44 +229,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+Obz+n+vT0Lyr0leLYmdAm2XtTY=
+			yoAgR4x0nGhJfK5sXT5NFWRvr7I=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sr4eaUkEjsDwvLGB9lC5ijx1MDDqQ5k6Q371dZObK3g=
+			RgB3ecCW0X6hSbyGCNWiUOru4tSNsTuN5Qbw7muSvmo=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/RWC-EC-Zxy-view-dia-FZ-zQY.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WUO/UaSWo5GD1aAFGlTo1+rTKSw=
+			4HzEOkkh/gImbyCuQRNjl+Je180=
 			</data>
 			<key>hash2</key>
 			<data>
-			0EU6rboOoxuOpKFvYUH+YURPnYYiu+5+zxGnbeJNDcM=
+			EyyjrQiSdVSjdVMFagEbt1rF/FGIbZnwLgWBdN+i0TA=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/scanCardViewController.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Rbzp5idNZO7PnNIJDeABOivorsk=
+			Ve7mVFR6PpUWnIFCXNumXydvnn4=
 			</data>
 			<key>hash2</key>
 			<data>
-			XAmpshXvrqAoHw+Cby86NvientkivvRY5904G4IAeUE=
+			b8xWvYXRW5PWAUgHPxDc7MGblzFy7n0g9ixAqjVHVXY=
 			</data>
 		</dict>
 		<key>CardScan.storyboardc/scanCardViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uV4WYbGpq7gfwzKAqA5OSMiDplc=
+			1rGNzsMbg3OBZdRq7fjVWiBXn0A=
 			</data>
 			<key>hash2</key>
 			<data>
-			O6yK9sZOc3n7QGRad6UZaHBUNcGeOXgy0o2yP3I+Prk=
+			RmEJmu8KC/T8q/i3O7oenj2HfAiKuTk6vpQy2NXCgh4=
 			</data>
 		</dict>
 		<key>FindFour.mlmodelc/.gitkeep</key>
