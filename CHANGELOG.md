@@ -109,6 +109,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.37] - 2021-04-23
+- Support for alternative resource endpoints
+
 ### [2.0.36] - 2021-04-15
 - Fullscreen keyboard improvements.
 - Updated analytic events.
