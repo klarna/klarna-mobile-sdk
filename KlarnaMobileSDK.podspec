@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.0.38"
+    s.version      = "2.0.39"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -39,7 +39,15 @@ Pod::Spec.new do |s|
     end
     
 
-    s.default_subspec = 'xcode-12.3-fat'
+    s.subspec 'full' do |sb|
+        sb.dependency 'KlarnaMobileSDK/xcode-12.3-fat-full'
+    end
+
+    s.subspec 'basic' do |sb|
+        sb.dependency 'KlarnaMobileSDK/xcode-12.3-fat'
+    end
+
+    s.default_subspec = 'full'
 
     s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
