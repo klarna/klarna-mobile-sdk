@@ -1,10 +1,18 @@
 {
     "meta": {
-        "version": "v2.0.0-2bf107f58ec",
-        "updated": "2021-03-31T08:55:11.478Z",
+        "version": "v2.0.1-1bb3c2c7ecd",
+        "updated": "2021-04-30T12:05:21.830Z",
         "schema": "v2"
     },
     "config": {
+        "sdkVersions": {
+            "android": {
+                "versionName": "2.0.36"
+            },
+            "ios": {
+                "versionName": "2.0.36"
+            }
+        },
         "assets": [
             {
                 "name": "sdk-init-script",
