@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.41] - 2021-05-06
+- Added Objective-C initializers with default value for alternative endpoint.
+
 ### [2.0.40] - 2021-05-04
 - Fix bug for OSM with alternative resource endpoint .alternative2.
 
