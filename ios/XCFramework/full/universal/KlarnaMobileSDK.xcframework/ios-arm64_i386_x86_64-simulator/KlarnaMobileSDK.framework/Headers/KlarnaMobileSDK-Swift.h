@@ -323,7 +323,15 @@ enum KlarnaResourceEndpoint : NSInteger;
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
@@ -508,6 +516,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
+/// Initialize OSM view.
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -680,7 +690,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param delegate A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
@@ -1152,7 +1176,15 @@ enum KlarnaResourceEndpoint : NSInteger;
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
@@ -1337,6 +1369,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
+/// Initialize OSM view.
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -1509,7 +1543,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param delegate A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
@@ -1981,7 +2029,15 @@ enum KlarnaResourceEndpoint : NSInteger;
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
@@ -2166,6 +2222,8 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 /// constraints (top, left, leading, trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
+/// Initialize OSM view.
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
@@ -2338,7 +2396,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// \param delegate A listener object that will receive events from this view.
 ///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param delegate A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
