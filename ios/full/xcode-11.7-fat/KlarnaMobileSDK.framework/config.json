@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.0.1-1bb3c2c7ecd",
-        "updated": "2021-04-30T12:05:21.830Z",
+        "version": "v2.0.2-72dd32104e9",
+        "updated": "2021-05-06T10:50:09.926Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.0.36"
+                "versionName": "2.0.37"
             },
             "ios": {
-                "versionName": "2.0.36"
+                "versionName": "2.0.40"
             }
         },
         "assets": [
@@ -203,6 +203,16 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-oc.playground.klarnaservices.com",
+                            "path": "/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": ["azure"],
+                        "environments": ["playground"],
+                        "regions": ["na"],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "osm-na-2.playground.klarnaservices.com",
                             "path": "/v3/messaging"
                         }
                     }
