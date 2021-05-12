@@ -115,6 +115,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.38] - 2021-05-12
+- Support JS Bridge caching.
+- Internal optimization and improvements.
+
 ### [2.0.37] - 2021-04-23
 - Support for alternative resource endpoints
 
