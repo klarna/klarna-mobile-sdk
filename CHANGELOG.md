@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.42] - 2021-05-27
+- Fixed: WKWebView with contet offscreen when keyboard appears in iOS 13.3 or lower versions (https://bugs.webkit.org/show_bug.cgi?id=192564) 
+- Resources are stored in cache, improving the load times.
+
 ### [2.0.41] - 2021-05-06
 - Added Objective-C initializers with default value for alternative endpoint.
 

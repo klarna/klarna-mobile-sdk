@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.0.2-72dd32104e9",
-        "updated": "2021-05-06T10:50:09.926Z",
+        "version": "v2.0.3-05d24b3cab8",
+        "updated": "2021-05-27T10:39:04.486Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.0.37"
+                "versionName": "2.0.38"
             },
             "ios": {
-                "versionName": "2.0.40"
+                "versionName": "2.0.41"
             }
         },
         "assets": [
@@ -19,9 +19,19 @@
                 "urls": [
                     {
                         "isFallback": true,
-                        "alternatives": ["aws"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "x.klarnacdn.net",
@@ -29,9 +39,19 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "z.klarnacdn.net",
@@ -45,9 +65,19 @@
                 "urls": [
                     {
                         "isFallback": true,
-                        "alternatives": ["aws"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "x.klarnacdn.net",
@@ -55,9 +85,19 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "z.klarnacdn.net",
@@ -71,9 +111,19 @@
                 "urls": [
                     {
                         "isFallback": true,
-                        "alternatives": ["aws"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "x.klarnacdn.net",
@@ -81,9 +131,19 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["staging", "playground", "production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "z.klarnacdn.net",
@@ -99,9 +159,17 @@
                 "urls": [
                     {
                         "isFallback": true,
-                        "alternatives": ["aws"],
-                        "environments": ["production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "eu.klarnaevt.com",
@@ -109,9 +177,18 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["staging", "playground"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "frontend-event-router-eu.staging.c2c.klarna.net",
@@ -119,9 +196,17 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["production"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "naz.klarnaevt.com",
@@ -129,9 +214,18 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["staging", "playground"],
-                        "regions": ["eu", "na", "oc"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "naz.playground.klarnaevt.com",
@@ -147,9 +241,16 @@
                 "urls": [
                     {
                         "isFallback": true,
-                        "alternatives": ["aws"],
-                        "environments": ["production"],
-                        "regions": ["eu"],
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-eu.klarnaservices.com",
@@ -157,9 +258,16 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["production"],
-                        "regions": ["na"],
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-na.klarnaservices.com",
@@ -167,9 +275,16 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["production"],
-                        "regions": ["oc"],
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-oc.klarnaservices.com",
@@ -177,9 +292,16 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["playground"],
-                        "regions": ["eu"],
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-eu.playground.klarnaservices.com",
@@ -187,9 +309,15 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["playground"],
-                        "regions": ["na"],
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-na.playground.klarnaservices.com",
@@ -197,9 +325,16 @@
                         }
                     },
                     {
-                        "alternatives": ["aws"],
-                        "environments": ["playground"],
-                        "regions": ["oc"],
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-oc.playground.klarnaservices.com",
@@ -207,9 +342,15 @@
                         }
                     },
                     {
-                        "alternatives": ["azure"],
-                        "environments": ["playground"],
-                        "regions": ["na"],
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
                         "endpoint": {
                             "scheme": "https",
                             "host": "osm-na-2.playground.klarnaservices.com",
@@ -227,7 +368,8 @@
                 "enabled": true
             },
             "analytics": {
-                "logLevel": "info"
+                "logLevel": "info",
+                "log-level": "info"
             },
             "blacklistUrls": [
                 "file:///Users/fake-klarna*",
@@ -247,7 +389,8 @@
             "android": {
                 "makeWebViewsDebuggable": false
             },
-            "ios": {},
+            "ios": {
+            },
             "overrides": {
             }
         },
@@ -260,7 +403,8 @@
                         "value": "Hold the front of your card up to the camera"
                     }
                 ],
-                "placeholders": []
+                "placeholders": [
+                ]
             },
             {
                 "name": "paymentView.card.instructions.scanning",
@@ -270,7 +414,8 @@
                         "value": "Scanning card"
                     }
                 ],
-                "placeholders": []
+                "placeholders": [
+                ]
             },
             {
                 "name": "paymentView.card.instructions.success",
