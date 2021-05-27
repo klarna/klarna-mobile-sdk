@@ -115,6 +115,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.39] - 2021-05-25
+- Reduce singletons for less memory usage.
+- Improve internal error handling.
+
 ### [2.0.38] - 2021-05-12
 - Support JS Bridge caching.
 - Internal optimization and improvements.
