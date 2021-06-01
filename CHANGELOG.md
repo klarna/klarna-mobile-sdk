@@ -119,6 +119,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.40] - 2021-06-01
+- Permissions & WebRTC support.
+- Improved fullscreen implementation.
+
 ### [2.0.39] - 2021-05-25
 - Reduce singletons for less memory usage.
 - Improve internal error handling.
