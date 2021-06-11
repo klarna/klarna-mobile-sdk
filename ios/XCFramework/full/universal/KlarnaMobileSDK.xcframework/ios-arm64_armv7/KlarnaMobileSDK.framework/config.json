@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.0.3-05d24b3cab8",
-        "updated": "2021-05-27T10:39:04.486Z",
+        "version": "v2.0.3-4a1e1dfed73",
+        "updated": "2021-06-01T11:34:06.230Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.0.38"
+                "versionName": "2.0.40"
             },
             "ios": {
-                "versionName": "2.0.41"
+                "versionName": "2.0.42"
             }
         },
         "assets": [
@@ -390,8 +390,10 @@
                 "makeWebViewsDebuggable": false
             },
             "ios": {
+                
             },
             "overrides": {
+                
             }
         },
         "texts": [
@@ -404,6 +406,7 @@
                     }
                 ],
                 "placeholders": [
+                    
                 ]
             },
             {
@@ -415,6 +418,7 @@
                     }
                 ],
                 "placeholders": [
+                    
                 ]
             },
             {

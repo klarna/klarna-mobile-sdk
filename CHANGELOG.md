@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.43] - 2021-06-11
+- Fixed: OSM will create a temp folder where it will store the resources.
+
 ### [2.0.42] - 2021-05-27
 - Fixed: WKWebView with contet offscreen when keyboard appears in iOS 13.3 or lower versions (https://bugs.webkit.org/show_bug.cgi?id=192564) 
 - Resources are stored in cache, improving the load times.
