@@ -122,6 +122,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.43] - 2021-07-13
+- Improve transition animation to/from full screen content.
+- Added support to open Klarna App in Android API level 30.
+
 ### [2.0.42] - 2021-06-28
 - Improve internal parts using random integers and UUIDs.
 - Fix string resources with special characters.
