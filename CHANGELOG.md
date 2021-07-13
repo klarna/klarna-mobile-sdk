@@ -122,6 +122,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.42] - 2021-06-28
+- Improve internal parts using random integers and UUIDs.
+- Fix string resources with special characters.
+
 ### [2.0.41] - 2021-06-14
 - Replaced the default SDK variant to include all features just like the full variant. SDK variant supporting limited features with a smaller size will be the basic variant starting with this version.
 
