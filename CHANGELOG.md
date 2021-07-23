@@ -122,6 +122,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.0.44] - 2021-07-23
+- Change hardware requirements to be optional.
+
 ### [2.0.43] - 2021-07-13
 - Improve transition animation to/from full screen content.
 - Added support to open Klarna App in Android API level 30.
