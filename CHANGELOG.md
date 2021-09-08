@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.0.44] - 2021-09-08
+- Fixed: OSM delegate available in Objective-c.
+- Fixed: Space between lines in OSM.
+- Version control for Carthage integration.
+
 ### [2.0.43] - 2021-06-11
 - Fixed: OSM will create a temp folder where it will store the resources.
 
