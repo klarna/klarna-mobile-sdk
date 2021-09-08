@@ -232,7 +232,7 @@ extension String {
   @objc public var environment: KlarnaMobileSDK.KlarnaOSMEnvironment
   public var region: KlarnaMobileSDK.KlarnaOSMRegion?
   @objc public var theme: KlarnaMobileSDK.KlarnaOSMTheme
-  weak public var delegate: KlarnaMobileSDK.KlarnaOSMViewEventListener?
+  @objc weak public var delegate: KlarnaMobileSDK.KlarnaOSMViewEventListener?
   @objc public func setPurchaseAmount(_ amount: Foundation.NSNumber?)
   @objc public func setRegion(_ region: KlarnaMobileSDK.KlarnaOSMRegion)
   @objc public func render(callback: @escaping KlarnaMobileSDK.KlarnaOSMView.RenderResult)

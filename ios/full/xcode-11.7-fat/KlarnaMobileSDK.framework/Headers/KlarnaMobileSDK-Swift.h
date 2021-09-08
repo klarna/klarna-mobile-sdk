@@ -510,6 +510,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 
 @class NSCoder;
 @class UIViewController;
+@protocol KlarnaOSMViewEventListener;
 @class NSNumber;
 
 /// OSM Placement View
@@ -536,6 +537,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @property (nonatomic) enum KlarnaOSMEnvironment environment;
 /// Theme for the widget.
 @property (nonatomic) enum KlarnaOSMTheme theme;
+/// Event listener for OSM View.
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
 - (void)setRegion:(enum KlarnaOSMRegion)region;
 /// Called after the above properties are set. Renders the content in the
@@ -1382,6 +1385,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 
 @class NSCoder;
 @class UIViewController;
+@protocol KlarnaOSMViewEventListener;
 @class NSNumber;
 
 /// OSM Placement View
@@ -1408,6 +1412,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @property (nonatomic) enum KlarnaOSMEnvironment environment;
 /// Theme for the widget.
 @property (nonatomic) enum KlarnaOSMTheme theme;
+/// Event listener for OSM View.
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
 - (void)setRegion:(enum KlarnaOSMRegion)region;
 /// Called after the above properties are set. Renders the content in the
@@ -2258,6 +2264,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 
 @class NSCoder;
 @class UIViewController;
+@protocol KlarnaOSMViewEventListener;
 @class NSNumber;
 
 /// OSM Placement View
@@ -2284,6 +2291,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @property (nonatomic) enum KlarnaOSMEnvironment environment;
 /// Theme for the widget.
 @property (nonatomic) enum KlarnaOSMTheme theme;
+/// Event listener for OSM View.
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
 - (void)setRegion:(enum KlarnaOSMRegion)region;
 /// Called after the above properties are set. Renders the content in the
@@ -3130,6 +3139,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
 
 @class NSCoder;
 @class UIViewController;
+@protocol KlarnaOSMViewEventListener;
 @class NSNumber;
 
 /// OSM Placement View
@@ -3156,6 +3166,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @property (nonatomic) enum KlarnaOSMEnvironment environment;
 /// Theme for the widget.
 @property (nonatomic) enum KlarnaOSMTheme theme;
+/// Event listener for OSM View.
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
 - (void)setRegion:(enum KlarnaOSMRegion)region;
 /// Called after the above properties are set. Renders the content in the
