@@ -127,6 +127,12 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.0] - 2021-11-12
+- Improved support for 3DSecure flows in new markets
+- Added "returnURL" parameter to the KlarnaPaymentView constructor
+- Deprecated KlarnaHybridSDKCallback and added separate callbacks for events and fullscreen transitions
+- Internal optimization and improvements
+
 ### [2.0.44] - 2021-07-23
 - Change hardware requirements to be optional.
 
