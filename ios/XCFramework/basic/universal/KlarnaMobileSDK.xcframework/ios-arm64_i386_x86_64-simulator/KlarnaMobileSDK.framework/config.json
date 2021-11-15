@@ -1,7 +1,7 @@
 {
     "meta": {
-        "version": "v2.0.3-fa6dc365d7f",
-        "updated": "2021-07-27T09:20:09.881Z",
+        "version": "v2.0.3-246931f8db2",
+        "updated": "2021-09-21T13:47:55.189Z",
         "schema": "v2"
     },
     "config": {
@@ -10,7 +10,7 @@
                 "versionName": "2.0.44"
             },
             "ios": {
-                "versionName": "2.0.43"
+                "versionName": "2.0.44"
             }
         },
         "assets": [

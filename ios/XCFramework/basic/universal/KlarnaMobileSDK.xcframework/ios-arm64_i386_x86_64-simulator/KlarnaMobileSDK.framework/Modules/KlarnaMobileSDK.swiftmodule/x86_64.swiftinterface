@@ -1,8 +1,11 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KlarnaMobileSDK
+import AVFoundation
 import AVKit
+import Accelerate
 import CommonCrypto
+import CoreML
 import Foundation
 import JavaScriptCore
 @_exported import KlarnaMobileSDK
@@ -10,10 +13,14 @@ import ObjectiveC
 import SafariServices
 import Swift
 import UIKit
+import VideoToolbox
+import Vision
 import WebKit
+import _Concurrency
+import os.log
 import os
 @available(*, deprecated, message: "Use KlarnaHybridEventListener instead.")
-@objc public protocol KlarnaHybridSDKEventListener : AnyObject {
+@objc public protocol KlarnaHybridSDKEventListener {
   @objc func klarnaHybridSDKWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
   @objc func klarnaHybridSDKDidShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
   @objc func klarnaHybridSDKWillHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
@@ -23,33 +30,116 @@ import os
 @objc public enum KlarnaResourceEndpoint : Swift.Int {
   case alternative1
   case alternative2
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc public protocol KlarnaEventListener {
+  @objc func klarnaComponent(_ view: KlarnaMobileSDK.KlarnaComponent, didReceiveEvent event: Swift.String, params: [Swift.String : Any])
+  @objc func klarnaComponent(_ view: KlarnaMobileSDK.KlarnaComponent, didReceiveError error: KlarnaMobileSDK.KlarnaMobileSDKError)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutSDK {
+  @objc convenience dynamic public init(returnURL: Foundation.URL)
+  @objc convenience dynamic public init(returnURL: Foundation.URL, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutSDK {
+  @objc dynamic public var checkoutViewController: KlarnaMobileSDK.KlarnaCheckoutViewController {
+    @objc get
+  }
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutSDK : KlarnaMobileSDK.KlarnaCheckoutAPI {
+  @objc dynamic public var checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions? {
+    @objc get
+  }
+  @objc dynamic public var klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener? {
+    @objc get
+    @objc set
+  }
+  @objc dynamic public func suspend()
+  @objc dynamic public func resume()
+  @objc dynamic public func setSnippet(_ str: Swift.String?)
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutViewControllerDebug : KlarnaMobileSDK.KlarnaCheckoutViewController {
+  @nonobjc @_Concurrency.MainActor(unsafe) public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func loadUrl(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func evaluateJS(_ script: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCookies()
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCache()
+  @_Concurrency.MainActor(unsafe) public func setInitScriptURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func setMessageBridgeURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc deinit
+}
+@objc public protocol KlarneCheckoutSizeDelegate {
+  @objc func klarnaCheckoutComponent(_ checkoutComponent: KlarnaMobileSDK.KlarnaCheckoutScrollAPI, didResize size: CoreGraphics.CGSize)
 }
 @objc public enum KlarnaOSMEnvironment : Swift.Int {
   case demo
   case production
   case playground
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
+}
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class ScanBaseViewController : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
+  @objc @_Concurrency.MainActor(unsafe) open func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
+  @objc @_Concurrency.MainActor(unsafe) open func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
+  @objc @_Concurrency.MainActor(unsafe) open func onCameraPermissionDenied(showedPrompt: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) open func useCurrentFrameNumber(errorCorrectedNumber: Swift.String?, currentFrameNumber: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
+  @available(iOS 11.2, *)
+  @_Concurrency.MainActor(unsafe) open func blockingMlModel(fullCardImage: CoreGraphics.CGImage, roiRectangle: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol KlarnaFullscreenEventListener {
+  @objc func klarnaWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
+  @objc func klarnaDidShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
+  @objc func klarnaWillHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
+  @objc func klarnaDidHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaMobileSDKCommon : ObjectiveC.NSObject {
   @objc public static func setLoggingLevel(_ loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel)
   @objc public static func deviceIdentifier() -> Swift.String
   @objc deinit
 }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutViewDebug : KlarnaMobileSDK.KlarnaCheckoutView {
+  @nonobjc @_Concurrency.MainActor(unsafe) public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public func loadUrl(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func evaluateJS(_ script: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCookies()
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCache()
+  @_Concurrency.MainActor(unsafe) public func setInitScriptURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func setMessageBridgeURL(_ url: Foundation.URL)
+  @objc deinit
+}
 @objc public enum KlarnaOSMRegion : Swift.Int {
   case eu
   case na
   case oc
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -61,15 +151,15 @@ import os
 }
 @available(*, deprecated, message: "Deprecated for the same class without an 's'.")
 public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
-extension UIFont {
+extension UIKit.UIFont {
   public static func loadFonts()
 }
 @objc public enum KlarnaLoggingLevel : Swift.Int {
   case off = 0
   case error = 1
   case verbose = 2
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -78,20 +168,27 @@ extension UIFont {
   @objc final public let bodyString: Swift.String?
   required public init(from dictionary: [Swift.String : Swift.String])
   @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutView : UIKit.UIView, KlarnaMobileSDK.KlarnaComponent {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class KlarnaPaymentOptions : ObjectiveC.NSObject {
+  public var initData: Swift.String?
   @objc override dynamic public init()
+  @objc deinit
 }
 @objc public enum KlarnaOSMTheme : Swift.Int {
   case dark
   case light
   case automatic
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
 public typealias KlarnaPaymentAction = Swift.String
-extension String {
+extension Swift.String {
   public static let initialize: Swift.String
   public static let load: Swift.String
   public static let loadPaymentReview: Swift.String
@@ -103,8 +200,8 @@ extension String {
   case log = 0
   case network = 1
   case message = 2
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -113,26 +210,30 @@ extension String {
   final public let type: KlarnaMobileSDK.KlarnaDebugEventType
   final public let title: Swift.String
   final public let content: Swift.String
-  @objc override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaPaymentViewDebug : KlarnaMobileSDK.KlarnaPaymentView {
-  public func setPaymentsLibraryLibUrl(_ url: Swift.String)
-  public func setPaymentsLibraryAppVersion(_ version: Swift.String)
-  public func setPaymentsLibraryLibVersion(_ version: Swift.String)
-  public func setPaymentsWrapperURL(_ url: Foundation.URL)
-  public func setInitScriptURL(_ url: Foundation.URL)
-  public func setMessageBridgeURL(_ url: Foundation.URL)
-  public func clearWebViewCookies()
-  public func clearWebViewCache()
-  public func loadUrl(_ url: Foundation.URL)
-  public func evaluateJS(_ script: Swift.String)
-  @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutViewController : UIKit.UIViewController, KlarnaMobileSDK.KlarnaComponent {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaPaymentViewDebug : KlarnaMobileSDK.KlarnaPaymentView {
+  @_Concurrency.MainActor(unsafe) public func setPaymentsLibraryLibUrl(_ url: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func setPaymentsLibraryAppVersion(_ version: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func setPaymentsLibraryLibVersion(_ version: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func setPaymentsWrapperURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func setInitScriptURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func setMessageBridgeURL(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCookies()
+  @_Concurrency.MainActor(unsafe) public func clearWebViewCache()
+  @_Concurrency.MainActor(unsafe) public func loadUrl(_ url: Foundation.URL)
+  @_Concurrency.MainActor(unsafe) public func evaluateJS(_ script: Swift.String)
+  @nonobjc @_Concurrency.MainActor(unsafe) public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDK : ObjectiveC.NSObject {
   @objc deinit
-  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers @objc public class KlarnaMobileSDKError : ObjectiveC.NSObject, Swift.Error {
   @objc final public let name: Swift.String
@@ -141,23 +242,44 @@ extension String {
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class KlarnaProductOptions : ObjectiveC.NSObject {
+  final public let paymentOptions: KlarnaMobileSDK.KlarnaPaymentOptions
+  final public let checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public protocol KlarnaOSMViewEventListener : AnyObject {
+@objc public protocol KlarnaOSMViewEventListener {
   @objc func klarnaOSMViewResized(_ height: CoreGraphics.CGFloat)
 }
-@objc extension NSObject {
+@objc public protocol KlarnaCheckoutAPI {
+  @objc var checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions? { get }
+  @objc var klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener? { get set }
+  @objc func suspend()
+  @objc func resume()
+  @objc func setSnippet(_ str: Swift.String?)
 }
-@objc extension KlarnaHybridSDK {
-  @objc dynamic public var klarnaInitData: Swift.String? {
+@_hasMissingDesignatedInitializers @objc public class KlarnaCheckoutSDK : ObjectiveC.NSObject, KlarnaMobileSDK.KlarnaComponent {
+  @objc deinit
+}
+@objc extension KlarnaMobileSDK.KlarnaHybridSDK {
+  @objc @available(*, deprecated, message: "This has been replaced with KlarnaProductOptions to accommodate more options.")
+  dynamic public var klarnaInitData: Swift.String? {
     @objc get
     @objc set
   }
+  @objc dynamic public var productOptions: KlarnaMobileSDK.KlarnaProductOptions {
+    @objc get
+  }
   @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(webView: KlarnaMobileSDK.KlarnaWebView, returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridSDKEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @available(*, deprecated, message: "Use the new initializer instead.")
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener)
-  @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener)
   @objc dynamic public func addWebView(_ webView: KlarnaMobileSDK.KlarnaWebView)
   @objc dynamic public func newPageLoad(in webView: KlarnaMobileSDK.KlarnaWebView)
   @available(*, deprecated, message: "Use the `newPageLoad` instead.")
@@ -167,28 +289,46 @@ extension String {
   @objc public static func deviceIdentifier() -> Swift.String
   @available(*, deprecated, message: "SDK does not need this to be called anymore. Will be removed in future releases.")
   @objc public static func handleDeeplink(withUrl url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any])
+  @available(*, deprecated, message: "Replaced with KlarnaEventListener in the constructor.")
   @objc dynamic public func registerEventListener(withCallback callback: @escaping (KlarnaMobileSDK.KlarnaEvent) -> ())
+  @objc dynamic public var fullscreenEventListener: KlarnaMobileSDK.KlarnaFullscreenEventListener? {
+    @objc get
+    @objc set
+  }
 }
-@objc extension KlarnaPaymentView {
-  @objc dynamic public var category: Swift.String {
+@objc public protocol KlarnaCheckoutScrollAPI {
+  @objc var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? { get set }
+  @objc var internalScrollDisabled: Swift.Bool { get set }
+  @objc var adjustsParentScrollViewInsets: Swift.Bool { get set }
+  @objc var parentScrollView: UIKit.UIScrollView? { get set }
+}
+@objc extension KlarnaMobileSDK.KlarnaPaymentView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var category: Swift.String {
     @objc get
   }
-  @objc dynamic public var isLoaded: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isLoaded: Swift.Bool {
     @objc get
   }
-  @objc dynamic public var isAvalable: Swift.Bool {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isAvalable: Swift.Bool {
     @objc get
   }
-  @objc convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener)
-  @objc convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var productOptions: KlarnaMobileSDK.KlarnaProductOptions {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
   @available(*, deprecated, message: "Use the new initializer instead.")
-  @nonobjc convenience public init(clientToken: Swift.String, category: Swift.String, returnUrl: Foundation.URL, delegate: KlarnaMobileSDK.KlarnaPaymentViewDelegate, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
-  @objc dynamic public func initialize(clientToken: Swift.String, returnUrl: Foundation.URL)
-  @objc dynamic public func load(jsonData: Swift.String? = nil)
-  @objc dynamic public func loadPaymentReview()
-  @objc dynamic public func authorize(autoFinalize: Swift.Bool = true, jsonData: Swift.String? = nil)
-  @objc dynamic public func reauthorize(jsonData: Swift.String? = nil)
-  @objc dynamic public func finalise(jsonData: Swift.String? = nil)
+  @nonobjc @_Concurrency.MainActor(unsafe) convenience public init(clientToken: Swift.String, category: Swift.String, returnUrl: Foundation.URL, delegate: KlarnaMobileSDK.KlarnaPaymentViewDelegate, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func initialize(clientToken: Swift.String, returnUrl: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func initialize(clientToken: Swift.String)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func load(jsonData: Swift.String? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func loadPaymentReview()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func authorize(autoFinalize: Swift.Bool = true, jsonData: Swift.String? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func reauthorize(jsonData: Swift.String? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func finalise(jsonData: Swift.String? = nil)
 }
 @available(*, deprecated, message: "Use KlarnaPaymentViewEventListener instead.")
 public protocol KlarnaPaymentViewDelegate : AnyObject {
@@ -201,7 +341,49 @@ public protocol KlarnaPaymentViewDelegate : AnyObject {
   func klarnaPaymentView(_ paymentView: KlarnaMobileSDK.KlarnaPaymentView, resizedToHeight height: CoreGraphics.CGFloat)
   func klarnaPaymentView(_ paymentView: KlarnaMobileSDK.KlarnaPaymentView, failedWithError error: KlarnaMobileSDK.KlarnaPaymentsError)
 }
-extension String {
+public enum KlarnaCheckoutSignals {
+  public static let Notification: Swift.String
+  public static let Name: Swift.String
+  public static let Data: Swift.String
+  public static let Message: Swift.String
+}
+@objc public protocol KlarnaComponent {
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutViewController {
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutViewController : KlarnaMobileSDK.KlarnaCheckoutAPI {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func suspend()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func resume()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func setSnippet(_ str: Swift.String?)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutViewController : KlarnaMobileSDK.KlarnaCheckoutScrollAPI {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var adjustsParentScrollViewInsets: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var parentScrollView: UIKit.UIScrollView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var internalScrollDisabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+extension Swift.String {
   public static let KlarnaOSMErrorMissingClientId: Swift.String
   public static let KlarnaOSMErrorMissingPlacementKey: Swift.String
   public static let KlarnaOSMErrorInvalidLocale: Swift.String
@@ -212,40 +394,111 @@ extension String {
   public static let KlarnaOSMErrorPlacementError: Swift.String
   public static let KlarnaOSMErrorNoContent: Swift.String
 }
-@objc public protocol KlarnaHybridEventListener : AnyObject {
-  @objc func klarnaWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
-  @objc func klarnaDidShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
-  @objc func klarnaWillHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
-  @objc func klarnaDidHideFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
+@available(*, deprecated, message: "Use KlarnaEventListener and KlarnaFullscreenEventListener instead.")
+@objc public protocol KlarnaHybridEventListener : KlarnaMobileSDK.KlarnaFullscreenEventListener {
   @objc func klarnaFailed(inWebView webView: KlarnaMobileSDK.KlarnaWebView, withError error: KlarnaMobileSDK.KlarnaMobileSDKError)
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaOSMView : UIKit.UIView {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaCheckoutSDKDebug : KlarnaMobileSDK.KlarnaCheckoutSDK {
+  @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
+  public func loadUrl(_ url: Foundation.URL)
+  public func evaluateJS(_ script: Swift.String)
+  public func clearWebViewCookies()
+  public func clearWebViewCache()
+  public func setInitScriptURL(_ url: Foundation.URL)
+  public func setMessageBridgeURL(_ url: Foundation.URL)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaOSMView : UIKit.UIView {
   @objc dynamic public init()
-  public init(resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  public typealias RenderResult = (KlarnaMobileSDK.KlarnaMobileSDKError?) -> ()
-  @objc public var clientId: Swift.String?
-  @objc public var placementKey: Swift.String?
-  @objc public var locale: Swift.String
-  public var purchaseAmount: Swift.Int?
-  @objc weak public var hostViewController: UIKit.UIViewController?
-  @objc public var environment: KlarnaMobileSDK.KlarnaOSMEnvironment
-  public var region: KlarnaMobileSDK.KlarnaOSMRegion?
-  @objc public var theme: KlarnaMobileSDK.KlarnaOSMTheme
-  @objc weak public var delegate: KlarnaMobileSDK.KlarnaOSMViewEventListener?
-  @objc public func setPurchaseAmount(_ amount: Foundation.NSNumber?)
-  @objc public func setRegion(_ region: KlarnaMobileSDK.KlarnaOSMRegion)
-  @objc public func render(callback: @escaping KlarnaMobileSDK.KlarnaOSMView.RenderResult)
+  @_Concurrency.MainActor(unsafe) public init(resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  public typealias RenderResult = (_ error: KlarnaMobileSDK.KlarnaMobileSDKError?) -> ()
+  @objc @_Concurrency.MainActor(unsafe) public var clientId: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var placementKey: Swift.String?
+  @objc @_Concurrency.MainActor(unsafe) public var locale: Swift.String
+  @_Concurrency.MainActor(unsafe) public var purchaseAmount: Swift.Int?
+  @objc @_Concurrency.MainActor(unsafe) weak public var hostViewController: UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) public var environment: KlarnaMobileSDK.KlarnaOSMEnvironment
+  @_Concurrency.MainActor(unsafe) public var region: KlarnaMobileSDK.KlarnaOSMRegion?
+  @objc @_Concurrency.MainActor(unsafe) public var theme: KlarnaMobileSDK.KlarnaOSMTheme
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: KlarnaMobileSDK.KlarnaOSMViewEventListener?
+  @objc @_Concurrency.MainActor(unsafe) public func setPurchaseAmount(_ amount: Foundation.NSNumber?)
+  @objc @_Concurrency.MainActor(unsafe) public func setRegion(_ region: KlarnaMobileSDK.KlarnaOSMRegion)
+  @objc @_Concurrency.MainActor(unsafe) public func render(callback: @escaping KlarnaMobileSDK.KlarnaOSMView.RenderResult)
   @objc deinit
 }
 public typealias KlarnaPaymentMethodCategory = Swift.String
-extension String {
+extension Swift.String {
   public static let PayNow: Swift.String
   public static let PayLater: Swift.String
   public static let SliceIt: Swift.String
   public static let PayInParts: Swift.String
 }
-@objc public protocol KlarnaPaymentEventListener : AnyObject {
+@objc extension KlarnaMobileSDK.KlarnaCheckoutView {
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutView : KlarnaMobileSDK.KlarnaCheckoutAPI {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func suspend()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func resume()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func setSnippet(_ str: Swift.String?)
+}
+@objc extension KlarnaMobileSDK.KlarnaCheckoutView : KlarnaMobileSDK.KlarnaCheckoutScrollAPI {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var internalScrollDisabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var adjustsParentScrollViewInsets: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var parentScrollView: UIKit.UIScrollView? {
+    @objc get
+    @objc set
+  }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class UIDotLoadingIndicator : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsCount: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsSpacing: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var tintColor: UIKit.UIColor! {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) final public func startAnimating()
+  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class KlarnaCheckoutOptions : ObjectiveC.NSObject {
+  public var merchantHandlesEPM: Swift.Bool
+  public var merchantHandlesValidationErrors: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol KlarnaPaymentEventListener {
   @objc func klarnaInitialized(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
   @objc func klarnaLoaded(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
   @objc func klarnaLoadedPaymentReview(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
@@ -255,11 +508,11 @@ extension String {
   @objc func klarnaResized(paymentView: KlarnaMobileSDK.KlarnaPaymentView, to newHeight: CoreGraphics.CGFloat)
   @objc func klarnaFailed(inPaymentView paymentView: KlarnaMobileSDK.KlarnaPaymentView, withError error: KlarnaMobileSDK.KlarnaPaymentError)
 }
-@objc public protocol KlarnaWebView : AnyObject {
+@objc public protocol KlarnaWebView : KlarnaMobileSDK.KlarnaComponent {
 }
-@objc extension WKWebView : KlarnaMobileSDK.KlarnaWebView {
+@objc extension WebKit.WKWebView : KlarnaMobileSDK.KlarnaWebView {
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaPaymentView : UIKit.UIView {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaPaymentView : UIKit.UIView {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDKDebug : KlarnaMobileSDK.KlarnaHybridSDK {
