@@ -4,6 +4,12 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.1.0] - 2021-11-15
+- Improved support for 3DSecure flows in new markets.
+- Added "returnUrl" to the `KlarnaPaymentView` constructor parameters.
+- Deprecated `KlarnaHybridSDKEventListener` and added separate callbacks for events and fullscreen transitions.
+- Internal optimization and improvements.
+
 ### [2.0.44] - 2021-09-08
 - Fixed: OSM delegate available in Objective-c.
 - Fixed: Space between lines in OSM.
