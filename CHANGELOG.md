@@ -133,6 +133,12 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.0] - 2021-11-12
+- Improved support for 3DSecure flows in new markets.
+- Added "returnURL" to the `KlarnaPaymentView` constructor parameters. [Read more.](https://docs.klarna.com/in-app/inapp-android-overview/klarna-payments-native/)
+- Deprecated `KlarnaHybridSDKCallback` and added separate callbacks for events and fullscreen transitions. [Read more.](https://docs.klarna.com/in-app/inapp-android-overview/hybrid/)
+- Internal optimization and improvements.
+
 ### [2.0.44] - 2021-07-23
 - Change hardware requirements to be optional.
 
