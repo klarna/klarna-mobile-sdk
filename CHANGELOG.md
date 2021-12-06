@@ -133,6 +133,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.1] - 2021-12-03
+- Fixed an issue while creating an instance of the SDK in background thread.
+
 ### [2.1.0] - 2021-11-12
 - Improved support for 3DSecure flows in new markets.
 - Added "returnURL" to the `KlarnaPaymentView` constructor parameters. [Read more.](https://docs.klarna.com/in-app/inapp-android-overview/klarna-payments-native/)
