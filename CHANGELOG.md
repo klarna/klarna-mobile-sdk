@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.1.1] - 2021-12-13
+- Fix Fullscreen timeout animation for iOS 15.
+
 ### [2.1.0] - 2021-11-15
 - Improved support for 3DSecure flows in new markets.
 - Added "returnUrl" to the `KlarnaPaymentView` constructor parameters.
