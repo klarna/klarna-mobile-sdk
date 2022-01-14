@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.1.2] - 2022-01-14
+- Added support for opening PDF files.
+- Fix margin error when the keyboard appears in fullscreen.
+- Added listener to open BankID on internal Webview.
+
 ### [2.1.1] - 2021-12-13
 - Fix Fullscreen timeout animation for iOS 15.
 
