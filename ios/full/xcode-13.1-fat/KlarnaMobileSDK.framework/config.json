@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.0.3-246931f8db2",
-        "updated": "2021-09-21T13:47:55.189Z",
+        "version": "v2.0.4-81d21128f6b",
+        "updated": "2021-12-16T14:14:47.719Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.0.44"
+                "versionName": "2.1.1"
             },
             "ios": {
-                "versionName": "2.0.44"
+                "versionName": "2.1.0"
             }
         },
         "assets": [
@@ -148,6 +148,52 @@
                             "scheme": "https",
                             "host": "z.klarnacdn.net",
                             "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "postpurchase-wrapper",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.klarnacdn.net",
+                            "path": "/mobile-sdk/klarna-mobile-sdk-postpurchase-wrapper/v1/index.html"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "z.klarnacdn.net",
+                            "path": "/mobile-sdk/klarna-mobile-sdk-postpurchase-wrapper/v1/index.html"
                         }
                     }
                 ]
