@@ -144,6 +144,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.2] - 2022-01-18
+- Fixed an issue caused by render process crash in WebViews.
+
 ### [2.1.1] - 2021-12-03
 - Fixed an issue while creating an instance of the SDK in background thread.
 
