@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.1.4] - 2022-02-09
+- Internal browser now support universal links.
+- Fixed margins when the keyboard appears in Separate Fullscreen.
+- Fixed some memory leaks.
+
 ### [2.1.3] - 2022-01-17
 - Fixed keyboard crash introduced in 2.1.2.
 
