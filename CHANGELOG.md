@@ -149,6 +149,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.3] - 2022-01-24
+- Fixed an issue with opening external apps from internal browser.
+
 ### [2.1.2] - 2022-01-18
 - Fixed an issue caused by render process crash in WebViews.
 
