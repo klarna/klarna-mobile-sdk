@@ -149,6 +149,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.4] - 2022-02-10
+- Updated consumer proguard rules to prevent detected obfuscation issues.
+
 ### [2.1.3] - 2022-01-24
 - Fixed an issue with opening external apps from internal browser.
 
