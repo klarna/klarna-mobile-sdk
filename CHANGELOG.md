@@ -149,6 +149,11 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.5] - 2022-02-11
+- Updated application lifecycle implementation.
+- Disabled some proguard optimizations.
+- Changed proguard rules to apply obfuscation in consumer builds for some core parts.
+
 ### [2.1.4] - 2022-02-10
 - Updated consumer proguard rules to prevent detected obfuscation issues.
 
