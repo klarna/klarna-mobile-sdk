@@ -150,6 +150,7 @@ Future releases will be documented in this section.
 ## Android
 
 ### [2.1.6] - 2022-03-23
+- Added support for "One Klarna" payment flow.
 - Minor bug fixes and improvements.
 
 ### [2.1.5] - 2022-02-11
