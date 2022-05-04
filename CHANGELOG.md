@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.1.6] - 2022-05-04
+- Added support for opening SFSafariViewController.
+
 ### [2.1.5] - 2022-03-23
 - Improved fullscreen performance for One Klarna.
 
