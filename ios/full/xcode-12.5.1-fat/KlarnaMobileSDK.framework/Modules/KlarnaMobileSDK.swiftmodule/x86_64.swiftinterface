@@ -170,6 +170,7 @@ extension UIFont {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaCheckoutView : UIKit.UIView, KlarnaMobileSDK.KlarnaComponent {
+  @objc override dynamic public func didMoveToWindow()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KlarnaPaymentOptions : ObjectiveC.NSObject {
@@ -519,6 +520,7 @@ extension String {
 @objc extension WKWebView : KlarnaMobileSDK.KlarnaWebView {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaPaymentView : UIKit.UIView {
+  @objc override dynamic public func didMoveToWindow()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDKDebug : KlarnaMobileSDK.KlarnaHybridSDK {

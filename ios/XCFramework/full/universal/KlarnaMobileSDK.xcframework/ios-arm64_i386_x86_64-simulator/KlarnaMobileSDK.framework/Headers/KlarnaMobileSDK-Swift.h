@@ -324,6 +324,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
@@ -925,6 +926,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
@@ -1487,6 +1489,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
@@ -2088,6 +2091,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
@@ -2650,6 +2654,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
@@ -3251,6 +3256,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (void)didMoveToWindow;
 @end
 
 
