@@ -155,6 +155,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.1.8] - 2022-06-02
+- Added checks for WebView availability on the device.
+- Allow verbose logs in debug mode.
+
 ### [2.1.7] - 2022-05-04
 - Added support for opening Custom Tabs.
 
