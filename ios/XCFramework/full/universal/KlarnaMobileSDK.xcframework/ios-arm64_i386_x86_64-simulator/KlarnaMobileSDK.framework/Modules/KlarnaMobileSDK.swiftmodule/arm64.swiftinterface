@@ -170,6 +170,7 @@ extension UIKit.UIFont {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutView : UIKit.UIView, KlarnaMobileSDK.KlarnaComponent {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KlarnaPaymentOptions : ObjectiveC.NSObject {
@@ -513,6 +514,7 @@ extension Swift.String {
 @objc extension WebKit.WKWebView : KlarnaMobileSDK.KlarnaWebView {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaPaymentView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDKDebug : KlarnaMobileSDK.KlarnaHybridSDK {
