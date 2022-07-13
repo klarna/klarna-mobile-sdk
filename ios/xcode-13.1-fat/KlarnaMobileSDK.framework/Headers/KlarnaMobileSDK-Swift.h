@@ -251,16 +251,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
 @class NSURL;
 enum KlarnaResourceEndpoint : NSInteger;
 
@@ -283,6 +273,16 @@ enum KlarnaResourceEndpoint : NSInteger;
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+@end
+
+@class KlarnaCheckoutViewController;
+
+@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Klarna Checkout View Controller
+/// note:
+///
+/// This view controller needs to be presented by the app itself once the checkout is initialized.
+@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
 @end
 
 
@@ -1080,6 +1080,92 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @end
 
 
+/// An SDK error specific to the Klarna Post Purchase native component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
+@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@property (nonatomic, readonly, copy) NSString * _Nullable status;
+@end
+
+@class KlarnaPostPurchaseSDK;
+enum KlarnaPostPurchaseRenderResult : NSInteger;
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaPostPurchaseEventListener_")
+@protocol KlarnaPostPurchaseEventListener
+- (void)onAuthorizeRequestedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onInitializedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onRenderedOperationWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK result:(enum KlarnaPostPurchaseRenderResult)result;
+- (void)onErrorWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK error:(KlarnaPostPurchaseError * _Nonnull)error;
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
+  KlarnaPostPurchaseRenderResultNoStateChange = 1,
+  KlarnaPostPurchaseRenderResultStateChange = 2,
+};
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
+@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+///
+/// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
+///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Initializes the Post Purchase Instance.
+/// After creating the Post Purchase SDK instance this is the next method to call.
+/// It will initialize the instance properties and assets required
+/// \param locale 
+///
+/// \param purchaseCountry Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param design 
+///
+- (void)initializeWithLocale:(NSString * _Nonnull)locale purchaseCountry:(NSString * _Nonnull)purchaseCountry design:(NSString * _Nullable)design;
+/// Authorize the Post Purchase Instance.
+/// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
+/// important:
+/// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
+/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// Render the Post Purchase flow.
+/// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
+/// \param operationToken Token received from Klarna after the auth code exchange
+///
+/// \param locale 
+///
+/// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+/// Replace the listener passed on initialization of the Post Purchase SDK
+/// This method replaces the listener passed during initialization of the Post Purchase SDK.
+/// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
+/// important:
+/// There can be one delegate assigned for each Post Purchase SDK instance
+/// \param listener The object that receives events of the Post Purchase SDK.
+///
+- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
+/// This method removes the listener assigned to the Post Purchase SDK.
+/// important:
+/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
+- (void)removeEventListener;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1103,6 +1189,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
 @end
 
 
+
+
+/// An SDK model specific to the Klarna Post Purchase component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
+@interface PostPurchaseAuthRequest : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @class UIImage;
 @class AVCaptureOutput;
@@ -1416,16 +1510,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
 @class NSURL;
 enum KlarnaResourceEndpoint : NSInteger;
 
@@ -1448,6 +1532,16 @@ enum KlarnaResourceEndpoint : NSInteger;
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+@end
+
+@class KlarnaCheckoutViewController;
+
+@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Klarna Checkout View Controller
+/// note:
+///
+/// This view controller needs to be presented by the app itself once the checkout is initialized.
+@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
 @end
 
 
@@ -2245,6 +2339,92 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @end
 
 
+/// An SDK error specific to the Klarna Post Purchase native component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
+@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@property (nonatomic, readonly, copy) NSString * _Nullable status;
+@end
+
+@class KlarnaPostPurchaseSDK;
+enum KlarnaPostPurchaseRenderResult : NSInteger;
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaPostPurchaseEventListener_")
+@protocol KlarnaPostPurchaseEventListener
+- (void)onAuthorizeRequestedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onInitializedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onRenderedOperationWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK result:(enum KlarnaPostPurchaseRenderResult)result;
+- (void)onErrorWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK error:(KlarnaPostPurchaseError * _Nonnull)error;
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
+  KlarnaPostPurchaseRenderResultNoStateChange = 1,
+  KlarnaPostPurchaseRenderResultStateChange = 2,
+};
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
+@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+///
+/// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
+///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Initializes the Post Purchase Instance.
+/// After creating the Post Purchase SDK instance this is the next method to call.
+/// It will initialize the instance properties and assets required
+/// \param locale 
+///
+/// \param purchaseCountry Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param design 
+///
+- (void)initializeWithLocale:(NSString * _Nonnull)locale purchaseCountry:(NSString * _Nonnull)purchaseCountry design:(NSString * _Nullable)design;
+/// Authorize the Post Purchase Instance.
+/// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
+/// important:
+/// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
+/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// Render the Post Purchase flow.
+/// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
+/// \param operationToken Token received from Klarna after the auth code exchange
+///
+/// \param locale 
+///
+/// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+/// Replace the listener passed on initialization of the Post Purchase SDK
+/// This method replaces the listener passed during initialization of the Post Purchase SDK.
+/// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
+/// important:
+/// There can be one delegate assigned for each Post Purchase SDK instance
+/// \param listener The object that receives events of the Post Purchase SDK.
+///
+- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
+/// This method removes the listener assigned to the Post Purchase SDK.
+/// important:
+/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
+- (void)removeEventListener;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2268,6 +2448,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
 @end
 
 
+
+
+/// An SDK model specific to the Klarna Post Purchase component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
+@interface PostPurchaseAuthRequest : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @class UIImage;
 @class AVCaptureOutput;
@@ -2585,16 +2773,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
 @class NSURL;
 enum KlarnaResourceEndpoint : NSInteger;
 
@@ -2617,6 +2795,16 @@ enum KlarnaResourceEndpoint : NSInteger;
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+@end
+
+@class KlarnaCheckoutViewController;
+
+@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Klarna Checkout View Controller
+/// note:
+///
+/// This view controller needs to be presented by the app itself once the checkout is initialized.
+@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
 @end
 
 
@@ -3414,6 +3602,92 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @end
 
 
+/// An SDK error specific to the Klarna Post Purchase native component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
+@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@property (nonatomic, readonly, copy) NSString * _Nullable status;
+@end
+
+@class KlarnaPostPurchaseSDK;
+enum KlarnaPostPurchaseRenderResult : NSInteger;
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaPostPurchaseEventListener_")
+@protocol KlarnaPostPurchaseEventListener
+- (void)onAuthorizeRequestedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onInitializedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onRenderedOperationWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK result:(enum KlarnaPostPurchaseRenderResult)result;
+- (void)onErrorWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK error:(KlarnaPostPurchaseError * _Nonnull)error;
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
+  KlarnaPostPurchaseRenderResultNoStateChange = 1,
+  KlarnaPostPurchaseRenderResultStateChange = 2,
+};
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
+@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+///
+/// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
+///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Initializes the Post Purchase Instance.
+/// After creating the Post Purchase SDK instance this is the next method to call.
+/// It will initialize the instance properties and assets required
+/// \param locale 
+///
+/// \param purchaseCountry Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param design 
+///
+- (void)initializeWithLocale:(NSString * _Nonnull)locale purchaseCountry:(NSString * _Nonnull)purchaseCountry design:(NSString * _Nullable)design;
+/// Authorize the Post Purchase Instance.
+/// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
+/// important:
+/// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
+/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// Render the Post Purchase flow.
+/// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
+/// \param operationToken Token received from Klarna after the auth code exchange
+///
+/// \param locale 
+///
+/// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+/// Replace the listener passed on initialization of the Post Purchase SDK
+/// This method replaces the listener passed during initialization of the Post Purchase SDK.
+/// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
+/// important:
+/// There can be one delegate assigned for each Post Purchase SDK instance
+/// \param listener The object that receives events of the Post Purchase SDK.
+///
+- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
+/// This method removes the listener assigned to the Post Purchase SDK.
+/// important:
+/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
+- (void)removeEventListener;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -3437,6 +3711,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
 @end
 
 
+
+
+/// An SDK model specific to the Klarna Post Purchase component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
+@interface PostPurchaseAuthRequest : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @class UIImage;
 @class AVCaptureOutput;
@@ -3750,16 +4032,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
 @class NSURL;
 enum KlarnaResourceEndpoint : NSInteger;
 
@@ -3782,6 +4054,16 @@ enum KlarnaResourceEndpoint : NSInteger;
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+@end
+
+@class KlarnaCheckoutViewController;
+
+@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Klarna Checkout View Controller
+/// note:
+///
+/// This view controller needs to be presented by the app itself once the checkout is initialized.
+@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
 @end
 
 
@@ -4579,6 +4861,92 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @end
 
 
+/// An SDK error specific to the Klarna Post Purchase native component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
+@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@property (nonatomic, readonly, copy) NSString * _Nullable status;
+@end
+
+@class KlarnaPostPurchaseSDK;
+enum KlarnaPostPurchaseRenderResult : NSInteger;
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaPostPurchaseEventListener_")
+@protocol KlarnaPostPurchaseEventListener
+- (void)onAuthorizeRequestedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onInitializedWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK;
+- (void)onRenderedOperationWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK result:(enum KlarnaPostPurchaseRenderResult)result;
+- (void)onErrorWithKlarnaPostPurchaseSDK:(KlarnaPostPurchaseSDK * _Nonnull)klarnaPostPurchaseSDK error:(KlarnaPostPurchaseError * _Nonnull)error;
+@end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
+  KlarnaPostPurchaseRenderResultNoStateChange = 1,
+  KlarnaPostPurchaseRenderResultStateChange = 2,
+};
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
+@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+///
+/// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
+///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Initializes the Post Purchase Instance.
+/// After creating the Post Purchase SDK instance this is the next method to call.
+/// It will initialize the instance properties and assets required
+/// \param locale 
+///
+/// \param purchaseCountry Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param design 
+///
+- (void)initializeWithLocale:(NSString * _Nonnull)locale purchaseCountry:(NSString * _Nonnull)purchaseCountry design:(NSString * _Nullable)design;
+/// Authorize the Post Purchase Instance.
+/// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
+/// important:
+/// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
+/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// Render the Post Purchase flow.
+/// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
+/// \param operationToken Token received from Klarna after the auth code exchange
+///
+/// \param locale 
+///
+/// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+- (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+/// Replace the listener passed on initialization of the Post Purchase SDK
+/// This method replaces the listener passed during initialization of the Post Purchase SDK.
+/// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
+/// important:
+/// There can be one delegate assigned for each Post Purchase SDK instance
+/// \param listener The object that receives events of the Post Purchase SDK.
+///
+- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
+/// This method removes the listener assigned to the Post Purchase SDK.
+/// important:
+/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
+- (void)removeEventListener;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -4602,6 +4970,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
 @end
 
 
+
+
+/// An SDK model specific to the Klarna Post Purchase component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
+@interface PostPurchaseAuthRequest : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @class UIImage;
 @class AVCaptureOutput;
