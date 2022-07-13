@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.2.0] - 2022-07-13
+- Added support for Post Purchase
+
 ### [2.1.7] - 2022-05-30
 - Internal optimizations.
 

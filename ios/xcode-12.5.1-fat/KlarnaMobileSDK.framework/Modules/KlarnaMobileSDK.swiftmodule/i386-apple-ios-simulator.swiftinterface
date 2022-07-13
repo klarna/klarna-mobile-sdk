@@ -18,6 +18,16 @@ import Vision
 import WebKit
 import os.log
 import os
+public typealias KlarnaPostPurchaseRegion = Swift.String
+extension String {
+  public static let eu: Swift.String
+  public static let na: Swift.String
+  public static let oc: Swift.String
+}
+@_hasMissingDesignatedInitializers @objc public class KlarnaPostPurchaseSDK : ObjectiveC.NSObject, KlarnaMobileSDK.KlarnaComponent {
+  @objc override dynamic public init()
+  @objc deinit
+}
 @available(*, deprecated, message: "Use KlarnaHybridEventListener instead.")
 @objc public protocol KlarnaHybridSDKEventListener {
   @objc func klarnaHybridSDKWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completion: @escaping () -> Swift.Void)
@@ -163,11 +173,30 @@ extension UIFont {
     get
   }
 }
+@objc extension KlarnaPostPurchaseSDK {
+  @objc convenience dynamic public init(environment: KlarnaMobileSDK.KlarnaPostPurchaseEnvironment, region: KlarnaMobileSDK.KlarnaPostPurchaseRegion, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1, listener: KlarnaMobileSDK.KlarnaPostPurchaseEventListener)
+  @objc dynamic public func initialize(locale: Swift.String, purchaseCountry: Swift.String, design: Swift.String?)
+  @objc dynamic public func authorizationRequest(_ request: KlarnaMobileSDK.PostPurchaseAuthRequest)
+  @objc dynamic public func renderOperation(operationToken: Swift.String, locale: Swift.String?, redirectUri: Swift.String?)
+  @objc dynamic public func setEventListener(_ listener: KlarnaMobileSDK.KlarnaPostPurchaseEventListener)
+  @objc dynamic public func removeEventListener()
+}
 @objc public class KlarnaEvent : ObjectiveC.NSObject {
   @objc final public let bodyString: Swift.String?
   required public init(from dictionary: [Swift.String : Swift.String])
   @objc override dynamic public init()
   @objc deinit
+}
+@objc public enum KlarnaPostPurchaseRenderResult : Swift.Int {
+  case noStateChange = 1
+  case stateChange = 2
+  public init?(string: Swift.String)
+  public func value() -> Swift.String
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KlarnaCheckoutView : UIKit.UIView, KlarnaMobileSDK.KlarnaComponent {
   @objc override dynamic public func didMoveToWindow()
@@ -248,6 +277,12 @@ extension String {
   @objc override dynamic public init()
   @objc deinit
 }
+public typealias KlarnaPostPurchaseEnvironment = Swift.String
+extension String {
+  public static let playground: Swift.String
+  public static let production: Swift.String
+  public static let staging: Swift.String
+}
 @objc @_inheritsConvenienceInitializers public class KlarnaProductOptions : ObjectiveC.NSObject {
   final public let paymentOptions: KlarnaMobileSDK.KlarnaPaymentOptions
   final public let checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions
@@ -264,10 +299,20 @@ extension String {
   @objc func resume()
   @objc func setSnippet(_ str: Swift.String?)
 }
+@objc public protocol KlarnaPostPurchaseEventListener {
+  @objc func onAuthorizeRequested(klarnaPostPurchaseSDK: KlarnaMobileSDK.KlarnaPostPurchaseSDK)
+  @objc func onInitialized(klarnaPostPurchaseSDK: KlarnaMobileSDK.KlarnaPostPurchaseSDK)
+  @objc func onRenderedOperation(klarnaPostPurchaseSDK: KlarnaMobileSDK.KlarnaPostPurchaseSDK, result: KlarnaMobileSDK.KlarnaPostPurchaseRenderResult)
+  @objc func onError(klarnaPostPurchaseSDK: KlarnaMobileSDK.KlarnaPostPurchaseSDK, error: KlarnaMobileSDK.KlarnaPostPurchaseError)
+}
 @objc extension NSObject {
 }
 @_hasMissingDesignatedInitializers @objc public class KlarnaCheckoutSDK : ObjectiveC.NSObject, KlarnaMobileSDK.KlarnaComponent {
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class KlarnaPostPurchaseError : KlarnaMobileSDK.KlarnaMobileSDKError {
+  @objc final public let status: Swift.String?
   @objc deinit
 }
 @objc extension KlarnaHybridSDK {
@@ -354,6 +399,7 @@ public enum KlarnaCheckoutSignals {
   public static let Data: Swift.String
   public static let Message: Swift.String
 }
+public typealias KlarnaPostPurchaseErrorName = Swift.String
 @objc public protocol KlarnaComponent {
 }
 @objc extension KlarnaCheckoutViewController {
@@ -523,6 +569,11 @@ extension String {
   @objc override dynamic public func didMoveToWindow()
   @objc deinit
 }
+@objc public class PostPurchaseAuthRequest : ObjectiveC.NSObject {
+  public init(clientId: Swift.String, scope: Swift.String, redirectUri: Swift.String, locale: Swift.String?, state: Swift.String?, loginHint: Swift.String?, responseType: Swift.String?)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDKDebug : KlarnaMobileSDK.KlarnaHybridSDK {
   public func clearWebViewCookies()
   public func clearWebViewCache()
@@ -543,6 +594,9 @@ extension KlarnaMobileSDK.KlarnaOSMRegion : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaPostPurchaseRenderResult : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaPostPurchaseRenderResult : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaPostPurchaseRenderResult : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaOSMTheme : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaOSMTheme : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaOSMTheme : Swift.RawRepresentable {}
