@@ -161,6 +161,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.2.0] - 2022-07-13
+- Added Post Purchase standalone integration
+
 ### [2.1.8] - 2022-06-02
 - Added checks for WebView availability on the device.
 - Allow verbose logs in debug mode.
