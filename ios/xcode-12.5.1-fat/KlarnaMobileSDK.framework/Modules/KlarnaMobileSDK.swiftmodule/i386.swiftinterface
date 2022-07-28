@@ -81,7 +81,7 @@ extension String {
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc deinit
 }
-@objc public protocol KlarneCheckoutSizeDelegate {
+@objc public protocol KlarnaCheckoutSizeDelegate {
   @objc func klarnaCheckoutComponent(_ checkoutComponent: KlarnaMobileSDK.KlarnaCheckoutScrollAPI, didResize size: CoreGraphics.CGSize)
 }
 @objc public enum KlarnaOSMEnvironment : Swift.Int {
@@ -349,7 +349,7 @@ extension String {
   }
 }
 @objc public protocol KlarnaCheckoutScrollAPI {
-  @objc var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? { get set }
+  @objc var sizeDelegate: KlarnaMobileSDK.KlarnaCheckoutSizeDelegate? { get set }
   @objc var internalScrollDisabled: Swift.Bool { get set }
   @objc var adjustsParentScrollViewInsets: Swift.Bool { get set }
   @objc var parentScrollView: UIKit.UIScrollView? { get set }
@@ -419,7 +419,7 @@ public typealias KlarnaPostPurchaseErrorName = Swift.String
   @objc dynamic public func setSnippet(_ str: Swift.String?)
 }
 @objc extension KlarnaCheckoutViewController : KlarnaMobileSDK.KlarnaCheckoutScrollAPI {
-  @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? {
+  @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarnaCheckoutSizeDelegate? {
     @objc get
     @objc set
   }
@@ -504,7 +504,7 @@ extension String {
   @objc dynamic public func setSnippet(_ str: Swift.String?)
 }
 @objc extension KlarnaCheckoutView : KlarnaMobileSDK.KlarnaCheckoutScrollAPI {
-  @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarneCheckoutSizeDelegate? {
+  @objc dynamic public var sizeDelegate: KlarnaMobileSDK.KlarnaCheckoutSizeDelegate? {
     @objc get
     @objc set
   }

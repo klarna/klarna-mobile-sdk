@@ -302,19 +302,25 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaCheckoutSDKDebug")
 @interface KlarnaCheckoutSDKDebug : KlarnaCheckoutSDK
 @end
 
-@protocol KlarneCheckoutSizeDelegate;
+@protocol KlarnaCheckoutSizeDelegate;
 @class NSNumber;
 @class UIScrollView;
 
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK23KlarnaCheckoutScrollAPI_")
 @protocol KlarnaCheckoutScrollAPI
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 /// Should the internal scroll be disabled?
 @property (nonatomic) BOOL internalScrollDisabled;
 /// Should the view adjust it parent’s scroll view’s insets if a keyboard is shown?
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 /// Parent (merchant’s) scroll view.
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaCheckoutSizeDelegate_")
+@protocol KlarnaCheckoutSizeDelegate
+- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
 @end
 
 @class NSCoder;
@@ -369,7 +375,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 
 
 @interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 @property (nonatomic) BOOL internalScrollDisabled;
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
@@ -402,7 +408,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaCheckoutViewController")
 
 
 @interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
 @property (nonatomic) BOOL internalScrollDisabled;
@@ -1176,12 +1182,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView <KlarnaComponent>
-@end
-
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
-@protocol KlarneCheckoutSizeDelegate
-- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
 @end
 
 
@@ -1561,19 +1561,25 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaCheckoutSDKDebug")
 @interface KlarnaCheckoutSDKDebug : KlarnaCheckoutSDK
 @end
 
-@protocol KlarneCheckoutSizeDelegate;
+@protocol KlarnaCheckoutSizeDelegate;
 @class NSNumber;
 @class UIScrollView;
 
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK23KlarnaCheckoutScrollAPI_")
 @protocol KlarnaCheckoutScrollAPI
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 /// Should the internal scroll be disabled?
 @property (nonatomic) BOOL internalScrollDisabled;
 /// Should the view adjust it parent’s scroll view’s insets if a keyboard is shown?
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 /// Parent (merchant’s) scroll view.
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaCheckoutSizeDelegate_")
+@protocol KlarnaCheckoutSizeDelegate
+- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
 @end
 
 @class NSCoder;
@@ -1628,7 +1634,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 
 
 @interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 @property (nonatomic) BOOL internalScrollDisabled;
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
@@ -1661,7 +1667,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaCheckoutViewController")
 
 
 @interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarneCheckoutSizeDelegate> _Nullable sizeDelegate;
+@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
 @property (nonatomic) BOOL internalScrollDisabled;
@@ -2435,12 +2441,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
 /// General class that envelops WKWebView
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
 @protocol KlarnaWebView <KlarnaComponent>
-@end
-
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarneCheckoutSizeDelegate_")
-@protocol KlarneCheckoutSizeDelegate
-- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
 @end
 
 
