@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.0.4-761641cbb8f",
-        "updated": "2022-06-30T11:20:20.515Z",
+        "version": "v2.0.5-10caff85c3b",
+        "updated": "2022-07-14T09:49:02.782Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.1.8"
+                "versionName": "2.2.0"
             },
             "ios": {
-                "versionName": "2.1.7"
+                "versionName": "2.2.0"
             }
         },
         "assets": [
@@ -206,7 +206,8 @@
                     {
                         "isFallback": true,
                         "alternatives": [
-                            "aws"
+                            "aws",
+                            "azure"
                         ],
                         "environments": [
                             "production"
@@ -224,7 +225,8 @@
                     },
                     {
                         "alternatives": [
-                            "aws"
+                            "aws",
+                            "azure"
                         ],
                         "environments": [
                             "staging",
@@ -238,43 +240,6 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "frontend-event-router-eu.staging.c2c.klarna.net",
-                            "path": "/v1/in-app"
-                        }
-                    },
-                    {
-                        "alternatives": [
-                            "azure"
-                        ],
-                        "environments": [
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "naz.klarnaevt.com",
-                            "path": "/v1/in-app"
-                        }
-                    },
-                    {
-                        "alternatives": [
-                            "azure"
-                        ],
-                        "environments": [
-                            "staging",
-                            "playground"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "naz.playground.klarnaevt.com",
                             "path": "/v1/in-app"
                         }
                     }
@@ -414,8 +379,8 @@
                 "enabled": true
             },
             "analytics": {
-                "logLevel": "info",
-                "log-level": "info"
+                "logLevel": "off",
+                "log-level": "off"
             },
             "blacklistUrls": [
                 "file:///Users/fake-klarna*",
