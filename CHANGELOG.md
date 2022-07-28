@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.2.1] - 2022-07-28
+- Fix typo on API.
+- Fix crash on OSM for iOS 16. (rdar://FB10893183)
+
 ### [2.2.0] - 2022-07-13
 - Added support for Post Purchase
 
