@@ -1,11 +1,8 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KlarnaMobileSDK
-import AVFoundation
 import AVKit
-import Accelerate
 import CommonCrypto
-import CoreML
 import Foundation
 import JavaScriptCore
 @_exported import KlarnaMobileSDK
@@ -13,11 +10,8 @@ import ObjectiveC
 import SafariServices
 import Swift
 import UIKit
-import VideoToolbox
-import Vision
 import WebKit
 import _Concurrency
-import os.log
 import os
 public typealias KlarnaPostPurchaseRegion = Swift.String
 extension Swift.String {
@@ -93,34 +87,6 @@ extension Swift.String {
   public var rawValue: Swift.Int {
     get
   }
-}
-@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) open class ScanBaseViewController : UIKit.UIViewController, AVFoundation.AVCaptureVideoDataOutputSampleBufferDelegate {
-  @objc @_Concurrency.MainActor(unsafe) open func onScannedCard(number: Swift.String, expiryYear: Swift.String?, expiryMonth: Swift.String?, scannedImage: UIKit.UIImage?)
-  @objc @_Concurrency.MainActor(unsafe) open func showCardNumber(_ number: Swift.String, expiry: Swift.String?)
-  @objc @_Concurrency.MainActor(unsafe) open func onCameraPermissionDenied(showedPrompt: Swift.Bool)
-  @objc @_Concurrency.MainActor(unsafe) open func useCurrentFrameNumber(errorCorrectedNumber: Swift.String?, currentFrameNumber: Swift.String) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredInterfaceOrientationForPresentation: UIKit.UIInterfaceOrientation {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @_Concurrency.MainActor(unsafe) @objc get
-  }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc public func captureOutput(_ output: AVFoundation.AVCaptureOutput, didOutput sampleBuffer: CoreMedia.CMSampleBuffer, from connection: AVFoundation.AVCaptureConnection)
-  @available(iOS 11.2, *)
-  @_Concurrency.MainActor(unsafe) open func blockingMlModel(fullCardImage: CoreGraphics.CGImage, roiRectangle: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
 }
 @objc public protocol KlarnaFullscreenEventListener {
   @objc func klarnaWillShowFullscreen(inWebView webView: KlarnaMobileSDK.KlarnaWebView, completionHandler: @escaping () -> Swift.Void)
@@ -513,30 +479,6 @@ extension Swift.String {
     @objc get
     @objc set
   }
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class UIDotLoadingIndicator : UIKit.UIView {
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsCount: Swift.Int {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsRadius: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var dotsSpacing: CoreGraphics.CGFloat {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) @objc override final public var tintColor: UIKit.UIColor! {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
-  }
-  @_Concurrency.MainActor(unsafe) final public func startAnimating()
-  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
-  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class KlarnaCheckoutOptions : ObjectiveC.NSObject {
   public var merchantHandlesEPM: Swift.Bool

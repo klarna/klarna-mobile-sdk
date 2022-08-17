@@ -1,7 +1,7 @@
 {
     "meta": {
-        "version": "v2.0.5-10caff85c3b",
-        "updated": "2022-07-14T09:49:02.782Z",
+        "version": "v2.0.6-5b11f075813",
+        "updated": "2022-08-09T18:45:52.941Z",
         "schema": "v2"
     },
     "config": {
@@ -10,7 +10,7 @@
                 "versionName": "2.2.0"
             },
             "ios": {
-                "versionName": "2.2.0"
+                "versionName": "2.2.1"
             }
         },
         "assets": [
@@ -379,8 +379,8 @@
                 "enabled": true
             },
             "analytics": {
-                "logLevel": "off",
-                "log-level": "off"
+                "logLevel": "info",
+                "log-level": "info"
             },
             "blacklistUrls": [
                 "file:///Users/fake-klarna*",
