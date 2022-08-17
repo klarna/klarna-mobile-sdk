@@ -94,7 +94,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rWuIBplgg/XyGgRyq2nuVT81Vm0=
+		0QuY0pid6TY/pFKODTaqtxtxdT0=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		xY6WnAoQJn1oq3l+kw/nE5tqWSA=
+		jBaandybBeLzRk6T8lpELhQ9YTY=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -198,11 +198,11 @@
 		</data>
 		<key>WrapperInitScript.js</key>
 		<data>
-		9BdAO/xtRjmLEYXKCoejrA2l9uM=
+		fcIj2U5YQcGNPmtlKoZxSgu5ySg=
 		</data>
 		<key>config.json</key>
 		<data>
-		og/Y50ggIJNOJd9HmvS+ojnWvwM=
+		GXkCvMxFqHrXdo2IFjvwn1cIlao=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -468,11 +468,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xY6WnAoQJn1oq3l+kw/nE5tqWSA=
+			jBaandybBeLzRk6T8lpELhQ9YTY=
 			</data>
 			<key>hash2</key>
 			<data>
-			NOaVwx7p+Ahh5dIn3K629KNsu+c3JXLqpWEVqVO93S4=
+			unUx2+deI3H2iyOAiH7UwfYs31Jnfdpsi2UFCsEQRbo=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -732,22 +732,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9BdAO/xtRjmLEYXKCoejrA2l9uM=
+			fcIj2U5YQcGNPmtlKoZxSgu5ySg=
 			</data>
 			<key>hash2</key>
 			<data>
-			RUT4AWGKZDKwniaBBDTLBAuI6xpN7WZjGVxzw/N8GTA=
+			nG0lYLiUIfoRB4vHHSXZH41paMM/fal31+1iCJP87m0=
 			</data>
 		</dict>
 		<key>config.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			og/Y50ggIJNOJd9HmvS+ojnWvwM=
+			GXkCvMxFqHrXdo2IFjvwn1cIlao=
 			</data>
 			<key>hash2</key>
 			<data>
-			IE0H0uMjXfRgLBkLd1arXNy+WPDnIAJmujeKHHUug6Q=
+			7FUR4X+DGRUHP0JXUMqjWu1v/8IVeScxFYopFPSOgxM=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>

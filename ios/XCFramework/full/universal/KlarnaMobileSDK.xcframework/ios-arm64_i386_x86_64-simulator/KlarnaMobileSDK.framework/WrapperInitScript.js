@@ -10,7 +10,7 @@
 
         foundMessageBridge = true;
       } else {
-        window.setTimeout(notifyMessageBridge, 500);
+        window.setTimeout(notifyMessageBridge, 50);
       }
     };
 
@@ -29,6 +29,6 @@
       }
     };
 
-    interval = setInterval(notifyMessageBridge, 500);
+    interval = setInterval(notifyMessageBridge, 50);
   });
 })();
