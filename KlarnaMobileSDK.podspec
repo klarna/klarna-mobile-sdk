@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.2.2"
+    s.version      = "2.2.3"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -13,22 +13,6 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.swift_version = "5.0"
 
-    
-    s.subspec 'xcode-12.5.1-fat' do |sb|
-        sb.source_files = "ios/xcode-12.5.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode-12.5.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode-12.5.1-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
-
-    s.subspec 'xcode-12.5.1-fat-full' do |sb|
-        sb.source_files = "ios/full/xcode-12.5.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/full/xcode-12.5.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/full/xcode-12.5.1-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
     
     s.subspec 'xcode-13.1-fat' do |sb|
         sb.source_files = "ios/xcode-13.1-fat/KlarnaMobileSDK.framework/Headers/*.h"
