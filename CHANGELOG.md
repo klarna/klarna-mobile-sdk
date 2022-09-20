@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.2.3] - 2022-09-20
+- Fixed: OSM hostViewController presentation behavior
+
 ### [2.2.2] - 2022-08-17
 - Removed all references for Card Scan (Camera Usage) in Basic framework. 
 
