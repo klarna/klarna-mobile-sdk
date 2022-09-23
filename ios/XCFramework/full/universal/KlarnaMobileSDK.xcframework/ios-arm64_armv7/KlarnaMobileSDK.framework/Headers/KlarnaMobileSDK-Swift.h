@@ -215,132 +215,133 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-@class KlarnaCheckoutOptions;
-@protocol KlarnaEventListener;
-@class NSString;
 
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK17KlarnaCheckoutAPI_")
-@protocol KlarnaCheckoutAPI
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-- (void)suspend;
-- (void)resume;
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
+/// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
 @interface KlarnaCheckoutOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-/// General class that envelops any Klarna Component
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK15KlarnaComponent_")
-@protocol KlarnaComponent
-@end
-
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
-@interface KlarnaCheckoutSDK : NSObject <KlarnaComponent>
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSURL;
-enum KlarnaResourceEndpoint : NSInteger;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Create a Klarna Checkout SDK
-/// note:
-///
-/// Klarna Checkout SDK will create a view controller instance to be shown by the app,
-/// this view controller can be accessed by checkoutViewController variable.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
-///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
-/// Create a Klarna Checkout View
-/// note:
-///
-/// Klarna Checkout SDK will create a view controller instance to be shown by the app,
-/// this view controller can be accessed by checkoutViewController variable.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
-///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-@end
-
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-/// Sends message to checkout to suspend operations.
-- (void)suspend;
-/// Sends message to checkout to resume operations.
-- (void)resume;
-/// Startup option for use when using a snippet obtained from server
-/// Loads html checkout “snippet” received from server into
-/// main WebView.
-/// \param str the snippet of html code that initializes the checkout.
-///
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaCheckoutSDKDebug")
-@interface KlarnaCheckoutSDKDebug : KlarnaCheckoutSDK
-@end
-
-@protocol KlarnaCheckoutSizeDelegate;
-@class NSNumber;
-@class UIScrollView;
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK23KlarnaCheckoutScrollAPI_")
-@protocol KlarnaCheckoutScrollAPI
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
-/// Should the internal scroll be disabled?
-@property (nonatomic) BOOL internalScrollDisabled;
-/// Should the view adjust it parent’s scroll view’s insets if a keyboard is shown?
-@property (nonatomic) BOOL adjustsParentScrollViewInsets;
-/// Parent (merchant’s) scroll view.
-@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@end
-
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaCheckoutSizeDelegate_")
-@protocol KlarnaCheckoutSizeDelegate
-- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
-@end
-
 @class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
-@interface KlarnaCheckoutView : UIView <KlarnaComponent>
+@interface KlarnaCheckoutView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (void)didMoveToWindow;
 @end
 
+@class NSURL;
+@class KlarnaRegion;
+@class KlarnaEnvironment;
+@class KlarnaResourceEndpoint;
+enum KlarnaTheme : NSInteger;
+@protocol KlarnaEventHandler;
+enum KlarnaLoggingLevel : NSInteger;
+@class NSString;
+
+/// General class that envelops any Klarna Component, regardless of integration.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK15KlarnaComponent_")
+@protocol KlarnaComponent
+/// A schema (and optionally some path) defined in your app’s <code>Info.plist</code>, under <code>URLTypes</code> (aka
+/// <code>CFBundleURLTypes</code>) to ensure that customers get returned back to your app if they need to
+/// leave it for any reason.
+/// This schema is used in flows where the customer needs to be directed to an external app (for
+/// example if they need to authenticate with their bank). Klarna uses the value that you provided to
+/// configure third-party app flows so that when they’re complete, customers get automatically returned
+/// back to your app.
+/// warning:
+/// Make sure that the app schema you provide doesn’t trigger any navigations when
+/// called.
+/// warning:
+/// Not setting this (either through this property or some other initializer) can be very
+/// detrimental to the customers’ user experience (and hence conversion).
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+/// Geographic region that the SDK performs requests to. If not supplied, it may trigger an error or
+/// default to using <code>KlarnaRegion/eu</code> internally.
+/// Set this to a different value during intialization if you operate in an alternate region.
+/// warning:
+/// Setting it <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+/// Environment or “mode” that this SDK runs in. If not set, may trigger an error or default to using
+/// <code>KlarnaEnvironment/production</code> internally.
+/// Set this during initialization if you want the SDK to run in demo or playground mode.
+/// warning:
+/// Setting it <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+/// Determines what endpoints to fetch resources and perform requests from. Defaults to
+/// <code>KlarnaResourceEndpoint/alternative1</code>.
+/// warning:
+/// Don’t change unless explicitly discussed with Klarna.
+/// warning:
+/// Setting <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+/// Theme to render this component with. Defaults to <code>KlarnaTheme/light</code>.
+/// Set this value <em>before</em> the view (or web view) that you’re rendering Klarna’s conent in actually
+/// renders said content.
+/// warning:
+/// Setting this value <em>after</em> content is loaded might not have any effect.
+@property (nonatomic) enum KlarnaTheme theme;
+/// Event handler to set to receive events and errors from Klarna components.
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+/// Determines the amount of logging being performed by the SDK. Defaults to <code>KlarnaLoggingLevel/error</code>.
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+/// Product(s) being rendered in this component.
+/// In most standalone integrations, this value will be equal to a a single product. For example, if you’re
+/// rendering a <code>KlarnaPaymentView</code>, this value will just be equal to <code>KlarnaProduct/payments</code>.
+/// Integrations that can potentially render multiple products (for example using
+/// <code>KlarnaStandaloneWebView</code>) can have different values:
+/// <ul>
+///   <li>
+///     <code>KlarnaProduct/none</code> when the SDK doesn’t see any product running.
+///   </li>
+///   <li>
+///     <code>.<product></code> when it sees a single product.
+///   </li>
+///   <li>
+///     <code>[.<product1>, .<product2>]</code> when it sees multiple running at the same time.
+///   </li>
+/// </ul>
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+/// Components conforming to this protocol render a single Klarna product at a time.
+/// Empty for now, but keeping it for completeness, as it represents <code>KlarnaMultiComponent</code>’s
+/// counterpart.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
+@protocol KlarnaSingleComponent <KlarnaComponent>
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
 
 @interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Set the HTML snippet that you get from Klarna when creating an order to load Klarna Checkout
+/// into this view.
+/// \param snippet the HTML snippet that will be rendered in this view.
+///
+- (void)setSnippet:(NSString * _Nullable)snippet;
+/// Signals checkout to suspend the checkout process. Customers won’t be able to operate on the
+/// checkout view.
+- (void)suspend;
+/// Signals checkout to resume operations. It may do a backend check on the order state.
+- (void)resume;
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Options for Klarna Checkout integration
+@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
 /// Create a Klarna Checkout View
 /// note:
 ///
 /// Klarna checkout view will be initialized with frame <code>.zero</code>,
 /// auto layout is the recommended way to manage the view’s layout.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+/// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
 /// Create a Klarna Checkout View
@@ -348,76 +349,76 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 ///
 /// Klarna checkout view will be initialized with frame <code>.zero</code>,
 /// auto layout is the recommended way to manage the view’s layout.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+/// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
+@class NSNumber;
+@class UIScrollView;
 
-@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-/// Options for Klarna Checkout integration
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-/// When set, events will be sent via this callback instead of NSNotifications
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-/// Sends message to checkout to suspend operations.
-- (void)suspend;
-/// Sends message to checkout to resume operations.
-- (void)resume;
-/// Startup option for use when using a snippet obtained from server
-/// Loads html checkout “snippet” received from server into
-/// main WebView.
-/// \param str the snippet of html code that initializes the checkout.
-///
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
-@property (nonatomic) BOOL internalScrollDisabled;
-@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+/// This is a component with scrolling contents.
+/// Get (or set) the below properties to change how scrolling in the component behaves.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaScrollableComponent_")
+@protocol KlarnaScrollableComponent
+/// A boolean value that determines whether scrolling is enabled for the component.
+@property (nonatomic) BOOL isScrollEnabled;
+/// The custom distance that the content view is inset from the safe area or scroll view edges.
+@property (nonatomic) UIEdgeInsets contentInset;
+/// The point at which the origin of the content view is offset from the origin of the scroll view.
+@property (nonatomic, readonly) CGPoint contentOffset;
+/// The behavior for determining the adjusted content offsets.
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+/// The manner in which the keyboard is dismissed when a drag begins in the scroll view.
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+/// If this component is a subview of another scroll view, provide a reference to it here to allow the
+/// SDK to make both views scroll as one.
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@end
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaCheckoutViewController")
-@interface KlarnaCheckoutViewController : UIViewController <KlarnaComponent>
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (void)loadView;
-- (void)viewDidLoad;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK))
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-- (void)suspend;
-- (void)resume;
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
+/// When a keyboard appears and this view’s scroll view is nested in a parent scroll view, setting this
+/// value to <code>true</code> ensures that only the outer scroll view adjusts its insets.
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
-@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@property (nonatomic) BOOL internalScrollDisabled;
+@end
+
+@protocol KlarnaSizingDelegate;
+
+/// This is component with resizing contents.
+/// Provide a size delegate to be notified of sizing changes.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK24KlarnaResizableComponent_")
+@protocol KlarnaResizableComponent
+/// Height of the component’s content in points.
+@property (nonatomic, readonly) CGFloat contentHeight;
+/// Delegate that gets called when the component’s content changes height. Change its external
+/// height here.
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
 @end
 
 
-SWIFT_CLASS("_TtC15KlarnaMobileSDK33KlarnaCheckoutViewControllerDebug")
-@interface KlarnaCheckoutViewControllerDebug : KlarnaCheckoutViewController
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+/// This is a component that hosts and owns its own content.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaStandaloneComponent_")
+@protocol KlarnaStandaloneComponent <KlarnaComponent, KlarnaResizableComponent, KlarnaScrollableComponent>
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @end
 
 
@@ -427,12 +428,29 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaCheckoutViewDebug")
 
 
 
+/// This is an event that describes something that occurred internally within the SDK, which can be used
+/// to debug espcially complex problems.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
 @interface KlarnaDebugEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// Implement this interface to receive information about events internal to the SDK.
+/// This is not necessary in most cases. We might ask you to implement this and log the events somewhere
+/// if we identify an otherwise undebuggable problem in the SDK.
+/// warning:
+/// This method is called <em>a lot</em>. This means that you should <em>absolutely never</em> log events
+/// sent through this to the network. It’ll burn through your users’ data.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK24KlarnaDebugEventDelegate_")
+@protocol KlarnaDebugEventDelegate
+/// A given Klarna component has relayed an event to your delegate.
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent relayedEvent:(KlarnaDebugEvent * _Nonnull)event;
+@end
+
+/// Type of debug event that is being logged.
 typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, open) {
   KlarnaDebugEventTypeLog = 0,
   KlarnaDebugEventTypeNetwork = 1,
@@ -440,16 +458,111 @@ typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, open) {
 };
 
 
-SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+/// Configures the “mode” that the SDK should run in.
+/// The environment determines the endpoints the SDK makes requests to, how it behaves (e.g., what kinds
+/// of validation are perfomed) as well as customizing other aspects of how it runs.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaEnvironment")
+@interface KlarnaEnvironment : NSObject
+/// Run in a “demo” mode where no (or minimal) API requests are performed.
+/// Content is static, not localized, and tokens, API keys and other identifiiers are not validated at all.
+/// This is useful to test if the SDK works during integration, before you have access to any tokens or
+/// keys, or if you want to run UI tests that aren’t fully end-to-end.
+/// warning:
+/// Not supported for all integrations.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull demo;)
++ (KlarnaEnvironment * _Nonnull)demo SWIFT_WARN_UNUSED_RESULT;
+/// The SDK will perform requests against playground endpoints, where not real money/orders/etc.
+/// are being handled.
+/// Some backend validation is in place, while other fields could be ignored e.g: the backend may
+/// check that an address is real, but might not do the same checks about a customer.
+/// warning:
+/// Make sure that you’re using playground merchant IDs / tokens / keys etc, or the
+/// integration might not work.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull playground;)
++ (KlarnaEnvironment * _Nonnull)playground SWIFT_WARN_UNUSED_RESULT;
+/// The SDK will perform requests against production endpoints, where real full validation and orders
+/// take place.
+/// This is the default value in all integrations.
+/// warning:
+/// Make sure that you’re using production merchant IDs / tokens / etc, or the
+/// integration might not work.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull production;)
++ (KlarnaEnvironment * _Nonnull)production SWIFT_WARN_UNUSED_RESULT;
+/// The SDK uses this environment in Klarna-internal integrations to make requests to staging
+/// environments.
+/// warning:
+/// Do not use this unless running against Klarna’s internal testing environments.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull staging;)
++ (KlarnaEnvironment * _Nonnull)staging SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Describes a generic error that occurred within the SDK.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
+@interface KlarnaError : NSObject
+/// Unique name identifying this error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Description of the error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+/// Describes whether this error is fatal. This means some part of the flow failed permanently.
+@property (nonatomic, readonly) BOOL isFatal;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Represents an event that was sent by a component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent") SWIFT_DEPRECATED_MSG("Use KlarnaProductEvent through eventHandler instead.")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaMobileSDKError;
+@class KlarnaProductEvent;
 
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_")
+/// Interface to an object that gets notfied of key events happening to a product in a Klarna component.
+/// Most integrations offer dedicated delegates/handlers with concrete methods that you can implement –
+/// but there’s cases when an SDK renders multiple products and/or the events are too varied or generic to
+/// provide you with a specialized API. This is for those cases.
+/// If you want to receive events from the SDK:
+/// <ul>
+///   <li>
+///     Implement this protocol.
+///   </li>
+///   <li>
+///     Set it on the component’s <code>KlarnaComponent/eventHandler</code>.
+///   </li>
+///   <li>
+///     Observe for the events that you’re interested in.
+///   </li>
+/// </ul>
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK18KlarnaEventHandler_")
+@protocol KlarnaEventHandler
+/// An event happened within a Klarna component.
+/// \param klarnaCompnent The component that the event came from.
+///
+/// \param event The event itself.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent dispatchedEvent:(KlarnaProductEvent * _Nonnull)event;
+/// An error occured within a Klarna component.
+/// \param klarnaComponent The component that the error came from.
+///
+/// \param event The error that was encountered.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent encounteredError:(KlarnaError * _Nonnull)error;
+@end
+
+
+/// Represents an event listener used in several Klarna components.
+/// warning:
+/// Deprecated, implement <code>KlarnaEventHandler</code> and set it as the component’s
+/// <code>eventHandler</code> instead.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventHandler instead")
 @protocol KlarnaEventListener
 /// Called when Klarna’s<code>UIView</code> has received event signals.
 /// \param view instance of the UIView class that received this signal.
@@ -464,7 +577,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_")
 ///
 /// \param error details of the error received such as name, message etc.
 ///
-- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaMobileSDKError * _Nonnull)error;
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
 @end
 
 @protocol KlarnaWebView;
@@ -513,14 +626,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK29KlarnaFullscreenEventListener_")
 /// warning:
 /// Make sure you listen to to <code>klarnaFailed(inWebView:withError:)</code> for potential
 /// fatal and non-fatal errors. If the error is not fatal, you can call the method again.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaHybridEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventListener and KlarnaFullscreenEventListener instead.")
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaHybridEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventHandler and KlarnaFullscreenEventListener instead.")
 @protocol KlarnaHybridEventListener <KlarnaFullscreenEventListener>
 /// Event to notify merchant that an error occured during Hybrid SDK’s usage.
 /// \param webView The web view the error occured in.
 ///
 /// \param error Error details.
 ///
-- (void)klarnaFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
+- (void)klarnaFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaError * _Nonnull)error;
 @end
 
 
@@ -532,86 +645,28 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaProductOptions;
-@protocol KlarnaHybridSDKEventListener;
+@class WKWebView;
 @class NSURLRequest;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
-@property (nonatomic, copy) NSString * _Nullable klarnaInitData SWIFT_DEPRECATED_MSG("This has been replaced with KlarnaProductOptions to accommodate more options.");
-/// Feature flags for products.
-@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// warning:
-/// This initializer is deprecated. Use the new one and just initialize the SDK and
-/// add the web view you’ll be using.
-/// \param webView A web view (<code>WKWebView</code>) for Klarna’s SDK to operate on.
-///
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
 /// \param webView Web view that the SDK will keep track of (<code>WKWebView</code>).
 ///
-- (void)addWebView:(id <KlarnaWebView> _Nonnull)webView;
+- (void)addWebView:(WKWebView * _Nonnull)webView;
 /// Notify the SDK that a new page will load in the provided web view.
 /// Call should be perfomed in:
 /// <code>webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)</code>.
 /// \param webView Web view that the SDK will check (<code>WKWebView</code>).
 ///
-- (void)newPageLoadIn:(id <KlarnaWebView> _Nonnull)webView;
+- (void)newPageLoadIn:(WKWebView * _Nonnull)webView;
 /// Notify the SDK that a new page will load in the provided web view.
 /// warning:
 /// Use <code>newPageLoad</code> from this same class instead.
 /// \param webView Web view that the SDK will check (<code>WKWebView</code>).
 ///
-- (void)newPageWillLoadIn:(id <KlarnaWebView> _Nonnull)webView SWIFT_DEPRECATED_MSG("Use the `newPageLoad` instead.");
+- (void)newPageWillLoadIn:(WKWebView * _Nonnull)webView SWIFT_DEPRECATED_MSG("Use the `newPageLoad` instead.");
 /// Verify with the SDK whether a request/navigation should be performed in the web view.
 /// Checking should be perfomed in:
 /// <code>webView(_: decidePolicyFor: decisionHandler:)</code> with the <code>navigationAction</code>’s <code>request</code> property.
@@ -634,7 +689,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// returns:
 /// a unique ID, persistent throughout the app’s installation.
-+ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use the method of the same name on KlarnaMobileSDK instead.");
++ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Do not use.");
 /// To be called when the application is re-opened from a third-party application while the SDK
 /// is running.
 /// warning:
@@ -647,57 +702,99 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
 /// \param callback Closure to handle message events sent to merchants.
 ///
-- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback SWIFT_DEPRECATED_MSG("Replaced with KlarnaEventListener in the constructor.");
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback SWIFT_DEPRECATED_MSG("Replaced with implementing KlarnaEventHandler set as EventHandler.");
+@end
+
+@class KlarnaProductOptions;
+
+@interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData SWIFT_DEPRECATED_MSG("This has been replaced with KlarnaProductOptions to accommodate more options.");
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
 @property (nonatomic, strong) id <KlarnaFullscreenEventListener> _Nullable fullscreenEventListener;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param fullscreenEventListener Listener that will notify fullscreen events.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param fullscreenEventListener Listener that will notify fullscreen events.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
+@end
+
+
+/// Components conforming to this interface protocol may render multiple products at once.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK20KlarnaMultiComponent_")
+@protocol KlarnaMultiComponent <KlarnaComponent>
+/// Determines the products that the SDK will enhance to work in the app. Defaults to <code>KlarnaProduct/all</code>,
+/// Use this property to signal to products to <em>not</em> use the SDK.
+/// warning:
+/// Some Klarna products may ignore this flag.
+/// warning:
+/// Setting this to a single product or <code>KlarnaProduct/none</code> may cause
+/// integrations to <em>not work properly</em>. Use this only if you want specific products to <em>not</em> be
+/// enhanced by the SDK and only if agreed with Klarna.
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+/// Sends an event to a given Klarna product.
+/// Use this in cases when you don’t have a dedicated API to operate on a specific Klarna product.
+/// warning:
+/// Events are not buffered or persisted. If you send an event to a product that is not
+/// ready to receive messages, it will be lost. Check that the product is loaded by looking at the
+/// <code>KlarnaComponent/products</code> property.
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
+/// These are startup options for specific products loaded in a web view that the SDK operates on.
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
+@end
+
+
+@interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaMultiComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
 @end
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
 @interface KlarnaHybridSDKDebug : KlarnaHybridSDK
-@end
-
-
-/// Your app should listen to SDK events in the from the Hybrid SDK by implementing this protocol.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaHybridEventListener instead.")
-@protocol KlarnaHybridSDKEventListener
-/// Event to notify the merchant app that the following web view will present content that
-/// should be displayed in a full-screen format.
-/// \param webView Web view to be presented in fullscreen.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete.
-///
-- (void)klarnaHybridSDKWillShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify the merchant app merchant that content that should be presented in
-/// full-screen has been displayed.
-/// \param webView Web view that has presented full-screen content.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete.
-///
-- (void)klarnaHybridSDKDidShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify the merchant’s app that the full-screen content in the following web view
-/// will be removed, and the “original” contents will be displayed.
-/// \param webView Web view to be restored to original presentation.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete
-///
-- (void)klarnaHybridSDKWillHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify merchant that the full-screen content in the web view has been removed and
-/// it is now displaying “regular” content.
-/// \param webView Web View presenting original content.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete
-///
-- (void)klarnaHybridSDKDidHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify merchant that an error occured during Hybrid SDK usage.
-/// \param webView on which webview the failure happened.
-///
-/// \param error detail error.
-///
-- (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
 /// Level of logging to system console.
@@ -722,7 +819,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 /// The default logging level is <code>error</code>.
 /// \param loggingLevel Console log output level.
 ///
-+ (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel;
++ (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel SWIFT_DEPRECATED_MSG("Set logging level at per-component level instead.");
 /// Provides a device identifier for an app.
 /// The string it returns remains constant during the app’s lifetime on the app. The value does
 /// not change on updates, but will change on re-installs.
@@ -730,55 +827,22 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 ///
 /// returns:
 /// A unique persisted ID string.
-+ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Do not use. May be eventually removed.");
 @end
 
 
-/// Describes a generic error that occurred within the SDK.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
-@interface KlarnaMobileSDKError : NSObject
-/// Unique name identifying this error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-/// Description of the error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-/// Describes whether this error is fatal. This means some part of the flow failed permanently.
-@property (nonatomic, readonly) BOOL isFatal;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, open) {
-  KlarnaOSMEnvironmentDemo = 0,
-  KlarnaOSMEnvironmentProduction = 1,
-  KlarnaOSMEnvironmentPlayground = 2,
-};
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, open) {
-  KlarnaOSMRegionEu = 0,
-  KlarnaOSMRegionNa = 1,
-  KlarnaOSMRegionOc = 2,
-};
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
-  KlarnaOSMThemeDark = 0,
-  KlarnaOSMThemeLight = 1,
-  KlarnaOSMThemeAutomatic = 2,
-};
-
+@class UIViewController;
 @protocol KlarnaOSMViewEventListener;
 
-/// OSM Placement View
+/// This is a Klarna On-Site Messaging Placement View
 /// View starts off as completely empty/transparent. There is no content until
-/// <code>render()</code> is called.
-/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
-/// constraints (top, left, leading, trailing).
+/// <code>KlarnaOSMView/render(callback:)</code> is called.
+/// note:
+/// If no <code>delegate</code> or <code>sizingDelegate</code> is set, the view will self-size vertically. In that case,
+/// just add it to the parent view with <code>addSubview()</code> and set edge constraints (top, bottom, leading,
+/// trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-/// Initialize OSM view.
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
 @property (nonatomic, copy) NSString * _Nullable clientId;
 /// Merchant’s Placement’s Key (required)
@@ -788,41 +852,101 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 /// View controller (or activity) that will be used to render placement
 /// details modally (required). Would be <code>hostActivity</code> on Android.
 @property (nonatomic, weak) UIViewController * _Nullable hostViewController;
-/// Environment for testing and production. Default will be demo
-@property (nonatomic) enum KlarnaOSMEnvironment environment;
-/// Theme for the widget.
-@property (nonatomic) enum KlarnaOSMTheme theme;
 /// Event listener for OSM View.
-@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate SWIFT_DEPRECATED_MSG("Set a KlarnaSizingDelegate on sizingDelegate instead.");
+/// Initialize OSM view.
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Initialize OSM view.
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
-- (void)setRegion:(enum KlarnaOSMRegion)region;
-/// Called after the above properties are set. Renders the content in the
-/// placement. The view will update/style its contents at this stage.
-/// If a property is missing, an error will be returned. If rendering
-/// is disabled, an error will be returned. If a property is invalid, an error
-/// will be returned.
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Renders the content in the view. If already rendered, the view will update (or restyle) its contents
+/// instead.
+/// warning:
+/// To be called only after <code>clientId</code>, <code>placementKey</code>, <code>purchaseAmount</code>,
+/// <code>environment</code> and <code>region</code>  properties are set.
+/// An error will set in the callback if:
+/// <ul>
+///   <li>
+///     If a property is missing
+///   </li>
+///   <li>
+///     If rendering placements is disabled for you
+///   </li>
+///   <li>
+///     If a property is invalid
+///   </li>
+/// </ul>
 /// \param callback Merchant-supplied callback to be used when placement is
 /// rendered or an error occurs. Called on main thread.
 ///
-- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaMobileSDKError * _Nullable))callback;
+- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaError * _Nullable))callback;
+/// Renders the content in the view. If already rendered, the view will update (or restyle) its contents
+/// instead.
+/// warning:
+/// To be called only after <code>clientId</code>, <code>placementKey</code>, <code>purchaseAmount</code>,
+/// <code>environment</code> and <code>region</code>  properties are set.
+/// An error will be sent to KlarnaEventHandler if:
+/// <ul>
+///   <li>
+///     If a property is missing
+///   </li>
+///   <li>
+///     If rendering placements is disabled for you
+///   </li>
+///   <li>
+///     If a property is invalid
+///   </li>
+/// </ul>
+- (void)render;
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @end
 
 
 /// An object that will be notified of events happening to a <code>KlarnaOSMView</code>
 /// If you’re integrating KlarnaOSMView inside a view that needs to specify the content height,
 /// you’ll need to implement an instance of this listener.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_")
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRECATED_MSG("Implement KlarnaSizingDelegate instead.")
 @protocol KlarnaOSMViewEventListener
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
 
-/// An SDK error specific to the Klarna Payments component.
+/// An SDK error specific to Klarna Payments.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
-@interface KlarnaPaymentError : KlarnaMobileSDKError
-/// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
+@interface KlarnaPaymentError : KlarnaError
+/// If an error isn’t fatal, it may be due to invalid fields being supplied. The fields that need to be
+/// corrected will be supplied here.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
-/// Action the error occurred during.
+/// If the error occured during a specific operation, it will be supplied here.
 @property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
@@ -921,6 +1045,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 @end
 
 
+/// Options to be sent to Klarna Payments on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaPaymentOptions")
 @interface KlarnaPaymentOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -936,92 +1061,18 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
 @interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Payment method category this view will be / is displaying.
-@property (nonatomic, readonly, copy) NSString * _Nonnull category;
-/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
-/// True by default. Once it becomes false, it will not become true again.
-@property (nonatomic, readonly) BOOL isLoaded;
-/// Informs whether this PaymentView’s content is loaded.
-/// Will be false until a successful load() call has been performed.
-@property (nonatomic, readonly) BOOL isAvalable;
-/// Feature flags for products.
-@property (nonatomic, strong) KlarnaProductOptions * _Nonnull productOptions;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
-/// note:
-///
-/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error.
 /// \param clientToken Client token received from Klarna when creating the session.
 ///
 /// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (void)initializeWithClientToken:(NSString * _Nonnull)clientToken returnUrl:(NSURL * _Nonnull)returnUrl;
 /// Initialize the <code>KlarnaPaymentView</code>.
-/// note:
-///
-/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error and the returnURL was specified in the Init of KlarnaPaymentView
 /// \param clientToken Client token received from Klarna when creating the session.
 ///
 - (void)initializeWithClientToken:(NSString * _Nonnull)clientToken;
@@ -1077,6 +1128,105 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Payment method category this view will be / is displaying.
+@property (nonatomic, readonly, copy) NSString * _Nonnull category;
+/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
+/// Will be false until a successful load() call has been performed.
+@property (nonatomic, readonly) BOOL isLoaded;
+/// Informs whether this PaymentView’s content is loaded.
+/// True by default. Once it becomes false, it will not become true again.
+@property (nonatomic, readonly) BOOL isAvalable;
+/// Options for Klarna Payments integration
+@property (nonatomic, readonly, strong) KlarnaPaymentOptions * _Nonnull paymentOptions;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+@end
+
+
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
@@ -1084,7 +1234,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 
 /// An SDK error specific to the Klarna Post Purchase native component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
-@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@interface KlarnaPostPurchaseError : KlarnaError
 @property (nonatomic, readonly, copy) NSString * _Nullable status;
 @end
 
@@ -1106,26 +1256,35 @@ typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
-@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+@interface KlarnaPostPurchaseSDK : NSObject
+/// Internal initializer.
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Create a Klarna Post Purchase Instance with the specified parameters.
 /// Use this method when creating a PostPurchaseSDK object.
 /// This method is the designated initializer.
-/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
 ///
-/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
 ///
-- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
 /// After creating the Post Purchase SDK instance this is the next method to call.
 /// It will initialize the instance properties and assets required
@@ -1152,6 +1311,15 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+@end
+
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
 /// Replace the listener passed on initialization of the Post Purchase SDK
 /// This method replaces the listener passed during initialization of the Post Purchase SDK.
 /// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
@@ -1159,30 +1327,281 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// There can be one delegate assigned for each Post Purchase SDK instance
 /// \param listener The object that receives events of the Post Purchase SDK.
 ///
-- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
-/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
-/// This method removes the listener assigned to the Post Purchase SDK.
-/// important:
-/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
-- (void)removeEventListener;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+@protocol NSCoding;
+
+/// An event that’s sent to/from a given product we’re rendering in a component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
+@interface KlarnaProductEvent : NSObject
+/// Title or identifier for the event being sent.
+@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+/// Klarna product this is being sent to/from.
+/// The primary use for this is to interface with Klarna products in components that can render multiple
+/// products.
+/// When sending the event, you can set it to e.g. <code>KlarnaProduct.payments</code> to send this
+/// event exclusively to Klarna Payments, or <code>KlarnaProduct.all</code> if you want every type of
+/// component to receive it.
+/// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
+/// if the SDK can’t determine where the event is coming from.
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// Initializer available only for objc
+- (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
+/// Function available only for objc
+- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+
+/// Options to on specific products when they’re initialized in a web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
-  KlarnaResourceEndpointAlternative1 = 0,
-  KlarnaResourceEndpointAlternative2 = 1,
+
+/// Geographic API region that the SDK performs requests to.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK12KlarnaRegion")
+@interface KlarnaRegion : NSObject
+/// Europe
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull eu;)
++ (KlarnaRegion * _Nonnull)eu SWIFT_WARN_UNUSED_RESULT;
+/// North America
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull na;)
++ (KlarnaRegion * _Nonnull)na SWIFT_WARN_UNUSED_RESULT;
+/// Oceania
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull oc;)
++ (KlarnaRegion * _Nonnull)oc SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+/// The SDK retrieves resources and performs API calls to one of several cloud platforms (think AWS, GCP,
+/// Azure…). This “enum” determines what endpoints it should be using.
+/// This should generally not be read or set with the exception of very specific integrations. Klarna may
+/// still reserve the right override any selection you set based on legal or contractual requirements. Don’t
+/// use these unless explicitly agreed with Klarna.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
+@interface KlarnaResourceEndpoint : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+/// Interface to an object that’s notified when a component’s content has changed height internally.
+/// Compnents don’t size themselves, as the SDK can’t tell whether your app sets any external constraints.
+/// If you want to be able to size the component:
+/// <ul>
+///   <li>
+///     Implement this protocol.
+///   </li>
+///   <li>
+///     Set it on the component’s <code>KlarnaResizableComponent/sizingDelegate</code>.
+///   </li>
+///   <li>
+///     When this protocol’s function is called, size the component based on the supplied height (e.g., with
+///     constraints, setting the frame, etc).
+///   </li>
+/// </ul>
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK20KlarnaSizingDelegate_")
+@protocol KlarnaSizingDelegate
+/// Called when a Klarna component has changed size.
+/// \param klarnaComponent Component that changed size.
+///
+/// \param height Height in points that the component resized to.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent resizedToHeight:(CGFloat)height;
+@end
+
+
+@protocol KlarnaStandaloneWebViewDelegate;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
+@interface KlarnaStandaloneWebView : UIView
+@property (nonatomic, readonly) double estimatedProgress;
+@property (nonatomic, strong) id <KlarnaStandaloneWebViewDelegate> _Nullable delegate;
+/// Creates a <code>KlarnaStandaloneWebView</code>
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaMultiComponent>
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
+@end
+
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+@class WKNavigation;
+@class UIColor;
+@class WKFrameInfo;
+@class WKUserScript;
+@protocol WKScriptMessageHandler;
+@class WKContentWorld;
+@protocol WKScriptMessageHandlerWithReply;
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK))
+- (WKNavigation * _Nullable)loadURLRequest:(NSURLRequest * _Nonnull)request;
+- (WKNavigation * _Nullable)loadURL:(NSURL * _Nonnull)url;
+- (WKNavigation * _Nullable)loadFileURL:(NSURL * _Nonnull)url allowingReadAccessTo:(NSURL * _Nonnull)readAccessUrl;
+- (WKNavigation * _Nullable)loadHTML:(NSString * _Nonnull)htmlString withBaseURL:(NSURL * _Nullable)baseUrl;
+- (WKNavigation * _Nullable)reload;
+- (WKNavigation * _Nullable)reloadFromOrigin;
+- (void)stopLoading;
+- (WKNavigation * _Nullable)goBack;
+- (WKNavigation * _Nullable)goForward;
+@property (nonatomic, readonly, copy) NSURL * _Nullable url;
+@property (nonatomic, readonly, copy) NSString * _Nullable title;
+@property (nonatomic, readonly) BOOL isLoading;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) CGSize contentSize;
+@property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
+@property (nonatomic) BOOL allowsBackForwardAnimationGestures;
+@property (nonatomic) BOOL allowsLinkPreview;
+- (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
+- (void)addUserScript:(WKUserScript * _Nonnull)script;
+- (void)removeAllUserScripts;
+@property (nonatomic, readonly, copy) NSArray<WKUserScript *> * _Nonnull userScripts;
+- (void)addScriptMessageHandler:(id <WKScriptMessageHandler> _Nonnull)scriptMessageHandler named:(NSString * _Nonnull)name to:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)addScriptMessageHandler:(id <WKScriptMessageHandler> _Nonnull)scriptMessageHandler named:(NSString * _Nonnull)name;
+- (void)addScriptMessageHandlerWithReply:(id <WKScriptMessageHandlerWithReply> _Nonnull)scriptMessageHandlerWithReply named:(NSString * _Nonnull)name to:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeScriptMessageHandlerWithNamed:(NSString * _Nonnull)name from:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeScriptMessageHandlerWithNamed:(NSString * _Nonnull)name;
+- (void)removeAllScriptMessageHandlersFrom:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeAllScriptMessageHandlers;
+@property (nonatomic, readonly, copy) NSArray<id <WKScriptMessageHandler>> * _Nonnull scriptMessageHandlers;
+@property (nonatomic, readonly, copy) NSArray<id <WKScriptMessageHandlerWithReply>> * _Nonnull scriptMessageHandlersWithReply;
+@property (nonatomic) BOOL cachingEnabled;
+- (void)clearCache;
+- (void)clearCookies;
+@end
+
+@class WKNavigationResponse;
+@class WKNavigationAction;
+@class WKWebViewConfiguration;
+@class WKWindowFeatures;
+@class WKSecurityOrigin;
+
+/// This is the single delegate that you can implement to observe events in the web view.
+/// It’s a combination of <code>WKNavigationDelegate</code> and <code>WKUIDelegate</code>. Its functions behave the
+/// same way as the originals, but we cut down on what we expose to only the most important and make
+/// naming a bit more consistent.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaStandaloneWebViewDelegate_")
+@protocol KlarnaStandaloneWebViewDelegate
+@optional
+/// Asks the delegate for permission to navigate to new content after the response is known.
+/// Use this to allow or deny a request <em>after</em> the web view receives the response to the original
+/// URL request. The <code>navigationResponse</code> contains the details of the response, including the
+/// type of data it contains.
+/// warning:
+/// If this function is implemented, the handler needs to be called, even if only with <code>handler(.allow)</code>.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView decidePolicyFor:(WKNavigationResponse * _Nonnull)navigationResponse handler:(SWIFT_NOESCAPE void (^ _Nonnull)(WKNavigationResponsePolicy))handler;
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView decidePolicyFor:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+/// Invoked when a main frame navigation starts.
+/// The web view calls this method after it receives provisional approval to process a navigation
+/// request, but before it receives a response to that request.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+/// Invoked when a server redirect is received for the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didReceiveRedirectForProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+/// Invoked when content starts arriving for the main frame.
+/// After the delegate’s <code>klarnaStandaloneWebView(_:decidePolicyFor...</code> method
+/// approves the response, the web view begins processing it. The web view calls this method
+/// immediately before it starts to update the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didCommit:(WKNavigation * _Nonnull)navigation;
+/// Invoked when a main frame navigation completes.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFinish:(WKNavigation * _Nonnull)navigation;
+/// Invoked when an error occurs while starting to load data for the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+/// Invoked when an error occurs during a committed main frame navigation.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFail:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+/// Will be called when a navigation requesting a new tab or window occurs in the web view.
+/// You can either:
+/// <ul>
+///   <li>
+///     Return a new <code>WKWebView</code>, in which case content will be loaded there (for example if you have an internal browser with a WKWebView that you can use).
+///   </li>
+///   <li>
+///     Return <code>nil</code> and open the URL in <code>navigationAction.request</code> in the system browser - however session data might be lost.
+///   </li>
+///   <li>
+///     Return <code>nil</code> and the navigation will simply be blocked.
+///   </li>
+/// </ul>
+- (WKWebView * _Nullable)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView createWebViewWith:(WKWebViewConfiguration * _Nonnull)configuration forNavigation:(WKNavigationAction * _Nonnull)navigationAction withFeatures:(WKWindowFeatures * _Nonnull)windowFeatures SWIFT_WARN_UNUSED_RESULT;
+/// Determines whether a web resource, which the security origin object describes, can access the
+/// device’s microphone audio and camera video.
+/// warning:
+/// Default behavior if this function is not implemented is to call the handler with
+/// <code>.prompt</code> (i.e., to prompt the user).
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView requestMediaCapturePermissionFor:(WKSecurityOrigin * _Nonnull)origin initiatedByFrame:(WKFrameInfo * _Nonnull)frame ofType:(WKMediaCaptureType)type handler:(void (^ _Nonnull)(WKPermissionDecision))handler SWIFT_AVAILABILITY(ios,introduced=15.0);
+@end
+
+/// Defines the theme (or style) that components should use.
+/// The theme will always default to <code>light</code>. Automatic switching is opt-in. This is because both Klarna
+/// and many existing apps that integrate the SDK historically only support a light theme, and we don’t want
+/// to break existing integrations.
+typedef SWIFT_ENUM(NSInteger, KlarnaTheme, open) {
+/// Style this component with a dark theme (dark background with light foreground content).
+  KlarnaThemeDark = 0,
+/// Style this component with a light theme (light background with dark foreground content).
+  KlarnaThemeLight = 1,
+/// Style this component to automatically change its theme according to your app’s  <code>userInterfaceStyle</code>.
+  KlarnaThemeAutomatic = 2,
 };
 
 
-/// General class that envelops WKWebView
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
-@protocol KlarnaWebView <KlarnaComponent>
+/// General class that envelops all web views. Was originally used to mask away <code>WKWebView</code> and
+/// <code>UIWebView</code> specializations.
+/// note:
+/// Kept for compatibility until integrators migrate.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_") SWIFT_DEPRECATED_MSG("Not used as a type anymore.")
+@protocol KlarnaWebView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
+  KlarnaWebViewOpeningBehaviorDelegate = 0,
+  KlarnaWebViewOpeningBehaviorIgnore = 1,
+  KlarnaWebViewOpeningBehaviorNavigate = 2,
+  KlarnaWebViewOpeningBehaviorSystemBrowser = 3,
+  KlarnaWebViewOpeningBehaviorInternalBrowser = 4,
+};
 
 
 
@@ -1197,6 +1616,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
 @interface ScanBaseViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -1220,7 +1640,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
 
 
 
-@class UIColor;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 @interface UIDotLoadingIndicator : UIView
@@ -1247,9 +1666,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 
 
 
+SWIFT_DEPRECATED
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
@@ -1474,132 +1893,133 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-@class KlarnaCheckoutOptions;
-@protocol KlarnaEventListener;
-@class NSString;
 
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK17KlarnaCheckoutAPI_")
-@protocol KlarnaCheckoutAPI
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-- (void)suspend;
-- (void)resume;
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
+/// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
 @interface KlarnaCheckoutOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-/// General class that envelops any Klarna Component
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK15KlarnaComponent_")
-@protocol KlarnaComponent
-@end
-
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaCheckoutSDK")
-@interface KlarnaCheckoutSDK : NSObject <KlarnaComponent>
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSURL;
-enum KlarnaResourceEndpoint : NSInteger;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Create a Klarna Checkout SDK
-/// note:
-///
-/// Klarna Checkout SDK will create a view controller instance to be shown by the app,
-/// this view controller can be accessed by checkoutViewController variable.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
-///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
-/// Create a Klarna Checkout View
-/// note:
-///
-/// Klarna Checkout SDK will create a view controller instance to be shown by the app,
-/// this view controller can be accessed by checkoutViewController variable.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
-///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-@end
-
-@class KlarnaCheckoutViewController;
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Klarna Checkout View Controller
-/// note:
-///
-/// This view controller needs to be presented by the app itself once the checkout is initialized.
-@property (nonatomic, readonly, strong) KlarnaCheckoutViewController * _Nonnull checkoutViewController;
-@end
-
-
-@interface KlarnaCheckoutSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-/// Sends message to checkout to suspend operations.
-- (void)suspend;
-/// Sends message to checkout to resume operations.
-- (void)resume;
-/// Startup option for use when using a snippet obtained from server
-/// Loads html checkout “snippet” received from server into
-/// main WebView.
-/// \param str the snippet of html code that initializes the checkout.
-///
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaCheckoutSDKDebug")
-@interface KlarnaCheckoutSDKDebug : KlarnaCheckoutSDK
-@end
-
-@protocol KlarnaCheckoutSizeDelegate;
-@class NSNumber;
-@class UIScrollView;
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK23KlarnaCheckoutScrollAPI_")
-@protocol KlarnaCheckoutScrollAPI
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
-/// Should the internal scroll be disabled?
-@property (nonatomic) BOOL internalScrollDisabled;
-/// Should the view adjust it parent’s scroll view’s insets if a keyboard is shown?
-@property (nonatomic) BOOL adjustsParentScrollViewInsets;
-/// Parent (merchant’s) scroll view.
-@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@end
-
-
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaCheckoutSizeDelegate_")
-@protocol KlarnaCheckoutSizeDelegate
-- (void)klarnaCheckoutComponent:(id <KlarnaCheckoutScrollAPI> _Nonnull)checkoutComponent didResize:(CGSize)size;
-@end
-
 @class NSCoder;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
-@interface KlarnaCheckoutView : UIView <KlarnaComponent>
+@interface KlarnaCheckoutView : UIView
 /// Mark <code>init(frame:)</code> as <code>private</code> to prevent it being used to initialize the payment view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (void)didMoveToWindow;
 @end
 
+@class NSURL;
+@class KlarnaRegion;
+@class KlarnaEnvironment;
+@class KlarnaResourceEndpoint;
+enum KlarnaTheme : NSInteger;
+@protocol KlarnaEventHandler;
+enum KlarnaLoggingLevel : NSInteger;
+@class NSString;
+
+/// General class that envelops any Klarna Component, regardless of integration.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK15KlarnaComponent_")
+@protocol KlarnaComponent
+/// A schema (and optionally some path) defined in your app’s <code>Info.plist</code>, under <code>URLTypes</code> (aka
+/// <code>CFBundleURLTypes</code>) to ensure that customers get returned back to your app if they need to
+/// leave it for any reason.
+/// This schema is used in flows where the customer needs to be directed to an external app (for
+/// example if they need to authenticate with their bank). Klarna uses the value that you provided to
+/// configure third-party app flows so that when they’re complete, customers get automatically returned
+/// back to your app.
+/// warning:
+/// Make sure that the app schema you provide doesn’t trigger any navigations when
+/// called.
+/// warning:
+/// Not setting this (either through this property or some other initializer) can be very
+/// detrimental to the customers’ user experience (and hence conversion).
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+/// Geographic region that the SDK performs requests to. If not supplied, it may trigger an error or
+/// default to using <code>KlarnaRegion/eu</code> internally.
+/// Set this to a different value during intialization if you operate in an alternate region.
+/// warning:
+/// Setting it <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+/// Environment or “mode” that this SDK runs in. If not set, may trigger an error or default to using
+/// <code>KlarnaEnvironment/production</code> internally.
+/// Set this during initialization if you want the SDK to run in demo or playground mode.
+/// warning:
+/// Setting it <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+/// Determines what endpoints to fetch resources and perform requests from. Defaults to
+/// <code>KlarnaResourceEndpoint/alternative1</code>.
+/// warning:
+/// Don’t change unless explicitly discussed with Klarna.
+/// warning:
+/// Setting <em>after</em> a Klarna component is rendered may not have any effect.
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+/// Theme to render this component with. Defaults to <code>KlarnaTheme/light</code>.
+/// Set this value <em>before</em> the view (or web view) that you’re rendering Klarna’s conent in actually
+/// renders said content.
+/// warning:
+/// Setting this value <em>after</em> content is loaded might not have any effect.
+@property (nonatomic) enum KlarnaTheme theme;
+/// Event handler to set to receive events and errors from Klarna components.
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+/// Determines the amount of logging being performed by the SDK. Defaults to <code>KlarnaLoggingLevel/error</code>.
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+/// Product(s) being rendered in this component.
+/// In most standalone integrations, this value will be equal to a a single product. For example, if you’re
+/// rendering a <code>KlarnaPaymentView</code>, this value will just be equal to <code>KlarnaProduct/payments</code>.
+/// Integrations that can potentially render multiple products (for example using
+/// <code>KlarnaStandaloneWebView</code>) can have different values:
+/// <ul>
+///   <li>
+///     <code>KlarnaProduct/none</code> when the SDK doesn’t see any product running.
+///   </li>
+///   <li>
+///     <code>.<product></code> when it sees a single product.
+///   </li>
+///   <li>
+///     <code>[.<product1>, .<product2>]</code> when it sees multiple running at the same time.
+///   </li>
+/// </ul>
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+/// Components conforming to this protocol render a single Klarna product at a time.
+/// Empty for now, but keeping it for completeness, as it represents <code>KlarnaMultiComponent</code>’s
+/// counterpart.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
+@protocol KlarnaSingleComponent <KlarnaComponent>
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
 
 @interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Set the HTML snippet that you get from Klarna when creating an order to load Klarna Checkout
+/// into this view.
+/// \param snippet the HTML snippet that will be rendered in this view.
+///
+- (void)setSnippet:(NSString * _Nullable)snippet;
+/// Signals checkout to suspend the checkout process. Customers won’t be able to operate on the
+/// checkout view.
+- (void)suspend;
+/// Signals checkout to resume operations. It may do a backend check on the order state.
+- (void)resume;
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Options for Klarna Checkout integration
+@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
 /// Create a Klarna Checkout View
 /// note:
 ///
 /// Klarna checkout view will be initialized with frame <code>.zero</code>,
 /// auto layout is the recommended way to manage the view’s layout.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+/// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
 /// Create a Klarna Checkout View
@@ -1607,76 +2027,76 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaCheckoutView")
 ///
 /// Klarna checkout view will be initialized with frame <code>.zero</code>,
 /// auto layout is the recommended way to manage the view’s layout.
-/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+/// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
+@class NSNumber;
+@class UIScrollView;
 
-@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-/// Options for Klarna Checkout integration
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-/// When set, events will be sent via this callback instead of NSNotifications
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-/// Sends message to checkout to suspend operations.
-- (void)suspend;
-/// Sends message to checkout to resume operations.
-- (void)resume;
-/// Startup option for use when using a snippet obtained from server
-/// Loads html checkout “snippet” received from server into
-/// main WebView.
-/// \param str the snippet of html code that initializes the checkout.
-///
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
-@property (nonatomic) BOOL internalScrollDisabled;
-@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+/// This is a component with scrolling contents.
+/// Get (or set) the below properties to change how scrolling in the component behaves.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaScrollableComponent_")
+@protocol KlarnaScrollableComponent
+/// A boolean value that determines whether scrolling is enabled for the component.
+@property (nonatomic) BOOL isScrollEnabled;
+/// The custom distance that the content view is inset from the safe area or scroll view edges.
+@property (nonatomic) UIEdgeInsets contentInset;
+/// The point at which the origin of the content view is offset from the origin of the scroll view.
+@property (nonatomic, readonly) CGPoint contentOffset;
+/// The behavior for determining the adjusted content offsets.
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+/// The manner in which the keyboard is dismissed when a drag begins in the scroll view.
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+/// If this component is a subview of another scroll view, provide a reference to it here to allow the
+/// SDK to make both views scroll as one.
 @property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@end
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaCheckoutViewController")
-@interface KlarnaCheckoutViewController : UIViewController <KlarnaComponent>
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
-- (void)loadView;
-- (void)viewDidLoad;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK))
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutAPI>
-@property (nonatomic, readonly, strong) KlarnaCheckoutOptions * _Nullable checkoutOptions;
-@property (nonatomic, strong) id <KlarnaEventListener> _Nullable klarnaEventListener;
-- (void)suspend;
-- (void)resume;
-- (void)setSnippet:(NSString * _Nullable)str;
-@end
-
-
-@interface KlarnaCheckoutViewController (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaCheckoutScrollAPI>
-@property (nonatomic, strong) id <KlarnaCheckoutSizeDelegate> _Nullable sizeDelegate;
+/// When a keyboard appears and this view’s scroll view is nested in a parent scroll view, setting this
+/// value to <code>true</code> ensures that only the outer scroll view adjusts its insets.
 @property (nonatomic) BOOL adjustsParentScrollViewInsets;
-@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
-@property (nonatomic) BOOL internalScrollDisabled;
+@end
+
+@protocol KlarnaSizingDelegate;
+
+/// This is component with resizing contents.
+/// Provide a size delegate to be notified of sizing changes.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK24KlarnaResizableComponent_")
+@protocol KlarnaResizableComponent
+/// Height of the component’s content in points.
+@property (nonatomic, readonly) CGFloat contentHeight;
+/// Delegate that gets called when the component’s content changes height. Change its external
+/// height here.
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
 @end
 
 
-SWIFT_CLASS("_TtC15KlarnaMobileSDK33KlarnaCheckoutViewControllerDebug")
-@interface KlarnaCheckoutViewControllerDebug : KlarnaCheckoutViewController
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+/// This is a component that hosts and owns its own content.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaStandaloneComponent_")
+@protocol KlarnaStandaloneComponent <KlarnaComponent, KlarnaResizableComponent, KlarnaScrollableComponent>
+@end
+
+
+@interface KlarnaCheckoutView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @end
 
 
@@ -1686,12 +2106,29 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaCheckoutViewDebug")
 
 
 
+/// This is an event that describes something that occurred internally within the SDK, which can be used
+/// to debug espcially complex problems.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK16KlarnaDebugEvent")
 @interface KlarnaDebugEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// Implement this interface to receive information about events internal to the SDK.
+/// This is not necessary in most cases. We might ask you to implement this and log the events somewhere
+/// if we identify an otherwise undebuggable problem in the SDK.
+/// warning:
+/// This method is called <em>a lot</em>. This means that you should <em>absolutely never</em> log events
+/// sent through this to the network. It’ll burn through your users’ data.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK24KlarnaDebugEventDelegate_")
+@protocol KlarnaDebugEventDelegate
+/// A given Klarna component has relayed an event to your delegate.
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent relayedEvent:(KlarnaDebugEvent * _Nonnull)event;
+@end
+
+/// Type of debug event that is being logged.
 typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, open) {
   KlarnaDebugEventTypeLog = 0,
   KlarnaDebugEventTypeNetwork = 1,
@@ -1699,16 +2136,111 @@ typedef SWIFT_ENUM(NSInteger, KlarnaDebugEventType, open) {
 };
 
 
-SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent")
+/// Configures the “mode” that the SDK should run in.
+/// The environment determines the endpoints the SDK makes requests to, how it behaves (e.g., what kinds
+/// of validation are perfomed) as well as customizing other aspects of how it runs.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaEnvironment")
+@interface KlarnaEnvironment : NSObject
+/// Run in a “demo” mode where no (or minimal) API requests are performed.
+/// Content is static, not localized, and tokens, API keys and other identifiiers are not validated at all.
+/// This is useful to test if the SDK works during integration, before you have access to any tokens or
+/// keys, or if you want to run UI tests that aren’t fully end-to-end.
+/// warning:
+/// Not supported for all integrations.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull demo;)
++ (KlarnaEnvironment * _Nonnull)demo SWIFT_WARN_UNUSED_RESULT;
+/// The SDK will perform requests against playground endpoints, where not real money/orders/etc.
+/// are being handled.
+/// Some backend validation is in place, while other fields could be ignored e.g: the backend may
+/// check that an address is real, but might not do the same checks about a customer.
+/// warning:
+/// Make sure that you’re using playground merchant IDs / tokens / keys etc, or the
+/// integration might not work.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull playground;)
++ (KlarnaEnvironment * _Nonnull)playground SWIFT_WARN_UNUSED_RESULT;
+/// The SDK will perform requests against production endpoints, where real full validation and orders
+/// take place.
+/// This is the default value in all integrations.
+/// warning:
+/// Make sure that you’re using production merchant IDs / tokens / etc, or the
+/// integration might not work.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull production;)
++ (KlarnaEnvironment * _Nonnull)production SWIFT_WARN_UNUSED_RESULT;
+/// The SDK uses this environment in Klarna-internal integrations to make requests to staging
+/// environments.
+/// warning:
+/// Do not use this unless running against Klarna’s internal testing environments.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnvironment * _Nonnull staging;)
++ (KlarnaEnvironment * _Nonnull)staging SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Describes a generic error that occurred within the SDK.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
+@interface KlarnaError : NSObject
+/// Unique name identifying this error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+/// Description of the error.
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+/// Describes whether this error is fatal. This means some part of the flow failed permanently.
+@property (nonatomic, readonly) BOOL isFatal;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Represents an event that was sent by a component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent") SWIFT_DEPRECATED_MSG("Use KlarnaProductEvent through eventHandler instead.")
 @interface KlarnaEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nullable bodyString;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaMobileSDKError;
+@class KlarnaProductEvent;
 
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_")
+/// Interface to an object that gets notfied of key events happening to a product in a Klarna component.
+/// Most integrations offer dedicated delegates/handlers with concrete methods that you can implement –
+/// but there’s cases when an SDK renders multiple products and/or the events are too varied or generic to
+/// provide you with a specialized API. This is for those cases.
+/// If you want to receive events from the SDK:
+/// <ul>
+///   <li>
+///     Implement this protocol.
+///   </li>
+///   <li>
+///     Set it on the component’s <code>KlarnaComponent/eventHandler</code>.
+///   </li>
+///   <li>
+///     Observe for the events that you’re interested in.
+///   </li>
+/// </ul>
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK18KlarnaEventHandler_")
+@protocol KlarnaEventHandler
+/// An event happened within a Klarna component.
+/// \param klarnaCompnent The component that the event came from.
+///
+/// \param event The event itself.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent dispatchedEvent:(KlarnaProductEvent * _Nonnull)event;
+/// An error occured within a Klarna component.
+/// \param klarnaComponent The component that the error came from.
+///
+/// \param event The error that was encountered.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent encounteredError:(KlarnaError * _Nonnull)error;
+@end
+
+
+/// Represents an event listener used in several Klarna components.
+/// warning:
+/// Deprecated, implement <code>KlarnaEventHandler</code> and set it as the component’s
+/// <code>eventHandler</code> instead.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventHandler instead")
 @protocol KlarnaEventListener
 /// Called when Klarna’s<code>UIView</code> has received event signals.
 /// \param view instance of the UIView class that received this signal.
@@ -1723,7 +2255,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_")
 ///
 /// \param error details of the error received such as name, message etc.
 ///
-- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaMobileSDKError * _Nonnull)error;
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
 @end
 
 @protocol KlarnaWebView;
@@ -1772,14 +2304,14 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK29KlarnaFullscreenEventListener_")
 /// warning:
 /// Make sure you listen to to <code>klarnaFailed(inWebView:withError:)</code> for potential
 /// fatal and non-fatal errors. If the error is not fatal, you can call the method again.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaHybridEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventListener and KlarnaFullscreenEventListener instead.")
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK25KlarnaHybridEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaEventHandler and KlarnaFullscreenEventListener instead.")
 @protocol KlarnaHybridEventListener <KlarnaFullscreenEventListener>
 /// Event to notify merchant that an error occured during Hybrid SDK’s usage.
 /// \param webView The web view the error occured in.
 ///
 /// \param error Error details.
 ///
-- (void)klarnaFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
+- (void)klarnaFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaError * _Nonnull)error;
 @end
 
 
@@ -1791,86 +2323,28 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class KlarnaProductOptions;
-@protocol KlarnaHybridSDKEventListener;
+@class WKWebView;
 @class NSURLRequest;
 
 @interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
-@property (nonatomic, copy) NSString * _Nullable klarnaInitData SWIFT_DEPRECATED_MSG("This has been replaced with KlarnaProductOptions to accommodate more options.");
-/// Feature flags for products.
-@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// warning:
-/// This initializer is deprecated. Use the new one and just initialize the SDK and
-/// add the web view you’ll be using.
-/// \param webView A web view (<code>WKWebView</code>) for Klarna’s SDK to operate on.
-///
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithWebView:(id <KlarnaWebView> _Nonnull)webView returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridSDKEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-/// Initialize the Klarna Mobile SDK in hybrid mode.
-/// note:
-/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param eventListener A listener that will receive events from the SDK.
-///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
 /// Adds a web view that the SDK will keep track of until either the web view or the SDK is
 /// dereferenced.
 /// You may add multiple web views to the same instance.
 /// \param webView Web view that the SDK will keep track of (<code>WKWebView</code>).
 ///
-- (void)addWebView:(id <KlarnaWebView> _Nonnull)webView;
+- (void)addWebView:(WKWebView * _Nonnull)webView;
 /// Notify the SDK that a new page will load in the provided web view.
 /// Call should be perfomed in:
 /// <code>webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)</code>.
 /// \param webView Web view that the SDK will check (<code>WKWebView</code>).
 ///
-- (void)newPageLoadIn:(id <KlarnaWebView> _Nonnull)webView;
+- (void)newPageLoadIn:(WKWebView * _Nonnull)webView;
 /// Notify the SDK that a new page will load in the provided web view.
 /// warning:
 /// Use <code>newPageLoad</code> from this same class instead.
 /// \param webView Web view that the SDK will check (<code>WKWebView</code>).
 ///
-- (void)newPageWillLoadIn:(id <KlarnaWebView> _Nonnull)webView SWIFT_DEPRECATED_MSG("Use the `newPageLoad` instead.");
+- (void)newPageWillLoadIn:(WKWebView * _Nonnull)webView SWIFT_DEPRECATED_MSG("Use the `newPageLoad` instead.");
 /// Verify with the SDK whether a request/navigation should be performed in the web view.
 /// Checking should be perfomed in:
 /// <code>webView(_: decidePolicyFor: decisionHandler:)</code> with the <code>navigationAction</code>’s <code>request</code> property.
@@ -1893,7 +2367,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// returns:
 /// a unique ID, persistent throughout the app’s installation.
-+ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Use the method of the same name on KlarnaMobileSDK instead.");
++ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Do not use.");
 /// To be called when the application is re-opened from a third-party application while the SDK
 /// is running.
 /// warning:
@@ -1906,57 +2380,99 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// Adds a callback that the SDK will call if Klarna needs to send arbitrary information that will be forward to the merchant.
 /// \param callback Closure to handle message events sent to merchants.
 ///
-- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback SWIFT_DEPRECATED_MSG("Replaced with KlarnaEventListener in the constructor.");
+- (void)registerEventListenerWithCallback:(void (^ _Nonnull)(KlarnaEvent * _Nonnull))callback SWIFT_DEPRECATED_MSG("Replaced with implementing KlarnaEventHandler set as EventHandler.");
+@end
+
+@class KlarnaProductOptions;
+
+@interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Arbitrary data as string that will be sent to Klarna components in handshake with the SDK.
+@property (nonatomic, copy) NSString * _Nullable klarnaInitData SWIFT_DEPRECATED_MSG("This has been replaced with KlarnaProductOptions to accommodate more options.");
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
 @property (nonatomic, strong) id <KlarnaFullscreenEventListener> _Nullable fullscreenEventListener;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaHybridEventListener> _Nonnull)eventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param fullscreenEventListener Listener that will notify fullscreen events.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param fullscreenEventListener Listener that will notify fullscreen events.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
+@end
+
+
+/// Components conforming to this interface protocol may render multiple products at once.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK20KlarnaMultiComponent_")
+@protocol KlarnaMultiComponent <KlarnaComponent>
+/// Determines the products that the SDK will enhance to work in the app. Defaults to <code>KlarnaProduct/all</code>,
+/// Use this property to signal to products to <em>not</em> use the SDK.
+/// warning:
+/// Some Klarna products may ignore this flag.
+/// warning:
+/// Setting this to a single product or <code>KlarnaProduct/none</code> may cause
+/// integrations to <em>not work properly</em>. Use this only if you want specific products to <em>not</em> be
+/// enhanced by the SDK and only if agreed with Klarna.
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+/// Sends an event to a given Klarna product.
+/// Use this in cases when you don’t have a dedicated API to operate on a specific Klarna product.
+/// warning:
+/// Events are not buffered or persisted. If you send an event to a product that is not
+/// ready to receive messages, it will be lost. Check that the product is loaded by looking at the
+/// <code>KlarnaComponent/products</code> property.
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
+/// These are startup options for specific products loaded in a web view that the SDK operates on.
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
+@end
+
+
+@interface KlarnaHybridSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaMultiComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
 @end
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
 @interface KlarnaHybridSDKDebug : KlarnaHybridSDK
-@end
-
-
-/// Your app should listen to SDK events in the from the Hybrid SDK by implementing this protocol.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK28KlarnaHybridSDKEventListener_") SWIFT_DEPRECATED_MSG("Use KlarnaHybridEventListener instead.")
-@protocol KlarnaHybridSDKEventListener
-/// Event to notify the merchant app that the following web view will present content that
-/// should be displayed in a full-screen format.
-/// \param webView Web view to be presented in fullscreen.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete.
-///
-- (void)klarnaHybridSDKWillShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify the merchant app merchant that content that should be presented in
-/// full-screen has been displayed.
-/// \param webView Web view that has presented full-screen content.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete.
-///
-- (void)klarnaHybridSDKDidShowFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify the merchant’s app that the full-screen content in the following web view
-/// will be removed, and the “original” contents will be displayed.
-/// \param webView Web view to be restored to original presentation.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete
-///
-- (void)klarnaHybridSDKWillHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify merchant that the full-screen content in the web view has been removed and
-/// it is now displaying “regular” content.
-/// \param webView Web View presenting original content.
-///
-/// \param completion A callback the merchant should use to let the Hybrid SDK know when any
-/// actions addressing this event are complete
-///
-- (void)klarnaHybridSDKDidHideFullscreenInWebView:(id <KlarnaWebView> _Nonnull)webView completion:(void (^ _Nonnull)(void))completion;
-/// Event to notify merchant that an error occured during Hybrid SDK usage.
-/// \param webView on which webview the failure happened.
-///
-/// \param error detail error.
-///
-- (void)klarnaHybridSDKFailedInWebView:(id <KlarnaWebView> _Nonnull)webView withError:(KlarnaMobileSDKError * _Nonnull)error;
 @end
 
 /// Level of logging to system console.
@@ -1981,7 +2497,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 /// The default logging level is <code>error</code>.
 /// \param loggingLevel Console log output level.
 ///
-+ (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel;
++ (void)setLoggingLevel:(enum KlarnaLoggingLevel)loggingLevel SWIFT_DEPRECATED_MSG("Set logging level at per-component level instead.");
 /// Provides a device identifier for an app.
 /// The string it returns remains constant during the app’s lifetime on the app. The value does
 /// not change on updates, but will change on re-installs.
@@ -1989,55 +2505,22 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 ///
 /// returns:
 /// A unique persisted ID string.
-+ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT;
++ (NSString * _Nonnull)deviceIdentifier SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Do not use. May be eventually removed.");
 @end
 
 
-/// Describes a generic error that occurred within the SDK.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaMobileSDKError")
-@interface KlarnaMobileSDKError : NSObject
-/// Unique name identifying this error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull name;
-/// Description of the error.
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-/// Describes whether this error is fatal. This means some part of the flow failed permanently.
-@property (nonatomic, readonly) BOOL isFatal;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMEnvironment, open) {
-  KlarnaOSMEnvironmentDemo = 0,
-  KlarnaOSMEnvironmentProduction = 1,
-  KlarnaOSMEnvironmentPlayground = 2,
-};
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMRegion, open) {
-  KlarnaOSMRegionEu = 0,
-  KlarnaOSMRegionNa = 1,
-  KlarnaOSMRegionOc = 2,
-};
-
-typedef SWIFT_ENUM(NSInteger, KlarnaOSMTheme, open) {
-  KlarnaOSMThemeDark = 0,
-  KlarnaOSMThemeLight = 1,
-  KlarnaOSMThemeAutomatic = 2,
-};
-
+@class UIViewController;
 @protocol KlarnaOSMViewEventListener;
 
-/// OSM Placement View
+/// This is a Klarna On-Site Messaging Placement View
 /// View starts off as completely empty/transparent. There is no content until
-/// <code>render()</code> is called.
-/// The view self-sizes vertically. Add to parent with <code>addSubview()</code> and set outer
-/// constraints (top, left, leading, trailing).
+/// <code>KlarnaOSMView/render(callback:)</code> is called.
+/// note:
+/// If no <code>delegate</code> or <code>sizingDelegate</code> is set, the view will self-size vertically. In that case,
+/// just add it to the parent view with <code>addSubview()</code> and set edge constraints (top, bottom, leading,
+/// trailing).
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 @interface KlarnaOSMView : UIView
-/// Initialize OSM view.
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 /// Merchant’s Client ID (required)
 @property (nonatomic, copy) NSString * _Nullable clientId;
 /// Merchant’s Placement’s Key (required)
@@ -2047,41 +2530,101 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 /// View controller (or activity) that will be used to render placement
 /// details modally (required). Would be <code>hostActivity</code> on Android.
 @property (nonatomic, weak) UIViewController * _Nullable hostViewController;
-/// Environment for testing and production. Default will be demo
-@property (nonatomic) enum KlarnaOSMEnvironment environment;
-/// Theme for the widget.
-@property (nonatomic) enum KlarnaOSMTheme theme;
 /// Event listener for OSM View.
-@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate;
+@property (nonatomic, weak) id <KlarnaOSMViewEventListener> _Nullable delegate SWIFT_DEPRECATED_MSG("Set a KlarnaSizingDelegate on sizingDelegate instead.");
+/// Initialize OSM view.
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Initialize OSM view.
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)setPurchaseAmount:(NSNumber * _Nullable)amount;
-- (void)setRegion:(enum KlarnaOSMRegion)region;
-/// Called after the above properties are set. Renders the content in the
-/// placement. The view will update/style its contents at this stage.
-/// If a property is missing, an error will be returned. If rendering
-/// is disabled, an error will be returned. If a property is invalid, an error
-/// will be returned.
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Renders the content in the view. If already rendered, the view will update (or restyle) its contents
+/// instead.
+/// warning:
+/// To be called only after <code>clientId</code>, <code>placementKey</code>, <code>purchaseAmount</code>,
+/// <code>environment</code> and <code>region</code>  properties are set.
+/// An error will set in the callback if:
+/// <ul>
+///   <li>
+///     If a property is missing
+///   </li>
+///   <li>
+///     If rendering placements is disabled for you
+///   </li>
+///   <li>
+///     If a property is invalid
+///   </li>
+/// </ul>
 /// \param callback Merchant-supplied callback to be used when placement is
 /// rendered or an error occurs. Called on main thread.
 ///
-- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaMobileSDKError * _Nullable))callback;
+- (void)renderWithCallback:(void (^ _Nonnull)(KlarnaError * _Nullable))callback;
+/// Renders the content in the view. If already rendered, the view will update (or restyle) its contents
+/// instead.
+/// warning:
+/// To be called only after <code>clientId</code>, <code>placementKey</code>, <code>purchaseAmount</code>,
+/// <code>environment</code> and <code>region</code>  properties are set.
+/// An error will be sent to KlarnaEventHandler if:
+/// <ul>
+///   <li>
+///     If a property is missing
+///   </li>
+///   <li>
+///     If rendering placements is disabled for you
+///   </li>
+///   <li>
+///     If a property is invalid
+///   </li>
+/// </ul>
+- (void)render;
+@end
+
+
+@interface KlarnaOSMView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
 @end
 
 
 /// An object that will be notified of events happening to a <code>KlarnaOSMView</code>
 /// If you’re integrating KlarnaOSMView inside a view that needs to specify the content height,
 /// you’ll need to implement an instance of this listener.
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_")
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRECATED_MSG("Implement KlarnaSizingDelegate instead.")
 @protocol KlarnaOSMViewEventListener
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
 
-/// An SDK error specific to the Klarna Payments component.
+/// An SDK error specific to Klarna Payments.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
-@interface KlarnaPaymentError : KlarnaMobileSDKError
-/// If an error isn’t fatal, the SDK will inform you of what fields need to be addressed.
+@interface KlarnaPaymentError : KlarnaError
+/// If an error isn’t fatal, it may be due to invalid fields being supplied. The fields that need to be
+/// corrected will be supplied here.
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable invalidFields;
-/// Action the error occurred during.
+/// If the error occured during a specific operation, it will be supplied here.
 @property (nonatomic, readonly, copy) NSString * _Nullable action;
 @end
 
@@ -2180,6 +2723,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaPaymentEventListener_")
 @end
 
 
+/// Options to be sent to Klarna Payments on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaPaymentOptions")
 @interface KlarnaPaymentOptions : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2195,92 +2739,18 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
 @interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
-/// Payment method category this view will be / is displaying.
-@property (nonatomic, readonly, copy) NSString * _Nonnull category;
-/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
-/// True by default. Once it becomes false, it will not become true again.
-@property (nonatomic, readonly) BOOL isLoaded;
-/// Informs whether this PaymentView’s content is loaded.
-/// Will be false until a successful load() call has been performed.
-@property (nonatomic, readonly) BOOL isAvalable;
-/// Feature flags for products.
-@property (nonatomic, strong) KlarnaProductOptions * _Nonnull productOptions;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
-/// Create a Klarna Payment View
-/// note:
-///
-/// Klarna payment view will be initialized with frame <code>.zero</code>,
-/// auto layout is the recommended way to manage the view’s layout.
-/// note:
-///
-/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
-/// automatically. You need to call initialize yourself.
-/// \param category Category of payment methods to be loaded.
-///
-/// \param delegate A listener object that will receive events from this view.
-///
-/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
-///
-- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint;
 /// Initialize the <code>KlarnaPaymentView</code>.
-/// note:
-///
-/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error.
 /// \param clientToken Client token received from Klarna when creating the session.
 ///
 /// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (void)initializeWithClientToken:(NSString * _Nonnull)clientToken returnUrl:(NSURL * _Nonnull)returnUrl;
 /// Initialize the <code>KlarnaPaymentView</code>.
-/// note:
-///
-/// <em>Only</em> call this separately when you get a <code>invalidClientToken</code> error and the returnURL was specified in the Init of KlarnaPaymentView
 /// \param clientToken Client token received from Klarna when creating the session.
 ///
 - (void)initializeWithClientToken:(NSString * _Nonnull)clientToken;
@@ -2336,6 +2806,105 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 @end
 
 
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Payment method category this view will be / is displaying.
+@property (nonatomic, readonly, copy) NSString * _Nonnull category;
+/// Informs whether this <code>KlarnaPaymentView</code> should be displayed to the customer.
+/// Will be false until a successful load() call has been performed.
+@property (nonatomic, readonly) BOOL isLoaded;
+/// Informs whether this PaymentView’s content is loaded.
+/// True by default. Once it becomes false, it will not become true again.
+@property (nonatomic, readonly) BOOL isAvalable;
+/// Options for Klarna Payments integration
+@property (nonatomic, readonly, strong) KlarnaPaymentOptions * _Nonnull paymentOptions;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param returnUrl Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+@end
+
+
+@interface KlarnaPaymentView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 @interface KlarnaPaymentViewDebug : KlarnaPaymentView
 @end
@@ -2343,7 +2912,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaPaymentViewDebug")
 
 /// An SDK error specific to the Klarna Post Purchase native component.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaPostPurchaseError")
-@interface KlarnaPostPurchaseError : KlarnaMobileSDKError
+@interface KlarnaPostPurchaseError : KlarnaError
 @property (nonatomic, readonly, copy) NSString * _Nullable status;
 @end
 
@@ -2365,26 +2934,35 @@ typedef SWIFT_ENUM(NSInteger, KlarnaPostPurchaseRenderResult, open) {
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
-@interface KlarnaPostPurchaseSDK : NSObject <KlarnaComponent>
+@interface KlarnaPostPurchaseSDK : NSObject
+/// Internal initializer.
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Create a Klarna Post Purchase Instance with the specified parameters.
 /// Use this method when creating a PostPurchaseSDK object.
 /// This method is the designated initializer.
-/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaPostPurchaseEnvironment</code>
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
 ///
-/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaPostPurchaseRegion</code>
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
 ///
-- (nonnull instancetype)initWithEnvironment:(NSString * _Nonnull)environment region:(NSString * _Nonnull)region resourceEndpoint:(enum KlarnaResourceEndpoint)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+@end
+
+@class PostPurchaseAuthRequest;
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
 /// After creating the Post Purchase SDK instance this is the next method to call.
 /// It will initialize the instance properties and assets required
@@ -2411,6 +2989,15 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
 - (void)renderOperationWithOperationToken:(NSString * _Nonnull)operationToken locale:(NSString * _Nullable)locale redirectUri:(NSString * _Nullable)redirectUri;
+@end
+
+
+@interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
 /// Replace the listener passed on initialization of the Post Purchase SDK
 /// This method replaces the listener passed during initialization of the Post Purchase SDK.
 /// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
@@ -2418,30 +3005,281 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// There can be one delegate assigned for each Post Purchase SDK instance
 /// \param listener The object that receives events of the Post Purchase SDK.
 ///
-- (void)setEventListener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
-/// Removes the listener assigned the Post Purchase SDK either during initialization or by calling <code>setEventListener:</code> method
-/// This method removes the listener assigned to the Post Purchase SDK.
-/// important:
-/// Be aware that removing the listener will cause not receiving updates about the Post Purchase SDK functions results.
-- (void)removeEventListener;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+@protocol NSCoding;
+
+/// An event that’s sent to/from a given product we’re rendering in a component.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
+@interface KlarnaProductEvent : NSObject
+/// Title or identifier for the event being sent.
+@property (nonatomic, readonly, copy) NSString * _Nonnull action;
+/// Klarna product this is being sent to/from.
+/// The primary use for this is to interface with Klarna products in components that can render multiple
+/// products.
+/// When sending the event, you can set it to e.g. <code>KlarnaProduct.payments</code> to send this
+/// event exclusively to Klarna Payments, or <code>KlarnaProduct.all</code> if you want every type of
+/// component to receive it.
+/// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
+/// if the SDK can’t determine where the event is coming from.
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// Initializer available only for objc
+- (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
+/// Function available only for objc
+- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+
+/// Options to on specific products when they’re initialized in a web view.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaProductOptions")
 @interface KlarnaProductOptions : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, KlarnaResourceEndpoint, open) {
-  KlarnaResourceEndpointAlternative1 = 0,
-  KlarnaResourceEndpointAlternative2 = 1,
+
+/// Geographic API region that the SDK performs requests to.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK12KlarnaRegion")
+@interface KlarnaRegion : NSObject
+/// Europe
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull eu;)
++ (KlarnaRegion * _Nonnull)eu SWIFT_WARN_UNUSED_RESULT;
+/// North America
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull na;)
++ (KlarnaRegion * _Nonnull)na SWIFT_WARN_UNUSED_RESULT;
+/// Oceania
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion * _Nonnull oc;)
++ (KlarnaRegion * _Nonnull)oc SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+/// The SDK retrieves resources and performs API calls to one of several cloud platforms (think AWS, GCP,
+/// Azure…). This “enum” determines what endpoints it should be using.
+/// This should generally not be read or set with the exception of very specific integrations. Klarna may
+/// still reserve the right override any selection you set based on legal or contractual requirements. Don’t
+/// use these unless explicitly agreed with Klarna.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
+@interface KlarnaResourceEndpoint : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+
+/// Interface to an object that’s notified when a component’s content has changed height internally.
+/// Compnents don’t size themselves, as the SDK can’t tell whether your app sets any external constraints.
+/// If you want to be able to size the component:
+/// <ul>
+///   <li>
+///     Implement this protocol.
+///   </li>
+///   <li>
+///     Set it on the component’s <code>KlarnaResizableComponent/sizingDelegate</code>.
+///   </li>
+///   <li>
+///     When this protocol’s function is called, size the component based on the supplied height (e.g., with
+///     constraints, setting the frame, etc).
+///   </li>
+/// </ul>
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK20KlarnaSizingDelegate_")
+@protocol KlarnaSizingDelegate
+/// Called when a Klarna component has changed size.
+/// \param klarnaComponent Component that changed size.
+///
+/// \param height Height in points that the component resized to.
+///
+- (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent resizedToHeight:(CGFloat)height;
+@end
+
+
+@protocol KlarnaStandaloneWebViewDelegate;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
+@interface KlarnaStandaloneWebView : UIView
+@property (nonatomic, readonly) double estimatedProgress;
+@property (nonatomic, strong) id <KlarnaStandaloneWebViewDelegate> _Nullable delegate;
+/// Creates a <code>KlarnaStandaloneWebView</code>
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
+@end
+
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaMultiComponent>
+@property (nonatomic, readonly, strong) KlarnaProductOptions * _Nonnull productOptions;
+@property (nonatomic, copy) NSSet<NSString *> * _Nonnull enabledProducts;
+- (void)sendEvent:(KlarnaProductEvent * _Nonnull)event;
+@end
+
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic, readonly) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+@class WKNavigation;
+@class UIColor;
+@class WKFrameInfo;
+@class WKUserScript;
+@protocol WKScriptMessageHandler;
+@class WKContentWorld;
+@protocol WKScriptMessageHandlerWithReply;
+
+@interface KlarnaStandaloneWebView (SWIFT_EXTENSION(KlarnaMobileSDK))
+- (WKNavigation * _Nullable)loadURLRequest:(NSURLRequest * _Nonnull)request;
+- (WKNavigation * _Nullable)loadURL:(NSURL * _Nonnull)url;
+- (WKNavigation * _Nullable)loadFileURL:(NSURL * _Nonnull)url allowingReadAccessTo:(NSURL * _Nonnull)readAccessUrl;
+- (WKNavigation * _Nullable)loadHTML:(NSString * _Nonnull)htmlString withBaseURL:(NSURL * _Nullable)baseUrl;
+- (WKNavigation * _Nullable)reload;
+- (WKNavigation * _Nullable)reloadFromOrigin;
+- (void)stopLoading;
+- (WKNavigation * _Nullable)goBack;
+- (WKNavigation * _Nullable)goForward;
+@property (nonatomic, readonly, copy) NSURL * _Nullable url;
+@property (nonatomic, readonly, copy) NSString * _Nullable title;
+@property (nonatomic, readonly) BOOL isLoading;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) CGSize contentSize;
+@property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
+@property (nonatomic) BOOL allowsBackForwardAnimationGestures;
+@property (nonatomic) BOOL allowsLinkPreview;
+- (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
+- (void)addUserScript:(WKUserScript * _Nonnull)script;
+- (void)removeAllUserScripts;
+@property (nonatomic, readonly, copy) NSArray<WKUserScript *> * _Nonnull userScripts;
+- (void)addScriptMessageHandler:(id <WKScriptMessageHandler> _Nonnull)scriptMessageHandler named:(NSString * _Nonnull)name to:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)addScriptMessageHandler:(id <WKScriptMessageHandler> _Nonnull)scriptMessageHandler named:(NSString * _Nonnull)name;
+- (void)addScriptMessageHandlerWithReply:(id <WKScriptMessageHandlerWithReply> _Nonnull)scriptMessageHandlerWithReply named:(NSString * _Nonnull)name to:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeScriptMessageHandlerWithNamed:(NSString * _Nonnull)name from:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeScriptMessageHandlerWithNamed:(NSString * _Nonnull)name;
+- (void)removeAllScriptMessageHandlersFrom:(WKContentWorld * _Nonnull)contentWorld SWIFT_AVAILABILITY(ios,introduced=14.0);
+- (void)removeAllScriptMessageHandlers;
+@property (nonatomic, readonly, copy) NSArray<id <WKScriptMessageHandler>> * _Nonnull scriptMessageHandlers;
+@property (nonatomic, readonly, copy) NSArray<id <WKScriptMessageHandlerWithReply>> * _Nonnull scriptMessageHandlersWithReply;
+@property (nonatomic) BOOL cachingEnabled;
+- (void)clearCache;
+- (void)clearCookies;
+@end
+
+@class WKNavigationResponse;
+@class WKNavigationAction;
+@class WKWebViewConfiguration;
+@class WKWindowFeatures;
+@class WKSecurityOrigin;
+
+/// This is the single delegate that you can implement to observe events in the web view.
+/// It’s a combination of <code>WKNavigationDelegate</code> and <code>WKUIDelegate</code>. Its functions behave the
+/// same way as the originals, but we cut down on what we expose to only the most important and make
+/// naming a bit more consistent.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaStandaloneWebViewDelegate_")
+@protocol KlarnaStandaloneWebViewDelegate
+@optional
+/// Asks the delegate for permission to navigate to new content after the response is known.
+/// Use this to allow or deny a request <em>after</em> the web view receives the response to the original
+/// URL request. The <code>navigationResponse</code> contains the details of the response, including the
+/// type of data it contains.
+/// warning:
+/// If this function is implemented, the handler needs to be called, even if only with <code>handler(.allow)</code>.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView decidePolicyFor:(WKNavigationResponse * _Nonnull)navigationResponse handler:(SWIFT_NOESCAPE void (^ _Nonnull)(WKNavigationResponsePolicy))handler;
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView decidePolicyFor:(WKNavigationAction * _Nonnull)navigationAction decisionHandler:(void (^ _Nonnull)(WKNavigationActionPolicy))decisionHandler;
+/// Invoked when a main frame navigation starts.
+/// The web view calls this method after it receives provisional approval to process a navigation
+/// request, but before it receives a response to that request.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didStartProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+/// Invoked when a server redirect is received for the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didReceiveRedirectForProvisionalNavigation:(WKNavigation * _Nonnull)navigation;
+/// Invoked when content starts arriving for the main frame.
+/// After the delegate’s <code>klarnaStandaloneWebView(_:decidePolicyFor...</code> method
+/// approves the response, the web view begins processing it. The web view calls this method
+/// immediately before it starts to update the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didCommit:(WKNavigation * _Nonnull)navigation;
+/// Invoked when a main frame navigation completes.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFinish:(WKNavigation * _Nonnull)navigation;
+/// Invoked when an error occurs while starting to load data for the main frame.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+/// Invoked when an error occurs during a committed main frame navigation.
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView didFail:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+/// Will be called when a navigation requesting a new tab or window occurs in the web view.
+/// You can either:
+/// <ul>
+///   <li>
+///     Return a new <code>WKWebView</code>, in which case content will be loaded there (for example if you have an internal browser with a WKWebView that you can use).
+///   </li>
+///   <li>
+///     Return <code>nil</code> and open the URL in <code>navigationAction.request</code> in the system browser - however session data might be lost.
+///   </li>
+///   <li>
+///     Return <code>nil</code> and the navigation will simply be blocked.
+///   </li>
+/// </ul>
+- (WKWebView * _Nullable)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView createWebViewWith:(WKWebViewConfiguration * _Nonnull)configuration forNavigation:(WKNavigationAction * _Nonnull)navigationAction withFeatures:(WKWindowFeatures * _Nonnull)windowFeatures SWIFT_WARN_UNUSED_RESULT;
+/// Determines whether a web resource, which the security origin object describes, can access the
+/// device’s microphone audio and camera video.
+/// warning:
+/// Default behavior if this function is not implemented is to call the handler with
+/// <code>.prompt</code> (i.e., to prompt the user).
+- (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView requestMediaCapturePermissionFor:(WKSecurityOrigin * _Nonnull)origin initiatedByFrame:(WKFrameInfo * _Nonnull)frame ofType:(WKMediaCaptureType)type handler:(void (^ _Nonnull)(WKPermissionDecision))handler SWIFT_AVAILABILITY(ios,introduced=15.0);
+@end
+
+/// Defines the theme (or style) that components should use.
+/// The theme will always default to <code>light</code>. Automatic switching is opt-in. This is because both Klarna
+/// and many existing apps that integrate the SDK historically only support a light theme, and we don’t want
+/// to break existing integrations.
+typedef SWIFT_ENUM(NSInteger, KlarnaTheme, open) {
+/// Style this component with a dark theme (dark background with light foreground content).
+  KlarnaThemeDark = 0,
+/// Style this component with a light theme (light background with dark foreground content).
+  KlarnaThemeLight = 1,
+/// Style this component to automatically change its theme according to your app’s  <code>userInterfaceStyle</code>.
+  KlarnaThemeAutomatic = 2,
 };
 
 
-/// General class that envelops WKWebView
-SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_")
-@protocol KlarnaWebView <KlarnaComponent>
+/// General class that envelops all web views. Was originally used to mask away <code>WKWebView</code> and
+/// <code>UIWebView</code> specializations.
+/// note:
+/// Kept for compatibility until integrators migrate.
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK13KlarnaWebView_") SWIFT_DEPRECATED_MSG("Not used as a type anymore.")
+@protocol KlarnaWebView
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
+  KlarnaWebViewOpeningBehaviorDelegate = 0,
+  KlarnaWebViewOpeningBehaviorIgnore = 1,
+  KlarnaWebViewOpeningBehaviorNavigate = 2,
+  KlarnaWebViewOpeningBehaviorSystemBrowser = 3,
+  KlarnaWebViewOpeningBehaviorInternalBrowser = 4,
+};
 
 
 
@@ -2456,6 +3294,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
 @class UIImage;
 @class AVCaptureOutput;
 @class AVCaptureConnection;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
 @interface ScanBaseViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -2479,7 +3318,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22ScanBaseViewController")
 
 
 
-@class UIColor;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 @interface UIDotLoadingIndicator : UIView
@@ -2506,9 +3344,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 
 
 
+SWIFT_DEPRECATED
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
-
 
 
 #if __has_attribute(external_source_symbol)
@@ -2518,3 +3356,73 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 #endif
 
 #endif
+//
+//  KlarnaMobileSDKPostfix.h
+//  KlarnaMobileSDK
+//
+//  Created by Gabriel Banfalvi on 2022-09-21.
+//  Copyright © 2022 Klarna Bank AB. All rights reserved.
+//
+
+#ifndef KlarnaMobileSDKPostfix_h
+#define KlarnaMobileSDKPostfix_h
+
+
+typedef NSString KlarnaErrorName;
+typedef KlarnaError KlarnaMobileSDKError;
+
+typedef NSString KlarnaEventName;
+typedef NSString KlarnaEventParamKey;
+
+typedef NSString KlarnaPaymentAction;
+typedef NSString KlarnaPaymentMethodCategory;
+typedef NSString KlarnaPaymentErrorName;
+
+typedef KlarnaPaymentError KlarnaPaymentsError;
+
+typedef NSString KlarnaOSMErrorName;
+typedef KlarnaTheme KlarnaOSMTheme;
+typedef KlarnaEnvironment KlarnaOSMEnvironment;
+typedef KlarnaRegion KlarnaOSMRegion;
+
+typedef void (^RenderResult)(KlarnaError *);
+typedef NSString KlarnaPostPurchaseErrorName;
+typedef KlarnaRegion KlarnaPostPurchaseRegion;
+typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
+
+#endif /* KlarnaMobileSDKPostfix_h */
+//
+//  KlarnaMobileSDKPostfix.h
+//  KlarnaMobileSDK
+//
+//  Created by Gabriel Banfalvi on 2022-09-21.
+//  Copyright © 2022 Klarna Bank AB. All rights reserved.
+//
+
+#ifndef KlarnaMobileSDKPostfix_h
+#define KlarnaMobileSDKPostfix_h
+
+
+typedef NSString KlarnaErrorName;
+typedef KlarnaError KlarnaMobileSDKError;
+
+typedef NSString KlarnaEventName;
+typedef NSString KlarnaEventParamKey;
+
+typedef NSString KlarnaPaymentAction;
+typedef NSString KlarnaPaymentMethodCategory;
+typedef NSString KlarnaPaymentErrorName;
+
+typedef KlarnaPaymentError KlarnaPaymentsError;
+
+typedef NSString KlarnaOSMErrorName;
+typedef KlarnaTheme KlarnaOSMTheme;
+typedef KlarnaEnvironment KlarnaOSMEnvironment;
+typedef KlarnaRegion KlarnaOSMRegion;
+
+typedef void (^RenderResult)(KlarnaError *);
+typedef NSString KlarnaPostPurchaseErrorName;
+typedef KlarnaRegion KlarnaPostPurchaseRegion;
+typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
+
+#endif /* KlarnaMobileSDKPostfix_h */
