@@ -11,6 +11,7 @@ Future releases will be documented in this section.
 - Added `KlarnaSingleComponent`. Components conforming to this protocol render a single Klarna product at a time.
 - Added `KlarnaEventHandler` interface. Provides methods that will notify events happening to a product in a Klarna component.
 - Added `KlarnaSizingDelegate` interface. Provides a size delegate that will notify of sizing changes.
+- Added `KlarnaStandaloneWebView` class.
 - Added `KlarnaEnvironment` class.
 - Added `KlarnaProduct` class.
 - Added `KlarnaProductEvent` class.
