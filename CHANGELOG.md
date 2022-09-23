@@ -219,6 +219,39 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.3.0] - 2022-09-23
+- Added `KlarnaComponent`. General class that envelops any Klarna Component, regardless of integration. 
+- Added `KlarnaMultiComponent`. Components conforming to this interface protocol may render multiple products at once.
+- Added `KlarnaStandaloneComponent`. For components that host and own their content. 
+- Added `KlarnaSingleComponent`. Components conforming to this protocol render a single Klarna product at a time.
+- Added `KlarnaEventHandler` interface. Provides methods that will notify events happening to a product in a Klarna component.
+- Added `KlarnaStandaloneWebView` class.
+- Added `KlarnaEnvironment` enum class.
+- Added `KlarnaProduct` enum class.
+- Added `KlarnaProductEvent` data class.
+- Added `KlarnaOSMRegion` enum class.
+- Added `KlarnaOSMTheme` enum class.
+- Added public constructor to `KlarnaProductOptions` data class.
+
+#### Klarna Payments
+- `KlarnaPaymentView` extends `KlarnaSingleComponent` and `KlarnaStandaloneComponent`.
+
+#### Hybrid
+- `KlarnaHybridSDK` extends `KlarnaMultiComponent`.
+
+#### OSM
+- `KlarnaOSMView` extends `KlarnaStandaloneComponent` and `KlarnaSingleComponent`.
+##### Deprecations
+- `KlarnaOSMEnvironment` is deprecated. Use `KlarnaEnvironment` instead.
+- `KlarnaOSMRegion` is deprecated. Use `KlarnaRegion` instead.
+- `KlarnaOSMTheme` is deprecated. Use `KlarnaTheme` instead.
+
+#### Post Purchase
+- `KlarnaPostPurchaseSDK` extends `KlarnaSingleComponent` and `KlarnaComponent`.
+##### Deprecations
+- `KlarnaPostPurchaseEnvironment` is deprecated. Use `KlarnaEnvironment` instead.
+- `KlarnaPostPurchaseRegion` is deprecated. Use `KlarnaRegion` instead.
+
 ### [2.2.1] - 2022-08-19
 - KlarnaOSMView has been made an open class.
 
