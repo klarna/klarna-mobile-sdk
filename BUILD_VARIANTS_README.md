@@ -18,15 +18,21 @@ For this release, we provide:
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
 | `xcode-13.1-fat` | fat | 13.1 - 13A1030d | 5.5.1| swiftlang-1300.0.31.4 clang-1300.0.29.6 |
 | `xcode-13.1-slim` | slim | 13.1 - 13A1030d | 5.5.1| swiftlang-1300.0.31.4 clang-1300.0.29.6 |
+| `xcode-14.0.1-fat` | fat | 14.0.1 - 14A400 | 5.7| swiftlang-5.7.0.127.4 clang-1400.0.29.50 |
+| `xcode-14.0.1-slim` | slim | 14.0.1 - 14A400 | 5.7| swiftlang-5.7.0.127.4 clang-1400.0.29.50 |
 
 
 ## Cocoapods
 
-This release defaults to using the latest, non-beta version `xcode-13.1-fat`. If you
+This release defaults to using the latest, non-beta version `xcode-14.0.1-fat`. If you
 want to use a different variant, update your Podfile to use a different subspec. E.g:
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-13.1-fat', '~> 2.3.0'
+pod 'KlarnaMobileSDK/xcode-13.1-fat', '~> 2.3.1'
+```
+
+```ruby
+pod 'KlarnaMobileSDK/xcode-14.0.1-fat', '~> 2.3.1'
 ```
 
