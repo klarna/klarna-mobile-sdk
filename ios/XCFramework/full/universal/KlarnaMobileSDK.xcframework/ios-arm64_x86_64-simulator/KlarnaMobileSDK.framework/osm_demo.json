@@ -1,0 +1,41 @@
+{
+    "content":{
+        "nodes":[
+            {
+                "name":"TEXT_MAIN",
+                "type":"TEXT",
+                "value":"Pay in 4 installments of $125.00."
+            },
+            {
+                "url":"https://na-assets.playground.klarnaservices.com/learn-more/index.html?showButtons=false&showBackground=true#eyJ0aWVySWQiOjQxLCJ0aWVyVXBkYXRlZEF0IjoiV2VkIFNlcCAxNiAyMDIwIDE2OjU2OjIxIEdNVCswMDAwIChDb29yZGluYXRlZCBVbml2ZXJzYWwgVGltZSkiLCJsYW5ndWFnZSI6IkVOIiwiY291bnRyeSI6IlVTIiwicHVyY2hhc2VBbW91bnQiOjUwMDAwLCJpc1RocmVzaG9sZCI6ZmFsc2UsInBheW1lbnRNZXRob2RJZCI6OSwidHJhY2tlclBhcmFtZXRlcnMiOnsiZCI6ImNyZWRpdC1wcm9tb3Rpb24tYmFkZ2UiLCJnIjoiZGRlMTdhYmMtYTQ0OC01N2QzLTlkMmUtYTQzMjJiMzE0MjhjIiwiZSI6ImVuLVVTIiwiaiI6Ijc4YzYwYWExLTU4Y2MtNDIzMi05N2YzLWM3MjM2OTE3NjUzOCIsImsiOiI3MTNhZDM2YS03OTBiLTQ0NGUtOTY5ZC02M2JkMDYyMzM5NTMiLCJhYyI6Im1vYmlsZSIsImFhIjo1MDAwMH19",
+                "name":"ACTION_LEARN_MORE",
+                "type":"ACTION",
+                "label":"Learn more"
+            },
+            {
+                "alt":"Klarna",
+                "url":"http://us-assets.klarnaservices.com/images/badges/klarna.svg",
+                "name":"KLARNA_BADGE",
+                "type":"IMAGE"
+            },
+            {
+                "type": "TEXT",
+                "name": "TEXT_LEGAL",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan dapibus euismod. In pulvinar et orci sit amet tristique. Curabitur iaculis consequat sollicitudin. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce vel odio rhoncus, faucibus felis at, lacinia tortor. Vivamus tempor cursus ex a hendrerit"
+            },
+            {
+                "type": "ACTION",
+                "name": "ACTION_PREQUALIFY",
+                "label": "See if you're prequalified",
+                "url": "https://www.google.com/"
+            },
+            {
+                "alt":"Klarna",
+                "url":"http://us-assets.klarnaservices.com/images/badges/klarna.svg",
+                "name":"KLARNA_LOGO",
+                "type":"IMAGE"
+            },
+        ]
+    },
+    "impression_url":"https://ba838d5d.playground.klarnaservices.com/?p=2&t=impression&ab=api&d=credit-promotion-badge&g=dde17abc-a448-57d3-9d2e-a4322b31428c&e=en-US&j=78c60aa1-58cc-4232-97f3-c72369176538&k=713ad36a-790b-444e-969d-63bd06233953&ac=mobile&aa=50000"
+}
