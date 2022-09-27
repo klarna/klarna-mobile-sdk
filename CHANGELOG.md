@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.3.1] - 2022-09-27
+- Xcode 14 support.
+
 ### [2.3.0] - 2022-09-23
 - Added `KlarnaComponent`. General class that envelops any Klarna Component, regardless of integration. 
 - Added `KlarnaMultiComponent`. Components conforming to this interface protocol may render multiple products at once.
