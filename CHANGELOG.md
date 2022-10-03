@@ -222,6 +222,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.3.1] - 2022-10-03
+- Fixed fullscreen height issue with quick authorize calls for One Klarna payment flows.
+
 ### [2.3.0] - 2022-09-23
 - Added `KlarnaComponent`. General class that envelops any Klarna Component, regardless of integration. 
 - Added `KlarnaMultiComponent`. Components conforming to this interface protocol may render multiple products at once.
