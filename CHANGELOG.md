@@ -222,6 +222,12 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.3.2] - 2022-10-26
+- Improved handling of files and links.
+- Removed network security config file.
+- Improved debugging capabilities during development.
+- Minor internal improvements.
+
 ### [2.3.1] - 2022-10-03
 - Fixed fullscreen height issue with quick authorize calls for One Klarna payment flows.
 
