@@ -1630,6 +1630,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
 
 
 
+
 SWIFT_DEPRECATED
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
@@ -3259,6 +3260,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 

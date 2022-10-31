@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.3.2] - 2022-10-31
+- Fixed: Klarna payment authorization with a non-alphanumeric app name.
+- Internal improvements for fullscreens.
+- Internal optimizations.
+
 ### [2.3.1] - 2022-09-27
 - Xcode 14 support.
 

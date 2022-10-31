@@ -1673,6 +1673,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 
 
 
+
 SWIFT_DEPRECATED
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
@@ -3358,6 +3359,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 
 
 
+
 SWIFT_DEPRECATED
 @interface WKWebView (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaWebView>
 @end
@@ -5028,6 +5030,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
+
 
 
 
