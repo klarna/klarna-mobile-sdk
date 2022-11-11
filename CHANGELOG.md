@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.3.3] - 2022-11-11
+- Fixed: Fullscreen did not dismiss when the app was in the background.
+
 ### [2.3.2] - 2022-10-31
 - Fixed: Klarna payment authorization with a non-alphanumeric app name.
 - Internal improvements for fullscreens.
