@@ -348,7 +348,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 /// auto layout is the recommended way to manage the view’s layout.
 /// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
 /// Create a Klarna Checkout View
 /// note:
 ///
@@ -358,7 +358,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 ///
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
 @class UIScrollView;
@@ -741,11 +741,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
 /// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -753,9 +751,17 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventHandler:(id <KlarnaEventHandler> _Nonnull)klarnaEventHandler resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
 
@@ -1991,7 +1997,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 /// auto layout is the recommended way to manage the view’s layout.
 /// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
 /// Create a Klarna Checkout View
 /// note:
 ///
@@ -2001,7 +2007,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 ///
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
 @class UIScrollView;
@@ -2384,11 +2390,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
-///
 /// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
 /// note:
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
@@ -2396,9 +2400,17 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 ///
 /// \param eventListener A listener that will receive events from the SDK.
 ///
-/// \param fullscreenEventListener Listener that will notify fullscreen events.
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
-- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener;
+/// \param eventListener A listener that will receive events from the SDK.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventHandler:(id <KlarnaEventHandler> _Nonnull)klarnaEventHandler resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
 

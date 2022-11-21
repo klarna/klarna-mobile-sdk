@@ -1,7 +1,7 @@
 {
     "meta": {
-        "version": "v2.0.6-b700afb8e46",
-        "updated": "2022-10-28T07:30:56.622Z",
+        "version": "v2.1.0-dbb72de0a89",
+        "updated": "2022-11-16T14:46:43.557Z",
         "schema": "v2"
     },
     "config": {
@@ -10,7 +10,7 @@
                 "versionName": "2.3.2"
             },
             "ios": {
-                "versionName": "2.3.1"
+                "versionName": "2.3.2"
             }
         },
         "assets": [
@@ -401,9 +401,6 @@
                 "makeWebViewsDebuggable": false
             },
             "ios": {
-                
-            },
-            "overrides": {
                 
             }
         },
