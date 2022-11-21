@@ -230,6 +230,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.4.0] - 2022-11-21
+- Added support for Klarna Checkout in Standalone, Hybrid and WebView integrations.
+- Added `KlarnaCheckoutView` extends `KlarnaSingleComponent` and `KlarnaStandaloneComponent`.
+
 ### [2.3.2] - 2022-10-26
 - Improved handling of files and links.
 - Removed network security config file.
