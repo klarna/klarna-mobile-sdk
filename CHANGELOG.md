@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.4.0] - 2022-11-22
+- Added support for Klarna Checkout in Standalone, Hybrid and WebView integrations.
+- Added `KlarnaCheckoutView` extends `KlarnaSingleComponent` and `KlarnaStandaloneComponent`.
+
 ### [2.3.3] - 2022-11-11
 - Fixed: Fullscreen did not dismiss when the app was in the background.
 
