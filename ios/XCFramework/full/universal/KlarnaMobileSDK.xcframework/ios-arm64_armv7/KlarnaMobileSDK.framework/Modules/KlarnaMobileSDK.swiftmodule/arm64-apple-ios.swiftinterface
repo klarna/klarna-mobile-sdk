@@ -378,8 +378,11 @@ public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
   @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(returnUrl: Foundation.URL, eventListener: KlarnaMobileSDK.KlarnaHybridEventListener)
+  @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventListener: KlarnaMobileSDK.KlarnaEventListener)
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventHandler: KlarnaMobileSDK.KlarnaEventHandler, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
 }
 @objc extension KlarnaMobileSDK.KlarnaHybridSDK {
   @objc dynamic public func addWebView(_ webView: WebKit.WKWebView)
@@ -911,8 +914,8 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
   @objc @_Concurrency.MainActor(unsafe) dynamic public var checkoutOptions: KlarnaMobileSDK.KlarnaCheckoutOptions? {
     @objc get
   }
-  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL)
-  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
 }
 @objc extension KlarnaMobileSDK.KlarnaCheckoutView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func setSnippet(_ snippet: Swift.String?)
