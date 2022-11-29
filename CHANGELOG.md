@@ -6,6 +6,7 @@ Future releases will be documented in this section.
 
 ### [2.4.1] - 2022-11-29
 - Fixed: OSM View stacks elements when the render function is called multiple times.
+- Updated SDK assets for Klarna Payments.
 
 ### [2.4.0] - 2022-11-22
 - Added support for Klarna Checkout in Standalone, Hybrid and WebView integrations.
