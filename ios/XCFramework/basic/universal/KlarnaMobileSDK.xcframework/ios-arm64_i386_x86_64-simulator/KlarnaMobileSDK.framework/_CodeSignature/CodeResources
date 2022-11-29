@@ -50,7 +50,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		3UoV7UgwGKwuiuUSF1+sl5olnmE=
+		p1fDF1eUH68ARa2F7FBLljETFNI=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		my51LnLWYlLkosKScJzYRJlUyO8=
+		msBVmen1iIixw7MlJ2Yv6hllwZc=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>PaymentsWrapper.html</key>
 		<data>
-		kCirCkZan+gK9dwCWtsbW4mfkhw=
+		T1r6MPIpcs4RQJTqB7YPt6jc1ks=
 		</data>
 		<key>PostPurchaseWrapper.html</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>config.json</key>
 		<data>
-		KYdsCAH9f4te05uEkn018PapEEE=
+		5DaQN8n2m6ayfUZLVr/dztwOe6E=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -267,11 +267,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			my51LnLWYlLkosKScJzYRJlUyO8=
+			msBVmen1iIixw7MlJ2Yv6hllwZc=
 			</data>
 			<key>hash2</key>
 			<data>
-			KNWFan00D9Wb2v1vrqCw4mFfh/0ltf5SE05d15AIEdg=
+			GQOgkmpFt319arwtHvaXP+O7yrv8jSvKjqs5dziegXA=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -410,11 +410,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kCirCkZan+gK9dwCWtsbW4mfkhw=
+			T1r6MPIpcs4RQJTqB7YPt6jc1ks=
 			</data>
 			<key>hash2</key>
 			<data>
-			N6FPnnknGrqbWiapZ2Zq42rhQPbY76wiAsdHf4VKHls=
+			WdFwS7vfMB0kbMSrt7JRlWzji/TtEVemo5TGtAkqIZw=
 			</data>
 		</dict>
 		<key>PostPurchaseWrapper.html</key>
@@ -443,11 +443,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KYdsCAH9f4te05uEkn018PapEEE=
+			5DaQN8n2m6ayfUZLVr/dztwOe6E=
 			</data>
 			<key>hash2</key>
 			<data>
-			AiH/SPXvyA68yRJlTxG7YAkkOwi6Oa+MHNpZ2VTUC7k=
+			b2ZLoo9sQ3k6Ds+Xta8P+7DGZA1oYvi/JQRJPiZzddY=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>
