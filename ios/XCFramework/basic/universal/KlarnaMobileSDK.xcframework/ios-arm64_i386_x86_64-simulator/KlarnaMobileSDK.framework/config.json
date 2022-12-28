@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.1.0-99db40b8b56",
-        "updated": "2022-11-22T15:50:15.167Z",
+        "version": "v2.1.1-fe754d7dea7",
+        "updated": "2022-12-13T13:44:28.288Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.4.0"
+                "versionName": "2.4.1"
             },
             "ios": {
-                "versionName": "2.4.0"
+                "versionName": "2.4.1"
             }
         },
         "assets": [
@@ -194,6 +194,69 @@
                             "scheme": "https",
                             "host": "z.klarnacdn.net",
                             "path": "/mobile-sdk/klarna-mobile-sdk-postpurchase-wrapper/v1/index.html"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "express-button-fullscreen",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "js.klarna.com",
+                            "path": "/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "js.playground.klarna.com",
+                            "path": "/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "s3.int.klarna.net",
+                            "path": "/instant-shopping/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
                         }
                     }
                 ]

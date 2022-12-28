@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.4.2] - 2022-12-28
+- Updated Checkout keyboard handling behavior.
+- Internal improvements for experiments decoding.
+
 ### [2.4.1] - 2022-11-29
 - Fixed: OSM View stacks elements when the render function is called multiple times.
 - Updated SDK assets for Klarna Payments.
