@@ -242,6 +242,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.5.0] - 2023-01-19
+- Added Klarna Express Button integration.
+
 ### [2.4.3] - 2023-01-13
 - Bug fixes and stability improvements.
 
