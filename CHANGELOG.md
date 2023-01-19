@@ -242,6 +242,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.4.3] - 2023-01-13
+- Bug fixes and stability improvements.
+
 ### [2.4.2] - 2022-12-19
 - Use English locale in the SDK's internal string functions instead of device's/app's locale configuration.
 
