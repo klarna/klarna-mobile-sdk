@@ -4,6 +4,10 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.5.0] - 2023-01-20
+- Added Klarna Express Button integration.
+- Post Purchase API updated to make it consistent with other SDK products.
+
 ### [2.4.2] - 2022-12-28
 - Updated Checkout keyboard handling behavior.
 - Internal improvements for experiments decoding.
