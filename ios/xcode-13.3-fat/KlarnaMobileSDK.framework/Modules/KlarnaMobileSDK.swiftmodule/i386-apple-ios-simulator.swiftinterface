@@ -22,6 +22,24 @@ public typealias KlarnaPostPurchaseRegion = KlarnaMobileSDK.KlarnaRegion
   @objc var contentHeight: CoreGraphics.CGFloat { get }
   @objc var sizingDelegate: KlarnaMobileSDK.KlarnaSizingDelegate? { get set }
 }
+@_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaExpressButton : UIKit.UIControl {
+  @objc @_Concurrency.MainActor(unsafe) public var buttonTheme: KlarnaMobileSDK.KlarnaButtonTheme {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var buttonShape: KlarnaMobileSDK.KlarnaButtonShape {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var buttonLabel: KlarnaMobileSDK.KlarnaButtonLabel {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public init(clientId: Swift.String, locale: Swift.String, buttonTheme: KlarnaMobileSDK.KlarnaButtonTheme = .klarna, buttonShape: KlarnaMobileSDK.KlarnaButtonShape = .roundedRect, buttonLabel: KlarnaMobileSDK.KlarnaButtonLabel = .klarnaProduct, theme: KlarnaMobileSDK.KlarnaTheme = .automatic, environment: KlarnaMobileSDK.KlarnaEnvironment = .production, region: KlarnaMobileSDK.KlarnaRegion = .na, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1, returnUrl: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @objc deinit
+}
 @objc public class KlarnaResourceEndpoint : ObjectiveC.NSObject, Swift.RawRepresentable {
   public var rawValue: Swift.Int
   required public init?(rawValue: Swift.Int)
@@ -73,6 +91,19 @@ public typealias KlarnaOSMEnvironment = KlarnaMobileSDK.KlarnaEnvironment
   @objc public static func deviceIdentifier() -> Swift.String
   @objc deinit
 }
+@objc public enum KlarnaButtonShape : Swift.Int {
+  case roundedRect
+  case pill
+  case rectangle
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutViewDebug : KlarnaMobileSDK.KlarnaCheckoutView {
   @nonobjc @_Concurrency.MainActor(unsafe) public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @_Concurrency.MainActor(unsafe) public func loadUrl(_ url: Foundation.URL)
@@ -121,11 +152,12 @@ extension UIKit.UIFont {
   }
 }
 @objc extension KlarnaMobileSDK.KlarnaPostPurchaseSDK {
+  @objc convenience dynamic public init(environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion, listener: KlarnaMobileSDK.KlarnaPostPurchaseEventListener)
   @objc convenience dynamic public init(environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint, listener: KlarnaMobileSDK.KlarnaPostPurchaseEventListener)
 }
 @objc extension KlarnaMobileSDK.KlarnaPostPurchaseSDK {
   @objc dynamic public func initialize(locale: Swift.String, purchaseCountry: Swift.String, design: Swift.String?)
-  @objc dynamic public func authorizationRequest(_ request: KlarnaMobileSDK.PostPurchaseAuthRequest)
+  @objc dynamic public func authorizationRequest(clientId: Swift.String, scope: Swift.String, redirectUri: Swift.String, locale: Swift.String?, state: Swift.String?, loginHint: Swift.String?, responseType: Swift.String?)
   @objc dynamic public func renderOperation(operationToken: Swift.String, locale: Swift.String?, redirectUri: Swift.String?)
 }
 @objc extension KlarnaMobileSDK.KlarnaPostPurchaseSDK : KlarnaMobileSDK.KlarnaSingleComponent {
@@ -572,6 +604,12 @@ extension Swift.Set where Element == Swift.String {
     get
   }
 }
+public typealias KlarnaExpressButtonErrorName = Swift.String
+extension Swift.String {
+  public static let KlarnaExpressButtonErrorInvalidParams: Swift.String
+  public static let KlarnaExpressButtonErrorMerchantDisabled: Swift.String
+  public static let KlarnaExpressButtonErrorRender: Swift.String
+}
 public typealias KlarnaOSMErrorName = Swift.String
 extension Swift.String {
   public static let KlarnaOSMErrorMissingClientId: Swift.String
@@ -984,6 +1022,87 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
     get
   }
 }
+@objc extension KlarnaMobileSDK.KlarnaExpressButton {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var clientId: Swift.String? {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var locale: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(clientId: Swift.String, locale: Swift.String = "en-US", returnUrl: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(clientId: Swift.String, locale: Swift.String = "en-US", buttonTheme: KlarnaMobileSDK.KlarnaButtonTheme = .klarna, buttonShape: KlarnaMobileSDK.KlarnaButtonShape = .roundedRect, buttonLabel: KlarnaMobileSDK.KlarnaButtonLabel = .klarnaProduct, returnUrl: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler)
+}
+@objc extension KlarnaMobileSDK.KlarnaExpressButton : KlarnaMobileSDK.KlarnaSingleComponent {
+}
+@objc extension KlarnaMobileSDK.KlarnaExpressButton : KlarnaMobileSDK.KlarnaStandaloneComponent {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var region: KlarnaMobileSDK.KlarnaRegion? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var environment: KlarnaMobileSDK.KlarnaEnvironment? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var returnURL: Foundation.URL? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var theme: KlarnaMobileSDK.KlarnaTheme {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var eventHandler: KlarnaMobileSDK.KlarnaEventHandler? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var loggingLevel: KlarnaMobileSDK.KlarnaLoggingLevel {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var products: KlarnaMobileSDK.KlarnaProducts {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var contentHeight: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var sizingDelegate: KlarnaMobileSDK.KlarnaSizingDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var isScrollEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var contentInset: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var contentOffset: CoreGraphics.CGPoint {
+    @objc get
+    @objc set
+  }
+  @available(iOS 11.0, *)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var contentInsetAdjustmentBehavior: UIKit.UIScrollView.ContentInsetAdjustmentBehavior {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var keyboardDismissMode: UIKit.UIScrollView.KeyboardDismissMode {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var parentScrollView: UIKit.UIScrollView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public var adjustsParentScrollViewInsets: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
 @objc public protocol KlarnaPaymentEventListener {
   @objc func klarnaInitialized(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
   @objc func klarnaLoaded(paymentView: KlarnaMobileSDK.KlarnaPaymentView)
@@ -994,11 +1113,32 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
   @objc func klarnaResized(paymentView: KlarnaMobileSDK.KlarnaPaymentView, to newHeight: CoreGraphics.CGFloat)
   @objc func klarnaFailed(inPaymentView paymentView: KlarnaMobileSDK.KlarnaPaymentView, withError error: KlarnaMobileSDK.KlarnaPaymentError)
 }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaExpressButtonDebug : KlarnaMobileSDK.KlarnaExpressButton {
+  @_Concurrency.MainActor(unsafe) public func fullscreenPresentation(force: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func setExpressButtonVersion(_ version: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func setExpressButtonEndpoint(_ url: Swift.String?)
+  @_Concurrency.MainActor(unsafe) override public init(clientId: Swift.String, locale: Swift.String, buttonTheme: KlarnaMobileSDK.KlarnaButtonTheme = super, buttonShape: KlarnaMobileSDK.KlarnaButtonShape = super, buttonLabel: KlarnaMobileSDK.KlarnaButtonLabel = super, theme: KlarnaMobileSDK.KlarnaTheme = super, environment: KlarnaMobileSDK.KlarnaEnvironment = super, region: KlarnaMobileSDK.KlarnaRegion = super, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = super, returnUrl: Foundation.URL, eventHandler: KlarnaMobileSDK.KlarnaEventHandler)
+  @objc deinit
+}
 @available(*, deprecated, message: "Not used as a type anymore.")
 @objc public protocol KlarnaWebView {
 }
 @available(*, deprecated)
 @objc extension WebKit.WKWebView : KlarnaMobileSDK.KlarnaWebView {
+}
+@objc public enum KlarnaButtonTheme : Swift.Int {
+  case klarna
+  case light
+  case dark
+  case auto
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @available(*, deprecated, renamed: "KlarnaError", message: "Use KlarnaError instead.")
 public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
@@ -1010,9 +1150,17 @@ public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
   @objc func klarnaComponent(_ klarnaComponent: KlarnaMobileSDK.KlarnaComponent, dispatchedEvent event: KlarnaMobileSDK.KlarnaProductEvent)
   @objc func klarnaComponent(_ klarnaComponent: KlarnaMobileSDK.KlarnaComponent, encounteredError error: KlarnaMobileSDK.KlarnaError)
 }
-@objc public class PostPurchaseAuthRequest : ObjectiveC.NSObject {
-  public init(clientId: Swift.String, scope: Swift.String, redirectUri: Swift.String, locale: Swift.String?, state: Swift.String?, loginHint: Swift.String?, responseType: Swift.String?)
-  @objc deinit
+@objc public enum KlarnaButtonLabel : Swift.Int {
+  case klarnaProduct
+  case klarna
+  public var stringValue: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDKDebug : KlarnaMobileSDK.KlarnaHybridSDK {
   public func clearWebViewCookies()
@@ -1022,6 +1170,9 @@ public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }
+extension KlarnaMobileSDK.KlarnaButtonShape : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaButtonShape : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaButtonShape : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaLoggingLevel : Swift.RawRepresentable {}
@@ -1037,3 +1188,9 @@ extension KlarnaMobileSDK.KlarnaTheme : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaWebViewOpeningBehavior : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaWebViewOpeningBehavior : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaWebViewOpeningBehavior : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaButtonTheme : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaButtonTheme : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaButtonTheme : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.RawRepresentable {}

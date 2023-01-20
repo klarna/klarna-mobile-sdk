@@ -224,6 +224,33 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonLabel, open) {
+/// Show the default text.
+  KlarnaButtonLabelKlarnaProduct = 0,
+/// Will render the button only with the Klarna logo.
+  KlarnaButtonLabelKlarna = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
+/// Set the button as a rectangle with rounded corners.
+  KlarnaButtonShapeRoundedRect = 0,
+/// Set the button as a pill shaped button.
+  KlarnaButtonShapePill = 1,
+/// set the button as a rectangle with square corners.
+  KlarnaButtonShapeRectangle = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
+/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+  KlarnaButtonThemeKlarna = 0,
+/// Will render the button in white. It is recommended to use this theme on dark backgrounds.
+  KlarnaButtonThemeLight = 1,
+/// Will render the button in black. It is recommended to use this theme on light backgrounds.
+  KlarnaButtonThemeDark = 2,
+/// Will render the button based on the device theme.
+  KlarnaButtonThemeAuto = 3,
+};
+
 
 /// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
@@ -586,6 +613,91 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_M
 /// \param error details of the error received such as name, message etc.
 ///
 - (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
+@end
+
+@class UITraitCollection;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaExpressButton")
+@interface KlarnaExpressButton : UIControl
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Merchant identification (MID) code assigned to every merchant using Klarna.
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+/// Localization, list of supported locales can be found in https://docs.klarna.com/express-button/availiability/.
+@property (nonatomic, readonly, copy) NSString * _Nonnull locale;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param buttonTheme Customization of the theme appearance.
+///
+/// \param buttonShape Customization of the shape appearance.
+///
+/// \param buttonLabel Customization of the label appearance.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale buttonTheme:(enum KlarnaButtonTheme)buttonTheme buttonShape:(enum KlarnaButtonShape)buttonShape buttonLabel:(enum KlarnaButtonLabel)buttonLabel returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK24KlarnaExpressButtonDebug")
+@interface KlarnaExpressButtonDebug : KlarnaExpressButton
 @end
 
 @protocol KlarnaWebView;
@@ -1290,6 +1402,16 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 ///
 /// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
+///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
@@ -1297,7 +1419,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 - (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
 @end
 
-@class PostPurchaseAuthRequest;
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
@@ -1314,9 +1435,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
 /// important:
 /// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
-/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+/// \param clientId The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
 ///
-- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// \param scope The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param redirectUri The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param locale The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param loginHint The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param responseType The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequestWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope redirectUri:(NSString * _Nonnull)redirectUri locale:(NSString * _Nullable)locale state:(NSString * _Nullable)state loginHint:(NSString * _Nullable)loginHint responseType:(NSString * _Nullable)responseType;
 /// Render the Post Purchase flow.
 /// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
 /// \param operationToken Token received from Klarna after the auth code exchange
@@ -1619,14 +1750,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
 };
 
 
-
-
-/// An SDK model specific to the Klarna Post Purchase component.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
-@interface PostPurchaseAuthRequest : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 
@@ -1873,6 +1996,33 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonLabel, open) {
+/// Show the default text.
+  KlarnaButtonLabelKlarnaProduct = 0,
+/// Will render the button only with the Klarna logo.
+  KlarnaButtonLabelKlarna = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
+/// Set the button as a rectangle with rounded corners.
+  KlarnaButtonShapeRoundedRect = 0,
+/// Set the button as a pill shaped button.
+  KlarnaButtonShapePill = 1,
+/// set the button as a rectangle with square corners.
+  KlarnaButtonShapeRectangle = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
+/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+  KlarnaButtonThemeKlarna = 0,
+/// Will render the button in white. It is recommended to use this theme on dark backgrounds.
+  KlarnaButtonThemeLight = 1,
+/// Will render the button in black. It is recommended to use this theme on light backgrounds.
+  KlarnaButtonThemeDark = 2,
+/// Will render the button based on the device theme.
+  KlarnaButtonThemeAuto = 3,
+};
+
 
 /// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
@@ -2235,6 +2385,91 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_M
 /// \param error details of the error received such as name, message etc.
 ///
 - (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
+@end
+
+@class UITraitCollection;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaExpressButton")
+@interface KlarnaExpressButton : UIControl
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Merchant identification (MID) code assigned to every merchant using Klarna.
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+/// Localization, list of supported locales can be found in https://docs.klarna.com/express-button/availiability/.
+@property (nonatomic, readonly, copy) NSString * _Nonnull locale;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param buttonTheme Customization of the theme appearance.
+///
+/// \param buttonShape Customization of the shape appearance.
+///
+/// \param buttonLabel Customization of the label appearance.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale buttonTheme:(enum KlarnaButtonTheme)buttonTheme buttonShape:(enum KlarnaButtonShape)buttonShape buttonLabel:(enum KlarnaButtonLabel)buttonLabel returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK24KlarnaExpressButtonDebug")
+@interface KlarnaExpressButtonDebug : KlarnaExpressButton
 @end
 
 @protocol KlarnaWebView;
@@ -2939,6 +3174,16 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 ///
 /// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
+///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
@@ -2946,7 +3191,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 - (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
 @end
 
-@class PostPurchaseAuthRequest;
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
@@ -2963,9 +3207,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
 /// important:
 /// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
-/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+/// \param clientId The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
 ///
-- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// \param scope The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param redirectUri The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param locale The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param loginHint The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param responseType The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequestWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope redirectUri:(NSString * _Nonnull)redirectUri locale:(NSString * _Nullable)locale state:(NSString * _Nullable)state loginHint:(NSString * _Nullable)loginHint responseType:(NSString * _Nullable)responseType;
 /// Render the Post Purchase flow.
 /// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
 /// \param operationToken Token received from Klarna after the auth code exchange
@@ -3268,14 +3522,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
 };
 
 
-
-
-/// An SDK model specific to the Klarna Post Purchase component.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
-@interface PostPurchaseAuthRequest : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 
@@ -3596,6 +3842,33 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonLabel, open) {
+/// Show the default text.
+  KlarnaButtonLabelKlarnaProduct = 0,
+/// Will render the button only with the Klarna logo.
+  KlarnaButtonLabelKlarna = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
+/// Set the button as a rectangle with rounded corners.
+  KlarnaButtonShapeRoundedRect = 0,
+/// Set the button as a pill shaped button.
+  KlarnaButtonShapePill = 1,
+/// set the button as a rectangle with square corners.
+  KlarnaButtonShapeRectangle = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
+/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+  KlarnaButtonThemeKlarna = 0,
+/// Will render the button in white. It is recommended to use this theme on dark backgrounds.
+  KlarnaButtonThemeLight = 1,
+/// Will render the button in black. It is recommended to use this theme on light backgrounds.
+  KlarnaButtonThemeDark = 2,
+/// Will render the button based on the device theme.
+  KlarnaButtonThemeAuto = 3,
+};
+
 
 /// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
@@ -3958,6 +4231,91 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_M
 /// \param error details of the error received such as name, message etc.
 ///
 - (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
+@end
+
+@class UITraitCollection;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaExpressButton")
+@interface KlarnaExpressButton : UIControl
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Merchant identification (MID) code assigned to every merchant using Klarna.
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+/// Localization, list of supported locales can be found in https://docs.klarna.com/express-button/availiability/.
+@property (nonatomic, readonly, copy) NSString * _Nonnull locale;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param buttonTheme Customization of the theme appearance.
+///
+/// \param buttonShape Customization of the shape appearance.
+///
+/// \param buttonLabel Customization of the label appearance.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale buttonTheme:(enum KlarnaButtonTheme)buttonTheme buttonShape:(enum KlarnaButtonShape)buttonShape buttonLabel:(enum KlarnaButtonLabel)buttonLabel returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK24KlarnaExpressButtonDebug")
+@interface KlarnaExpressButtonDebug : KlarnaExpressButton
 @end
 
 @protocol KlarnaWebView;
@@ -4662,6 +5020,16 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 ///
 /// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
+///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
@@ -4669,7 +5037,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 - (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
 @end
 
-@class PostPurchaseAuthRequest;
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
@@ -4686,9 +5053,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
 /// important:
 /// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
-/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+/// \param clientId The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
 ///
-- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// \param scope The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param redirectUri The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param locale The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param loginHint The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param responseType The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequestWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope redirectUri:(NSString * _Nonnull)redirectUri locale:(NSString * _Nullable)locale state:(NSString * _Nullable)state loginHint:(NSString * _Nullable)loginHint responseType:(NSString * _Nullable)responseType;
 /// Render the Post Purchase flow.
 /// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
 /// \param operationToken Token received from Klarna after the auth code exchange
@@ -4991,14 +5368,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
 };
 
 
-
-
-/// An SDK model specific to the Klarna Post Purchase component.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
-@interface PostPurchaseAuthRequest : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 
@@ -5245,6 +5614,33 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonLabel, open) {
+/// Show the default text.
+  KlarnaButtonLabelKlarnaProduct = 0,
+/// Will render the button only with the Klarna logo.
+  KlarnaButtonLabelKlarna = 1,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
+/// Set the button as a rectangle with rounded corners.
+  KlarnaButtonShapeRoundedRect = 0,
+/// Set the button as a pill shaped button.
+  KlarnaButtonShapePill = 1,
+/// set the button as a rectangle with square corners.
+  KlarnaButtonShapeRectangle = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
+/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+  KlarnaButtonThemeKlarna = 0,
+/// Will render the button in white. It is recommended to use this theme on dark backgrounds.
+  KlarnaButtonThemeLight = 1,
+/// Will render the button in black. It is recommended to use this theme on light backgrounds.
+  KlarnaButtonThemeDark = 2,
+/// Will render the button based on the device theme.
+  KlarnaButtonThemeAuto = 3,
+};
+
 
 /// Options to be sent to Klarna Checkout on initialization.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaCheckoutOptions")
@@ -5607,6 +6003,91 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK19KlarnaEventListener_") SWIFT_DEPRECATED_M
 /// \param error details of the error received such as name, message etc.
 ///
 - (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)view didReceiveError:(KlarnaError * _Nonnull)error;
+@end
+
+@class UITraitCollection;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaExpressButton")
+@interface KlarnaExpressButton : UIControl
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Merchant identification (MID) code assigned to every merchant using Klarna.
+@property (nonatomic, readonly, copy) NSString * _Nullable clientId;
+/// Localization, list of supported locales can be found in https://docs.klarna.com/express-button/availiability/.
+@property (nonatomic, readonly, copy) NSString * _Nonnull locale;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Create a Klarna Express Button
+/// note:
+///
+/// Klarna Express Button view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param clientId Merchant identification (MID)
+///
+/// \param locale Localization
+///
+/// \param buttonTheme Customization of the theme appearance.
+///
+/// \param buttonShape Customization of the shape appearance.
+///
+/// \param buttonLabel Customization of the label appearance.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaExpressButton instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId locale:(NSString * _Nonnull)locale buttonTheme:(enum KlarnaButtonTheme)buttonTheme buttonShape:(enum KlarnaButtonShape)buttonShape buttonLabel:(enum KlarnaButtonLabel)buttonLabel returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+@interface KlarnaExpressButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaStandaloneComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@property (nonatomic, readonly) CGFloat contentHeight;
+@property (nonatomic, strong) id <KlarnaSizingDelegate> _Nullable sizingDelegate;
+@property (nonatomic) BOOL isScrollEnabled;
+@property (nonatomic) UIEdgeInsets contentInset;
+@property (nonatomic) CGPoint contentOffset;
+@property (nonatomic) UIScrollViewContentInsetAdjustmentBehavior contentInsetAdjustmentBehavior SWIFT_AVAILABILITY(ios,introduced=11.0);
+@property (nonatomic) UIScrollViewKeyboardDismissMode keyboardDismissMode;
+@property (nonatomic, strong) UIScrollView * _Nullable parentScrollView;
+@property (nonatomic) BOOL adjustsParentScrollViewInsets;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK24KlarnaExpressButtonDebug")
+@interface KlarnaExpressButtonDebug : KlarnaExpressButton
 @end
 
 @protocol KlarnaWebView;
@@ -6311,6 +6792,16 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 ///
 /// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
 ///
+/// \param listener An object that will receive events from this PostPurchaseSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
+/// Create a Klarna Post Purchase Instance with the specified parameters.
+/// Use this method when creating a PostPurchaseSDK object.
+/// This method is the designated initializer.
+/// \param environment The PostPurchaseSDK specific environment (e.g. staging). For possible values check <code>KlarnaEnvironment</code>
+///
+/// \param region The PostPurchaseSDK specific region (e.g. EU). For possible values check <code>KlarnaRegion</code>
+///
 /// \param resourceEndpoint The PostPurchaseSDK with an alternative endpoint. For possible values check <code>KlarnaResourceEndpoint</code>
 ///
 /// \param listener An object that will receive events from this PostPurchaseSDK instance.
@@ -6318,7 +6809,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 - (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint listener:(id <KlarnaPostPurchaseEventListener> _Nonnull)listener;
 @end
 
-@class PostPurchaseAuthRequest;
 
 @interface KlarnaPostPurchaseSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
 /// Initializes the Post Purchase Instance.
@@ -6335,9 +6825,19 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// After receiving the initialized successful callback, the next step is to authorize the user with Klarna to access the Post Purchase information
 /// important:
 /// Only call this after you get a <em>success</em> callback in the <em>onInitialized</em> delegate method.
-/// \param request The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+/// \param clientId The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
 ///
-- (void)authorizationRequest:(PostPurchaseAuthRequest * _Nonnull)request;
+/// \param scope The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param redirectUri The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param locale The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param loginHint The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+/// \param responseType The model with attributes needed to authorize the Post Purchase flow, some of it’s attributes are required.
+///
+- (void)authorizationRequestWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope redirectUri:(NSString * _Nonnull)redirectUri locale:(NSString * _Nullable)locale state:(NSString * _Nullable)state loginHint:(NSString * _Nullable)loginHint responseType:(NSString * _Nullable)responseType;
 /// Render the Post Purchase flow.
 /// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
 /// \param operationToken Token received from Klarna after the auth code exchange
@@ -6640,14 +7140,6 @@ typedef SWIFT_ENUM(NSInteger, KlarnaWebViewOpeningBehavior, open) {
 };
 
 
-
-
-/// An SDK model specific to the Klarna Post Purchase component.
-SWIFT_CLASS("_TtC15KlarnaMobileSDK23PostPurchaseAuthRequest")
-@interface PostPurchaseAuthRequest : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 
 

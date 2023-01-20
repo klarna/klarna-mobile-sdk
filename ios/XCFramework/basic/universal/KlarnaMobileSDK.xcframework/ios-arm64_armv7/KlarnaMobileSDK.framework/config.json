@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.1.1-fe754d7dea7",
-        "updated": "2022-12-13T13:44:28.288Z",
+        "version": "v2.1.1-bee99306c86",
+        "updated": "2022-12-28T12:31:19.918Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.4.1"
+                "versionName": "2.4.2"
             },
             "ios": {
-                "versionName": "2.4.1"
+                "versionName": "2.4.2"
             }
         },
         "assets": [
