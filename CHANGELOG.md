@@ -246,6 +246,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.5.1] - 2023-01-30
+- Fixed OkHttp header encoding issues.
+- Optimized internal OkHttpClient usage.
+
 ### [2.5.0] - 2023-01-19
 - Added Klarna Express Button integration.
 
