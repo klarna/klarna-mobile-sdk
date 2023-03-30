@@ -838,6 +838,14 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView {
     @objc get
     @objc set
   }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var isOpaque: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
+  }
   @available(iOS 14, *)
   @_Concurrency.MainActor(unsafe) public func evaluateJavaScript(_ javaScript: Swift.String, frame: WebKit.WKFrameInfo? = nil, contentWorld: WebKit.WKContentWorld = WKContentWorld.page, completion: ((_ result: Swift.Result<Any, Swift.Error>) -> Swift.Void)? = nil)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func evaluateJavaScript(_ javaScript: Swift.String, frame: WebKit.WKFrameInfo? = nil, completion: (((Any?, Swift.Error?) -> Swift.Void))? = nil)

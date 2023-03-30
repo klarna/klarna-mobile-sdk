@@ -1643,6 +1643,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
 @property (nonatomic) BOOL allowsBackForwardAnimationGestures;
 @property (nonatomic) BOOL allowsLinkPreview;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+@property (nonatomic, getter=isOpaque) BOOL opaque;
 - (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
 - (void)addUserScript:(WKUserScript * _Nonnull)script;
 - (void)removeAllUserScripts;
@@ -3458,6 +3460,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
 @property (nonatomic) BOOL allowsBackForwardAnimationGestures;
 @property (nonatomic) BOOL allowsLinkPreview;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+@property (nonatomic, getter=isOpaque) BOOL opaque;
 - (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
 - (void)addUserScript:(WKUserScript * _Nonnull)script;
 - (void)removeAllUserScripts;
@@ -5347,6 +5351,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
 @property (nonatomic) BOOL allowsBackForwardAnimationGestures;
 @property (nonatomic) BOOL allowsLinkPreview;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+@property (nonatomic, getter=isOpaque) BOOL opaque;
 - (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
 - (void)addUserScript:(WKUserScript * _Nonnull)script;
 - (void)removeAllUserScripts;
@@ -7162,6 +7168,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
 @property (nonatomic) BOOL allowsBackForwardAnimationGestures;
 @property (nonatomic) BOOL allowsLinkPreview;
+@property (nonatomic, strong) UIColor * _Nullable backgroundColor;
+@property (nonatomic, getter=isOpaque) BOOL opaque;
 - (void)evaluateJavaScript:(NSString * _Nonnull)javaScript frame:(WKFrameInfo * _Nullable)frame completion:(void (^ _Nullable)(id _Nullable, NSError * _Nullable))completion;
 - (void)addUserScript:(WKUserScript * _Nonnull)script;
 - (void)removeAllUserScripts;
