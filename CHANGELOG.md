@@ -4,6 +4,12 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.5.1] - 2023-03-30
+- Added backgroundColor and isOpaque properties to `KlarnaStandaloneWebView`.
+- Fixed error while validating returnURL when there were multiple URLs on info.plist.
+- Fixed delegate methods not being called on Post Purchase SDK Delegate.
+- Xcode 14.2 build.
+
 ### [2.5.0] - 2023-01-20
 - Added Klarna Express Button integration.
 - Post Purchase API updated to make it consistent with other SDK products.

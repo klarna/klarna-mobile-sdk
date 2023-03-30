@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.1.1-bee99306c86",
-        "updated": "2022-12-28T12:31:19.918Z",
+        "version": "v2.2.3-14b094f4ba7",
+        "updated": "2023-03-29T13:07:19.014Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.4.2"
+                "versionName": "2.5.2"
             },
             "ios": {
-                "versionName": "2.4.2"
+                "versionName": "2.5.0"
             }
         },
         "assets": [
@@ -20,26 +20,7 @@
                     {
                         "isFallback": true,
                         "alternatives": [
-                            "aws"
-                        ],
-                        "environments": [
-                            "staging",
-                            "playground",
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "x.klarnacdn.net",
-                            "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
-                        }
-                    },
-                    {
-                        "alternatives": [
+                            "aws",
                             "azure"
                         ],
                         "environments": [
@@ -54,7 +35,7 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "z.klarnacdn.net",
+                            "host": "x.klarnacdn.net",
                             "path": "/mobile-sdk/wrapper-init-script/v1/script/WrapperInitScript.js"
                         }
                     }
@@ -66,26 +47,7 @@
                     {
                         "isFallback": true,
                         "alternatives": [
-                            "aws"
-                        ],
-                        "environments": [
-                            "staging",
-                            "playground",
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "x.klarnacdn.net",
-                            "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
-                        }
-                    },
-                    {
-                        "alternatives": [
+                            "aws",
                             "azure"
                         ],
                         "environments": [
@@ -100,7 +62,7 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "z.klarnacdn.net",
+                            "host": "x.klarnacdn.net",
                             "path": "/mobile-sdk/mobile-js-snippet/v1/app.min.js"
                         }
                     }
@@ -112,26 +74,7 @@
                     {
                         "isFallback": true,
                         "alternatives": [
-                            "aws"
-                        ],
-                        "environments": [
-                            "staging",
-                            "playground",
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "x.klarnacdn.net",
-                            "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
-                        }
-                    },
-                    {
-                        "alternatives": [
+                            "aws",
                             "azure"
                         ],
                         "environments": [
@@ -146,7 +89,7 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "z.klarnacdn.net",
+                            "host": "x.klarnacdn.net",
                             "path": "/mobile-sdk/klarna-mobile-sdk-payments-wrapper-v2/v1/index.html"
                         }
                     }
@@ -158,26 +101,7 @@
                     {
                         "isFallback": true,
                         "alternatives": [
-                            "aws"
-                        ],
-                        "environments": [
-                            "staging",
-                            "playground",
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "x.klarnacdn.net",
-                            "path": "/mobile-sdk/klarna-mobile-sdk-postpurchase-wrapper/v1/index.html"
-                        }
-                    },
-                    {
-                        "alternatives": [
+                            "aws",
                             "azure"
                         ],
                         "environments": [
@@ -192,7 +116,7 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "z.klarnacdn.net",
+                            "host": "x.klarnacdn.net",
                             "path": "/mobile-sdk/klarna-mobile-sdk-postpurchase-wrapper/v1/index.html"
                         }
                     }
@@ -384,7 +308,8 @@
                     },
                     {
                         "alternatives": [
-                            "aws"
+                            "aws",
+                            "azure"
                         ],
                         "environments": [
                             "playground"
@@ -414,21 +339,131 @@
                             "host": "osm-oc.playground.klarnaservices.com",
                             "path": "/v3/messaging"
                         }
+                    }
+                ]
+            },
+            {
+                "name": "siwk-oidc-issuer",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "app.klarna.com",
+                            "path": "/"
+                        }
                     },
                     {
                         "alternatives": [
+                            "aws",
                             "azure"
                         ],
                         "environments": [
                             "playground"
                         ],
                         "regions": [
-                            "na"
+                            "eu",
+                            "na",
+                            "oc"
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-na-2.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "login.playground.klarna.com",
+                            "path": "/"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "app.nonprod.eu1.klapp.klarna.net",
+                            "path": "/"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "siwk-oidc-idp",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.klarna.com",
+                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.playground.klarna.com",
+                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.nonprod.klarna.net",
+                            "path": "/eu/lp/idp/.well-known/openid-configuration"
                         }
                     }
                 ]
@@ -445,11 +480,7 @@
                 "logLevel": "info",
                 "log-level": "info"
             },
-            "blacklistUrls": [
-                "file:///Users/fake-klarna*",
-                "ftp*fake-klarna*",
-                "http*://www.fake-klarna.com*"
-            ]
+            "blacklistUrls": []
         },
         "debugToggles": {
             "console": {
@@ -464,7 +495,7 @@
                 "makeWebViewsDebuggable": false
             },
             "ios": {
-                
+
             }
         },
         "texts": [
@@ -472,36 +503,57 @@
                 "name": "paymentView.card.instructions.hold",
                 "localizations": [
                     {
+                        "default": true,
                         "locale": "default",
                         "value": "Hold the front of your card up to the camera"
                     }
                 ],
                 "placeholders": [
-                    
+
                 ]
             },
             {
                 "name": "paymentView.card.instructions.scanning",
                 "localizations": [
                     {
+                        "default": true,
                         "locale": "default",
                         "value": "Scanning card"
                     }
                 ],
                 "placeholders": [
-                    
+
                 ]
             },
             {
                 "name": "paymentView.card.instructions.success",
                 "localizations": [
                     {
+                        "default": true,
                         "locale": "default",
                         "value": "%issuer% recognised"
                     }
                 ],
                 "placeholders": [
                     "%issuer%"
+                ]
+            },
+
+            {
+                "name": "signinwithklarna.button.label.continue",
+                "localizations": [
+                    {
+                        "default": true,
+                        "locale": "en-SE",
+                        "value": "Continue with Klarna"
+                    },
+                    {
+                        "locale": "sv-SE",
+                        "value": "Fortsätt med Klarna"
+                    }
+                ],
+                "placeholders": [
+
                 ]
             }
         ]
