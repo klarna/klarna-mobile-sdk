@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.0] - 2023-04-11
+- Added Sign in with Klarna integration.
+
 ### [2.5.1] - 2023-03-30
 - Added backgroundColor and isOpaque properties to `KlarnaStandaloneWebView`.
 - Fixed error while validating returnURL when there were multiple URLs on info.plist.
