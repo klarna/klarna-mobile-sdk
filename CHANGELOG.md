@@ -252,6 +252,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.0] - 2023-04-11
+- Added Sign in with Klarna integration.
+
 ### [2.5.2] - 2023-02-21
 - Renamed internal assets of the SDK to fix conflicts with host applications.
 
