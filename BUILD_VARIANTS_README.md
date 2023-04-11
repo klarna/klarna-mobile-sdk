@@ -29,10 +29,10 @@ want to use a different variant, update your Podfile to use a different subspec.
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-13.3-fat', '~> 2.5.1'
+pod 'KlarnaMobileSDK/xcode-13.3-fat', '~> 2.6.0'
 ```
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-14.2-fat', '~> 2.5.1'
+pod 'KlarnaMobileSDK/xcode-14.2-fat', '~> 2.6.0'
 ```
 
