@@ -1,7 +1,7 @@
 {
     "meta": {
-        "version": "v2.2.3-14b094f4ba7",
-        "updated": "2023-03-29T13:07:19.014Z",
+        "version": "v2.2.3-68a04bc22ca",
+        "updated": "2023-04-03T14:36:39.331Z",
         "schema": "v2"
     },
     "config": {
@@ -10,7 +10,7 @@
                 "versionName": "2.5.2"
             },
             "ios": {
-                "versionName": "2.5.0"
+                "versionName": "2.5.1"
             }
         },
         "assets": [
@@ -494,9 +494,7 @@
             "android": {
                 "makeWebViewsDebuggable": false
             },
-            "ios": {
-
-            }
+            "ios": {}
         },
         "texts": [
             {
@@ -508,9 +506,7 @@
                         "value": "Hold the front of your card up to the camera"
                     }
                 ],
-                "placeholders": [
-
-                ]
+                "placeholders": []
             },
             {
                 "name": "paymentView.card.instructions.scanning",
@@ -521,9 +517,7 @@
                         "value": "Scanning card"
                     }
                 ],
-                "placeholders": [
-
-                ]
+                "placeholders": []
             },
             {
                 "name": "paymentView.card.instructions.success",
@@ -538,7 +532,6 @@
                     "%issuer%"
                 ]
             },
-
             {
                 "name": "signinwithklarna.button.label.continue",
                 "localizations": [
@@ -552,9 +545,7 @@
                         "value": "Fortsätt med Klarna"
                     }
                 ],
-                "placeholders": [
-
-                ]
+                "placeholders": []
             }
         ]
     }

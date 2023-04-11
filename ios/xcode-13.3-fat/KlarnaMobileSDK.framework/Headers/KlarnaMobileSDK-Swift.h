@@ -1545,6 +1545,238 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 @end
 
 
+@protocol ASWebAuthenticationPresentationContextProviding;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton : UIControl
+/// Defines the theme (or style) of the buttons. For possible options, see <code>KlarnaButtonTheme</code>.
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+/// Defines the shape of the button. For other values, see <code>KlarnaButtonShape</code>.
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+/// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+/// Creates a an instance of this button.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// note:
+/// The view will be initialized with frame <code>.zero</code>, auto layout is the recommended way to
+/// manage its layout.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// This is the UUID you get when creating your Klarna OAuth 2.0 app.
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Space-separated list of scopes you would like to request from the user.
+@property (nonatomic, copy) NSString * _Nullable scope;
+/// The market or the country where this integration is available.
+@property (nonatomic, copy) NSString * _Nullable market;
+/// The language to be presented to the user.
+@property (nonatomic, copy) NSString * _Nullable locale;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButtonDebug : KlarnaSignInButton
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK : NSObject
+/// Creates an instance of KlarnaSignInSDK
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// Sign in the user with the supplied parameters.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Creates a KlarnaSignInSDK Instance
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param theme Defines the theme (or style) that web component <em>(Not Klarna Sign-In Button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDKDebug : KlarnaSignInSDK
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 
 /// Interface to an object that’s notified when a component’s content has changed height internally.
@@ -3318,6 +3550,238 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+@protocol ASWebAuthenticationPresentationContextProviding;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton : UIControl
+/// Defines the theme (or style) of the buttons. For possible options, see <code>KlarnaButtonTheme</code>.
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+/// Defines the shape of the button. For other values, see <code>KlarnaButtonShape</code>.
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+/// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+/// Creates a an instance of this button.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// note:
+/// The view will be initialized with frame <code>.zero</code>, auto layout is the recommended way to
+/// manage its layout.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// This is the UUID you get when creating your Klarna OAuth 2.0 app.
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Space-separated list of scopes you would like to request from the user.
+@property (nonatomic, copy) NSString * _Nullable scope;
+/// The market or the country where this integration is available.
+@property (nonatomic, copy) NSString * _Nullable market;
+/// The language to be presented to the user.
+@property (nonatomic, copy) NSString * _Nullable locale;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButtonDebug : KlarnaSignInButton
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK : NSObject
+/// Creates an instance of KlarnaSignInSDK
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// Sign in the user with the supplied parameters.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Creates a KlarnaSignInSDK Instance
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param theme Defines the theme (or style) that web component <em>(Not Klarna Sign-In Button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDKDebug : KlarnaSignInSDK
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
@@ -5167,6 +5631,238 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 @end
 
 
+@protocol ASWebAuthenticationPresentationContextProviding;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton : UIControl
+/// Defines the theme (or style) of the buttons. For possible options, see <code>KlarnaButtonTheme</code>.
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+/// Defines the shape of the button. For other values, see <code>KlarnaButtonShape</code>.
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+/// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+/// Creates a an instance of this button.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// note:
+/// The view will be initialized with frame <code>.zero</code>, auto layout is the recommended way to
+/// manage its layout.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// This is the UUID you get when creating your Klarna OAuth 2.0 app.
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Space-separated list of scopes you would like to request from the user.
+@property (nonatomic, copy) NSString * _Nullable scope;
+/// The market or the country where this integration is available.
+@property (nonatomic, copy) NSString * _Nullable market;
+/// The language to be presented to the user.
+@property (nonatomic, copy) NSString * _Nullable locale;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButtonDebug : KlarnaSignInButton
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK : NSObject
+/// Creates an instance of KlarnaSignInSDK
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// Sign in the user with the supplied parameters.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Creates a KlarnaSignInSDK Instance
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param theme Defines the theme (or style) that web component <em>(Not Klarna Sign-In Button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDKDebug : KlarnaSignInSDK
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 
 /// Interface to an object that’s notified when a component’s content has changed height internally.
@@ -6940,6 +7636,238 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+@protocol ASWebAuthenticationPresentationContextProviding;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton : UIControl
+/// Defines the theme (or style) of the buttons. For possible options, see <code>KlarnaButtonTheme</code>.
+@property (nonatomic) enum KlarnaButtonTheme buttonTheme;
+/// Defines the shape of the button. For other values, see <code>KlarnaButtonShape</code>.
+@property (nonatomic) enum KlarnaButtonShape buttonShape;
+/// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
+@property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+/// Creates a an instance of this button.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// note:
+/// The view will be initialized with frame <code>.zero</code>, auto layout is the recommended way to
+/// manage its layout.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// This is the UUID you get when creating your Klarna OAuth 2.0 app.
+@property (nonatomic, copy) NSString * _Nullable clientId;
+/// Space-separated list of scopes you would like to request from the user.
+@property (nonatomic, copy) NSString * _Nullable scope;
+/// The market or the country where this integration is available.
+@property (nonatomic, copy) NSString * _Nullable market;
+/// The language to be presented to the user.
+@property (nonatomic, copy) NSString * _Nullable locale;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a Klarna Sign-In Button Instance
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK))
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInButtonDebug : KlarnaSignInButton
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK : NSObject
+/// Creates an instance of KlarnaSignInSDK
+/// \param theme Defines the theme (or style) of the sign-in components <em>Note: (not the button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Specifies the environemnt the button should run in. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Defines the regional endpoint requests are made to. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Allows the SDK to make requests against an alternative cloud provider. Do not set unless absolutely necessary.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+/// \param loggingLevel Level at which the SDK will log events at.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// Sign in the user with the supplied parameters.
+/// note:
+/// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
+/// \param clientId This is the UUID you get when creating your Klarna OAuth 2.0 app.
+///
+/// \param scope Space-separated list of scopes you would like to request from the user.
+///
+/// \param market The market or the country where this integration is available.
+///
+/// \param locale The language to be presented to the user.
+///
+/// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
+///
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK))
+/// Creates a KlarnaSignInSDK Instance
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithEnvironment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+/// Creates a KlarnaSignInSDK Instance
+/// \param theme Defines the theme (or style) that web component <em>(Not Klarna Sign-In Button)</em> should use. For possible values check <code>KlarnaTheme</code>.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventHandler An object that will receive events from this KlarnaSignInSDK instance.
+///
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
+@end
+
+
+SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDK (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaComponent>
+@property (nonatomic, strong) KlarnaRegion * _Nullable region;
+@property (nonatomic, strong) KlarnaEnvironment * _Nullable environment;
+@property (nonatomic, strong) KlarnaResourceEndpoint * _Nonnull resourceEndpoint;
+@property (nonatomic, copy) NSURL * _Nullable returnURL;
+@property (nonatomic) enum KlarnaTheme theme;
+@property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
+@property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
+@property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+@end
+
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaSignInSDKDebug : KlarnaSignInSDK
+- (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
