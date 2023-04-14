@@ -20683,6 +20683,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
@@ -46880,6 +46890,41 @@
       "offset": 1039,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/CharacterSet+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 261,
+      "length": 7,
+      "value": "\":#[]@\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/CharacterSet+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 305,
+      "length": 13,
+      "value": "\"!$&'()*+,;=\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/CharacterSet+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 408,
+      "length": 54,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/CharacterSet+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 437,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/CharacterSet+Extensions.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/PaymentGatewayResponseMessage.swift",
