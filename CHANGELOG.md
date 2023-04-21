@@ -261,6 +261,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.1] - 2023-04-21
+- Fixed initial validation errors for KlarnaSignInButton.
+- Internal optimization and improvements for Sign In With Klarna.
+
 ### [2.6.0] - 2023-04-11
 - Added Sign in with Klarna integration.
 
