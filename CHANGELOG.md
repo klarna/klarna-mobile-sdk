@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.2] - 2023-04-21
+- Internal optimization and improvements for Sign In With Klarna.
+
 ### [2.6.1] - 2023-04-14
 - Fixed Sign In with Klarna POST Request.
 
