@@ -50,7 +50,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZoRyFB0iisNRs5ktkZe9gLBMyRQ=
+		CybL26JRXggMxeoxABEFbi62Hrc=
 		</data>
 		<key>KEBVersion.json</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		tkUGUgcR7fvd8vuqpD8phsIZVvI=
+		sgeQ9D8rXE2GHvgne8bDZMg4d2k=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lF2iKleHj8ysJinYRt2QyfObSJQ=
+		Ad9vRleAUvCL46NsPFSH8u/kqko=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		OFFr2YjjRNcQjTUwTbBYIzaZRTc=
+		g8aAynEs2fPJqW2KM67Apr5YQIM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>config.json</key>
 		<data>
-		7WuDnBfVRJW6w4i7qmaDMCCoRCs=
+		1WxAFrxqd8Hr1DYl6Y/js60nUxI=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -286,11 +286,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tkUGUgcR7fvd8vuqpD8phsIZVvI=
+			sgeQ9D8rXE2GHvgne8bDZMg4d2k=
 			</data>
 			<key>hash2</key>
 			<data>
-			eGLhGyneWvJsqH7oUFnyoXoRx0f0dznw6saU4WScGgQ=
+			d/nY41ehOD5/CMKFNZo4tVh9uX4r5HgstYBSHRlDDzU=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -363,11 +363,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lF2iKleHj8ysJinYRt2QyfObSJQ=
+			Ad9vRleAUvCL46NsPFSH8u/kqko=
 			</data>
 			<key>hash2</key>
 			<data>
-			9uLqUCzy2b1dehv9OSwX02NYm6gO2VrRv61nIzBgC48=
+			XGHLF6Ai4uqNYLL6BBxvwkR54XZb6C5iKmATBMvY1/E=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -418,11 +418,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OFFr2YjjRNcQjTUwTbBYIzaZRTc=
+			g8aAynEs2fPJqW2KM67Apr5YQIM=
 			</data>
 			<key>hash2</key>
 			<data>
-			s4JhBRLfFWGwPhhnPxMkTWvy49EBbyPrNTXYkEYS4x8=
+			/R8ZN9VWcRwh7mSaJlA9B3nVagzirWOpRb/Tu2euelE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -473,11 +473,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7WuDnBfVRJW6w4i7qmaDMCCoRCs=
+			1WxAFrxqd8Hr1DYl6Y/js60nUxI=
 			</data>
 			<key>hash2</key>
 			<data>
-			9tnWt8/ZKk+Oo2upMIpw+tz27Lxc5oj02RyFJD7Qkcs=
+			pUx376+lJvj8d9ZG78r9IdIClUF0OTZ3KxY6RHr0kc8=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>

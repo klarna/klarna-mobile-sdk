@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.3] - 2023-04-26
+- Fixed: Fullscreen being dismissed on OPF.
+
 ### [2.6.2] - 2023-04-21
 - Internal optimization and improvements for Sign In With Klarna.
 
