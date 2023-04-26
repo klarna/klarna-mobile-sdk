@@ -98,7 +98,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		oiGnysap+EfRKoeZJoC37Psnx3s=
+		zYm7FJbC4JnunWwbPz5XvOB2pjI=
 		</data>
 		<key>KEBVersion.json</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		tkUGUgcR7fvd8vuqpD8phsIZVvI=
+		sgeQ9D8rXE2GHvgne8bDZMg4d2k=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		oIQz2v7z4KeiX+JonzetBqaF4J4=
+		gncCFUWNH1cSzgu6XXXxWmTcDbQ=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bFsbgpiV/R+80v+KGRs4eMi8PJ4=
+		47tfUbsH3H51DnYjlna7BOqPdL4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>config.json</key>
 		<data>
-		7WuDnBfVRJW6w4i7qmaDMCCoRCs=
+		1WxAFrxqd8Hr1DYl6Y/js60nUxI=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -466,11 +466,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tkUGUgcR7fvd8vuqpD8phsIZVvI=
+			sgeQ9D8rXE2GHvgne8bDZMg4d2k=
 			</data>
 			<key>hash2</key>
 			<data>
-			eGLhGyneWvJsqH7oUFnyoXoRx0f0dznw6saU4WScGgQ=
+			d/nY41ehOD5/CMKFNZo4tVh9uX4r5HgstYBSHRlDDzU=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -543,11 +543,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			oIQz2v7z4KeiX+JonzetBqaF4J4=
+			gncCFUWNH1cSzgu6XXXxWmTcDbQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			c0UZn3pTNPXe4Ib0PY/33qBmnXKwJzTAugcT/lImbWw=
+			q8Y1F+WZIKvpBbGsg17ZOTgVcmiIPaLVs3IPSdUe0ig=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -598,11 +598,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bFsbgpiV/R+80v+KGRs4eMi8PJ4=
+			47tfUbsH3H51DnYjlna7BOqPdL4=
 			</data>
 			<key>hash2</key>
 			<data>
-			L6ylMnPX2cGKwvJbwpmNmPDjXhgfUzHnBlntApCreAI=
+			XnvUqbiR0uXf4NQrwebKVYFzvWQASr7FsDhecsD/w1Y=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -653,11 +653,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7WuDnBfVRJW6w4i7qmaDMCCoRCs=
+			1WxAFrxqd8Hr1DYl6Y/js60nUxI=
 			</data>
 			<key>hash2</key>
 			<data>
-			9tnWt8/ZKk+Oo2upMIpw+tz27Lxc5oj02RyFJD7Qkcs=
+			pUx376+lJvj8d9ZG78r9IdIClUF0OTZ3KxY6RHr0kc8=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>
