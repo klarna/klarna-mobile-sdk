@@ -264,6 +264,11 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.2] - 2023-05-09
+- Added support for permission handling in Separate Fullscreen.
+- Fixed redirect URI validation for Sign in With Klarna.
+- Removed max width and height limits for KlarnaSignInButton.
+
 ### [2.6.1] - 2023-04-21
 - Fixed initial validation errors for KlarnaSignInButton.
 - Internal optimization and improvements for Sign In With Klarna.
