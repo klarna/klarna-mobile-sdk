@@ -50,11 +50,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qok3qmKqMs8XAlCtg9EbwmpwMHM=
+		6QBZHEAWdyHNwg7sFz0/YVMIz5M=
 		</data>
 		<key>KEBVersion.json</key>
 		<data>
-		/fboselYnu60XPgWdRoXvS5EvSs=
+		vxtgAh3/lKBRAAKU3XX4tP2GpVk=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		c44oh9hv66clzbZxJ4KmtKRYiDg=
+		8bxQZdHb2iKnD7zlNrUqid49gJw=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>MessageBridge.js</key>
 		<data>
-		pceu3z8XVgqmCCGbWaaKc2YBoVE=
+		Ge1WdqweV1yuI0G0EJCkK5vaCWw=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>config.json</key>
 		<data>
-		1WxAFrxqd8Hr1DYl6Y/js60nUxI=
+		eBsYSy2vF/HGhqbK35S7eUc3dlI=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -264,11 +264,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/fboselYnu60XPgWdRoXvS5EvSs=
+			vxtgAh3/lKBRAAKU3XX4tP2GpVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			zzcJ4oNEYYKRY2B8/Wn8bG+GERh5aIoUVVkTs71dpac=
+			KqzNqdI0wiffcplBbchO8UbdTmYcjDej9METyZv2S6o=
 			</data>
 		</dict>
 		<key>KlarnaHeadline-Bold.ttf</key>
@@ -286,11 +286,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			c44oh9hv66clzbZxJ4KmtKRYiDg=
+			8bxQZdHb2iKnD7zlNrUqid49gJw=
 			</data>
 			<key>hash2</key>
 			<data>
-			H/nXCAyu/hN6GKFI1nnc2GSiJJLxAJSee9xKnf4UMRU=
+			5b7d2ObnS5+/SGoNRgFULxFqN1IRT6t1yhYgsulfPl0=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -308,11 +308,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pceu3z8XVgqmCCGbWaaKc2YBoVE=
+			Ge1WdqweV1yuI0G0EJCkK5vaCWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			APCYugd2mUm0s6oQyswwQEHVMnDbwCspJigtJxTQKdQ=
+			hCHkOo11k6Zmj43zShlT4wr278Gws0b51x51YUWNFrw=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -473,11 +473,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1WxAFrxqd8Hr1DYl6Y/js60nUxI=
+			eBsYSy2vF/HGhqbK35S7eUc3dlI=
 			</data>
 			<key>hash2</key>
 			<data>
-			pUx376+lJvj8d9ZG78r9IdIClUF0OTZ3KxY6RHr0kc8=
+			FY+aaX02yOhEUJLWjMMe1jgpZ04EFDRNx3VNtWqFYoA=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>
