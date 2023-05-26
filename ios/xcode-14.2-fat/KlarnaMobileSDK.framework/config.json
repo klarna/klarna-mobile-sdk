@@ -1,13 +1,13 @@
 {
     "meta": {
-        "version": "v2.2.3-8f557af1842",
-        "updated": "2023-04-24T10:08:44.738Z",
+        "version": "v2.2.3-3faf5b13ea7",
+        "updated": "2023-05-26T11:47:28.834Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.1"
+                "versionName": "2.6.2"
             },
             "ios": {
                 "versionName": "2.6.2"
@@ -142,7 +142,7 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "js.klarna.com",
-                            "path": "/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
+                            "path": "/express-button/v1.0.0-1237-g2073d55/fullscreen.html"
                         }
                     },
                     {
@@ -161,7 +161,7 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "js.playground.klarna.com",
-                            "path": "/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
+                            "path": "/express-button/v1.0.0-1237-g2073d55/fullscreen.html"
                         }
                     },
                     {
@@ -180,7 +180,7 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "s3.int.klarna.net",
-                            "path": "/instant-shopping/express-button/v1.0.0-1188-g42971cd/fullscreen.html"
+                            "path": "/instant-shopping/express-button/v1.0.0-1237-g2073d55/fullscreen.html"
                         }
                     }
                 ]
