@@ -268,6 +268,11 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.3] - 2023-05-26
+- Fixed blank pages reporting error from background.
+- Updated assets.
+- Improved monitoring for application lifecycle.
+
 ### [2.6.2] - 2023-05-09
 - Added support for permission handling in Separate Fullscreen.
 - Fixed redirect URI validation for Sign in With Klarna.
