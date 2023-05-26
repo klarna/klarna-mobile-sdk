@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.5] - 2023-05-26
+- Updated assets.
+
 ### [2.6.4] - 2023-05-02
 - Fix screen orientation in fullscreen per device size.
 - Fix fullscreen dismiss on certain touch events.
