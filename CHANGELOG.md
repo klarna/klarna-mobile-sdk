@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.6] - 2023-06-28
+- Fix UIActivityViewController for iPad.
+
 ### [2.6.5] - 2023-05-26
 - Updated assets.
 
