@@ -39749,8 +39749,8 @@
           },
           {
             "kind": "Var",
-            "name": "signInWithKlarna",
-            "printedName": "signInWithKlarna",
+            "name": "signIn",
+            "printedName": "signIn",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -39760,8 +39760,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:SS15KlarnaMobileSDKE010signInWithA0SSvpZ",
-            "mangledName": "$sSS15KlarnaMobileSDKE010signInWithA0SSvpZ",
+            "usr": "s:SS15KlarnaMobileSDKE6signInSSvpZ",
+            "mangledName": "$sSS15KlarnaMobileSDKE6signInSSvpZ",
             "moduleName": "KlarnaMobileSDK",
             "static": true,
             "declAttributes": [
@@ -39785,8 +39785,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:SS15KlarnaMobileSDKE010signInWithA0SSvgZ",
-                "mangledName": "$sSS15KlarnaMobileSDKE010signInWithA0SSvgZ",
+                "usr": "s:SS15KlarnaMobileSDKE6signInSSvgZ",
+                "mangledName": "$sSS15KlarnaMobileSDKE6signInSSvgZ",
                 "moduleName": "KlarnaMobileSDK",
                 "static": true,
                 "implicit": true,
@@ -42028,8 +42028,8 @@
           },
           {
             "kind": "Var",
-            "name": "signInWithKlarna",
-            "printedName": "signInWithKlarna",
+            "name": "signIn",
+            "printedName": "signIn",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -42047,8 +42047,8 @@
               }
             ],
             "declKind": "Var",
-            "usr": "s:Sh15KlarnaMobileSDKSSRszrlE010signInWithA0ShySSGvpZ",
-            "mangledName": "$sSh15KlarnaMobileSDKSSRszrlE010signInWithA0ShySSGvpZ",
+            "usr": "s:Sh15KlarnaMobileSDKSSRszrlE6signInShySSGvpZ",
+            "mangledName": "$sSh15KlarnaMobileSDKSSRszrlE6signInShySSGvpZ",
             "moduleName": "KlarnaMobileSDK",
             "static": true,
             "declAttributes": [
@@ -42081,8 +42081,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:Sh15KlarnaMobileSDKSSRszrlE010signInWithA0ShySSGvgZ",
-                "mangledName": "$sSh15KlarnaMobileSDKSSRszrlE010signInWithA0ShySSGvgZ",
+                "usr": "s:Sh15KlarnaMobileSDKSSRszrlE6signInShySSGvgZ",
+                "mangledName": "$sSh15KlarnaMobileSDKSSRszrlE6signInShySSGvgZ",
                 "moduleName": "KlarnaMobileSDK",
                 "genericSig": "<τ_0_0 where τ_0_0 == Swift.String>",
                 "sugared_genericSig": "<Element where Element == Swift.String>",
@@ -43406,1267 +43406,1330 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 746,
-      "length": 21,
-      "value": "\"sign_in_with_klarna\""
+      "offset": 736,
+      "length": 9,
+      "value": "\"sign_in\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 915,
+      "offset": 893,
       "length": 29,
       "value": "\"LSApplicationQueriesSchemes\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1059,
+      "offset": 1037,
       "length": 32,
       "value": "\"KlarnaNativeHookMessageHandler\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1129,
+      "offset": 1107,
       "length": 36,
       "value": "\"KlarnaNativeHookCardMessageHandler\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1302,
+      "offset": 1280,
       "length": 20,
       "value": "\"__KlarnaNativeHook\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1399,
+      "offset": 1377,
       "length": 8,
       "value": "\"Native\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1508,
+      "offset": 1486,
       "length": 3,
       "value": "\"*\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1627,
+      "offset": 1605,
       "length": 12,
       "value": "\"card-frame\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1678,
+      "offset": 1656,
       "length": 16,
       "value": "\"KlarnaCardScan\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1755,
+      "offset": 1733,
       "length": 5,
       "value": "\"YES\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1784,
+      "offset": 1762,
       "length": 4,
       "value": "\"NO\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1755,
+      "offset": 1733,
       "length": 5,
       "value": "\"YES\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1784,
+      "offset": 1762,
       "length": 4,
       "value": "\"NO\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1918,
+      "offset": 1896,
       "length": 6,
       "value": "\"full\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1946,
+      "offset": 1924,
       "length": 7,
       "value": "\"basic\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1918,
+      "offset": 1896,
       "length": 6,
       "value": "\"full\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 1946,
+      "offset": 1924,
       "length": 7,
       "value": "\"basic\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2096,
+      "offset": 2074,
       "length": 20,
       "value": "\"merchantHandlesEPM\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2170,
+      "offset": 2148,
       "length": 33,
       "value": "\"merchantHandlesValidationErrors\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2264,
+      "offset": 2242,
       "length": 16,
       "value": "\"klarnaInitData\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2318,
+      "offset": 2296,
       "length": 18,
       "value": "\"${SDKkpInitData}\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2406,
+      "offset": 2384,
       "length": 46,
       "value": "\"Hold the front of your card up to the camera\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2491,
+      "offset": 2469,
       "length": 15,
       "value": "\"Scanning card\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2543,
+      "offset": 2521,
       "length": 15,
       "value": "\"%s recognised\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2602,
+      "offset": 2580,
       "length": 20,
       "value": "\"Need camera access\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2672,
+      "offset": 2650,
       "length": 64,
       "value": "\"Please enable camera access in your settings to scan your card\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2787,
+      "offset": 2765,
       "length": 4,
       "value": "\"Ok\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2853,
+      "offset": 2831,
       "length": 24,
       "value": "\"KMSDK_xgy7K1ALR9wgurL_\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 2951,
+      "offset": 2929,
       "length": 24,
       "value": "\"payments-sdk-persisted\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3013,
+      "offset": 2991,
       "length": 31,
       "value": "\"KlarnaMobileSDK-ApplicationId\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3245,
+      "offset": 3223,
       "length": 23,
       "value": "\"KlarnaPaymentsWrapper\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3357,
+      "offset": 3335,
       "length": 16,
       "value": "\"KlarnaPayments\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3411,
+      "offset": 3389,
       "length": 5,
       "value": "\"KCO\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3465,
+      "offset": 3443,
       "length": 27,
       "value": "\"KlarnaPostPurchaseWrapper\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3542,
+      "offset": 3520,
       "length": 16,
       "value": "\"express-button\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3737,
+      "offset": 3715,
       "length": 9,
       "value": "\"wrapper\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3781,
+      "offset": 3759,
       "length": 11,
       "value": "\"localhost\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 3831,
+      "offset": 3809,
       "length": 208,
       "value": "\"[KlarnaPayments] Fatal error occurred.\nPlease contact Klarna Mobile SDK team for support.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4098,
+      "offset": 4076,
       "length": 9,
       "value": "\"webView\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4139,
+      "offset": 4117,
       "length": 11,
       "value": "\"jsContext\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4221,
+      "offset": 4199,
       "length": 19,
       "value": "\"estimatedProgress\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4296,
+      "offset": 4274,
       "length": 7,
       "value": "\"debug\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4325,
+      "offset": 4303,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4296,
+      "offset": 4274,
       "length": 7,
       "value": "\"debug\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4325,
+      "offset": 4303,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4478,
+      "offset": 4456,
       "length": 12,
       "value": "\"js-console\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4525,
+      "offset": 4503,
       "length": 16,
       "value": "\"in-app-message\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4576,
+      "offset": 4554,
       "length": 16,
       "value": "\"in-app-network\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4659,
+      "offset": 4637,
       "length": 19,
       "value": "\"osm-get-placement\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4716,
+      "offset": 4694,
       "length": 15,
       "value": "\"klarna-evt-v1\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4765,
+      "offset": 4743,
       "length": 17,
       "value": "\"sdk-init-script\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4818,
+      "offset": 4796,
       "length": 20,
       "value": "\"sdk-message-bridge\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4876,
+      "offset": 4854,
       "length": 21,
       "value": "\"kp-payments-wrapper\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 4939,
+      "offset": 4917,
       "length": 22,
       "value": "\"postpurchase-wrapper\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5007,
+      "offset": 4985,
       "length": 27,
       "value": "\"express-button-fullscreen\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5307,
+      "offset": 5285,
       "length": 28,
       "value": "\"http:\/\/checkout.klarna.sdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5411,
+      "offset": 5389,
       "length": 90,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/sdk-client-configuration\/v2\/configuration\/config.json\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 5411,
+      "offset": 5389,
       "length": 90,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/sdk-client-configuration\/v2\/configuration\/config.json\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6093,
+      "offset": 6071,
       "length": 4,
       "value": "\"eu\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6136,
+      "offset": 6114,
       "length": 4,
       "value": "\"na\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6174,
+      "offset": 6152,
       "length": 4,
       "value": "\"oc\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6258,
+      "offset": 6236,
       "length": 8,
       "value": "\"REGKEY\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6407,
+      "offset": 6385,
       "length": 85,
       "value": "\"https:\/\/osm-\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6448,
+      "offset": 6426,
       "length": 1,
       "value": "\".playground.klarnaservices.com\/v3\/messaging\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6529,
+      "offset": 6507,
       "length": 74,
       "value": "\"https:\/\/osm-\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6570,
+      "offset": 6548,
       "length": 1,
       "value": "\".klarnaservices.com\/v3\/messaging\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6711,
+      "offset": 6689,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6786,
+      "offset": 6764,
       "length": 19,
       "value": "\"s3.int.klarna.net\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6846,
+      "offset": 6824,
       "length": 26,
       "value": "\"js.playground.klarna.com\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 6913,
+      "offset": 6891,
       "length": 15,
       "value": "\"js.klarna.com\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7006,
+      "offset": 6984,
       "length": 34,
       "value": "\"\/instant-shopping\/express-button\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7081,
+      "offset": 7059,
       "length": 17,
       "value": "\"\/express-button\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 7139,
+      "offset": 7117,
       "length": 17,
       "value": "\"\/express-button\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8232,
+      "offset": 8210,
       "length": 76,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/osm-static-configuration\/v0\/config.json\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8432,
+      "offset": 8410,
       "length": 87,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/wrapper-init-script\/v1\/script\/WrapperInitScript.js\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8579,
+      "offset": 8557,
       "length": 88,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/klarna-mobile-sdk-payments-wrapper-v2\/v1\/index.html\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8725,
+      "offset": 8703,
       "length": 68,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/mobile-js-snippet\/v1\/app.min.js\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 8857,
+      "offset": 8835,
       "length": 89,
       "value": "\"https:\/\/x.klarnacdn.net\/mobile-sdk\/klarna-mobile-sdk-postpurchase-wrapper\/v1\/index.html\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9054,
+      "offset": 9032,
       "length": 96,
       "value": "\"https:\/\/evt-eu.staging.eu1.yaco.klarna.net\/v1\/mobile-sdk\/klarna-mobile-sdk-v\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9149,
+      "offset": 9127,
       "length": 3,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9203,
+      "offset": 9181,
       "length": 38,
       "value": "\"https:\/\/evt.klarna.com\/v1\/mobile-sdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9338,
-      "length": 100,
-      "value": "\"https:\/\/frontend-event-router-eu.staging.c2c.klarna.net\/v1\/in-app\/inappsdk-ios-v\""
+      "offset": 9316,
+      "length": 67,
+      "value": "\"https:\/\/frontend-event-router-eu.staging.c2c.klarna.net\/v1\/in-app\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9437,
-      "length": 3,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
-      "kind": "StringLiteral",
-      "offset": 9491,
+      "offset": 9436,
       "length": 36,
       "value": "\"https:\/\/eu.klarnaevt.com\/v1\/in-app\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9587,
+      "offset": 9532,
       "length": 8,
       "value": "\"in-app\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9632,
+      "offset": 9577,
       "length": 16,
       "value": "\"\/v1\/mobile-sdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9679,
+      "offset": 9624,
       "length": 15,
       "value": "\"not-available\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9729,
+      "offset": 9674,
       "length": 10,
       "value": "\"inappsdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9775,
+      "offset": 9720,
       "length": 5,
       "value": "\"ios\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9817,
+      "offset": 9762,
       "length": 12,
       "value": "\"In-App SDK\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9859,
+      "offset": 9804,
       "length": 14,
       "value": "\"Klarna-debug\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9900,
+      "offset": 9845,
       "length": 30,
       "value": "\"klarna_debug_library_enabled\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 9963,
+      "offset": 9908,
       "length": 29,
       "value": "\"-KlarnaPaymentsDebugEnabled\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10053,
+      "offset": 9998,
       "length": 5,
       "value": "\"iid\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10078,
+      "offset": 10023,
       "length": 5,
       "value": "\"sid\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10109,
+      "offset": 10054,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10053,
+      "offset": 9998,
       "length": 5,
       "value": "\"iid\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10078,
+      "offset": 10023,
       "length": 5,
       "value": "\"sid\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10109,
+      "offset": 10054,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10256,
+      "offset": 10201,
       "length": 11,
       "value": "\"client_id\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10296,
+      "offset": 10241,
       "length": 15,
       "value": "\"placement_key\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10335,
+      "offset": 10280,
       "length": 9,
       "value": "\"channel\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10367,
+      "offset": 10312,
       "length": 8,
       "value": "\"locale\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10406,
+      "offset": 10351,
       "length": 17,
       "value": "\"purchase_amount\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10256,
+      "offset": 10201,
       "length": 11,
       "value": "\"client_id\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10296,
+      "offset": 10241,
       "length": 15,
       "value": "\"placement_key\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10335,
+      "offset": 10280,
       "length": 9,
       "value": "\"channel\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10367,
+      "offset": 10312,
       "length": 8,
       "value": "\"locale\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10406,
+      "offset": 10351,
       "length": 17,
       "value": "\"purchase_amount\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10529,
+      "offset": 10474,
       "length": 8,
       "value": "\"mobile\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10846,
+      "offset": 10791,
       "length": 10,
       "value": "\"3dSecure\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10886,
+      "offset": 10831,
       "length": 9,
       "value": "\"mainUrl\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10921,
+      "offset": 10866,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 10959,
+      "offset": 10904,
       "length": 12,
       "value": "\"successUrl\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11004,
+      "offset": 10949,
       "length": 12,
       "value": "\"failureUrl\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11052,
+      "offset": 10997,
       "length": 15,
       "value": "\"hideOnSuccess\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11103,
+      "offset": 11048,
       "length": 15,
       "value": "\"hideOnFailure\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11151,
+      "offset": 11096,
       "length": 12,
       "value": "\"hideOnUrls\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11238,
+      "offset": 11183,
       "length": 13,
       "value": "\"experiments\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11355,
+      "offset": 11300,
       "length": 15,
       "value": "\"card-scanning\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11402,
+      "offset": 11347,
       "length": 18,
       "value": "\"internal-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11451,
+      "offset": 11396,
       "length": 13,
       "value": "\"3ds-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11355,
+      "offset": 11300,
       "length": 15,
       "value": "\"card-scanning\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11402,
+      "offset": 11347,
       "length": 18,
       "value": "\"internal-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11451,
+      "offset": 11396,
       "length": 13,
       "value": "\"3ds-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11662,
+      "offset": 11567,
+      "length": 13,
+      "value": "\"experiments\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11608,
+      "length": 14,
+      "value": "\"api-features\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11652,
+      "length": 24,
+      "value": "\"application-foreground\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11706,
+      "length": 17,
+      "value": "\"sdk-version-fix\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11762,
+      "length": 28,
+      "value": "\"sandboxed-internal-browser\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11567,
+      "length": 13,
+      "value": "\"experiments\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11608,
+      "length": 14,
+      "value": "\"api-features\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11652,
+      "length": 24,
+      "value": "\"application-foreground\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11706,
+      "length": 17,
+      "value": "\"sdk-version-fix\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11762,
+      "length": 28,
+      "value": "\"sandboxed-internal-browser\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 11988,
       "length": 33,
       "value": "\"in-app-sdk-new-internal-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11724,
+      "offset": 12050,
       "length": 26,
       "value": "\"in-app-sdk-card-scanning\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11662,
+      "offset": 11988,
       "length": 33,
       "value": "\"in-app-sdk-new-internal-browser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11724,
+      "offset": 12050,
       "length": 26,
       "value": "\"in-app-sdk-card-scanning\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11823,
+      "offset": 12149,
       "length": 22,
       "value": "\"card-scanning-enable\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11876,
+      "offset": 12202,
       "length": 9,
       "value": "\"control\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 11965,
+      "offset": 12291,
       "length": 29,
       "value": "\"new-internal-browser-enable\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12025,
+      "offset": 12351,
       "length": 9,
       "value": "\"control\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12072,
+      "offset": 12398,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "Array",
-      "offset": 12123,
+      "offset": 12449,
       "length": 75,
       "value": "[\"klarna.net\", \"klarna.com\", \"klarnacdn.net\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12266,
+      "offset": 12592,
       "length": 5,
       "value": "\"3ds\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12298,
+      "offset": 12624,
       "length": 13,
       "value": "\"internal-v1\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12338,
+      "offset": 12664,
       "length": 13,
       "value": "\"internal-v2\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12266,
+      "offset": 12592,
       "length": 5,
       "value": "\"3ds\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12298,
+      "offset": 12624,
       "length": 13,
       "value": "\"internal-v1\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12338,
+      "offset": 12664,
       "length": 13,
       "value": "\"internal-v2\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12504,
+      "offset": 12830,
       "length": 8,
       "value": "\"liburl\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12560,
+      "offset": 12886,
       "length": 12,
       "value": "\"appversion\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12620,
+      "offset": 12946,
       "length": 12,
       "value": "\"libversion\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12671,
+      "offset": 12997,
       "length": 10,
       "value": "\"endpoint\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12718,
+      "offset": 13044,
       "length": 13,
       "value": "\"clientToken\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12789,
+      "offset": 13115,
       "length": 11,
       "value": "\"klarna:\/\/\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12836,
+      "offset": 13162,
       "length": 18,
       "value": "\"klarnaconsent:\/\/\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12919,
+      "offset": 13245,
       "length": 11,
       "value": "\"eventBody\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 12993,
+      "offset": 13319,
       "length": 9,
       "value": "\"Klarna.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 13036,
+      "offset": 13362,
       "length": 18,
       "value": "\"Express Checkout\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13150,
+      "offset": 13476,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13163,
+      "offset": 13489,
       "length": 4,
       "value": "0.70"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13175,
+      "offset": 13501,
       "length": 4,
       "value": "0.78"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13188,
+      "offset": 13514,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13241,
+      "offset": 13567,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13254,
+      "offset": 13580,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13266,
+      "offset": 13592,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 13279,
+      "offset": 13605,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14026,
+      "offset": 14352,
       "length": 13,
       "value": "\"in-app-test\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14081,
+      "offset": 14407,
       "length": 15,
       "value": "\"siwk-oidc-idp\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14131,
+      "offset": 14457,
       "length": 18,
       "value": "\"siwk-oidc-issuer\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14181,
+      "offset": 14507,
       "length": 4,
       "value": "\"K.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14232,
+      "offset": 14558,
       "length": 22,
       "value": "\"Continue with Klarna\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14293,
+      "offset": 14619,
       "length": 40,
       "value": "\"signinwithklarna.button.label.continue\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14379,
+      "offset": 14705,
       "length": 9,
       "value": "\"default\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 14428,
+      "offset": 14754,
       "length": 23,
       "value": "\"Authorization failed.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "Array",
-      "offset": 14495,
+      "offset": 14821,
       "length": 694,
       "value": "[\"https:\/\/app.klarna.com\", \"https:\/\/login.klarna.com\", \"https:\/\/login.klarna.com\/eu\/lp\/idp\", \"https:\/\/login.klarna.com\/na\/lp\/idp\", \"https:\/\/login.klarna.com\/ap\/lp\/idp\", \"https:\/\/login.nonprod.klarna.net\", \"https:\/\/login.nonprod.klarna.net\/eu\/lp\/idp\", \"https:\/\/login.nonprod.klarna.net\/na\/lp\/idp\", \"https:\/\/login.nonprod.klarna.net\/ap\/lp\/idp\", \"https:\/\/login.playground.klarna.com\", \"https:\/\/login.playground.klarna.com\/eu\/lp\/idp\", \"https:\/\/login.playground.klarna.com\/na\/lp\/idp\", \"https:\/\/login.playground.klarna.com\/ap\/lp\/idp\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15285,
+      "offset": 15611,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15298,
+      "offset": 15624,
       "length": 4,
       "value": "0.70"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15310,
+      "offset": 15636,
       "length": 4,
       "value": "0.78"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15323,
+      "offset": 15649,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15376,
+      "offset": 15702,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15389,
+      "offset": 15715,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15401,
+      "offset": 15727,
       "length": 4,
       "value": "0.09"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15414,
+      "offset": 15740,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15572,
+      "offset": 15898,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15585,
+      "offset": 15911,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15597,
+      "offset": 15923,
       "length": 4,
       "value": "0.06"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "FloatLiteral",
-      "offset": 15610,
+      "offset": 15936,
       "length": 4,
       "value": "1.00"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 16397,
+      "offset": 16723,
       "length": 10,
       "value": "\"JSBridge\""
     },
@@ -45471,7 +45534,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/SignInEvent.swift",
       "kind": "Array",
-      "offset": 1864,
+      "offset": 1858,
       "length": 2,
       "value": "[]"
     },
@@ -46591,7 +46654,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Browser\/InternalBrowserViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4892,
+      "offset": 4955,
       "length": 4,
       "value": "true"
     },
@@ -46612,7 +46675,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInSDK.swift",
       "kind": "FloatLiteral",
-      "offset": 2124,
+      "offset": 2146,
       "length": 4,
       "value": "0.25"
     },
@@ -46766,65 +46829,58 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1471,
+      "offset": 1566,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1483,
+      "offset": 1578,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1539,
+      "offset": 1634,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1551,
+      "offset": 1646,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1605,
+      "offset": 1700,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1617,
+      "offset": 1712,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "IntegerLiteral",
-      "offset": 1673,
+      "offset": 1768,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1685,
+      "offset": 1780,
       "length": 4,
       "value": "true"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/FeaturesController.swift",
-      "kind": "Array",
-      "offset": 1736,
-      "length": 152,
-      "value": "[\"experiments\", \"api-features\", \"application-foreground\", \"sdk-version-fix\", \"sandboxed-internal-browser\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Hybrid\/Debug\/HybridSDKController+Debug.swift",
@@ -47847,153 +47903,6 @@
       "offset": 995,
       "length": 2,
       "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 5231,
-      "length": 12,
-      "value": "\"actionType\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 5426,
-      "length": 37,
-      "value": "\"Unexpected action in message params\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 5484,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 6978,
-      "length": 10,
-      "value": "\"approved\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 7043,
-      "length": 11,
-      "value": "\"authToken\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 7106,
-      "length": 18,
-      "value": "\"finalizeRequired\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 7520,
-      "length": 10,
-      "value": "\"approved\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 7587,
-      "length": 11,
-      "value": "\"authToken\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 7983,
-      "length": 10,
-      "value": "\"approved\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8052,
-      "length": 11,
-      "value": "\"authToken\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8152,
-      "length": 10,
-      "value": "\"isPublic\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8227,
-      "length": 9,
-      "value": "\"isFatal\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8303,
-      "length": 7,
-      "value": "\"error\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8315,
-      "length": 14,
-      "value": "\"Unknown Name\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8376,
-      "length": 9,
-      "value": "\"message\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8390,
-      "length": 17,
-      "value": "\"Unknown Message\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 8453,
-      "length": 8,
-      "value": "\"action\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 9361,
-      "length": 61,
-      "value": "\"Error from payments wrapper: \""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 9403,
-      "length": 1,
-      "value": "\" - \""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 9421,
-      "length": 31,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Native Function Delegates\/KPFunctionDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9493,
-      "length": 4,
-      "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/DebugClassEvent.swift",
