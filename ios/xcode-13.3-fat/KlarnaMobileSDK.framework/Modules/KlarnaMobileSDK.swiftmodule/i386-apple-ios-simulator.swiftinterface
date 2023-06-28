@@ -751,7 +751,7 @@ extension Swift.String {
   public static let onSiteMessaging: Swift.String
   public static let oneTimeCard: Swift.String
   public static let inStore: Swift.String
-  public static let signInWithKlarna: Swift.String
+  public static let signIn: Swift.String
 }
 extension Swift.Set where Element == Swift.String {
   public static let payments: KlarnaMobileSDK.KlarnaProducts
@@ -761,7 +761,7 @@ extension Swift.Set where Element == Swift.String {
   public static let onSiteMessaging: KlarnaMobileSDK.KlarnaProducts
   public static let oneTimeCard: KlarnaMobileSDK.KlarnaProducts
   public static let inStore: KlarnaMobileSDK.KlarnaProducts
-  public static let signInWithKlarna: KlarnaMobileSDK.KlarnaProducts
+  public static let signIn: KlarnaMobileSDK.KlarnaProducts
   public static var all: KlarnaMobileSDK.KlarnaProducts {
     get
   }
