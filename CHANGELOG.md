@@ -274,6 +274,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.5] - 2023-07-06
+- Fixed proguard issues for public Sign in with Klarna classes.
+- Fixed an issue with cancelling dialogs with the back button.
+
 ### [2.6.4] - 2023-06-21
 - Internal Browser now uses dialog fragments instead of an Activity.
 - Fixed user cancel false-positives for Sign in with Klarna. 
