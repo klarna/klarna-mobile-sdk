@@ -26876,6 +26876,82 @@
           },
           {
             "kind": "Var",
+            "name": "isInspectable",
+            "printedName": "isInspectable",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@CM@KlarnaMobileSDK@objc(cs)KlarnaStandaloneWebView(py)isInspectable",
+            "mangledName": "$s15KlarnaMobileSDK0A17StandaloneWebViewC13isInspectableSbvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Custom",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@KlarnaMobileSDK@objc(cs)KlarnaStandaloneWebView(im)isInspectable",
+                "mangledName": "$s15KlarnaMobileSDK0A17StandaloneWebViewC13isInspectableSbvg",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@CM@KlarnaMobileSDK@objc(cs)KlarnaStandaloneWebView(im)setIsInspectable:",
+                "mangledName": "$s15KlarnaMobileSDK0A17StandaloneWebViewC13isInspectableSbvs",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "isFromExtension": true,
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "underPageBackgroundColor",
             "printedName": "underPageBackgroundColor",
             "children": [
@@ -45107,7 +45183,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Web View\/InternalWebView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4108,
+      "offset": 4235,
       "length": 5,
       "value": "false"
     },
@@ -46654,7 +46730,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Browser\/InternalBrowserViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4955,
+      "offset": 4704,
       "length": 4,
       "value": "true"
     },
@@ -47903,6 +47979,13 @@
       "offset": 995,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Standalone Web View\/StandaloneWebViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1028,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/DebugClassEvent.swift",
