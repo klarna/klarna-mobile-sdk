@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.7] - 2023-07-27
+- Fix Umbrella header warning message.
+- Fix Webview content inside Internal Browser.
+- Added webview inspectable variable to `KlarnaStandaloneWebView`.
+
 ### [2.6.6] - 2023-06-28
 - Fix UIActivityViewController for iPad.
 
