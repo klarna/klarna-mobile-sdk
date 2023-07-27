@@ -1902,6 +1902,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, readonly) BOOL canGoForward;
 @property (nonatomic, readonly) BOOL canGoBack;
 @property (nonatomic, readonly) CGSize contentSize;
+@property (nonatomic) BOOL isInspectable;
 @property (nonatomic, strong) UIColor * _Nonnull underPageBackgroundColor SWIFT_AVAILABILITY(ios,introduced=15.0);
 @property (nonatomic) BOOL allowsBackForwardAnimationGestures;
 @property (nonatomic) BOOL allowsLinkPreview;

@@ -996,6 +996,10 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var contentSize: CoreGraphics.CGSize {
     @objc get
   }
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var isInspectable: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @available(iOS 15.0, *)
   @objc @_Concurrency.MainActor(unsafe) dynamic public var underPageBackgroundColor: UIKit.UIColor {
     @objc get
