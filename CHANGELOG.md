@@ -279,6 +279,9 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.6] - 2023-07-27
+- Fixed a proguard issue for fullscreen dialogs.
+
 ### [2.6.5] - 2023-07-06
 - Fixed proguard issues for public Sign in with Klarna classes.
 - Fixed an issue with cancelling dialogs with the back button.
