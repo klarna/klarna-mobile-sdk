@@ -4,6 +4,9 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.8] - 2023-08-08
+- Fix `Pointer is missing a nullability type specifier` warning.
+
 ### [2.6.7] - 2023-07-27
 - Fix Umbrella header warning message.
 - Fix Webview content inside Internal Browser.
