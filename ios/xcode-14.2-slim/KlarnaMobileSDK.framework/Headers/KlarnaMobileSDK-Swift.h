@@ -611,7 +611,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaEvent") SWIFT_DEPRECATED_MSG("Use Klar
 SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK18KlarnaEventHandler_")
 @protocol KlarnaEventHandler
 /// An event happened within a Klarna component.
-/// \param klarnaCompnent The component that the event came from.
+/// \param klarnaComponent The component that the event came from.
 ///
 /// \param event The event itself.
 ///
@@ -619,7 +619,7 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK18KlarnaEventHandler_")
 /// An error occured within a Klarna component.
 /// \param klarnaComponent The component that the error came from.
 ///
-/// \param event The error that was encountered.
+/// \param error The error that was encountered.
 ///
 - (void)klarnaComponent:(id <KlarnaComponent> _Nonnull)klarnaComponent encounteredError:(KlarnaError * _Nonnull)error;
 @end
@@ -887,7 +887,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
 /// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
-/// \param eventListener A listener that will receive events from the SDK.
+/// \param klarnaEventListener A listener that will receive events from the SDK.
 ///
 /// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
@@ -897,7 +897,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
 /// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
-/// \param eventListener A listener that will receive events from the SDK.
+/// \param klarnaEventListener A listener that will receive events from the SDK.
 ///
 - (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventListener:(id <KlarnaEventListener> _Nonnull)klarnaEventListener SWIFT_DEPRECATED_MSG("Use the new initializer instead.");
 /// Initialize the Klarna Mobile SDK in hybrid mode.
@@ -905,7 +905,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// After initializing the SDK, you’ll need to add the web view that the SDK will track.
 /// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
 ///
-/// \param eventListener A listener that will receive events from the SDK.
+/// \param klarnaEventHandler A listener that will receive events from the SDK.
 ///
 /// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
@@ -1456,11 +1456,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// Initializes the Post Purchase Instance.
 /// After creating the Post Purchase SDK instance this is the next method to call.
 /// It will initialize the instance properties and assets required
-/// \param locale 
+/// \param locale Localization, list of supported locales can be found in https://docs.klarna.com/in-app/inapp-ios-overview/post-purchase/
 ///
 /// \param purchaseCountry Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
-/// \param design 
+/// \param design Optional design identifier.
 ///
 - (void)initializeWithLocale:(NSString * _Nonnull)locale purchaseCountry:(NSString * _Nonnull)purchaseCountry design:(NSString * _Nullable)design;
 /// Authorize the Post Purchase Instance.
@@ -1484,7 +1484,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// This method causes to launch and load the PostPurchaseSDK view in <em>full screen mode</em>.
 /// \param operationToken Token received from Klarna after the auth code exchange
 ///
-/// \param locale 
+/// \param locale Localization, list of supported locales can be found in https://docs.klarna.com/in-app/inapp-ios-overview/post-purchase/
 ///
 /// \param redirectUri Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
@@ -1503,8 +1503,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaPostPurchaseSDK")
 /// The listener must adopt the KlarnaPostPurchaseEventListener protocol. This object is responsible for receiving events with results of the Post Purchase SDK API functions executions.
 /// important:
 /// There can be one delegate assigned for each Post Purchase SDK instance
-/// \param listener The object that receives events of the Post Purchase SDK.
-///
 @property (nonatomic, strong) id <KlarnaEventHandler> _Nullable eventHandler;
 @property (nonatomic) enum KlarnaLoggingLevel loggingLevel;
 @property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
@@ -2060,6 +2058,9 @@ SWIFT_DEPRECATED
 #define KlarnaMobileSDKPostfix_h
 
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NSString KlarnaErrorName;
 typedef KlarnaError KlarnaMobileSDKError;
 
@@ -2081,6 +2082,8 @@ typedef void (^RenderResult)(KlarnaError *);
 typedef NSString KlarnaPostPurchaseErrorName;
 typedef KlarnaRegion KlarnaPostPurchaseRegion;
 typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
+
+NS_ASSUME_NONNULL_END
 
 #endif /* KlarnaMobileSDKPostfix_h */
 //
@@ -2095,6 +2098,9 @@ typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
 #define KlarnaMobileSDKPostfix_h
 
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NSString KlarnaErrorName;
 typedef KlarnaError KlarnaMobileSDKError;
 
@@ -2116,5 +2122,7 @@ typedef void (^RenderResult)(KlarnaError *);
 typedef NSString KlarnaPostPurchaseErrorName;
 typedef KlarnaRegion KlarnaPostPurchaseRegion;
 typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
+
+NS_ASSUME_NONNULL_END
 
 #endif /* KlarnaMobileSDKPostfix_h */

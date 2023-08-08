@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/KlarnaMobileSDK-Swift.h</key>
 		<data>
-		ahLQYLkKvHh3ud0bijK4kgVJrHo=
+		YFibvRtj1p4tiXZrQe851fhivWg=
 		</data>
 		<key>Headers/KlarnaMobileSDK.h</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fMkkh7eS2ok8tJxPooZSsV/wHiw=
+		CYnrbOh/+xemjq/j18MY/M3XLIk=
 		</data>
 		<key>KEBVersion.json</key>
 		<data>
-		vxtgAh3/lKBRAAKU3XX4tP2GpVk=
+		asrQkqYZ32qExlN+q/SyfzVxBnI=
 		</data>
 		<key>KlarnaHeadline-Bold.ttf</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>KlarnaMobileSDK-Framework.plist</key>
 		<data>
-		vrckQ85B31zL6of6XPwsdnM++sA=
+		ekz1//l8MEbwoJ+Mr59zSl/2UiA=
 		</data>
 		<key>KlarnaText-Regular.ttf</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		sxyN8YDabLhS9PsFbbFqhR5d0Ig=
+		IIJIPP1yMsHOOBOpCvveKetZRgk=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		FiF7SrvAtnf9T/lgxwQ6l6/8d5c=
+		8swYPU8Lxg7O0mH+SAj86KIgrN4=
 		</data>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>PrivateHeaders/KlarnaMobileSDKPostfix.h</key>
 		<data>
-		YhxURTqguj1jA7V5BOLaqc9Tq/Y=
+		oOBCaUPPhFwqR0T9jWbVymraiQ4=
 		</data>
 		<key>WrapperInitScript.js</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>config.json</key>
 		<data>
-		eBsYSy2vF/HGhqbK35S7eUc3dlI=
+		X9gqWbpJl37gFpXkHasV+DnbYQ4=
 		</data>
 		<key>osm_demo.json</key>
 		<data>
@@ -231,11 +231,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ahLQYLkKvHh3ud0bijK4kgVJrHo=
+			YFibvRtj1p4tiXZrQe851fhivWg=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZnEtrcOxBGmD4pjVQXFuGz5dRMqet8SyyPdLEoOVxpc=
+			MmbAoSIboLnELw4duQ2tgyumdhJqtKDX/YCCIersAj8=
 			</data>
 		</dict>
 		<key>Headers/KlarnaMobileSDK.h</key>
@@ -253,11 +253,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vxtgAh3/lKBRAAKU3XX4tP2GpVk=
+			asrQkqYZ32qExlN+q/SyfzVxBnI=
 			</data>
 			<key>hash2</key>
 			<data>
-			KqzNqdI0wiffcplBbchO8UbdTmYcjDej9METyZv2S6o=
+			7hK3uOc7YMqLPGt72gL5FXZuN7RSwexnGQsJrm3ToXo=
 			</data>
 		</dict>
 		<key>KlarnaHeadline-Bold.ttf</key>
@@ -275,11 +275,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vrckQ85B31zL6of6XPwsdnM++sA=
+			ekz1//l8MEbwoJ+Mr59zSl/2UiA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uhSDaJ64wTXi+bRJfCrDXoKGHMG4D06bSJKUN0sZevk=
+			mko92h2Qlb3g35eqgSc6c6szlt/mY+WpCVbX8vor2UE=
 			</data>
 		</dict>
 		<key>KlarnaText-Regular.ttf</key>
@@ -330,11 +330,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sxyN8YDabLhS9PsFbbFqhR5d0Ig=
+			IIJIPP1yMsHOOBOpCvveKetZRgk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z3YsrGO25q6aBS3qu8NevKTctsQFr+ZLLQ/RyM5pibY=
+			aFQjd0xOUYhHMY2cXZqN/pdj7auHg983aQn4Q8Uyzt8=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -385,11 +385,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FiF7SrvAtnf9T/lgxwQ6l6/8d5c=
+			8swYPU8Lxg7O0mH+SAj86KIgrN4=
 			</data>
 			<key>hash2</key>
 			<data>
-			BXX7ouJvq5bhR35CXCR9hG7jjY4TQRZJzgpsdLb3n58=
+			DDGuQ+OETxlRkZLeLq8RvpHYfDhN2bp+sEQ0fGgHqj0=
 			</data>
 		</dict>
 		<key>Modules/KlarnaMobileSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -451,11 +451,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YhxURTqguj1jA7V5BOLaqc9Tq/Y=
+			oOBCaUPPhFwqR0T9jWbVymraiQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			+pJX387yn+ymbHkzU3jVPADgd9BMcY1vMyHbVdvkeEY=
+			K3CxqZf7UWhp0xIC+Je1AhI1Pj7euhWyEiWAceYU6Bc=
 			</data>
 		</dict>
 		<key>WrapperInitScript.js</key>
@@ -473,11 +473,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eBsYSy2vF/HGhqbK35S7eUc3dlI=
+			X9gqWbpJl37gFpXkHasV+DnbYQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			FY+aaX02yOhEUJLWjMMe1jgpZ04EFDRNx3VNtWqFYoA=
+			m3rpgRhbER4zeEJbSkm3RH3GYebAy5ZF6YncJFXYzug=
 			</data>
 		</dict>
 		<key>osm_demo.json</key>
