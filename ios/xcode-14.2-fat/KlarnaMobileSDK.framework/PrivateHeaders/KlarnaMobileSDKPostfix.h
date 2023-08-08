@@ -9,7 +9,10 @@
 #ifndef KlarnaMobileSDKPostfix_h
 #define KlarnaMobileSDKPostfix_h
 
+
 #import <KlarnaMobileSDK/KlarnaMobileSDK-Swift.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NSString KlarnaErrorName;
 typedef KlarnaError KlarnaMobileSDKError;
@@ -32,5 +35,7 @@ typedef void (^RenderResult)(KlarnaError *);
 typedef NSString KlarnaPostPurchaseErrorName;
 typedef KlarnaRegion KlarnaPostPurchaseRegion;
 typedef KlarnaEnvironment KlarnaPostPurchaseEnvironment;
+
+NS_ASSUME_NONNULL_END
 
 #endif /* KlarnaMobileSDKPostfix_h */
