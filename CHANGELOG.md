@@ -282,6 +282,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.7] - 2023-08-09
+- Card scanning results are wiped from memory after usage.
+- KlarnaPaymentView is made visible also on authorize call.
+
 ### [2.6.6] - 2023-07-27
 - Fixed a proguard issue for fullscreen dialogs.
 
