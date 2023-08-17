@@ -16,8 +16,6 @@ For this release, we provide:
 
 | Name | Fat/slim | Xcode Ver. & Build No. | Swift Ver. | Swift Toolchain Ver. |
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
-| `xcode-13.3-fat` | fat | 13.3 - 13E113 | 5.6| swiftlang-5.6.0.323.62 clang-1316.0.20.8 |
-| `xcode-13.3-slim` | slim | 13.3 - 13E113 | 5.6| swiftlang-5.6.0.323.62 clang-1316.0.20.8 |
 | `xcode-14.2-fat` | fat | 14.2 - 14C18 | 5.7.2| swiftlang-5.7.2.135.5 clang-1400.0.29.51 |
 | `xcode-14.2-slim` | slim | 14.2 - 14C18 | 5.7.2| swiftlang-5.7.2.135.5 clang-1400.0.29.51 |
 
@@ -29,10 +27,6 @@ want to use a different variant, update your Podfile to use a different subspec.
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-13.3-fat', '~> 2.6.8'
-```
-
-```ruby
-pod 'KlarnaMobileSDK/xcode-14.2-fat', '~> 2.6.8'
+pod 'KlarnaMobileSDK/xcode-14.2-fat', '~> 2.6.9'
 ```
 

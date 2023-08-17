@@ -1353,6 +1353,7 @@ public class KlarnaSignInSDKDebug : KlarnaMobileSDK.KlarnaSignInSDK {
 public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaPaymentView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willMove(toSuperview newSuperview: UIKit.UIView?)
   @objc deinit
 }
 @objc public protocol KlarnaEventHandler {
