@@ -4650,6 +4650,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -4701,6 +4711,16 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -6997,6 +7017,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
@@ -8382,6 +8412,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "KlarnaLoggingLevel",
         "printedName": "KlarnaLoggingLevel",
@@ -9345,6 +9385,16 @@
             "usr": "s:SE",
             "mangledName": "$sSE"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -11603,16 +11653,6 @@
       },
       {
         "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KlarnaMobileSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -13770,6 +13810,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "KlarnaDebugEventType",
         "printedName": "KlarnaDebugEventType",
@@ -14398,6 +14448,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
         "declKind": "Import",
@@ -14910,6 +14970,16 @@
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -18553,6 +18623,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "AuthenticationServices",
         "printedName": "AuthenticationServices",
         "declKind": "Import",
@@ -19715,6 +19795,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "KlarnaOSMViewEventListener",
         "printedName": "KlarnaOSMViewEventListener",
@@ -19807,6 +19897,16 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -19991,6 +20091,26 @@
         "printedName": "ObjectiveC",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -20218,8 +20338,28 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK",
         "declAttributes": [
@@ -21292,8 +21432,28 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK",
         "declAttributes": [
@@ -21411,6 +21571,16 @@
         "printedName": "JavaScriptCore",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -21550,6 +21720,16 @@
         "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -31282,6 +31462,16 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -32827,8 +33017,28 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "KlarnaMobileSDK",
         "declAttributes": [
@@ -33284,6 +33494,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "KlarnaExpressButtonDebug",
         "printedName": "KlarnaExpressButtonDebug",
@@ -33602,6 +33822,16 @@
             "usr": "c:@M@KlarnaMobileSDK@objc(pl)KlarnaScrollableComponent",
             "mangledName": "$s15KlarnaMobileSDK0A19ScrollableComponentP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -34053,6 +34283,46 @@
               "Override",
               "AccessControl",
               "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "willMove",
+            "printedName": "willMove(toSuperview:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIView",
+                    "printedName": "UIKit.UIView",
+                    "usr": "c:objc(cs)UIView"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaPaymentView(im)willMoveToSuperview:",
+            "mangledName": "$s15KlarnaMobileSDK0A11PaymentViewC8willMove11toSuperviewySo6UIViewCSg_tF",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "objc_name": "willMoveToSuperview:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -43158,6 +43428,13 @@
       "value": "true"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/WebViewPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 250,
+      "length": 9,
+      "value": "\"webView\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/Ocr.swift",
       "kind": "FloatLiteral",
       "offset": 126,
@@ -43345,6 +43622,13 @@
       "offset": 3122,
       "length": 21,
       "value": "\"klarnaMerchantEvent\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/KlarnaComponentPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 266,
+      "length": 11,
+      "value": "\"component\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaEnvironment.swift",
@@ -44819,7 +45103,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/AuthenticationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1855,
+      "offset": 1921,
       "length": 5,
       "value": "false"
     },
@@ -45062,6 +45346,13 @@
       "value": "\"KlarnaMobileSDK.CommonSdkControllerEvent\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/PaymentViewCallbackPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 274,
+      "length": 21,
+      "value": "\"paymentViewCallback\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Sign-In With Klarna\/Constants\/KlarnaSignInErrorName.swift",
       "kind": "StringLiteral",
       "offset": 435,
@@ -45109,6 +45400,34 @@
       "offset": 920,
       "length": 35,
       "value": "\"KlarnaSignInCompletedWithoutToken\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Analytics\/PaymentsEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 618,
+      "length": 23,
+      "value": "\"paymentsActionRequest\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Analytics\/PaymentsEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 715,
+      "length": 30,
+      "value": "\"paymentsActionRequestPending\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Analytics\/PaymentsEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 813,
+      "length": 24,
+      "value": "\"paymentsActionResponse\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/Analytics\/PaymentsEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 910,
+      "length": 29,
+      "value": "\"paymentViewCallbackNotified\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/MovingFullscreenDelegate.swift",
@@ -45412,6 +45731,13 @@
       "value": "\"KlarnaMobileSDK.KlarnaPaymentError\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 8,
+      "value": "\"signIn\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaLoggingLevel.swift",
       "kind": "StringLiteral",
       "offset": 409,
@@ -45552,6 +45878,13 @@
       "value": "2"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInButtonPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 260,
+      "length": 14,
+      "value": "\"signInButton\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/UIViewController+Extensions.swift",
       "kind": "FloatLiteral",
       "offset": 957,
@@ -45606,20 +45939,6 @@
       "offset": 191,
       "length": 19,
       "value": "\"KlarnaMobileSDK.WebViewWrapperEvent\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/SignInEvent.swift",
-      "kind": "Array",
-      "offset": 1858,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/SignInEvent.swift",
-      "kind": "StringLiteral",
-      "offset": 136,
-      "length": 11,
-      "value": "\"KlarnaMobileSDK.SignInEvent\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Payments\/Constants\/KlarnaPaymentAction.swift",
@@ -45839,6 +46158,13 @@
       "value": "\"KlarnaMobileSDK.BlaclistedURLEvent\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/MerchantPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 10,
+      "value": "\"merchant\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaDebugEvent.swift",
       "kind": "StringLiteral",
       "offset": 395,
@@ -45907,6 +46233,13 @@
       "offset": 1003,
       "length": 16,
       "value": "\"KlarnaMobileSDK.KlarnaDebugEvent\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/ExperimentsEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 318,
+      "length": 15,
+      "value": "\"setExperiment\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/GeneratedModels.swift",
@@ -46042,6 +46375,13 @@
       "value": "0"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/PaymentsPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 10,
+      "value": "\"payments\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaRegion.swift",
       "kind": "StringLiteral",
       "offset": 478,
@@ -46103,6 +46443,13 @@
       "offset": 194,
       "length": 24,
       "value": "\"KlarnaMobileSDK.PaymentsIntegrationEvent\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInRedirectPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 264,
+      "length": 16,
+      "value": "\"signInRedirect\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Express Button\/Debug\/ExpressButtonSDKController+Debug.swift",
@@ -46749,6 +47096,13 @@
       "value": "\"KlarnaMobileSDK.ScriptEvent\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInAuthPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 256,
+      "length": 12,
+      "value": "\"signInAuth\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInSDK.swift",
       "kind": "FloatLiteral",
       "offset": 2146,
@@ -46761,6 +47115,13 @@
       "offset": 207,
       "length": 15,
       "value": "\"KlarnaMobileSDK.KlarnaSignInSDK\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInTokenExchangeRequestPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 288,
+      "length": 28,
+      "value": "\"signInTokenExchangeRequest\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/CreditCardUtils.swift",
@@ -46882,11 +47243,32 @@
       "value": "16"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/DevicePayload.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 8,
+      "value": "\"device\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSObject+Extensions.swift",
       "kind": "Array",
       "offset": 247,
       "length": 256,
       "value": "[\"c\", \"i\", \"s\", \"q\", \"C\", \"I\", \"S\", \"Q\", \"f\", \"d\", \"B\", \"{CGSize=\"width\"d\"height\"d}\", \"{CGPoint=\"x\"d\"y\"d}\", \"{UIEdgeInsets=\"top\"d\"left\"d\"bottom\"d\"right\"d}\", \"{CGRect=\"origin\"{CGPoint=\"x\"d\"y\"d}\"size\"{CGSize=\"width\"d\"height\"d}}\"]"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/PaymentViewPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 258,
+      "length": 13,
+      "value": "\"paymentView\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInSdkPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 254,
+      "length": 11,
+      "value": "\"signInSdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Post-purchase\/Models\/KlarnaPostPurchaseError.swift",
@@ -46966,6 +47348,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInTokenExchangeResponsePayload.swift",
+      "kind": "StringLiteral",
+      "offset": 290,
+      "length": 29,
+      "value": "\"signInTokenExchangeResponse\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/OSM View\/OSM Style\/OSMStyle.swift",
       "kind": "FloatLiteral",
       "offset": 314,
@@ -46992,6 +47381,13 @@
       "offset": 352,
       "length": 4,
       "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInIdTokenPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 262,
+      "length": 15,
+      "value": "\"signInIdToken\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaTheme.swift",
@@ -47463,6 +47859,13 @@
       "value": "\"IMAGE\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/BlacklistedPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 258,
+      "length": 13,
+      "value": "\"blacklisted\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/API.swift",
       "kind": "StringLiteral",
       "offset": 831,
@@ -47512,11 +47915,25 @@
       "value": "\"KlarnaMobileSDK.NativeFunctionsControllerEvent\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/FeaturesPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 12,
+      "value": "\"featureset\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Hybrid\/HybridSDKController.swift",
       "kind": "BooleanLiteral",
       "offset": 1368,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/MetaPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 244,
+      "length": 6,
+      "value": "\"meta\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/ScanViewController.swift",
@@ -47755,6 +48172,13 @@
       "offset": 1139,
       "length": 32,
       "value": "\"KlarnaPostPurchaseErrorUnknown\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Sign In\/SignInIdpConfigurationPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 280,
+      "length": 24,
+      "value": "\"signInIdpConfiguration\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/MessageQueueControllerEvent.swift",
@@ -48403,14 +48827,14 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/PaymentsSDKController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1824,
+      "offset": 1879,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Payments\/PaymentsSDKController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1954,
+      "offset": 2005,
       "length": 5,
       "value": "false"
     },
@@ -48427,6 +48851,13 @@
       "offset": 966,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/ExperimentPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 256,
+      "length": 15,
+      "value": "\"setExperiment\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Info\/MerchantAppInfo.swift",
@@ -48632,6 +49063,27 @@
       "value": "\"osm_demo\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/PaymentViewEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 262,
+      "length": 32,
+      "value": "\"paymentViewAvailabilityChanged\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/PaymentViewEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 359,
+      "length": 21,
+      "value": "\"paymentViewAttached\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/PaymentViewEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 446,
+      "length": 21,
+      "value": "\"paymentViewDetached\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Post Purchase\/Analytics\/PostPurchaseRenderOperationEvent.swift",
       "kind": "StringLiteral",
       "offset": 192,
@@ -48716,6 +49168,13 @@
       "value": "\"en-US\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/SdkConfigPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 254,
+      "length": 11,
+      "value": "\"sdkConfig\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/InternalErrorEvent.swift",
       "kind": "StringLiteral",
       "offset": 196,
@@ -48730,6 +49189,160 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 209,
+      "length": 29,
+      "value": "\"signInControllerInitialized\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 307,
+      "length": 25,
+      "value": "\"signInButtonInitialized\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 398,
+      "length": 22,
+      "value": "\"signInSdkInitialized\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 486,
+      "length": 22,
+      "value": "\"signInButtonAttached\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 574,
+      "length": 22,
+      "value": "\"signInButtonDetached\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 661,
+      "length": 21,
+      "value": "\"signInButtonClicked\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 746,
+      "length": 20,
+      "value": "\"signInMethodCalled\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 834,
+      "length": 24,
+      "value": "\"signInValidatingParams\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 926,
+      "length": 23,
+      "value": "\"signInValidatedParams\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1026,
+      "length": 32,
+      "value": "\"signInFetchingIdpConfiguration\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1134,
+      "length": 31,
+      "value": "\"signInFetchedIdpConfiguration\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1229,
+      "length": 20,
+      "value": "\"signInStartingAuth\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1314,
+      "length": 21,
+      "value": "\"signInUserCancelled\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1397,
+      "length": 18,
+      "value": "\"signInRedirected\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1486,
+      "length": 26,
+      "value": "\"signInRedirectSuccessful\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1585,
+      "length": 29,
+      "value": "\"signInStartingTokenExchange\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1686,
+      "length": 28,
+      "value": "\"signInTokenExchangeRequest\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1788,
+      "length": 29,
+      "value": "\"signInTokenExchangeResponse\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1893,
+      "length": 31,
+      "value": "\"signInTokenExchangeSuccessful\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 1998,
+      "length": 30,
+      "value": "\"signInTokenExchangeValidated\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 2095,
+      "length": 23,
+      "value": "\"signInLoginSuccessful\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 2181,
+      "length": 19,
+      "value": "\"signInLoginFailed\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Cardscan\/External Source\/VideoFeed.swift",
       "kind": "BooleanLiteral",
       "offset": 351,
@@ -48742,6 +49355,20 @@
       "offset": 409,
       "length": 15,
       "value": "\"session queue\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/MessageBridgePayload.swift",
+      "kind": "StringLiteral",
+      "offset": 262,
+      "length": 15,
+      "value": "\"messageBridge\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/SdkPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 241,
+      "length": 5,
+      "value": "\"sdk\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaButtonTheme.swift",

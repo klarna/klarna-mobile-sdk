@@ -1217,6 +1217,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (void)didMoveToWindow;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
 @end
 
 
