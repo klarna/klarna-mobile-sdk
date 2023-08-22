@@ -4,6 +4,11 @@ All notable changes to Klarna In-App SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.10] - 2023-08-22
+- Added progress indicator in Sign In With Klarna Button.
+- Fixed style in Sign In With Klarna Button. 
+- Improved performance for Sign In With Klarna.
+
 ### [2.6.9] - 2023-08-17
 - Fix Logging level.
 - Internal optimization and improvements for Sign In With Klarna.

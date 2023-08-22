@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.2.3-7ac305c8178",
-        "updated": "2023-08-09T08:17:41.246Z",
+        "version": "v2.2.4-d3fa24a5bbe",
+        "updated": "2023-08-18T07:46:41.539Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.6"
+                "versionName": "2.6.7"
             },
             "ios": {
-                "versionName": "2.6.8"
+                "versionName": "2.6.9"
             }
         },
         "assets": [
@@ -251,8 +251,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-eu.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.klarna.com",
+                            "path": "/eu/cma/v3/messaging"
                         }
                     },
                     {
@@ -268,8 +268,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-na.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.klarna.com",
+                            "path": "/na/cma/v3/messaging"
                         }
                     },
                     {
@@ -285,8 +285,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-oc.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.klarna.com",
+                            "path": "/oc/cma/v3/messaging"
                         }
                     },
                     {
@@ -302,8 +302,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-eu.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.playground.klarna.com",
+                            "path": "/eu/cma/v3/messaging"
                         }
                     },
                     {
@@ -319,8 +319,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-na.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.playground.klarna.com",
+                            "path": "/na/cma/v3/messaging"
                         }
                     },
                     {
@@ -336,8 +336,59 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "osm-oc.playground.klarnaservices.com",
-                            "path": "/v3/messaging"
+                            "host": "js.playground.klarna.com",
+                            "path": "/oc/cma/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.nonprod.us1.js.klarna.net",
+                            "path": "/eu/cma/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.nonprod.us1.js.klarna.net",
+                            "path": "/na/cma/v3/messaging"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.nonprod.us1.js.klarna.net",
+                            "path": "/oc/cma/v3/messaging"
                         }
                     }
                 ]

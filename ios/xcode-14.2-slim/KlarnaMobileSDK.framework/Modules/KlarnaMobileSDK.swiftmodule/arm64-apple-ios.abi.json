@@ -11320,6 +11320,168 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "touchesBegan",
+            "printedName": "touchesBegan(_:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<UIKit.UITouch>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITouch",
+                    "printedName": "UIKit.UITouch",
+                    "usr": "c:objc(cs)UITouch"
+                  }
+                ],
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIEvent?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIEvent",
+                    "printedName": "UIKit.UIEvent",
+                    "usr": "c:objc(cs)UIEvent"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaSignInButton(im)touchesBegan:withEvent:",
+            "mangledName": "$s15KlarnaMobileSDK0A12SignInButtonC12touchesBegan_4withyShySo7UITouchCG_So7UIEventCSgtF",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "objc_name": "touchesBegan:withEvent:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "touchesEnded",
+            "printedName": "touchesEnded(_:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<UIKit.UITouch>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITouch",
+                    "printedName": "UIKit.UITouch",
+                    "usr": "c:objc(cs)UITouch"
+                  }
+                ],
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIEvent?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIEvent",
+                    "printedName": "UIKit.UIEvent",
+                    "usr": "c:objc(cs)UIEvent"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaSignInButton(im)touchesEnded:withEvent:",
+            "mangledName": "$s15KlarnaMobileSDK0A12SignInButtonC12touchesEnded_4withyShySo7UITouchCG_So7UIEventCSgtF",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "objc_name": "touchesEnded:withEvent:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "touchesCancelled",
+            "printedName": "touchesCancelled(_:with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<UIKit.UITouch>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITouch",
+                    "printedName": "UIKit.UITouch",
+                    "usr": "c:objc(cs)UITouch"
+                  }
+                ],
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIEvent?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIEvent",
+                    "printedName": "UIKit.UIEvent",
+                    "usr": "c:objc(cs)UIEvent"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaSignInButton(im)touchesCancelled:withEvent:",
+            "mangledName": "$s15KlarnaMobileSDK0A12SignInButtonC16touchesCancelled_4withyShySo7UITouchCG_So7UIEventCSgtF",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "objc_name": "touchesCancelled:withEvent:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(frame:)",
@@ -31149,6 +31311,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -43077,8 +43249,120 @@
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16032,
+      "length": 4,
+      "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16045,
+      "length": 4,
+      "value": "0.70"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16057,
+      "length": 4,
+      "value": "0.78"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16070,
+      "length": 4,
+      "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16123,
+      "length": 4,
+      "value": "0.20"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16136,
+      "length": 4,
+      "value": "0.21"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16148,
+      "length": 4,
+      "value": "0.21"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16161,
+      "length": 4,
+      "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16215,
+      "length": 4,
+      "value": "0.95"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16228,
+      "length": 4,
+      "value": "0.95"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16240,
+      "length": 4,
+      "value": "0.95"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16253,
+      "length": 4,
+      "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16362,
+      "length": 4,
+      "value": "0.20"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16375,
+      "length": 4,
+      "value": "0.21"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16387,
+      "length": 4,
+      "value": "0.21"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
+      "kind": "FloatLiteral",
+      "offset": 16400,
+      "length": 4,
+      "value": "1.00"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Util\/Constants.swift",
       "kind": "StringLiteral",
-      "offset": 16723,
+      "offset": 18468,
       "length": 10,
       "value": "\"JSBridge\""
     },
@@ -43092,7 +43376,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/AuthenticationController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1921,
+      "offset": 2192,
       "length": 5,
       "value": "false"
     },
@@ -43449,42 +43733,42 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 440,
+      "offset": 879,
       "length": 24,
       "value": "\"authorization_endpoint\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 494,
+      "offset": 933,
       "length": 16,
       "value": "\"token_endpoint\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 534,
+      "offset": 973,
       "length": 10,
       "value": "\"jwks_uri\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 440,
+      "offset": 879,
       "length": 24,
       "value": "\"authorization_endpoint\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 494,
+      "offset": 933,
       "length": 16,
       "value": "\"token_endpoint\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Models\/Authentication\/OpenIdConfiguration.swift",
       "kind": "StringLiteral",
-      "offset": 534,
+      "offset": 973,
       "length": 10,
       "value": "\"jwks_uri\""
     },
@@ -43833,66 +44117,80 @@
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
+      "kind": "BooleanLiteral",
+      "offset": 501,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
+      "kind": "BooleanLiteral",
+      "offset": 716,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
+      "kind": "BooleanLiteral",
+      "offset": 935,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "FloatLiteral",
-      "offset": 1093,
+      "offset": 1266,
       "length": 4,
       "value": "0.25"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1143,
-      "length": 2,
-      "value": "12"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1196,
+      "offset": 1312,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1263,
+      "offset": 1349,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1395,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1463,
       "length": 3,
       "value": "800"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1331,
+      "offset": 1531,
       "length": 3,
       "value": "900"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "IntegerLiteral",
-      "offset": 1395,
+      "offset": 1595,
       "length": 3,
       "value": "700"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
       "kind": "FloatLiteral",
-      "offset": 1447,
+      "offset": 1647,
       "length": 3,
       "value": "0.8"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
-      "kind": "Array",
-      "offset": 1509,
-      "length": 2,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
-      "kind": "Array",
-      "offset": 1567,
-      "length": 2,
-      "value": "[]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Sign-In With Klarna\/KlarnaSignInButton.swift",
@@ -46212,6 +46510,20 @@
       "value": "\"KlarnaMobileSDK.MerchantEventDelegateEvent\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Views\/LoadingView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 308,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Views\/LoadingView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 585,
+      "length": 1,
+      "value": "3"
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Events\/ExperimentsEvent.swift",
       "kind": "StringLiteral",
       "offset": 186,
@@ -46448,6 +46760,13 @@
       "offset": 2181,
       "length": 19,
       "value": "\"signInLoginFailed\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/SignInEventName.swift",
+      "kind": "StringLiteral",
+      "offset": 2279,
+      "length": 35,
+      "value": "\"signInUsingCachedIdpConfiguration\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/MessageBridgePayload.swift",

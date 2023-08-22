@@ -1579,6 +1579,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 
 
 @protocol ASWebAuthenticationPresentationContextProviding;
+@class UITouch;
+@class UIEvent;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButton : UIControl
@@ -1623,6 +1625,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -1630,6 +1635,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButton (SWIFT_EXTENSION(KlarnaMobileSDK)) <KlarnaSingleComponent>
 @end
+
 
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
