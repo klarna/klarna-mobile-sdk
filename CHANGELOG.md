@@ -291,6 +291,14 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.8] - 2023-08-22
+- Changed Sign in with Klarna button logo layout.
+- Added support for loading indicator for Sign in with Klarna button.
+- Improved performance by caching for Sign in with Klarna logins.
+- Fixed text scaling issues for native buttons.
+- Added support for skipping load calls in legacy tokenize flows.
+- Added permission support for hybrid integrations.
+
 ### [2.6.7] - 2023-08-09
 - Card scanning results are wiped from memory after usage.
 - KlarnaPaymentView is made visible also on authorize call.
