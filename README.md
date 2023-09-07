@@ -16,12 +16,12 @@ We offer a seamless and straightforward way to
 
 and so much more in a single package!
 
-## Overview
-
 ### SDK for Other Platforms
 
 * [React Native](https://github.com/klarna/react-native-klarna-inapp-sdk)
 * [Flutter](https://github.com/klarna/klarna-mobile-sdk-flutter)
+
+## Overview
 
 ### Requirements
 * iOS 10 or later.
@@ -38,25 +38,25 @@ and so much more in a single package!
 * [Android Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md#android)
 * [iOS Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md#ios)
 
-## Getting Started
+### Integrations
 
 Klarna Mobile SDK offers two different integration types; standalone and WebView. Both of these types include multiple product integrations underneath and they are separated by the integration API offered by the SDK.
 
-### Standalone Integrations
+#### Standalone Integrations
 Standalone integrations are product integrations offered with native API. Most of these integrations are fully native while there are some integrations that are using WebView internally. This means even if the integration is via a WebView you don't have to manage a WebView instance and instead you get a customized View or SDK instance that you can use directly with native APIs.
 
-### WebView Integrations
+#### WebView Integrations
 WebView integrations are solely based on WebViews and targeted to apps using WebViews in some parts of the app such as using Web checkout solutions in an app. These integrations either let integrator own a WebView or offer a WebView that's customized by the SDK and ready to be used out of the box.
 
-### Demo Apps
+#### Example Apps
 
-#### Standalone Integration
-* [iOS Demo App](https://github.com/klarna/kp-ios-example-app)
-* [Android Demo App](https://github.com/klarna/kp-android-example-app)
+##### Standalone Integration
+* [iOS Klarna Payments Example App](https://github.com/klarna/kp-ios-example-app)
+* [Android Klarna Payments Example App](https://github.com/klarna/kp-android-example-app)
 
-#### WebView Integration
-* [iOS Demo App](https://github.com/klarna/HybridInAppSDKDemo)
-* [Android Demo App](https://github.com/klarna/hybrid-android-example-app)
+##### WebView Integration
+* [iOS Hybrid Example App](https://github.com/klarna/HybridInAppSDKDemo)
+* [Android Hybrid Example App](https://github.com/klarna/hybrid-android-example-app)
 
 ## Support
 
