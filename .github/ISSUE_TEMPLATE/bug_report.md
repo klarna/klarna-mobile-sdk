@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Device and version:**
  - Device: [e.g. iPhone6]
  - OS version: [e.g. iOS8.1]
- - Klarna In-App SDK version [e.g. 1.2.3]
+ - Klarna Mobile SDK version [e.g. 1.2.3]
 
 **Merchant Name**
 Please state the merchant's name and the application's name that is facing the issue using the SDK.

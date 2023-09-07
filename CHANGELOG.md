@@ -1,5 +1,5 @@
 # Changelog
-All notable changes to Klarna In-App SDK will be documented in this file.
+All notable changes to Klarna Mobile SDK will be documented in this file.
 
 ## iOS
 Future releases will be documented in this section.

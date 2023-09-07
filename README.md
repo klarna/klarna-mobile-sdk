@@ -1,12 +1,10 @@
-# Klarna In-App SDK for iOS & Android
+# Klarna Mobile SDK for iOS & Android
 [![Cocoapods](https://img.shields.io/cocoapods/v/KlarnaMobileSDK.svg)](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsiOS.md)
 [![Maven](https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/maven-metadata.xml.svg)](https://github.com/klarna/klarna-mobile-sdk/blob/master/KlarnaPaymentsAndroid.md)
 [![GitHub](https://img.shields.io/github/license/klarna/klarna-mobile-sdk)](https://github.com/klarna/klarna-mobile-sdk/blob/master/LICENSE)
 ![Platforms](https://img.shields.io/badge/platform-ios%20%7C%20android-lightgrey)
 
-The Klarna In-App SDK allows merchants to integrate Klarna's products into their apps natively. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
-
-**Are you looking for Klarna Checkout?** Check out the [Klarna Checkout SDK](https://github.com/klarna/kco-mobile-sdk) repo instead.
+The Klarna Mobile SDK allows merchants to integrate Klarna's products into their apps natively. This means that you can add services like Klarna Payments to your app and let your customers pay with our payment methods.
 
 ## Requirements
 * iOS 10 or later.
@@ -22,8 +20,8 @@ The Klarna In-App SDK allows merchants to integrate Klarna's products into their
 *  [iOS](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/ios/index.html)
 *  [Android](https://htmlpreview.github.io/?https://github.com/klarna/klarna-mobile-sdk/blob/master/docs/android/klarna-mobile-sdk/index.html)
 
-## What Does Klarna In-App SDK Offer?
-Klarna In-App SDK offers two integration approaches: **Native integration** and **Hybrid integration**.
+## What Does Klarna Mobile SDK Offer?
+Klarna Mobile SDK offers two integration approaches: **Native integration** and **Hybrid integration**.
 
 **Native integration** allows fully native apps to add views with Klarna content to their app. We currently support Klarna Payments, allowing you to add payment views to your checkout and authorizing a session to create an order natively.
 
@@ -61,13 +59,13 @@ Our iOS and Android SDKs hold weak references to your web views, don't override 
 
 ## iOS Integration
 
-These are our iOS-specific guides for the In-App SDK. We currently have guides to get you started, to integrate Klarna Payments, and to perform a hybrid integration.
+These are our iOS-specific guides for the Mobile SDK. We currently have guides to get you started, to integrate Klarna Payments, and to perform a hybrid integration.
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/ios)
 
 ## Android Integration 
 
-These are our Android-specific guides for the In-App SDK. We currently have guides to get you started, to integrate Klarna Payments, and to perform a hybrid integration.
+These are our Android-specific guides for the Mobile SDK. We currently have guides to get you started, to integrate Klarna Payments, and to perform a hybrid integration.
 
 [Getting Started and Integration Guides](https://developers.klarna.com/documentation/in-app/android)
 
@@ -119,10 +117,10 @@ If you are having any issues using the SDK in your project or if you think that 
 
 ### How can I contribute?
 
-Thank you for reading this and taking the time to contribute to Klarna In-App SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
+Thank you for reading this and taking the time to contribute to Klarna Mobile SDK! Below is a set of guidelines to help you contribute whether you want to report a bug, come with suggestions or modify code.
 
 #### Reporting Bugs
-This section will guide you through submitting a bug report for Klarna In-App SDK.
+This section will guide you through submitting a bug report for Klarna Mobile SDK.
 
 Before submitting a bug report, please check that the issue hasn't been reported before. If you find a *Closed* issue that seems to describe an issue that is similar to what you want to report, open a new issue and link to the original issue in the new one. When you have checked that the issue hasn't been reported before, please **fill out [the required template](https://github.com/klarna/klarna-mobile-sdk/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)** which will help us resolve the issue faster. 
 
@@ -146,7 +144,7 @@ Include details about the device/emulator/simulator you are experiencing the iss
 * **Did you experience the issue in simulator/emulator or on real device(s)?**
 
 #### Contributing to Code
-Before contributing, please read through the [Klarna In-App SDK documentation](https://developers.klarna.com/documentation/in-app/).
+Before contributing, please read through the [Klarna Mobile SDK documentation](https://developers.klarna.com/documentation/in-app/).
 
 ##### Branching
 Prefix the branch you are going to work on depending on what you are working on (bug fix or feature). Use the following prefixes when creating a new branch:
