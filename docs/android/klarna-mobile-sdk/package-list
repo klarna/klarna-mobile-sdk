@@ -1,5 +1,0 @@
-$dokka.format:html
-$dokka.linkExtension:html
-
-com.klarna.mobile.sdk.hybrid
-com.klarna.mobile.sdk.payments
