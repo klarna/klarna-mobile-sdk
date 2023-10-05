@@ -1574,6 +1574,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion
 /// use these unless explicitly agreed with Klarna.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 @interface KlarnaResourceEndpoint : NSObject
+/// First provider
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResourceEndpoint * _Nonnull alternative1;)
++ (KlarnaResourceEndpoint * _Nonnull)alternative1 SWIFT_WARN_UNUSED_RESULT;
+/// Second provider
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResourceEndpoint * _Nonnull alternative2;)
++ (KlarnaResourceEndpoint * _Nonnull)alternative2 SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -3711,6 +3717,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaRegion
 /// use these unless explicitly agreed with Klarna.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK22KlarnaResourceEndpoint")
 @interface KlarnaResourceEndpoint : NSObject
+/// First provider
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResourceEndpoint * _Nonnull alternative1;)
++ (KlarnaResourceEndpoint * _Nonnull)alternative1 SWIFT_WARN_UNUSED_RESULT;
+/// Second provider
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResourceEndpoint * _Nonnull alternative2;)
++ (KlarnaResourceEndpoint * _Nonnull)alternative2 SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
