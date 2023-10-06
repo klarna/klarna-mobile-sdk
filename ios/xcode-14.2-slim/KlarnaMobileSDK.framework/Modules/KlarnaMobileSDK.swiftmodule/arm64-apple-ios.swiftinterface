@@ -48,8 +48,8 @@ public typealias KlarnaPostPurchaseRegion = KlarnaMobileSDK.KlarnaRegion
 @objc public class KlarnaResourceEndpoint : ObjectiveC.NSObject, Swift.RawRepresentable {
   public var rawValue: Swift.Int
   required public init?(rawValue: Swift.Int)
-  public static let alternative1: KlarnaMobileSDK.KlarnaResourceEndpoint
-  public static let alternative2: KlarnaMobileSDK.KlarnaResourceEndpoint
+  @objc public static let alternative1: KlarnaMobileSDK.KlarnaResourceEndpoint
+  @objc public static let alternative2: KlarnaMobileSDK.KlarnaResourceEndpoint
   public var stringValue: Swift.String {
     get
   }
