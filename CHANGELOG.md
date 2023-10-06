@@ -296,6 +296,10 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.9] - 2023-09-05
+- Changed the `launchMode` attribute for `KlarnaCustomTabActivity` from `singleTop` to `singleTask`
+- Minor internal improvements.
+
 ### [2.6.8] - 2023-08-22
 - Changed Sign in with Klarna button logo layout.
 - Added support for loading indicator for Sign in with Klarna button.
