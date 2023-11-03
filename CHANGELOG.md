@@ -300,6 +300,11 @@ Future releases will be documented in this section.
 
 ## Android
 
+### [2.6.10] - 2023-11-03
+- Added system browser fallback support for Sign in with Klarna.
+- Fixed On-site Messaging link click area.
+- Changed default autoFinalize value to null for KlarnaPaymentView.
+
 ### [2.6.9] - 2023-09-05
 - Changed the `launchMode` attribute for `KlarnaCustomTabActivity` from `singleTop` to `singleTask`
 - Minor internal improvements.
