@@ -4,6 +4,10 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.12] - 2023-11-03
+- Fix duplicated mesage handler on webview.
+- Added default value for auto finalize as null.
+
 ### [2.6.11] - 2023-10-05
 - Fixed navigation bar color when Internal Browser is presented.
 - Added @objc flag in KlarnaResourceEndpoint.
