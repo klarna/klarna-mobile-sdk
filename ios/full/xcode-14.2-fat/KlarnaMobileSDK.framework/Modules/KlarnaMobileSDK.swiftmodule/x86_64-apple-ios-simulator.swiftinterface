@@ -623,7 +623,8 @@ public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
   @objc @_Concurrency.MainActor(unsafe) dynamic public func initialize(clientToken: Swift.String)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func load(jsonData: Swift.String? = nil)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func loadPaymentReview()
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func authorize(autoFinalize: Swift.Bool = true, jsonData: Swift.String? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func authorize(jsonData: Swift.String? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func authorize(autoFinalize: Swift.Bool, jsonData: Swift.String? = nil)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func reauthorize(jsonData: Swift.String? = nil)
   @objc @_Concurrency.MainActor(unsafe) dynamic public func finalise(jsonData: Swift.String? = nil)
 }
