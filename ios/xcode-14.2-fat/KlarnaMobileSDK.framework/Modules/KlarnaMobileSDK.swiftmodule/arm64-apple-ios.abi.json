@@ -33192,6 +33192,45 @@
           {
             "kind": "Function",
             "name": "authorize",
+            "printedName": "authorize(jsonData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@KlarnaMobileSDK@objc(cs)KlarnaPaymentView(im)authorizeWithJsonData:",
+            "mangledName": "$s15KlarnaMobileSDK0A11PaymentViewC9authorize8jsonDataySSSg_tF",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Dynamic",
+              "Custom",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "authorize",
             "printedName": "authorize(autoFinalize:jsonData:)",
             "children": [
               {
@@ -33203,7 +33242,6 @@
                 "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
                 "usr": "s:Sb"
               },
               {
@@ -45595,13 +45633,6 @@
       "offset": 460,
       "length": 8,
       "value": "\"DELETE\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Payments\/SDK API\/KlarnaPaymentView+Public.swift",
-      "kind": "BooleanLiteral",
-      "offset": 9741,
-      "length": 4,
-      "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/OSM View\/Placements Models\/OSMError.swift",

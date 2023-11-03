@@ -1267,6 +1267,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 - (void)loadPaymentReview;
 /// Authorizes the session and evaluates whether an order can be created.
 /// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)authorizeWithJsonData:(NSString * _Nullable)jsonData;
+/// Authorizes the session and evaluates whether an order can be created.
+/// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
 /// \param autoFinalize An optional flag used to turn off auto-finalization for the direct bank transfer payment method.
 ///
 /// \param jsonData An optional string to update the session. Formatted as JSON.
@@ -3408,6 +3413,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 ///
 /// The session should be authorized.
 - (void)loadPaymentReview;
+/// Authorizes the session and evaluates whether an order can be created.
+/// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
+/// \param jsonData An optional string to update the session. Formatted as JSON.
+///
+- (void)authorizeWithJsonData:(NSString * _Nullable)jsonData;
 /// Authorizes the session and evaluates whether an order can be created.
 /// Merchant’s delegate will be called with successful/unsuccessful result of authorization.
 /// \param autoFinalize An optional flag used to turn off auto-finalization for the direct bank transfer payment method.

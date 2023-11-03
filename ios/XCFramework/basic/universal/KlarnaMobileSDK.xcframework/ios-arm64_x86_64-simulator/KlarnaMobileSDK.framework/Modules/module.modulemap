@@ -1,7 +1,7 @@
 framework module KlarnaMobileSDK {
   umbrella header "KlarnaMobileSDK.h"
-
   export *
+
   module * { export * }
 }
 
