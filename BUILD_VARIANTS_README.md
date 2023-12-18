@@ -16,23 +16,17 @@ For this release, we provide:
 
 | Name | Fat/slim | Xcode Ver. & Build No. | Swift Ver. | Swift Toolchain Ver. |
 | ---- | -------- | ---------------------------- | ---------- | -------------------- |
-| `xcode-14.2-fat` | fat | 14.2 - 14C18 | 5.7.2| swiftlang-5.7.2.135.5 clang-1400.0.29.51 |
-| `xcode-14.2-slim` | slim | 14.2 - 14C18 | 5.7.2| swiftlang-5.7.2.135.5 clang-1400.0.29.51 |
-| `xcode-15.0-fat` | fat | 15.0 - 15A240d | 5.9| swiftlang-5.9.0.128.108 clang-1500.0.40.1 |
-| `xcode-15.0-slim` | slim | 15.0 - 15A240d | 5.9| swiftlang-5.9.0.128.108 clang-1500.0.40.1 |
+| `xcode-15.1-fat` | fat | 15.1 - 15C65 | 5.9.2| swiftlang-5.9.2.2.56 clang-1500.1.0.2.5 |
+| `xcode-15.1-slim` | slim | 15.1 - 15C65 | 5.9.2| swiftlang-5.9.2.2.56 clang-1500.1.0.2.5 |
 
 
 ## Cocoapods
 
-This release defaults to using the latest, non-beta version `xcode-15.0-fat`. If you
+This release defaults to using the latest, non-beta version `xcode-15.1-fat`. If you
 want to use a different variant, update your Podfile to use a different subspec. E.g:
 
 
 ```ruby
-pod 'KlarnaMobileSDK/xcode-14.2-fat', '~> 2.6.12'
-```
-
-```ruby
-pod 'KlarnaMobileSDK/xcode-15.0-fat', '~> 2.6.12'
+pod 'KlarnaMobileSDK/xcode-15.1-fat', '~> 2.6.13'
 ```
 
