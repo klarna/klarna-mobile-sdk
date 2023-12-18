@@ -4,6 +4,12 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 ## iOS
 Future releases will be documented in this section.
 
+### [2.6.13] - 2023-12-18
+- Fixed javascript code execution vulnerability.
+- Added URL validations for SDK WebViews.
+- Updated SDK User-Agents.
+- Improved SDK monitoring.
+
 ### [2.6.12] - 2023-11-03
 - Fix duplicated mesage handler on webview.
 - Added default value for auto finalize as null.
@@ -299,6 +305,13 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.6.11] - 2023-12-18
+- Fixed javascript code execution vulnerability.
+- Added URL validations for SDK WebViews.
+- Improved Sign in with Klarna Redirects with a separate Activity.
+- Updated SDK User-Agents.
+- Improved Activity referencing for view operations.
+- Improved SDK monitoring.
 
 ### [2.6.10] - 2023-11-03
 - Added system browser fallback support for Sign in with Klarna.
