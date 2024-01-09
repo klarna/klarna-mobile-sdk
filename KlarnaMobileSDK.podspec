@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.6.13"
+    s.version      = "2.6.14"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -39,6 +39,6 @@ Pod::Spec.new do |s|
         sb.vendored_frameworks = "ios/XCFramework/basic/universal/KlarnaMobileSDK.xcframework"
     end
 
-    s.default_subspec = 'full'
+    s.default_subspec = 'basic'
 
 end

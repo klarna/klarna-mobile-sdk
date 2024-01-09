@@ -41551,7 +41551,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverride.swift",
       "kind": "BooleanLiteral",
-      "offset": 430,
+      "offset": 514,
       "length": 4,
       "value": "true"
     },
@@ -44176,315 +44176,259 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 1735,
+      "offset": 1520,
       "length": 70,
       "value": "\"This should never happen, since `canHandleMessage` is always called.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 1826,
+      "offset": 1611,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2110,
+      "offset": 1895,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2174,
+      "offset": 1959,
       "length": 45,
       "value": "\"Wrong params in `fullscreenLoadUrl` message\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 2244,
+      "offset": 2029,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2465,
+      "offset": 2250,
       "length": 41,
       "value": "\"Could not create a URL from params sent\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 2752,
+      "offset": 2537,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 2778,
+      "offset": 2563,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2875,
+      "offset": 2660,
       "length": 38,
       "value": "\"URL is unsafe: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 2912,
+      "offset": 2697,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 3672,
+      "offset": 3457,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 3698,
+      "offset": 3483,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 3795,
+      "offset": 3580,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 3992,
-      "length": 6,
-      "value": "\"html\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 4044,
-      "length": 5,
-      "value": "\"url\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 4108,
-      "length": 46,
-      "value": "\"Wrong params in `fullscreenLoadHtml` message\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4179,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 4400,
-      "length": 41,
-      "value": "\"Could not create a URL from params sent\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4687,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4713,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4832,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
-      "kind": "StringLiteral",
-      "offset": 5101,
+      "offset": 3849,
       "length": 11,
       "value": "\"placement\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 5117,
+      "offset": 3865,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 5174,
+      "offset": 3922,
       "length": 52,
       "value": "\"Wrong placement param in `fullscreenShow` message.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 5472,
+      "offset": 4220,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 5498,
+      "offset": 4246,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "IntegerLiteral",
-      "offset": 5593,
+      "offset": 4341,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 5660,
+      "offset": 4408,
       "length": 15,
       "value": "\"initialHeight\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6073,
+      "offset": 4821,
       "length": 12,
       "value": "\"background\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6090,
+      "offset": 4838,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 6200,
+      "offset": 4948,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6253,
+      "offset": 5001,
       "length": 11,
       "value": "\"canScroll\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6312,
+      "offset": 5060,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 6384,
+      "offset": 5132,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6438,
+      "offset": 5186,
       "length": 12,
       "value": "\"canDismiss\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 6500,
+      "offset": 5248,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 7546,
+      "offset": 6294,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 8126,
+      "offset": 6874,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 8321,
+      "offset": 7069,
       "length": 8,
       "value": "\"height\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 8455,
+      "offset": 7203,
       "length": 42,
       "value": "\"Wrong params in `heightChanged` message.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 8518,
+      "offset": 7266,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "BooleanLiteral",
-      "offset": 8647,
+      "offset": 7395,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9324,
+      "offset": 8072,
       "length": 9,
       "value": "\"success\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9347,
+      "offset": 8095,
       "length": 6,
       "value": "\"true\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions Delegates\/SeparateFullscreenDelegate.swift",
       "kind": "StringLiteral",
-      "offset": 9355,
+      "offset": 8103,
       "length": 7,
       "value": "\"false\""
     },
@@ -54235,401 +54179,408 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2165,
-      "length": 20,
-      "value": "\"fullscreenLoadHtml\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
-      "kind": "StringLiteral",
-      "offset": 2256,
+      "offset": 2141,
       "length": 16,
       "value": "\"fullscreenShow\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2368,
+      "offset": 2253,
       "length": 24,
       "value": "\"fullscreenShowResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2463,
+      "offset": 2348,
       "length": 16,
       "value": "\"fullscreenHide\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2574,
+      "offset": 2459,
       "length": 24,
       "value": "\"fullscreenHideResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2723,
+      "offset": 2608,
       "length": 17,
       "value": "\"testExternalApp\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2840,
+      "offset": 2725,
       "length": 25,
       "value": "\"testExternalAppResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 2940,
+      "offset": 2825,
       "length": 17,
       "value": "\"openExternalApp\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3047,
+      "offset": 2932,
       "length": 25,
       "value": "\"openExternalAppResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3188,
+      "offset": 3073,
       "length": 21,
       "value": "\"openExternalBrowser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3307,
+      "offset": 3192,
       "length": 29,
       "value": "\"openExternalBrowserResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3453,
+      "offset": 3338,
       "length": 21,
       "value": "\"showInternalBrowser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3583,
+      "offset": 3468,
       "length": 29,
       "value": "\"showInternalBrowserResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3685,
+      "offset": 3570,
       "length": 21,
       "value": "\"hideInternalBrowser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3803,
+      "offset": 3688,
       "length": 29,
       "value": "\"hideInternalBrowserResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 3935,
+      "offset": 3820,
       "length": 26,
       "value": "\"hideOnUrlInternalBrowser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4118,
+      "offset": 4003,
       "length": 30,
       "value": "\"showSandboxedInternalBrowser\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4267,
+      "offset": 4152,
       "length": 38,
       "value": "\"showSandboxedInternalBrowserResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4397,
+      "offset": 4282,
       "length": 9,
       "value": "\"getData\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4467,
+      "offset": 4352,
       "length": 17,
       "value": "\"getDataResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4548,
+      "offset": 4433,
       "length": 9,
       "value": "\"putData\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4620,
+      "offset": 4505,
       "length": 17,
       "value": "\"putDataResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4775,
+      "offset": 4660,
       "length": 23,
       "value": "\"isCardScanningEnabled\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4875,
+      "offset": 4760,
       "length": 25,
       "value": "\"scanCardNoAndExpiration\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 4936,
+      "offset": 4821,
       "length": 12,
       "value": "\"card-frame\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5071,
+      "offset": 4956,
       "length": 15,
       "value": "\"toggleLogging\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5137,
+      "offset": 5022,
       "length": 12,
       "value": "\"logMessage\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5247,
+      "offset": 5132,
       "length": 13,
       "value": "\"focusScroll\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5393,
+      "offset": 5278,
       "length": 19,
       "value": "\"actionToComponent\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5503,
+      "offset": 5388,
       "length": 16,
       "value": "\"actionToNative\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5558,
+      "offset": 5443,
       "length": 17,
       "value": "\"actionToWebView\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5640,
+      "offset": 5525,
       "length": 14,
       "value": "\"show3DSecure\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5693,
+      "offset": 5578,
       "length": 22,
       "value": "\"show3DSecureResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5777,
+      "offset": 5662,
       "length": 16,
       "value": "\"setExperiments\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5848,
+      "offset": 5733,
       "length": 16,
       "value": "\"getApiFeatures\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5902,
+      "offset": 5787,
       "length": 24,
       "value": "\"getApiFeaturesResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 5984,
+      "offset": 5869,
       "length": 15,
       "value": "\"merchantEvent\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6026,
+      "offset": 5911,
       "length": 10,
       "value": "\"merchant\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6102,
+      "offset": 5987,
       "length": 17,
       "value": "\"componentStatus\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6191,
+      "offset": 6076,
       "length": 25,
       "value": "\"applicationForegrounded\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6252,
+      "offset": 6137,
       "length": 25,
       "value": "\"applicationBackgrounded\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6307,
+      "offset": 6192,
       "length": 11,
       "value": "\"undefined\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6369,
+      "offset": 6254,
       "length": 9,
       "value": "\"suspend\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6403,
+      "offset": 6288,
       "length": 8,
       "value": "\"resume\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6507,
+      "offset": 6392,
       "length": 20,
       "value": "\"PostPurchaseCreate\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6568,
+      "offset": 6453,
       "length": 24,
       "value": "\"PostPurchaseInitialize\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6643,
+      "offset": 6528,
       "length": 34,
       "value": "\"PostPurchaseAuthorizationRequest\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6723,
+      "offset": 6608,
       "length": 29,
       "value": "\"PostPurchaseRenderOperation\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6866,
+      "offset": 6751,
       "length": 32,
       "value": "\"PostPurchaseInitializeResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 6957,
+      "offset": 6842,
       "length": 42,
       "value": "\"PostPurchaseAuthorizationRequestResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 7053,
+      "offset": 6938,
       "length": 37,
       "value": "\"PostPurchaseRenderOperationResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 7126,
+      "offset": 7011,
       "length": 19,
       "value": "\"PostPurchaseError\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Web View Handling\/Web View Message\/WebViewMessageAction.swift",
       "kind": "StringLiteral",
-      "offset": 7210,
+      "offset": 7095,
       "length": 23,
       "value": "\"KlarnaOSMViewResponse\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
       "kind": "StringLiteral",
-      "offset": 528,
+      "offset": 567,
       "length": 7,
       "value": "\"level\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
       "kind": "StringLiteral",
-      "offset": 558,
+      "offset": 605,
       "length": 16,
       "value": "\"forceLogEvents\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
       "kind": "StringLiteral",
-      "offset": 528,
+      "offset": 649,
+      "length": 13,
+      "value": "\"blockEvents\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
+      "kind": "StringLiteral",
+      "offset": 567,
       "length": 7,
       "value": "\"level\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
       "kind": "StringLiteral",
-      "offset": 558,
+      "offset": 605,
       "length": 16,
       "value": "\"forceLogEvents\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideProperty.swift",
+      "kind": "StringLiteral",
+      "offset": 649,
+      "length": 13,
+      "value": "\"blockEvents\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/Post Purchase\/PostPurchaseControllerInitPayload.swift",
@@ -57630,140 +57581,126 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1039,
+      "offset": 946,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 1840,
+      "offset": 1747,
       "length": 86,
       "value": "\"Loading separate fullscreen URL: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 1895,
+      "offset": 1802,
       "length": 4,
       "value": "\" from NFC: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 1924,
+      "offset": 1831,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 2314,
-      "length": 71,
-      "value": "\"Loading separate fullscreen HTML string from NFC: \""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
-      "kind": "StringLiteral",
-      "offset": 2383,
-      "length": 1,
-      "value": "\".\""
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
-      "kind": "StringLiteral",
-      "offset": 2672,
+      "offset": 2271,
       "length": 59,
       "value": "\"Showing separate fullscreen from NFC: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 2729,
+      "offset": 2328,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 2864,
+      "offset": 2463,
       "length": 75,
       "value": "\"Trying to present another separate fullscreen while there already is one.\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3360,
+      "offset": 2959,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3525,
+      "offset": 3124,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 3694,
+      "offset": 3293,
       "length": 62,
       "value": "\"Presenting separate fullscreen from NFC: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 3754,
+      "offset": 3353,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3831,
+      "offset": 3430,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 4491,
+      "offset": 4090,
       "length": 58,
       "value": "\"Hiding separate fullscreen from NFC: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "StringLiteral",
-      "offset": 4547,
+      "offset": 4146,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4598,
+      "offset": 4197,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4634,
+      "offset": 4233,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5048,
+      "offset": 4647,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Native Handling\/Native Functions\/Controllers\/SeparateFullscreenController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5207,
+      "offset": 4806,
       "length": 5,
       "value": "false"
     },
@@ -58617,49 +58554,56 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5967,
+      "offset": 6022,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6828,
+      "offset": 6275,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7093,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "StringLiteral",
-      "offset": 7031,
+      "offset": 7296,
       "length": 12,
       "value": "\"featureset\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "StringLiteral",
-      "offset": 8205,
+      "offset": 8470,
       "length": 15,
       "value": "\"crossPlatform\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "StringLiteral",
-      "offset": 8328,
+      "offset": 8593,
       "length": 9,
       "value": "\"version\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "StringLiteral",
-      "offset": 8441,
+      "offset": 8706,
       "length": 5,
       "value": "\"url\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/AnalyticsManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8524,
+      "offset": 8789,
       "length": 4,
       "value": "true"
     },
@@ -64777,175 +64721,133 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 801,
+      "offset": 856,
       "length": 7,
       "value": "\"equal\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 847,
+      "offset": 902,
       "length": 5,
       "value": "\"gte\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 888,
+      "offset": 943,
       "length": 5,
       "value": "\"lte\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 801,
+      "offset": 856,
       "length": 7,
       "value": "\"equal\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 847,
+      "offset": 902,
       "length": 5,
       "value": "\"gte\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 888,
+      "offset": 943,
       "length": 5,
       "value": "\"lte\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 1389,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1761,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2065,
+      "offset": 1645,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 2103,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2697,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2860,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2999,
+      "offset": 2567,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 3043,
-      "length": 5,
-      "value": "false"
+      "offset": 3370,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 3616,
-      "length": 5,
-      "value": "false"
+      "offset": 4143,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 3712,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
-      "kind": "BooleanLiteral",
-      "offset": 4517,
+      "offset": 4811,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "Array",
-      "offset": 4569,
+      "offset": 4863,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 5375,
+      "offset": 5669,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "BooleanLiteral",
-      "offset": 5993,
+      "offset": 6287,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 6448,
+      "offset": 6742,
       "length": 68,
       "value": "\"Failed to parse config override version \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 6502,
+      "offset": 6796,
       "length": 5,
       "value": "\"Nil\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 6508,
+      "offset": 6802,
       "length": 2,
       "value": "\" to Int\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 6651,
+      "offset": 6945,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Configuration\/Configuration Models\/Configurations\/ConfigOverrideCondition.swift",
       "kind": "StringLiteral",
-      "offset": 6662,
+      "offset": 6956,
       "length": 2,
       "value": "\"\""
     },
@@ -65771,112 +65673,112 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1306,
+      "offset": 1319,
       "length": 12,
       "value": "\"javascript\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "BooleanLiteral",
-      "offset": 1345,
+      "offset": 1358,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "BooleanLiteral",
-      "offset": 1376,
+      "offset": 1389,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "BooleanLiteral",
-      "offset": 1664,
+      "offset": 1677,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1724,
+      "offset": 1737,
       "length": 51,
       "value": "\"Can not resolve url into components, url: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 1774,
+      "offset": 1787,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "Array",
-      "offset": 1908,
+      "offset": 1921,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2213,
+      "offset": 2226,
       "length": 65,
       "value": "\"Can not get a url from components, urlComponents: \""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2277,
+      "offset": 2290,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2408,
+      "offset": 2421,
       "length": 8,
       "value": "\"bankid\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2433,
+      "offset": 2446,
       "length": 16,
       "value": "\"app.bankid.com\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2529,
+      "offset": 2542,
       "length": 6,
       "value": "\"http\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 2554,
+      "offset": 2567,
       "length": 7,
       "value": "\"https\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "Array",
-      "offset": 2950,
+      "offset": 2963,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 3004,
+      "offset": 3017,
       "length": 10,
       "value": "\"redirect\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/URL+Extensions.swift",
       "kind": "StringLiteral",
-      "offset": 3122,
+      "offset": 3135,
       "length": 10,
       "value": "\"redirect\""
     },
