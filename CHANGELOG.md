@@ -3,6 +3,9 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 
 ## iOS
 Future releases will be documented in this section.
+### [2.6.14] - 2024-01-10
+- Set the default variant of the SDK to basic.
+- Implemented minor internal security fixes and improvements.
 
 ### [2.6.13] - 2023-12-18
 - Fixed javascript code execution vulnerability.
@@ -305,6 +308,10 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.6.12] - 2024-01-09
+- Set the default variant of the SDK to basic.
+- Implemented minor internal security fixes and improvements.
+
 ### [2.6.11] - 2023-12-18
 - Fixed javascript code execution vulnerability.
 - Added URL validations for SDK WebViews.
