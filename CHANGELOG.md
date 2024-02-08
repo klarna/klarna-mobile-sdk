@@ -3,6 +3,11 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 
 ## iOS
 Future releases will be documented in this section.
+### [2.6.15] - 2024-02-08
+- Privacy Manifest file included inside KlarnaMobileSDK framework.
+- Environment and region values can be added through new constructor APIs. 
+- Internal improvements and optimizations.
+
 ### [2.6.14] - 2024-01-10
 - Set the default variant of the SDK to basic.
 - Implemented minor internal security fixes and improvements.
@@ -308,6 +313,12 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.6.13] - 2024-02-08
+- Updated development and build JDK to JDK 11 and AGP to AGP 7.
+- Resolved an issue preventing Sign in with Klarna integration when using a non-AppCompat theme.
+- Deleted several internal APIs that were mistakenly exposed in earlier versions.
+- Implemented several internal improvements and optimizations to enhance performance and reliability.
+
 ### [2.6.12] - 2024-01-09
 - Set the default variant of the SDK to basic.
 - Implemented minor internal security fixes and improvements.
