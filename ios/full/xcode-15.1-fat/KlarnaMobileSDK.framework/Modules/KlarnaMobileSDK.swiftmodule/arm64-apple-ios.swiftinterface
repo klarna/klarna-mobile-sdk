@@ -533,6 +533,7 @@ public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
   @available(*, deprecated, message: "Use the new initializer instead.")
   @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventListener: any KlarnaMobileSDK.KlarnaEventListener)
   @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventHandler: any KlarnaMobileSDK.KlarnaEventHandler, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
+  @objc convenience dynamic public init(returnUrl: Foundation.URL, klarnaEventHandler: any KlarnaMobileSDK.KlarnaEventHandler, environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
 }
 @objc extension KlarnaMobileSDK.KlarnaHybridSDK {
   @objc dynamic public func addWebView(_ webView: WebKit.WKWebView)
@@ -616,6 +617,7 @@ public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
   }
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, eventListener: any KlarnaMobileSDK.KlarnaPaymentEventListener)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, returnUrl: Foundation.URL, eventListener: any KlarnaMobileSDK.KlarnaPaymentEventListener)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, returnUrl: Foundation.URL, eventListener: any KlarnaMobileSDK.KlarnaPaymentEventListener, environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, eventListener: any KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(category: Swift.String, returnUrl: Foundation.URL, eventListener: any KlarnaMobileSDK.KlarnaPaymentEventListener, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
   @available(*, deprecated, message: "Use the new initializer instead.")
@@ -871,6 +873,7 @@ public typealias RenderResult = (_ error: KlarnaMobileSDK.KlarnaError?) -> ()
   @_Concurrency.MainActor(unsafe) @objc dynamic public init()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) public init(resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
+  @_Concurrency.MainActor(unsafe) public init(environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
   @objc @_Concurrency.MainActor(unsafe) public func setPurchaseAmount(_ amount: Foundation.NSNumber?)
   @objc deinit
 }
@@ -965,6 +968,7 @@ extension Swift.String {
     @objc set
   }
   @objc @_Concurrency.MainActor(unsafe) public init(returnURL: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) public init(returnURL: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
@@ -1145,6 +1149,7 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
     @objc get
   }
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler)
+  @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, environment: KlarnaMobileSDK.KlarnaEnvironment, region: KlarnaMobileSDK.KlarnaRegion, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint = .alternative1)
   @objc @_Concurrency.MainActor(unsafe) convenience dynamic public init(returnURL: Foundation.URL, eventHandler: any KlarnaMobileSDK.KlarnaEventHandler, resourceEndpoint: KlarnaMobileSDK.KlarnaResourceEndpoint)
 }
 @objc extension KlarnaMobileSDK.KlarnaCheckoutView {

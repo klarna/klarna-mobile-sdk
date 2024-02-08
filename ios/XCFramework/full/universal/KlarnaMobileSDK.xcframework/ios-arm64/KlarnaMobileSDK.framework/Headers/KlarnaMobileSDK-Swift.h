@@ -460,6 +460,8 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 /// auto layout is the recommended way to manage the view’s layout.
 /// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
 ///
+/// \param eventHandler A listener that will receive events from the SDK.
+///
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler;
 /// Create a Klarna Checkout View
 /// note:
@@ -467,6 +469,24 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK21KlarnaSingleComponent_")
 /// Klarna checkout view will be initialized with frame <code>.zero</code>,
 /// auto layout is the recommended way to manage the view’s layout.
 /// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param eventHandler A listener that will receive events from the SDK.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Create a Klarna Checkout View
+/// note:
+///
+/// Klarna checkout view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// \param returnURL Your apps custom URL scheme <code>CFBundleURLSchemes</code>.
+///
+/// \param eventHandler A listener that will receive events from the SDK.
 ///
 /// \param resourceEndpoint Optional value that initialises the SDK with an alternative endpoint.
 ///
@@ -959,6 +979,20 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaHybridSDK")
 /// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
 ///
 - (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventHandler:(id <KlarnaEventHandler> _Nonnull)klarnaEventHandler resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
+/// Initialize the Klarna Mobile SDK in hybrid mode.
+/// note:
+/// After initializing the SDK, you’ll need to add the web view that the SDK will track.
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param klarnaEventHandler A listener that will receive events from the SDK.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+/// \param resourceEndpoint Initialises the SDK with an alternative endpoint.
+///
+- (nonnull instancetype)initWithReturnUrl:(NSURL * _Nonnull)returnUrl klarnaEventHandler:(id <KlarnaEventHandler> _Nonnull)klarnaEventHandler environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint;
 @end
 
 
@@ -1383,6 +1417,26 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK17KlarnaPaymentView")
 /// \param eventListener A listener object that will receive events from this view.
 ///
 - (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener;
+/// Create a Klarna Payment View
+/// note:
+///
+/// Klarna payment view will be initialized with frame <code>.zero</code>,
+/// auto layout is the recommended way to manage the view’s layout.
+/// note:
+///
+/// When the payment view is initialized, this initializer <em>wont</em> call <code>initialize()</code>
+/// automatically. You need to call initialize yourself.
+/// \param category Category of payment methods to be loaded.
+///
+/// \param returnUrl Your app’s custom URL scheme, specified in your app’s <code>CFBundleURLSchemes</code> field in the Info.plist.
+///
+/// \param eventListener A listener object that will receive events from this view.
+///
+/// \param environment Initialises the SDK with the specified Environment. For possible values check <code>KlarnaEnvironment</code>.
+///
+/// \param region Initialises the SDK with a specified Region. For possible values check <code>KlarnaRegion</code>.
+///
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category returnUrl:(NSURL * _Nonnull)returnUrl eventListener:(id <KlarnaPaymentEventListener> _Nonnull)eventListener environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region;
 /// Create a Klarna Payment View
 /// note:
 ///
@@ -1910,6 +1964,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @property (nonatomic, strong) id <KlarnaStandaloneWebViewDelegate> _Nullable delegate;
 /// Creates a <code>KlarnaStandaloneWebView</code>
 - (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL OBJC_DESIGNATED_INITIALIZER;
+/// Creates a <code>KlarnaStandaloneWebView</code>
+- (nonnull instancetype)initWithReturnURL:(NSURL * _Nonnull)returnURL eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
