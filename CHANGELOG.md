@@ -3,6 +3,11 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 
 ## iOS
 Future releases will be documented in this section.
+### [2.6.15] - 2024-02-08
+- Privacy Manifest file included inside KlarnaMobileSDK framework
+- Environment and region values can be added through new constructor APIs. 
+- Internal improvements and optimizations.
+
 ### [2.6.14] - 2024-01-10
 - Set the default variant of the SDK to basic.
 - Implemented minor internal security fixes and improvements.
