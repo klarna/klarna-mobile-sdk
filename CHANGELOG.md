@@ -3,6 +3,12 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 
 ## iOS
 Future releases will be documented in this section.
+
+### [2.6.16] - 2024-02-28
+- Fixed CheckoutView memory leak.
+- Fixed build date/time format.
+- Fixed SDK monitoring for SIWK when initializing.
+
 ### [2.6.15] - 2024-02-08
 - Privacy Manifest file included inside KlarnaMobileSDK framework.
 - Environment and region values can be added through new constructor APIs. 

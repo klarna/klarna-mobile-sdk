@@ -289,6 +289,7 @@ extension Swift.String {
   public static let klarnaReturnURLNotInInfoPlistError: Swift.String
   public static let klarnaEnvironmentNotSupportedError: Swift.String
   public static let klarnaFailedToBootstrapResourcesError: Swift.String
+  public static let klarnaSdkNotAvailable: Swift.String
 }
 public typealias KlarnaEventParamKey = Swift.String
 extension Swift.String {
