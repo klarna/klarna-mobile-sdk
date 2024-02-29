@@ -319,6 +319,9 @@ Future releases will be documented in this section.
 - Fixed some modal dialog presentation in iOS 13 and for iPads.
 
 ## Android
+### [2.6.14] - 2024-02-29
+- Bug fixes and stability improvements.
+
 ### [2.6.13] - 2024-02-08
 - Updated development and build JDK to JDK 11 and AGP to AGP 7.
 - Resolved an issue preventing Sign in with Klarna integration when using a non-AppCompat theme.
