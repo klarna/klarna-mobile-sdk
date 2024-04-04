@@ -5,8 +5,8 @@ All notable changes to Klarna Mobile SDK will be documented in this file.
 Future releases will be documented in this section.
 
 ### [2.6.17] - 2024-04-04
-- Fixed memory leak in SIWK.
-- Fixed SIWK on NA/OC.
+- Added support for Sign in with Klarna in NA and OC regions.
+- Fixed memory leak in Sign in with Klarna integration.
 
 ### [2.6.16] - 2024-02-28
 - Fixed CheckoutView memory leak.
