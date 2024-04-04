@@ -18,7 +18,7 @@ Can you reliably reproduce the issue? If not, explain how often it occurs and un
 
 ## Screenshots or Recordings
 <!-- If applicable, add screenshots to help explain your problem.
-To screen record a phone connected to Android Studio or an emulator, follow the steps [here](https://developer.android.com/studio/debug/am-video). To screen record on iOS, follow the steps described [here](https://support.apple.com/en-us/HT207935).
+To screen record on iOS, follow the steps described [here](https://support.apple.com/en-us/HT207935).
 -->
 
 ## Console Logs
