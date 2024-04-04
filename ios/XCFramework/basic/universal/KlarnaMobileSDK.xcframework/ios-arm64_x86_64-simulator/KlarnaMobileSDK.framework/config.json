@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.0-e2bc3922b5d",
-        "updated": "2024-02-23T12:50:35.417Z",
+        "version": "v2.4.1-a56e79520e8",
+        "updated": "2024-04-03T13:44:10.099Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.13"
+                "versionName": "2.6.14"
             },
             "ios": {
-                "versionName": "2.6.15"
+                "versionName": "2.6.16"
             }
         },
         "assets": [
@@ -571,71 +571,8 @@
                         ],
                         "endpoint": {
                             "scheme": "https",
-                            "host": "app.klarna.com",
-                            "path": "/"
-                        }
-                    },
-                    {
-                        "alternatives": [
-                            "aws",
-                            "azure"
-                        ],
-                        "environments": [
-                            "playground"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "login.playground.klarna.com",
-                            "path": "/"
-                        }
-                    },
-                    {
-                        "alternatives": [
-                            "aws",
-                            "azure"
-                        ],
-                        "environments": [
-                            "staging"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
-                            "host": "app.nonprod.eu1.klapp.klarna.net",
-                            "path": "/"
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "siwk-oidc-idp",
-                "urls": [
-                    {
-                        "isFallback": true,
-                        "alternatives": [
-                            "aws",
-                            "azure"
-                        ],
-                        "environments": [
-                            "production"
-                        ],
-                        "regions": [
-                            "eu",
-                            "na",
-                            "oc"
-                        ],
-                        "endpoint": {
-                            "scheme": "https",
                             "host": "login.klarna.com",
-                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                            "path": "/"
                         }
                     },
                     {
@@ -654,7 +591,7 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "login.playground.klarna.com",
-                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                            "path": "/"
                         }
                     },
                     {
@@ -673,7 +610,168 @@
                         "endpoint": {
                             "scheme": "https",
                             "host": "login.nonprod.klarna.net",
+                            "path": "/"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "siwk-oidc-idp",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.klarna.com",
                             "path": "/eu/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.klarna.com",
+                            "path": "/na/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "production"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.klarna.com",
+                            "path": "/oc/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.playground.klarna.com",
+                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.playground.klarna.com",
+                            "path": "/na/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "playground"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.playground.klarna.com",
+                            "path": "/oc/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "eu"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.nonprod.klarna.net",
+                            "path": "/eu/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "na"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.nonprod.klarna.net",
+                            "path": "/na/lp/idp/.well-known/openid-configuration"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
+                        ],
+                        "regions": [
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "login.nonprod.klarna.net",
+                            "path": "/oc/lp/idp/.well-known/openid-configuration"
                         }
                     }
                 ]
