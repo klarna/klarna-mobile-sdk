@@ -1,7 +1,6 @@
-# Klarna Mobile SDK for iOS & Android
+# Klarna Mobile SDK for iOS
 [![Cocoapods][cocoapods-image]][cocoapods-url]
-[![Maven][maven-image]][maven-url]
-![Platforms][platforms-image]
+![Platform][platform-image]
 [![License][license-image]][license-url]
 [![Developed at Klarna][klarna-image]][klarna-url]
 
@@ -17,7 +16,7 @@ We offer a seamless and straightforward way to
 and so much more in a single package!
 
 ### SDK for Other Platforms
-
+* [Android](https://github.com/klarna/klarna-mobile-sdk-android)
 * [React Native](https://github.com/klarna/react-native-klarna-inapp-sdk)
 * [Flutter](https://github.com/klarna/klarna-mobile-sdk-flutter)
 
@@ -25,18 +24,14 @@ and so much more in a single package!
 
 ### Requirements
 * iOS 10 or later.
-* Android 4.4 or later.
 
 ### Documentations
 
 * [Overview](https://docs.klarna.com/mobile-sdk/)
-* [Android](https://docs.klarna.com/mobile-sdk/android/)
-* [iOS](https://docs.klarna.com/mobile-sdk/ios/)
-* [React Native](https://docs.klarna.com/mobile-sdk/reactnative/)
+* [Using the Mobile SDK on iOS](https://docs.klarna.com/mobile-sdk/ios/)
 
 ### Changelog
-* [Android Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md#android)
-* [iOS Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md#ios)
+* [iOS Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md)
 
 ### Integrations
 
@@ -52,11 +47,9 @@ WebView integrations are solely based on WebViews and targeted to apps using Web
 
 ##### Standalone Integration
 * [iOS Klarna Payments Example App](https://github.com/klarna/kp-ios-example-app)
-* [Android Klarna Payments Example App](https://github.com/klarna/kp-android-example-app)
 
 ##### WebView Integration
 * [iOS Hybrid Example App](https://github.com/klarna/HybridInAppSDKDemo)
-* [Android Hybrid Example App](https://github.com/klarna/hybrid-android-example-app)
 
 ## Support
 
@@ -74,9 +67,7 @@ This project is licensed under
 <!-- Markdown images & links -->
 [cocoapods-image]: https://img.shields.io/cocoapods/v/KlarnaMobileSDK.svg?style=flat-square
 [cocoapods-url]: https://docs.klarna.com/mobile-sdk/ios/get-started/#adding-the-sdk-cocoapods
-[maven-image]: https://img.shields.io/maven-metadata/v/https/x.klarnacdn.net/mobile-sdk/com/klarna/mobile/sdk/maven-metadata.xml.svg?style=flat-square
-[maven-url]: https://docs.klarna.com/mobile-sdk/android/get-started/#adding-the-sdk-as-a-dependency
-[platforms-image]: https://img.shields.io/badge/platform-ios%20%7C%20android-lightgrey?style=flat-square
+[platform-image]: https://img.shields.io/badge/platform-iOS-lightgrey?style=flat-square
 [license-image]: https://img.shields.io/github/license/klarna/klarna-mobile-sdk?style=flat-square
 [license-url]: https://github.com/klarna/klarna-mobile-sdk/blob/master/LICENSE
 [klarna-image]: https://img.shields.io/badge/%20-Developed%20at%20Klarna-black?labelColor=ffb3c7&style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAAAXNSR0IArs4c6QAAAIRlWElmTU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAALQAAAAAQAAAtAAAAABAAOgAQADAAAAAQABAACgAgAEAAAAAQAAABCgAwAEAAAAAQAAAA4AAAAA0LMKiwAAAAlwSFlzAABuugAAbroB1t6xFwAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAAVBJREFUKBVtkz0vREEUhsdXgo5qJXohkUgQ0fgFNFpR2V5ClP6CQu9PiB6lEL1I7B9A4/treZ47c252s97k2ffMmZkz5869m1JKL/AFbzAHaiRbmsIf4BdaMAZqMFsOXNxXkroKbxCPV5l8yHOJLVipn9/vEreLa7FguSN3S2ynA/ATeQuI8tTY6OOY34DQaQnq9mPCDtxoBwuRxPfAvPMWnARlB12KAi6eLTPruOOP4gcl33O6+Sjgc83DJkRH+h2MgorLzaPy68W48BG2S+xYnmAa1L+nOxEduMH3fgjGFvZeVkANZau68B6CrgJxWosFFpF7iG+h5wKZqwt42qIJtARu/ix+gqsosEq8D35o6R3c7OL4lAnTDljEe9B3Qa2BYzmHemDCt6Diwo6JY7E+A82OnN9HuoBruAQvUQ1nSxP4GVzBDRyBfygf6RW2/gD3NmEv+K/DZgAAAABJRU5ErkJggg==
