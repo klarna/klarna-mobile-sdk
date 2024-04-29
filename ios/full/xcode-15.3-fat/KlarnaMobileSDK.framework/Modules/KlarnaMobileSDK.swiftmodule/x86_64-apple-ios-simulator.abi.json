@@ -48611,21 +48611,21 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Web View\/Models\/BrowserInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2109,
+      "offset": 2135,
       "length": 13,
       "value": "\"wk_web_view\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Web View\/Models\/BrowserInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2260,
+      "offset": 2286,
       "length": 10,
       "value": "\"web_view\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Internal Web View\/Models\/BrowserInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2260,
+      "offset": 2286,
       "length": 10,
       "value": "\"web_view\""
     },
