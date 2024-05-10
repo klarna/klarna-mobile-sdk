@@ -8166,6 +8166,526 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "KlarnaTextStyleConfiguration",
+        "printedName": "KlarnaTextStyleConfiguration",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "textColor",
+            "printedName": "textColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC9textColorSo7UIColorCSgvp",
+            "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC9textColorSo7UIColorCSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC9textColorSo7UIColorCSgvg",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC9textColorSo7UIColorCSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "textFont",
+            "printedName": "textFont",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIFont?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC8textFontSo6UIFontCSgvp",
+            "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC8textFontSo6UIFontCSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIFont?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIFont",
+                        "printedName": "UIKit.UIFont",
+                        "usr": "c:objc(cs)UIFont"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC8textFontSo6UIFontCSgvg",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC8textFontSo6UIFontCSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "textSize",
+            "printedName": "textSize",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC8textSize14CoreFoundation7CGFloatVSgvp",
+            "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC8textSize12CoreGraphics7CGFloatVSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "CoreGraphics.CGFloat?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGFloat",
+                        "printedName": "CoreGraphics.CGFloat",
+                        "usr": "s:14CoreFoundation7CGFloatV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC8textSize14CoreFoundation7CGFloatVSgvg",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC8textSize12CoreGraphics7CGFloatVSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Builder",
+            "printedName": "Builder",
+            "children": [
+              {
+                "kind": "Function",
+                "name": "setTextColor",
+                "printedName": "setTextColor(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DynamicSelf",
+                    "printedName": "Self"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD5ColoryAEXDSo7UIColorCSgF",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD5ColoryAEXDSo7UIColorCSgF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "setTextFont",
+                "printedName": "setTextFont(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DynamicSelf",
+                    "printedName": "Self"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIFont?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIFont",
+                        "printedName": "UIKit.UIFont",
+                        "usr": "c:objc(cs)UIFont"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD4FontyAEXDSo6UIFontCSgF",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD4FontyAEXDSo6UIFontCSgF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "setTextSize",
+                "printedName": "setTextSize(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DynamicSelf",
+                    "printedName": "Self"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD4SizeyAEXD14CoreFoundation7CGFloatVF",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC03setD4SizeyAEXD12CoreGraphics7CGFloatVF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "build",
+                "printedName": "build()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KlarnaTextStyleConfiguration",
+                    "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration",
+                    "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC5buildACyF",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC5buildACyF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration.Builder",
+                    "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderCAEycfc",
+                "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderCAEycfc",
+                "moduleName": "KlarnaMobileSDK",
+                "overriding": true,
+                "implicit": true,
+                "objc_name": "init",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC",
+                  "Override"
+                ],
+                "init_kind": "Designated"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC",
+            "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC7BuilderC",
+            "moduleName": "KlarnaMobileSDK",
+            "objc_name": "KlarnaTextStyleBuilder",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "superclassUsr": "c:objc(cs)NSObject",
+            "inheritsConvenienceInitializers": true,
+            "superclassNames": [
+              "ObjectiveC.NSObject"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CVarArg",
+                "printedName": "CVarArg",
+                "usr": "s:s7CVarArgP",
+                "mangledName": "$ss7CVarArgP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObservingPublishing",
+                "printedName": "_KeyValueCodingAndObservingPublishing",
+                "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+                "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObserving",
+                "printedName": "_KeyValueCodingAndObserving",
+                "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+                "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomDebugStringConvertible",
+                "printedName": "CustomDebugStringConvertible",
+                "usr": "s:s28CustomDebugStringConvertibleP",
+                "mangledName": "$ss28CustomDebugStringConvertibleP"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "KlarnaTextStyleConfiguration",
+                "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration",
+                "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration(im)init",
+            "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationCACycfc",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration",
+        "mangledName": "$s15KlarnaMobileSDK0A22TextStyleConfigurationC",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "KlarnaPostPurchaseRenderResult",
         "printedName": "KlarnaPostPurchaseRenderResult",
         "children": [
@@ -20832,6 +21352,125 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "styleConfiguration",
+            "printedName": "styleConfiguration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KlarnaOSMStyleConfiguration",
+                    "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration",
+                    "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMView(py)styleConfiguration",
+            "mangledName": "$s15KlarnaMobileSDK0A7OSMViewC18styleConfigurationAA0a8OSMStyleF0CSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "KlarnaOSMStyleConfiguration",
+                        "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration",
+                        "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMView(im)styleConfiguration",
+                "mangledName": "$s15KlarnaMobileSDK0A7OSMViewC18styleConfigurationAA0a8OSMStyleF0CSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "KlarnaOSMStyleConfiguration",
+                        "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration",
+                        "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMView(im)setStyleConfiguration:",
+                "mangledName": "$s15KlarnaMobileSDK0A7OSMViewC18styleConfigurationAA0a8OSMStyleF0CSgvs",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A7OSMViewC18styleConfigurationAA0a8OSMStyleF0CSgvM",
+                "mangledName": "$s15KlarnaMobileSDK0A7OSMViewC18styleConfigurationAA0a8OSMStyleF0CSgvM",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "layoutSubviews",
             "printedName": "layoutSubviews()",
@@ -20874,6 +21513,46 @@
             "moduleName": "KlarnaMobileSDK",
             "overriding": true,
             "objc_name": "didMoveToWindow",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "traitCollectionDidChange",
+            "printedName": "traitCollectionDidChange(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UITraitCollection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UITraitCollection",
+                    "printedName": "UIKit.UITraitCollection",
+                    "usr": "c:objc(cs)UITraitCollection"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMView(im)traitCollectionDidChange:",
+            "mangledName": "$s15KlarnaMobileSDK0A7OSMViewC24traitCollectionDidChangeyySo07UITraitF0CSgF",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "objc_name": "traitCollectionDidChange:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -29954,6 +30633,426 @@
         "moduleName": "KlarnaMobileSDK",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "KlarnaOSMStyleConfiguration",
+        "printedName": "KlarnaOSMStyleConfiguration",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "backgroundColor",
+            "printedName": "backgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC15backgroundColorSo7UIColorCSgvp",
+            "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC15backgroundColorSo7UIColorCSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC15backgroundColorSo7UIColorCSgvg",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC15backgroundColorSo7UIColorCSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "textStyleConfiguration",
+            "printedName": "textStyleConfiguration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KlarnaTextStyleConfiguration",
+                    "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration",
+                    "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC09textStyleE0AA0a4TextgE0CSgvp",
+            "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC09textStyleE0AA0a4TextgE0CSgvp",
+            "moduleName": "KlarnaMobileSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "KlarnaTextStyleConfiguration",
+                        "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration",
+                        "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC09textStyleE0AA0a4TextgE0CSgvg",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC09textStyleE0AA0a4TextgE0CSgvg",
+                "moduleName": "KlarnaMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Builder",
+            "printedName": "Builder",
+            "children": [
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Builder",
+                    "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration.Builder",
+                    "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderCAEycfc",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderCAEycfc",
+                "moduleName": "KlarnaMobileSDK",
+                "overriding": true,
+                "objc_name": "init",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC",
+                  "Override",
+                  "AccessControl"
+                ],
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Function",
+                "name": "setBackgroundColor",
+                "printedName": "setBackgroundColor(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DynamicSelf",
+                    "printedName": "Self"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC18setBackgroundColoryAEXDSo7UIColorCSgF",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC18setBackgroundColoryAEXDSo7UIColorCSgF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "setTextStyleConfiguration",
+                "printedName": "setTextStyleConfiguration(_:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DynamicSelf",
+                    "printedName": "Self"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KlarnaTextStyleConfiguration",
+                    "printedName": "KlarnaMobileSDK.KlarnaTextStyleConfiguration",
+                    "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaTextStyleConfiguration"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC012setTextStyleE0yAEXDAA0ahiE0CF",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC012setTextStyleE0yAEXDAA0ahiE0CF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              },
+              {
+                "kind": "Function",
+                "name": "build",
+                "printedName": "build()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "KlarnaOSMStyleConfiguration",
+                    "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration",
+                    "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration"
+                  }
+                ],
+                "declKind": "Func",
+                "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC5buildACyF",
+                "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC5buildACyF",
+                "moduleName": "KlarnaMobileSDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "ObjC"
+                ],
+                "funcSelfKind": "NonMutating"
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC",
+            "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC7BuilderC",
+            "moduleName": "KlarnaMobileSDK",
+            "objc_name": "KlarnaOSMStyleBuilder",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "superclassUsr": "c:objc(cs)NSObject",
+            "inheritsConvenienceInitializers": true,
+            "superclassNames": [
+              "ObjectiveC.NSObject"
+            ],
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CVarArg",
+                "printedName": "CVarArg",
+                "usr": "s:s7CVarArgP",
+                "mangledName": "$ss7CVarArgP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObservingPublishing",
+                "printedName": "_KeyValueCodingAndObservingPublishing",
+                "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+                "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "_KeyValueCodingAndObserving",
+                "printedName": "_KeyValueCodingAndObserving",
+                "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+                "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomStringConvertible",
+                "printedName": "CustomStringConvertible",
+                "usr": "s:s23CustomStringConvertibleP",
+                "mangledName": "$ss23CustomStringConvertibleP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CustomDebugStringConvertible",
+                "printedName": "CustomDebugStringConvertible",
+                "usr": "s:s28CustomDebugStringConvertibleP",
+                "mangledName": "$ss28CustomDebugStringConvertibleP"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "KlarnaOSMStyleConfiguration",
+                "printedName": "KlarnaMobileSDK.KlarnaOSMStyleConfiguration",
+                "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration(im)init",
+            "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationCACycfc",
+            "moduleName": "KlarnaMobileSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@KlarnaMobileSDK@objc(cs)KlarnaOSMStyleConfiguration",
+        "mangledName": "$s15KlarnaMobileSDK0A21OSMStyleConfigurationC",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -44428,6 +45527,20 @@
       "value": "\"registerCardIframe\""
     },
     {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaTextStyleConfiguration.swift",
+      "kind": "IntegerLiteral",
+      "offset": 983,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Common\/Models\/KlarnaTextStyleConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 286,
+      "length": 28,
+      "value": "\"KlarnaMobileSDK.KlarnaTextStyleConfiguration\""
+    },
+    {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/Post-purchase\/Models\/KlarnaPostPurchaseRenderResult.swift",
       "kind": "StringLiteral",
       "offset": 382,
@@ -45837,37 +46950,37 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSMutableAttributedString+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 297,
+      "offset": 336,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSMutableAttributedString+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 965,
+      "offset": 1084,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSMutableAttributedString+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1643,
+      "offset": 1842,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSMutableAttributedString+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2317,
+      "offset": 2596,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Extensions\/NSMutableAttributedString+Extensions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3052,
+      "offset": 3385,
       "length": 2,
-      "value": "16"
+      "value": "14"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/DevicePayload.swift",
@@ -46523,37 +47636,44 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "IntegerLiteral",
-      "offset": 826,
+      "offset": 1101,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 891,
+      "offset": 1166,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1193,
+      "offset": 1468,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1257,
+      "offset": 1532,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1591,
-      "length": 1,
-      "value": "0"
+      "kind": "BooleanLiteral",
+      "offset": 1809,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1845,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Event Names\/BlacklistedURLEventName.swift",
@@ -46593,9 +47713,16 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMController.swift",
       "kind": "StringLiteral",
-      "offset": 8785,
+      "offset": 9109,
       "length": 10,
       "value": "\"osm_demo\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMController.swift",
+      "kind": "StringLiteral",
+      "offset": 122,
+      "length": 19,
+      "value": "\"KlarnaMobileSDK.KlarnaOSMController\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Hybrid\/HybridSDKController.swift",
@@ -47366,6 +48493,13 @@
       "offset": 256,
       "length": 15,
       "value": "\"setExperiment\""
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/On-site Messaging\/Models\/KlarnaOSMStyleConfiguration.swift",
+      "kind": "StringLiteral",
+      "offset": 269,
+      "length": 27,
+      "value": "\"KlarnaMobileSDK.KlarnaOSMStyleConfiguration\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Info\/MerchantAppInfo.swift",

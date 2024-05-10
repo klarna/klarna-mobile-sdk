@@ -1076,6 +1076,25 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 @end
 
 
+
+/// On Site Messaging placement style configuration.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK27KlarnaOSMStyleConfiguration")
+@interface KlarnaOSMStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIColor;
+@class KlarnaTextStyleConfiguration;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaOSMStyleBuilder : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)setBackgroundColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextStyleConfiguration:(KlarnaTextStyleConfiguration * _Nonnull)configuration SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaOSMStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UIViewController;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
@@ -1083,11 +1102,14 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 /// View controller (or activity) that will be used to render placement
 /// details modally (required). Would be <code>hostActivity</code> on Android.
 @property (nonatomic, weak) UIViewController * _Nullable hostViewController;
+/// Style configuration for the KlarnaOSMView. When not nil it will take precedence over the Theme values and support for dark mode needs to be implemented.
+@property (nonatomic, strong) KlarnaOSMStyleConfiguration * _Nullable styleConfiguration;
 /// Initialize OSM view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
 
@@ -2011,7 +2033,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @end
 
 @class WKNavigation;
-@class UIColor;
 @class WKFrameInfo;
 @class WKUserScript;
 @protocol WKScriptMessageHandler;
@@ -2116,6 +2137,25 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaStandaloneWebViewDelegate_")
 /// Default behavior if this function is not implemented is to call the handler with
 /// <code>.prompt</code> (i.e., to prompt the user).
 - (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView requestMediaCapturePermissionFor:(WKSecurityOrigin * _Nonnull)origin initiatedByFrame:(WKFrameInfo * _Nonnull)frame ofType:(WKMediaCaptureType)type handler:(void (^ _Nonnull)(WKPermissionDecision))handler SWIFT_AVAILABILITY(ios,introduced=15.0);
+@end
+
+
+/// Text style configuration for text elements in Klarna components.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaTextStyleConfiguration")
+@interface KlarnaTextStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIFont;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaTextStyleBuilder : NSObject
+- (nonnull instancetype)setTextColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextFont:(UIFont * _Nullable)font SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextSize:(CGFloat)size SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaTextStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 /// Defines the theme (or style) that components should use.
@@ -3380,6 +3420,25 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21KlarnaMobileSDKCommon")
 @end
 
 
+
+/// On Site Messaging placement style configuration.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK27KlarnaOSMStyleConfiguration")
+@interface KlarnaOSMStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIColor;
+@class KlarnaTextStyleConfiguration;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaOSMStyleBuilder : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)setBackgroundColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextStyleConfiguration:(KlarnaTextStyleConfiguration * _Nonnull)configuration SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaOSMStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+@end
+
 @class UIViewController;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
@@ -3387,11 +3446,14 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK13KlarnaOSMView")
 /// View controller (or activity) that will be used to render placement
 /// details modally (required). Would be <code>hostActivity</code> on Android.
 @property (nonatomic, weak) UIViewController * _Nullable hostViewController;
+/// Style configuration for the KlarnaOSMView. When not nil it will take precedence over the Theme values and support for dark mode needs to be implemented.
+@property (nonatomic, strong) KlarnaOSMStyleConfiguration * _Nullable styleConfiguration;
 /// Initialize OSM view.
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)didMoveToWindow;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
 
@@ -4315,7 +4377,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaStandaloneWebView")
 @end
 
 @class WKNavigation;
-@class UIColor;
 @class WKFrameInfo;
 @class WKUserScript;
 @protocol WKScriptMessageHandler;
@@ -4420,6 +4481,25 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK31KlarnaStandaloneWebViewDelegate_")
 /// Default behavior if this function is not implemented is to call the handler with
 /// <code>.prompt</code> (i.e., to prompt the user).
 - (void)klarnaStandaloneWebView:(KlarnaStandaloneWebView * _Nonnull)webView requestMediaCapturePermissionFor:(WKSecurityOrigin * _Nonnull)origin initiatedByFrame:(WKFrameInfo * _Nonnull)frame ofType:(WKMediaCaptureType)type handler:(void (^ _Nonnull)(WKPermissionDecision))handler SWIFT_AVAILABILITY(ios,introduced=15.0);
+@end
+
+
+/// Text style configuration for text elements in Klarna components.
+SWIFT_CLASS("_TtC15KlarnaMobileSDK28KlarnaTextStyleConfiguration")
+@interface KlarnaTextStyleConfiguration : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIFont;
+
+SWIFT_CLASS_NAMED("Builder")
+@interface KlarnaTextStyleBuilder : NSObject
+- (nonnull instancetype)setTextColor:(UIColor * _Nullable)color SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextFont:(UIFont * _Nullable)font SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)setTextSize:(CGFloat)size SWIFT_WARN_UNUSED_RESULT;
+- (KlarnaTextStyleConfiguration * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 /// Defines the theme (or style) that components should use.
