@@ -275,6 +275,20 @@ extension UIKit.UIFont {
   required public init(from dictionary: [Swift.String : Swift.String])
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objc public class KlarnaTextStyleConfiguration : ObjectiveC.NSObject {
+  final public let textColor: UIKit.UIColor?
+  final public let textFont: UIKit.UIFont?
+  final public let textSize: CoreFoundation.CGFloat?
+  @_inheritsConvenienceInitializers @objc(KlarnaTextStyleBuilder) public class Builder : ObjectiveC.NSObject {
+    @objc public func setTextColor(_ color: UIKit.UIColor?) -> Self
+    @objc public func setTextFont(_ font: UIKit.UIFont?) -> Self
+    @objc public func setTextSize(_ size: CoreFoundation.CGFloat) -> Self
+    @objc public func build() -> KlarnaMobileSDK.KlarnaTextStyleConfiguration
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc deinit
+}
 @objc public enum KlarnaPostPurchaseRenderResult : Swift.Int, Swift.CustomDebugStringConvertible, Swift.Codable {
   case noStateChange = 1
   case stateChange = 2
@@ -775,8 +789,10 @@ public protocol KlarnaPaymentViewDelegate : KlarnaMobileSDK.KlarnaEventHandler {
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaOSMView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) weak public var hostViewController: UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) public var styleConfiguration: KlarnaMobileSDK.KlarnaOSMStyleConfiguration?
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
 }
 @objc public protocol KlarnaSingleComponent : KlarnaMobileSDK.KlarnaComponent {
@@ -1273,6 +1289,18 @@ extension KlarnaMobileSDK.KlarnaStandaloneWebView : KlarnaMobileSDK.KlarnaStanda
   public var merchantHandlesEPM: Swift.Bool
   public var merchantHandlesValidationErrors: Swift.Bool
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class KlarnaOSMStyleConfiguration : ObjectiveC.NSObject {
+  final public let backgroundColor: UIKit.UIColor?
+  final public let textStyleConfiguration: KlarnaMobileSDK.KlarnaTextStyleConfiguration?
+  @_inheritsConvenienceInitializers @objc(KlarnaOSMStyleBuilder) public class Builder : ObjectiveC.NSObject {
+    @objc override dynamic public init()
+    @objc public func setBackgroundColor(_ color: UIKit.UIColor?) -> Self
+    @objc public func setTextStyleConfiguration(_ configuration: KlarnaMobileSDK.KlarnaTextStyleConfiguration) -> Self
+    @objc public func build() -> KlarnaMobileSDK.KlarnaOSMStyleConfiguration
+    @objc deinit
+  }
   @objc deinit
 }
 public struct KlarnaSignInToken : Swift.Codable {
