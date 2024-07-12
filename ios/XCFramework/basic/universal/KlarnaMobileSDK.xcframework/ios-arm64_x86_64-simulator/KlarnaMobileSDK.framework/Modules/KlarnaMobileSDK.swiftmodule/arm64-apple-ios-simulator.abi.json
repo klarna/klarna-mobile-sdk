@@ -25662,6 +25662,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KlarnaMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "KlarnaDebugEventDelegate",
         "printedName": "KlarnaDebugEventDelegate",
@@ -47636,42 +47646,42 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1101,
+      "offset": 1235,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1166,
+      "offset": 1300,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "IntegerLiteral",
-      "offset": 1468,
+      "offset": 1653,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1532,
+      "offset": 1717,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1809,
+      "offset": 2044,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/OSM\/KlarnaOSMView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1845,
+      "offset": 2080,
       "length": 5,
       "value": "false"
     },
@@ -48017,6 +48027,13 @@
       "offset": 12982,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Analytics\/Payloads\/CardScanningPayload.swift",
+      "kind": "StringLiteral",
+      "offset": 260,
+      "length": 14,
+      "value": "\"cardScanning\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Standalone Web View\/StandaloneWebViewController.swift",
