@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.1-a56e79520e8",
-        "updated": "2024-04-03T13:44:10.099Z",
+        "version": "v2.4.2-b9ad8262b85",
+        "updated": "2024-07-12T11:16:59.280Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.14"
+                "versionName": "2.6.18"
             },
             "ios": {
-                "versionName": "2.6.16"
+                "versionName": "2.6.20"
             }
         },
         "assets": [
@@ -181,6 +181,33 @@
                             "scheme": "https",
                             "host": "s3.int.klarna.net",
                             "path": "/instant-shopping/express-button/v1.0.0-1237-g2073d55/fullscreen.html"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "web-sdk-wrapper",
+                "urls": [
+                    {
+                        "isFallback": true,
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging",
+                            "playground",
+                            "production"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "x.klarnacdn.net",
+                            "path": "/mobile-sdk/klarna-mobile-sdk-web-sdk-wrapper/v1/index.html"
                         }
                     }
                 ]
@@ -687,7 +714,6 @@
                             "path": "/eu/lp/idp/.well-known/openid-configuration"
                         }
                     },
-
                     {
                         "alternatives": [
                             "aws",
@@ -705,7 +731,6 @@
                             "path": "/na/lp/idp/.well-known/openid-configuration"
                         }
                     },
-
                     {
                         "alternatives": [
                             "aws",
