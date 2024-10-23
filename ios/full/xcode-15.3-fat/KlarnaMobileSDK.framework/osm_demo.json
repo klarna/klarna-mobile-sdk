@@ -14,7 +14,7 @@
             },
             {
                 "alt":"Klarna",
-                "url":"http://us-assets.klarnaservices.com/images/badges/klarna.svg",
+                "url":"https://us-assets.klarnaservices.com/images/badges/klarna.svg",
                 "name":"KLARNA_BADGE",
                 "type":"IMAGE"
             },
@@ -31,7 +31,7 @@
             },
             {
                 "alt":"Klarna",
-                "url":"http://us-assets.klarnaservices.com/images/badges/klarna.svg",
+                "url":"https://us-assets.klarnaservices.com/images/badges/klarna.svg",
                 "name":"KLARNA_LOGO",
                 "type":"IMAGE"
             },

@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.2-b9ad8262b85",
-        "updated": "2024-07-12T11:16:59.280Z",
+        "version": "v2.4.5-c61b02e8dc6",
+        "updated": "2024-09-27T13:24:58.369Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.18"
+                "versionName": "2.6.20"
             },
             "ios": {
-                "versionName": "2.6.20"
+                "versionName": "2.6.22"
             }
         },
         "assets": [
@@ -813,7 +813,21 @@
                 "logLevel": "info",
                 "log-level": "info"
             },
-            "blacklistUrls": []
+            "blacklistUrls": [],
+            "authenticationBrowser": {
+                "whitelistedUrls": [
+                    "^https:\/\/pay\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/login\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/js\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/payments\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/pay\\.playground\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/login\\.playground\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/js\\.playground\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/payments\\.playground\\.klarna\\.com(\/.*)?",
+                    "^https:\/\/([a-zA-Z0-9-]+\\.)?klarna\\.net(\/.*)?$",
+                    "^https:\/\/([a-zA-Z0-9-]+\\.)?klarnacdn\\.net(\/.*)?$"
+                ]
+            }
         },
         "debugToggles": {
             "console": {
@@ -829,6 +843,31 @@
             },
             "ios": {}
         },
+        "overrides": [
+            {
+                "condition": {
+                    "os": [
+                        { "name": "ios" },
+                        { "name": "android" }
+                    ]
+                },
+                "override": {
+                    "signInWithKlarnaTokenizationTimeout": 5000
+                }
+            },
+            {
+                "condition": {
+                    "os": [
+                        { "name": "ios" }
+                    ]
+                },
+                "override": {
+                    "analytics": {
+                        "level": "info"
+                    }
+                }
+            }
+        ],
         "texts": [
             {
                 "name": "paymentView.card.instructions.hold",
