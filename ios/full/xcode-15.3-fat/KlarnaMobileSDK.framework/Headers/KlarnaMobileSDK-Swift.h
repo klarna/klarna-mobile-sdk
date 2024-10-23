@@ -1724,6 +1724,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 
 
 @protocol ASWebAuthenticationPresentationContextProviding;
+@protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
 @class UIEvent;
 
@@ -1765,7 +1766,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 ///
 /// \param loggingLevel Level at which the SDK will log events at.
 ///
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// \param tokenizationDelegate delegate to inform Merchant app to get the tokenizationId
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
@@ -1869,7 +1872,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1902,9 +1905,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,int
 ///
 /// \param locale The language to be presented to the user.
 ///
+/// \param tokenizationId The id to enable Tokenization
+///
 /// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
 ///
-- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale tokenizationId:(NSString * _Nullable)tokenizationId presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1959,6 +1964,12 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInSDKDebug : KlarnaSignInSDK
 - (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK32KlarnaSignInTokenizationDelegate_")
+@protocol KlarnaSignInTokenizationDelegate
+- (void)onTokenization:(id <KlarnaComponent> _Nonnull)klarnaComponent completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 @end
 
 
@@ -4068,6 +4079,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 
 
 @protocol ASWebAuthenticationPresentationContextProviding;
+@protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
 @class UIEvent;
 
@@ -4109,7 +4121,9 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 ///
 /// \param loggingLevel Level at which the SDK will log events at.
 ///
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+/// \param tokenizationDelegate delegate to inform Merchant app to get the tokenizationId
+///
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
@@ -4213,7 +4227,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
-- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -4246,9 +4260,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,int
 ///
 /// \param locale The language to be presented to the user.
 ///
+/// \param tokenizationId The id to enable Tokenization
+///
 /// \param presentationContext An interface the session uses to ask a delegate for a presentation context.
 ///
-- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
+- (void)signInClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nullable)locale tokenizationId:(NSString * _Nullable)tokenizationId presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4303,6 +4319,12 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaSignInSDKDebug") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInSDKDebug : KlarnaSignInSDK
 - (nonnull instancetype)initWithTheme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK32KlarnaSignInTokenizationDelegate_")
+@protocol KlarnaSignInTokenizationDelegate
+- (void)onTokenization:(id <KlarnaComponent> _Nonnull)klarnaComponent completionHandler:(void (^ _Nonnull)(NSString * _Nonnull))completionHandler;
 @end
 
 
