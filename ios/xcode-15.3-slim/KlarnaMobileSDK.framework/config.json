@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.5-c61b02e8dc6",
-        "updated": "2024-09-27T13:24:58.369Z",
+        "version": "v2.4.10-cd749966cb6",
+        "updated": "2024-12-16T14:14:07.632Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.20"
+                "versionName": "2.6.24"
             },
             "ios": {
-                "versionName": "2.6.22"
+                "versionName": "2.6.23"
             }
         },
         "assets": [
@@ -243,8 +243,26 @@
                             "azure"
                         ],
                         "environments": [
-                            "staging",
                             "playground"
+                        ],
+                        "regions": [
+                            "eu",
+                            "na",
+                            "oc"
+                        ],
+                        "endpoint": {
+                            "scheme": "https",
+                            "host": "eu.playground.klarnaevt.com",
+                            "path": "/v1/in-app"
+                        }
+                    },
+                    {
+                        "alternatives": [
+                            "aws",
+                            "azure"
+                        ],
+                        "environments": [
+                            "staging"
                         ],
                         "regions": [
                             "eu",
@@ -816,16 +834,126 @@
             "blacklistUrls": [],
             "authenticationBrowser": {
                 "whitelistedUrls": [
-                    "^https:\/\/pay\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/login\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/js\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/payments\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/pay\\.playground\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/login\\.playground\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/js\\.playground\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/payments\\.playground\\.klarna\\.com(\/.*)?",
-                    "^https:\/\/([a-zA-Z0-9-]+\\.)?klarna\\.net(\/.*)?$",
-                    "^https:\/\/([a-zA-Z0-9-]+\\.)?klarnacdn\\.net(\/.*)?$"
+                    "^https://pay\\.klarna\\.com(/.*)?",
+                    "^https://login\\.klarna\\.com(/.*)?",
+                    "^https://js\\.klarna\\.com(/.*)?",
+                    "^https://payments\\.klarna\\.com(/.*)?",
+                    "^https://pay\\.playground\\.klarna\\.com(/.*)?",
+                    "^https://login\\.playground\\.klarna\\.com(/.*)?",
+                    "^https://js\\.playground\\.klarna\\.com(/.*)?",
+                    "^https://payments\\.playground\\.klarna\\.com(/.*)?",
+                    "^https://(([a-zA-Z0-9-]+\\.)+)?klarna\\.net(/.*)?$",
+                    "^https://(([a-zA-Z0-9-]+\\.)+)?klarnacdn\\.net(/.*)?$"
+                ]
+            },
+            "canMakePayment": {
+                "supportedCurrencyCountryCombos": [
+                    {
+                        "currency": "AUD",
+                        "countries": [
+                            "AU"
+                        ]
+                    },
+                    {
+                        "currency": "EUR",
+                        "countries": [
+                            "AT",
+                            "BE",
+                            "DE",
+                            "ES",
+                            "FI",
+                            "FR",
+                            "GR",
+                            "IE",
+                            "IT",
+                            "NL",
+                            "PT"
+                        ]
+                    },
+                    {
+                        "currency": "CAD",
+                        "countries": [
+                            "CA"
+                        ]
+                    },
+                    {
+                        "currency": "CZK",
+                        "countries": [
+                            "CZ"
+                        ]
+                    },
+                    {
+                        "currency": "DKK",
+                        "countries": [
+                            "DK"
+                        ]
+                    },
+                    {
+                        "currency": "HUF",
+                        "countries": [
+                            "HU"
+                        ]
+                    },
+                    {
+                        "currency": "MXN",
+                        "countries": [
+                            "MX"
+                        ]
+                    },
+                    {
+                        "currency": "NZD",
+                        "countries": [
+                            "NZ"
+                        ]
+                    },
+                    {
+                        "currency": "NOK",
+                        "countries": [
+                            "NO"
+                        ]
+                    },
+                    {
+                        "currency": "PLN",
+                        "countries": [
+                            "PL"
+                        ]
+                    },
+                    {
+                        "currency": "RON",
+                        "countries": [
+                            "RO"
+                        ]
+                    },
+                    {
+                        "currency": "SEK",
+                        "countries": [
+                            "SE"
+                        ]
+                    },
+                    {
+                        "currency": "CHF",
+                        "countries": [
+                            "CH"
+                        ]
+                    },
+                    {
+                        "currency": "GBP",
+                        "countries": [
+                            "GB"
+                        ]
+                    },
+                    {
+                        "currency": "USD",
+                        "countries": [
+                            "US"
+                        ]
+                    },
+                    {
+                        "currency": "JPY",
+                        "countries": [
+                            "JP"
+                        ]
+                    }
                 ]
             }
         },
@@ -847,18 +975,52 @@
             {
                 "condition": {
                     "os": [
-                        { "name": "ios" },
-                        { "name": "android" }
+                        {
+                            "name": "ios"
+                        },
+                        {
+                            "name": "android"
+                        }
                     ]
                 },
                 "override": {
-                    "signInWithKlarnaTokenizationTimeout": 5000
+                    "signInWithKlarnaTokenizationTimeout": 5000,
+                    "analytics": {
+                        "blockEvents": [
+                            "blackListedURL",
+                            "eventListenerSet",
+                            "controllerSetUp",
+                            "componentEnvironmentSet",
+                            "componentRegionSet",
+                            "componentResourceEndpointSet",
+                            "componentThemeSet",
+                            "componentReturnURLSet",
+                            "newPageWillLoad",
+                            "osmControllerInit",
+                            "attachWebView",
+                            "deliverActionToNativeEvent",
+                            "merchantCallbackSet",
+                            "attachWebView",
+                            "standaloneWebViewNavLoadURL",
+                            "standaloneWebViewDelegateCalled",
+                            "permissionsRegisteredHandler",
+                            "standaloneWebViewClientSet",
+                            "standaloneWebViewNavLoadURL",
+                            "evaluationError",
+                            "standaloneWebViewClientCalled",
+                            "permissionsUnregisteredHandler",
+                            "standaloneWebViewJSInterfaceAdded",
+                            "messageQueueAddedDuplicateReceiver"
+                        ]
+                    }
                 }
             },
             {
                 "condition": {
                     "os": [
-                        { "name": "ios" }
+                        {
+                            "name": "ios"
+                        }
                     ]
                 },
                 "override": {
@@ -915,6 +1077,21 @@
                     {
                         "locale": "sv-SE",
                         "value": "Fortsätt med Klarna"
+                    }
+                ],
+                "placeholders": []
+            },
+            {
+                "name": "signinwithklarna.button.label.continuewith",
+                "localizations": [
+                    {
+                        "default": true,
+                        "locale": "en-SE",
+                        "value": "Continue with "
+                    },
+                    {
+                        "locale": "sv-SE",
+                        "value": "Fortsätt med "
                     }
                 ],
                 "placeholders": []

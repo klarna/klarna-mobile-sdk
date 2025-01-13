@@ -66,6 +66,10 @@ public typealias KlarnaPostPurchaseRegion = KlarnaMobileSDK.KlarnaRegion
   @objc func klarnaComponent(_ view: any KlarnaMobileSDK.KlarnaComponent, didReceiveEvent event: Swift.String, params: [Swift.String : Any])
   @objc func klarnaComponent(_ view: any KlarnaMobileSDK.KlarnaComponent, didReceiveError error: KlarnaMobileSDK.KlarnaMobileSDKError)
 }
+@_hasMissingDesignatedInitializers open class AssetManager<T> {
+  open func parseResource(sourceString: Swift.String) -> T?
+  @objc deinit
+}
 public typealias KlarnaEventName = Swift.String
 extension Swift.String {
   public static let klarnaComponentHeightChanged: Swift.String
@@ -326,6 +330,10 @@ extension Swift.String {
     @objc set
   }
   @objc @_Concurrency.MainActor(unsafe) public var buttonLabel: KlarnaMobileSDK.KlarnaButtonLabel {
+    @objc get
+    @objc set
+  }
+  @objc @_Concurrency.MainActor(unsafe) public var buttonLogoAlignment: KlarnaMobileSDK.KlarnaSignInButtonLogoAlignment {
     @objc get
     @objc set
   }
@@ -1391,6 +1399,7 @@ public class KlarnaSignInSDKDebug : KlarnaMobileSDK.KlarnaSignInSDK {
 @objc extension WebKit.WKWebView : KlarnaMobileSDK.KlarnaWebView {
 }
 @objc public enum KlarnaButtonTheme : Swift.Int {
+  @available(*, deprecated, message: "Klarna theme is no longer supported. Using this value will render the button in the default theme.")
   case klarna
   case light
   case dark
@@ -1435,6 +1444,15 @@ public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
   @nonobjc public func registerTestAppDelegate(_ delegate: @escaping (KlarnaMobileSDK.KlarnaDebugEvent) -> Swift.Void)
   @objc deinit
 }
+@objc public enum KlarnaSignInButtonLogoAlignment : Swift.Int {
+  case left
+  case center
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public protocol KlarnaSignInTokenizationDelegate {
   @objc func onTokenization(_ klarnaComponent: any KlarnaMobileSDK.KlarnaComponent, completionHandler: @escaping (Swift.String) -> Swift.Void)
 }
@@ -1462,3 +1480,6 @@ extension KlarnaMobileSDK.KlarnaButtonTheme : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaButtonLabel : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaSignInButtonLogoAlignment : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaSignInButtonLogoAlignment : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaSignInButtonLogoAlignment : Swift.RawRepresentable {}
