@@ -322,7 +322,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
-/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+/// This is no longer supported, thus will render the default theme.
   KlarnaButtonThemeKlarna = 0,
 /// Will render the button in white. It is recommended to use this theme on dark backgrounds.
   KlarnaButtonThemeLight = 1,
@@ -1719,6 +1719,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 @end
 
 
+enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
@@ -1732,6 +1733,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 @property (nonatomic) enum KlarnaButtonShape buttonShape;
 /// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
 @property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+@property (nonatomic) enum KlarnaSignInButtonLogoAlignment buttonLogoAlignment;
 /// Creates a an instance of this button.
 /// note:
 /// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
@@ -1870,6 +1872,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaSignInButtonLogoAlignment, open) {
+  KlarnaSignInButtonLogoAlignmentLeft = 0,
+  KlarnaSignInButtonLogoAlignmentCenter = 1,
+};
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
@@ -2237,7 +2244,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
-
 
 
 
@@ -2591,7 +2597,7 @@ typedef SWIFT_ENUM(NSInteger, KlarnaButtonShape, open) {
 };
 
 typedef SWIFT_ENUM(NSInteger, KlarnaButtonTheme, open) {
-/// Will render the button in the Klarna pink theme. This is the recommended theme as it has the highest brand recognition and likelihood of usage by your customers.
+/// This is no longer supported, thus will render the default theme.
   KlarnaButtonThemeKlarna = 0,
 /// Will render the button in white. It is recommended to use this theme on dark backgrounds.
   KlarnaButtonThemeLight = 1,
@@ -3988,6 +3994,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 @end
 
 
+enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
 @class UITouch;
@@ -4001,6 +4008,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,
 @property (nonatomic) enum KlarnaButtonShape buttonShape;
 /// Defines the content of the button. For alternatives, see <code>KlarnaButtonLabel</code>.
 @property (nonatomic) enum KlarnaButtonLabel buttonLabel;
+@property (nonatomic) enum KlarnaSignInButtonLogoAlignment buttonLogoAlignment;
 /// Creates a an instance of this button.
 /// note:
 /// More information about presentation context <a href="https://developer.apple.com/documentation/authenticationservices/aswebauthenticationpresentationcontextproviding">here</a>.
@@ -4139,6 +4147,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK23KlarnaSignInButtonDebug") SWIFT_AVAILABILITY
 @interface KlarnaSignInButtonDebug : KlarnaSignInButton
 - (nonnull instancetype)initWithClientId:(NSString * _Nonnull)clientId scope:(NSString * _Nonnull)scope market:(NSString * _Nonnull)market locale:(NSString * _Nonnull)locale presentationContext:(id <ASWebAuthenticationPresentationContextProviding> _Nonnull)presentationContext theme:(enum KlarnaTheme)theme environment:(KlarnaEnvironment * _Nonnull)environment region:(KlarnaRegion * _Nonnull)region resourceEndpoint:(KlarnaResourceEndpoint * _Nonnull)resourceEndpoint returnUrl:(NSURL * _Nonnull)returnUrl eventHandler:(id <KlarnaEventHandler> _Nonnull)eventHandler loggingLevel:(enum KlarnaLoggingLevel)loggingLevel tokenizationDelegate:(id <KlarnaSignInTokenizationDelegate> _Nullable)tokenizationDelegate OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, KlarnaSignInButtonLogoAlignment, open) {
+  KlarnaSignInButtonLogoAlignmentLeft = 0,
+  KlarnaSignInButtonLogoAlignmentCenter = 1,
+};
 
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK15KlarnaSignInSDK") SWIFT_AVAILABILITY(ios,introduced=13.0)
@@ -4506,7 +4519,6 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK21UIDotLoadingIndicator")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)layoutSubviews;
 @end
-
 
 
 
