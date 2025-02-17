@@ -9,36 +9,8 @@ Pod::Spec.new do |s|
     s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
     s.author       = { "Klarna Mobile SDK Team" => "mobile.sdk@klarna.com" }
     s.platform     = :ios, "10.0"
-    s.source       = { :git => "https://github.com/klarna/klarna-mobile-sdk.git", :tag => s.version.to_s }
+    s.source       = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }
     s.requires_arc = true
     s.swift_version = "5.0"
-
-    
-    s.subspec 'xcode-15.3-fat' do |sb|
-        sb.source_files = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
-
-    s.subspec 'xcode-15.3-fat-full' do |sb|
-        sb.source_files = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
-    
-
-    s.subspec 'full' do |sb|
-        sb.vendored_frameworks = "ios/XCFramework/full/universal/KlarnaMobileSDK.xcframework"
-    end
-
-    s.subspec 'basic' do |sb|
-        sb.vendored_frameworks = "ios/XCFramework/basic/universal/KlarnaMobileSDK.xcframework"
-    end
-
-    s.default_subspec = 'basic'
-
+    s.ios.vendored_frameworks = 'KlarnaMobileSDK.xcframework'    
 end
