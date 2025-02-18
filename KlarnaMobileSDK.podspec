@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.platform     = :ios, "10.0"
     s.requires_arc = true
     s.swift_version = "5.0"
-    s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }        
+    s.source        = { :git => "https://github.com/klarna/klarna-mobile-sdk.git", :tag => s.version.to_s }
     s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/KlarnaMobileSDK/**"' }
     s.module_name         = 'KlarnaMobileSDK'
 
