@@ -11,27 +11,32 @@ Pod::Spec.new do |s|
     s.platform     = :ios, "10.0"
     s.requires_arc = true
     s.swift_version = "5.0"
-
+    s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }        
     s.xcconfig            = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/KlarnaMobileSDK/**"' }
     s.module_name         = 'KlarnaMobileSDK'
-    s.preserve_paths      = 'KlarnaMobileSDK.xcframework'
-    s.vendored_frameworks = 'KlarnaMobileSDK.xcframework'
 
     s.subspec 'xcode-15.3-fat' do |sb|
-        sb.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-basic.xcframework.zip" }
+        s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-basic.xcframework.zip" }
+        sb.preserve_paths      = 'KlarnaMobileSDK.xcframework'
+        sb.vendored_frameworks = 'KlarnaMobileSDK.xcframework'
     end
 
     s.subspec 'xcode-15.3-fat-full' do |sb|
-        sb.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }
+        s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }
+        sb.preserve_paths      = 'KlarnaMobileSDK.xcframework'
+        sb.vendored_frameworks = 'KlarnaMobileSDK.xcframework'
     end
     
-
     s.subspec 'full' do |sb|
-        sb.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }        
+        s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-full.xcframework.zip" }        
+        sb.preserve_paths      = 'KlarnaMobileSDK.xcframework'
+        sb.vendored_frameworks = 'KlarnaMobileSDK.xcframework'
     end
 
     s.subspec 'basic' do |sb|
-        sb.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-basic.xcframework.zip" }
+        s.source              = { :http => "https://github.com/klarna/klarna-mobile-sdk/releases/download/#{s.version.to_s}/KlarnaMobileSDK-basic.xcframework.zip" }
+        sb.preserve_paths      = 'KlarnaMobileSDK.xcframework'
+        sb.vendored_frameworks = 'KlarnaMobileSDK.xcframework'
     end
 
     s.default_subspec = 'basic'
