@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+### [2.6.25] - 2025-02-24
+- Added a fix for inline camera preview in `KlarnaStandaloneWebView`.
+- Added new client ID and endpoint support in On-Site Messaging (OSM).
+- Optimized lifecycle for fullscreen webview instance.
+- Internal fixes and improvements.
+
 ### [2.6.24] - 2025-01-13
 - Added support for Single sign-on using ASWebAuthenticationSession.
 - Updated UI for Sign in with Klarna button.
