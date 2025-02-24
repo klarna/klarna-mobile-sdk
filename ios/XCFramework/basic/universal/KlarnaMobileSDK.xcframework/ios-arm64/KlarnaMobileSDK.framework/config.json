@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.10-cd749966cb6",
-        "updated": "2024-12-16T14:14:07.632Z",
+        "version": "v2.4.12-8b61ba82ae7",
+        "updated": "2025-02-19T12:44:51.334Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.24"
+                "versionName": "2.6.25"
             },
             "ios": {
-                "versionName": "2.6.23"
+                "versionName": "2.6.24"
             }
         },
         "assets": [
@@ -1077,6 +1077,26 @@
                     {
                         "locale": "sv-SE",
                         "value": "Fortsätt med Klarna"
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Weiter mit Klarna"
+                    },
+                    {
+                        "locale": "de-AT",
+                        "value": "Weiter mit Klarna"
+                    },
+                    {
+                        "locale": "fi-FI",
+                        "value": "Jatka Klarnallaa"
+                    },
+                    {
+                        "locale": "sv-FI",
+                        "value": "Fortsätt med Klarna"
+                    },
+                    {
+                        "locale": "nb-NO",
+                        "value": "Fortsett med Klarna"
                     }
                 ],
                 "placeholders": []
@@ -1092,6 +1112,26 @@
                     {
                         "locale": "sv-SE",
                         "value": "Fortsätt med "
+                    },
+                    {
+                        "locale": "de-DE",
+                        "value": "Weiter mit "
+                    },
+                    {
+                        "locale": "de-AT",
+                        "value": "Weiter mit "
+                    },
+                    {
+                        "locale": "fi-FI",
+                        "value": "Jatka "
+                    },
+                    {
+                        "locale": "sv-FI",
+                        "value": "Fortsätt med "
+                    },
+                    {
+                        "locale": "nb-NO",
+                        "value": "Fortsett med "
                     }
                 ],
                 "placeholders": []

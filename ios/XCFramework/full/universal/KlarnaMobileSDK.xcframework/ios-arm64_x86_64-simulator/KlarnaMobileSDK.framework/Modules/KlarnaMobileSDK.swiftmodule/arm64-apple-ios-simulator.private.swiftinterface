@@ -311,7 +311,6 @@ extension UIKit.UIFont {
     get
   }
 }
-public typealias KlarnaPaymentErrorName = Swift.String
 @objc public protocol KlarnaStandaloneComponent : KlarnaMobileSDK.KlarnaComponent, KlarnaMobileSDK.KlarnaResizableComponent, KlarnaMobileSDK.KlarnaScrollableComponent {
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaCheckoutView : UIKit.UIView {
@@ -343,6 +342,7 @@ extension Swift.String {
   public static let klarnaEnvironmentNotSupportedError: Swift.String
   public static let klarnaFailedToBootstrapResourcesError: Swift.String
   public static let klarnaSdkNotAvailable: Swift.String
+  public static let klarnaInternalError: Swift.String
 }
 public typealias KlarnaEventParamKey = Swift.String
 extension Swift.String {

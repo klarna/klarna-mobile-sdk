@@ -638,6 +638,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnviro
 @end
 
 
+
 /// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @interface KlarnaError : NSObject
@@ -1212,6 +1213,21 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRE
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaPaymentButton : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to Klarna Payments.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -1724,8 +1740,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
-@class UITouch;
-@class UIEvent;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButton : UIControl
@@ -2956,6 +2970,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaEnviro
 @end
 
 
+
 /// Describes a generic error that occurred within the SDK.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @interface KlarnaError : NSObject
@@ -3530,6 +3545,21 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRE
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
+@interface KlarnaPaymentButton : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 
 /// An SDK error specific to Klarna Payments.
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaPaymentError")
@@ -4042,8 +4072,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) KlarnaResour
 enum KlarnaSignInButtonLogoAlignment : NSInteger;
 @protocol ASWebAuthenticationPresentationContextProviding;
 @protocol KlarnaSignInTokenizationDelegate;
-@class UITouch;
-@class UIEvent;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaSignInButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaSignInButton : UIControl
