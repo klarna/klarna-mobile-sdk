@@ -1669,7 +1669,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -4030,7 +4030,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

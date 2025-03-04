@@ -5,43 +5,46 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [2.6.25] - 2025-02-24
+## [2.6.26] - 2025-03-04
+Fixed empty value in KlarnaProductEvent get params function when executed on Objc apps.
+
+## [2.6.25] - 2025-02-24
 - Added a fix for inline camera preview in `KlarnaStandaloneWebView`.
 - Added new client ID and endpoint support in On-Site Messaging (OSM).
 - Optimized lifecycle for fullscreen webview instance.
 - Internal fixes and improvements.
 
-### [2.6.24] - 2025-01-13
+## [2.6.24] - 2025-01-13
 - Added support for Single sign-on using ASWebAuthenticationSession.
 - Updated UI for Sign in with Klarna button.
 - Optimized remote asset loading.
 
-### [2.6.23] - 2024-10-23
+## [2.6.23] - 2024-10-23
 - Added SIWK tokenization feature.
 - Removed enforced consent prompt in Sign in with Klarna integration.
 - Improved OSM text rendering process.
 - Bug fixes and security improvements.
 
-### [2.6.22] - 2024-08-13
+## [2.6.22] - 2024-08-13
 - Updated fullscreen logic to prevent unhandled errors.
 
-### [2.6.21] - 2024-07-12
+## [2.6.21] - 2024-07-12
 - Fixed On-Site Messaging (OSM) background color not changing.
 - Internal improvements.
 
-### [2.6.20] - 2024-05-10
+## [2.6.20] - 2024-05-10
 - Added support for customizing the appearance of the On-Site Messaging (OSM) view.
 - Fixed the "Learn more" text to not start from a new line in OSM view.
 
-### [2.6.19] - 2024-05-02
+## [2.6.19] - 2024-05-02
 - Reverted enabling mergeable library due to cocoapods failures.
 
-### [2.6.18] - 2024-04-30
+## [2.6.18] - 2024-04-30
 - Added missing key in xcprivacy manifest file.
 - Mergeable library feature enabled.
 - Minor internal improvements.
 
-### [2.6.17] - 2024-04-04
+## [2.6.17] - 2024-04-04
 - Added support for Sign in with Klarna in NA and OC regions.
 - Fixed memory leak in Sign in with Klarna integration.
 
