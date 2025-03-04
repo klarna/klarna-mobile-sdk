@@ -1041,6 +1041,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
 @interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaIdentityButton")
+@interface KlarnaIdentityButton : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 /// Level of logging to system console.
 typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
@@ -1213,8 +1228,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRE
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
-@class UITouch;
-@class UIEvent;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaPaymentButton : UIView
@@ -1683,7 +1696,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -3373,6 +3386,21 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaHybridSDKDebug")
 @interface KlarnaHybridSDKDebug : KlarnaHybridSDK
 @end
 
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC15KlarnaMobileSDK20KlarnaIdentityButton")
+@interface KlarnaIdentityButton : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
+- (void)willMoveToSuperview:(UIView * _Nullable)newSuperview;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
 /// Level of logging to system console.
 typedef SWIFT_ENUM(NSInteger, KlarnaLoggingLevel, open) {
 /// No logging will occur.
@@ -3545,8 +3573,6 @@ SWIFT_PROTOCOL("_TtP15KlarnaMobileSDK26KlarnaOSMViewEventListener_") SWIFT_DEPRE
 - (void)klarnaOSMViewResized:(CGFloat)height;
 @end
 
-@class UITouch;
-@class UIEvent;
 
 SWIFT_CLASS("_TtC15KlarnaMobileSDK19KlarnaPaymentButton") SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface KlarnaPaymentButton : UIView
@@ -4015,7 +4041,7 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
-- (NSDictionary<NSString *, id <NSCoding>> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, id> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

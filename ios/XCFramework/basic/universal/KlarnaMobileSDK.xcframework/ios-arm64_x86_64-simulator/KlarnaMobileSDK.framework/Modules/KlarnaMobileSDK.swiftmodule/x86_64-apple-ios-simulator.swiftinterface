@@ -447,7 +447,7 @@ extension Swift.String {
   @available(swift, obsoleted: 1.0)
   @objc public init?(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Foundation.NSCoding] = [:])
   @available(swift, obsoleted: 1.0)
-  @objc public func getParams() -> [KlarnaMobileSDK.KlarnaEventParamKey : any Foundation.NSCoding]?
+  @objc public func getParams() -> [KlarnaMobileSDK.KlarnaEventParamKey : Any]?
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
