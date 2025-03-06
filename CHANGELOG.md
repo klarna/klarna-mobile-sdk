@@ -5,14 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.27] - 2025-03-05
+- Fixed a critical error, affecting last 2 releases, causing a crash in certain cases with cached old SDK configurations.
+
 ## [2.6.26] - 2025-03-04
-Fixed empty value in KlarnaProductEvent get params function when executed on Objc apps.
+- Fixed empty value in `KlarnaProductEvent` get params function when executed on Objc apps.
+- :warning: **This version has a critical issue**: Please use a newer version of the SDK. Future releases will be cautiously checked to prevent these warnings.
 
 ## [2.6.25] - 2025-02-24
 - Added a fix for inline camera preview in `KlarnaStandaloneWebView`.
 - Added new client ID and endpoint support in On-Site Messaging (OSM).
 - Optimized lifecycle for fullscreen webview instance.
 - Internal fixes and improvements.
+- :warning: **This version has a critical issue**: Please use a newer version of the SDK. Future releases will be cautiously checked to prevent these warnings.
 
 ## [2.6.24] - 2025-01-13
 - Added support for Single sign-on using ASWebAuthenticationSession.
