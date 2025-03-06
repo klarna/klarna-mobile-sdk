@@ -44052,7 +44052,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/assets\/base\/AssetManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 603,
+      "offset": 1017,
       "length": 5,
       "value": "false"
     },
@@ -49211,7 +49211,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Common\/CommonSDKController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9974,
+      "offset": 9983,
       "length": 4,
       "value": "true"
     },
