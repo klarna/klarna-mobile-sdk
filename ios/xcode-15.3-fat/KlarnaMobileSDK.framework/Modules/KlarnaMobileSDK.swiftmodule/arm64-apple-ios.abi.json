@@ -60359,7 +60359,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/assets\/base\/AssetManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 603,
+      "offset": 1017,
       "length": 5,
       "value": "false"
     },
@@ -62893,224 +62893,224 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6128,
+      "offset": 6129,
       "length": 6,
       "value": "[\"AU\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6146,
+      "offset": 6147,
       "length": 5,
       "value": "\"AUD\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6207,
+      "offset": 6208,
       "length": 66,
       "value": "[\"AT\", \"BE\", \"DE\", \"ES\", \"FI\", \"FR\", \"GR\", \"IE\", \"IT\", \"NL\", \"PT\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6297,
+      "offset": 6298,
       "length": 5,
       "value": "\"EUR\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6354,
+      "offset": 6355,
       "length": 6,
       "value": "[\"CA\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6372,
+      "offset": 6373,
       "length": 5,
       "value": "\"CAD\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6420,
+      "offset": 6421,
       "length": 6,
       "value": "[\"CZ\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6438,
+      "offset": 6439,
       "length": 5,
       "value": "\"CZK\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6486,
+      "offset": 6487,
       "length": 6,
       "value": "[\"DK\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6504,
+      "offset": 6505,
       "length": 5,
       "value": "\"DKK\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6552,
+      "offset": 6553,
       "length": 6,
       "value": "[\"HU\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6570,
+      "offset": 6571,
       "length": 5,
       "value": "\"HUF\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6618,
+      "offset": 6619,
       "length": 6,
       "value": "[\"MX\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6636,
+      "offset": 6637,
       "length": 5,
       "value": "\"MXN\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6684,
+      "offset": 6685,
       "length": 6,
       "value": "[\"NZ\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6702,
+      "offset": 6703,
       "length": 5,
       "value": "\"NZD\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6750,
+      "offset": 6751,
       "length": 6,
       "value": "[\"NO\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6768,
+      "offset": 6769,
       "length": 5,
       "value": "\"NOK\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6816,
+      "offset": 6817,
       "length": 6,
       "value": "[\"PL\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6834,
+      "offset": 6835,
       "length": 5,
       "value": "\"PLN\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6882,
+      "offset": 6883,
       "length": 6,
       "value": "[\"RO\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6900,
+      "offset": 6901,
       "length": 5,
       "value": "\"RON\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 6948,
+      "offset": 6949,
       "length": 6,
       "value": "[\"SE\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 6966,
+      "offset": 6967,
       "length": 5,
       "value": "\"SEK\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 7014,
+      "offset": 7015,
       "length": 6,
       "value": "[\"CH\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 7032,
+      "offset": 7033,
       "length": 5,
       "value": "\"CHF\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 7080,
+      "offset": 7081,
       "length": 6,
       "value": "[\"GB\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 7098,
+      "offset": 7099,
       "length": 5,
       "value": "\"GBP\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 7146,
+      "offset": 7147,
       "length": 6,
       "value": "[\"US\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 7164,
+      "offset": 7165,
       "length": 5,
       "value": "\"USD\""
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "Array",
-      "offset": 7212,
+      "offset": 7213,
       "length": 6,
       "value": "[\"JP\"]"
     },
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Public\/KlarnaNetwork\/KlarnaPayment.swift",
       "kind": "StringLiteral",
-      "offset": 7230,
+      "offset": 7231,
       "length": 5,
       "value": "\"JPY\""
     },
@@ -67086,7 +67086,7 @@
     {
       "filePath": "\/Users\/ec2-user\/Jenkins\/workspace\/klarna_mobile_sdk_ios_master\/sdk\/Sources\/Internal\/Shared\/Common\/CommonSDKController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9974,
+      "offset": 9983,
       "length": 4,
       "value": "true"
     },
