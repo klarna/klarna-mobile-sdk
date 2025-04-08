@@ -441,7 +441,8 @@ extension Swift.String {
   @objc final public let action: KlarnaMobileSDK.KlarnaEventName
   @objc final public let products: KlarnaMobileSDK.KlarnaProducts
   final public let params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable]
-  public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], sessionId: Swift.String? = nil)
+  @objc final public let sessionId: Swift.String?
+  public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], sessionId: Swift.String?)
   public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], isNonSpecificMerchantEvent: Swift.Bool = false, sessionId: Swift.String? = nil)
   public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, sessionId: Swift.String? = nil)
   @available(swift, obsoleted: 1.0)
@@ -460,9 +461,13 @@ extension Swift.String {
   @objc final public let name: KlarnaMobileSDK.KlarnaErrorName
   @objc final public let message: Swift.String
   @objc final public let isFatal: Swift.Bool
+  @objc final public let sessionId: Swift.String?
+  final public let params: [Swift.String : Swift.String?]?
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @available(swift, obsoleted: 1.0)
+  @objc public func getParams() -> [Swift.String : Swift.String]?
   @objc deinit
 }
 @objc public protocol KlarnaSizingDelegate {

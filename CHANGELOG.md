@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.28] - 2025-04-04
+- Fixed issue where KlarnaSignInButton label was not displayed.
+
 ## [2.6.27] - 2025-03-05
 - Fixed a critical error, affecting last 2 releases, causing a crash in certain cases with cached old SDK configurations.
 

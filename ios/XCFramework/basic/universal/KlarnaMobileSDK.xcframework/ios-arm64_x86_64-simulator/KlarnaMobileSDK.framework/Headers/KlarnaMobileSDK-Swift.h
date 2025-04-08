@@ -643,7 +643,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 /// Describes whether this error is fatal. This means some part of the flow failed permanently.
 @property (nonatomic, readonly) BOOL isFatal;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+/// Function available only for objc
+- (NSDictionary<NSString *, NSString *> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1660,6 +1664,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
 /// if the SDK can’t determine where the event is coming from.
 @property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
@@ -2875,7 +2881,11 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK11KlarnaError")
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 /// Describes whether this error is fatal. This means some part of the flow failed permanently.
 @property (nonatomic, readonly) BOOL isFatal;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 @property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+/// Function available only for objc
+- (NSDictionary<NSString *, NSString *> * _Nullable)getParams SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3892,6 +3902,8 @@ SWIFT_CLASS("_TtC15KlarnaMobileSDK18KlarnaProductEvent")
 /// When receiving an event, the component will be from a specific product or <code>KlarnaProduct.none</code>
 /// if the SDK can’t determine where the event is coming from.
 @property (nonatomic, readonly, copy) NSSet<NSString *> * _Nonnull products;
+/// SDK’s session ID
+@property (nonatomic, readonly, copy) NSString * _Nullable sessionId;
 /// Initializer available only for objc
 - (nullable instancetype)initWithAction:(NSString * _Nonnull)action products:(NSSet<NSString *> * _Nonnull)products params:(NSDictionary<NSString *, id <NSCoding>> * _Nonnull)params OBJC_DESIGNATED_INITIALIZER;
 /// Function available only for objc
