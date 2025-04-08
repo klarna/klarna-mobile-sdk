@@ -103,6 +103,39 @@ public class KlarnaIdentityRequest {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
   @objc deinit
 }
+public struct KlarnaShippingAddressChangeSuccessResponse : Swift.Equatable {
+  public let lineItems: [KlarnaMobileSDK.KlarnaLineItem]?
+  public let paymentAmount: Swift.Int?
+  public let selectedShippingOptionReference: Swift.String?
+  public let shippingOptions: [KlarnaMobileSDK.KlarnaShippingOption]
+  public class Builder {
+    public var lineItems: [KlarnaMobileSDK.KlarnaLineItem]? {
+      get
+    }
+    public var paymentAmount: Swift.Int? {
+      get
+    }
+    public var selectedShippingOptionReference: Swift.String? {
+      get
+    }
+    final public let shippingOptions: [KlarnaMobileSDK.KlarnaShippingOption]
+    public init(shippingOptions: [KlarnaMobileSDK.KlarnaShippingOption])
+    public func setLineItems(_ lineItems: [KlarnaMobileSDK.KlarnaLineItem]?) -> Self
+    public func setPaymentAmount(_ paymentAmount: Swift.Int?) -> Self
+    public func setSelectedShippingOptionReference(_ selectedShippingOptionReference: Swift.String?) -> Self
+    public func build() -> KlarnaMobileSDK.KlarnaShippingAddressChangeSuccessResponse
+    @objc deinit
+  }
+  public static func == (a: KlarnaMobileSDK.KlarnaShippingAddressChangeSuccessResponse, b: KlarnaMobileSDK.KlarnaShippingAddressChangeSuccessResponse) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaShippingAddressChangeSuccessResponse : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum KlarnaShippingAddressChangeResponse {
+  case failure(KlarnaMobileSDK.KlarnaShippingAddressChangeRejectionResponse)
+  case success(KlarnaMobileSDK.KlarnaShippingAddressChangeSuccessResponse)
+}
 @objc public class KlarnaResourceEndpoint : ObjectiveC.NSObject, Swift.RawRepresentable {
   public var rawValue: Swift.Int
   required public init?(rawValue: Swift.Int)
@@ -438,6 +471,21 @@ extension UIKit.UIFont {
     get
   }
 }
+public struct KlarnaAddressWithName : Swift.Equatable {
+  public let city: Swift.String?
+  public let country: Swift.String?
+  public let familyName: Swift.String?
+  public let givenName: Swift.String?
+  public let postalCode: Swift.String?
+  public let region: Swift.String?
+  public let streetAddress: Swift.String?
+  public let streetAddress2: Swift.String?
+  public static func == (a: KlarnaMobileSDK.KlarnaAddressWithName, b: KlarnaMobileSDK.KlarnaAddressWithName) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaAddressWithName : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct KlarnaShippingRecipient : Swift.Equatable {
   public let attention: Swift.String?
   public let email: Swift.String?
@@ -691,7 +739,8 @@ public struct KlarnaPaymentRequestOptions {
   @objc final public let action: KlarnaMobileSDK.KlarnaEventName
   @objc final public let products: KlarnaMobileSDK.KlarnaProducts
   final public let params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable]
-  public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], sessionId: Swift.String? = nil)
+  @objc final public let sessionId: Swift.String?
+  public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], sessionId: Swift.String?)
   public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, params: [KlarnaMobileSDK.KlarnaEventParamKey : any Swift.Decodable & Swift.Encodable] = [:], isNonSpecificMerchantEvent: Swift.Bool = false, sessionId: Swift.String? = nil)
   public init(action: KlarnaMobileSDK.KlarnaEventName, products: KlarnaMobileSDK.KlarnaProducts, sessionId: Swift.String? = nil)
   @available(swift, obsoleted: 1.0)
@@ -706,6 +755,12 @@ public struct KlarnaPaymentRequestOptions {
 public protocol KlarnaPaymentRequestListener : AnyObject {
   func onUpdate(request: KlarnaMobileSDK.KlarnaPaymentRequest)
   func onError(request: KlarnaMobileSDK.KlarnaPaymentRequest, error: KlarnaMobileSDK.KlarnaSDKError)
+  func onShippingAddressChange(address: KlarnaMobileSDK.KlarnaAddressWithName, completion: @escaping (KlarnaMobileSDK.KlarnaShippingAddressChangeResponse) -> Swift.Void)
+  func onShippingOptionSelect(option: KlarnaMobileSDK.KlarnaSelectedShippingOption, completion: @escaping (KlarnaMobileSDK.KlarnaShippingOptionSelectResponse) -> Swift.Void)
+}
+extension KlarnaMobileSDK.KlarnaPaymentRequestListener {
+  public func onShippingAddressChange(address: KlarnaMobileSDK.KlarnaAddressWithName, completion: @escaping (KlarnaMobileSDK.KlarnaShippingAddressChangeResponse) -> Swift.Void)
+  public func onShippingOptionSelect(option: KlarnaMobileSDK.KlarnaSelectedShippingOption, completion: @escaping (KlarnaMobileSDK.KlarnaShippingOptionSelectResponse) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers @objc public class KlarnaHybridSDK : ObjectiveC.NSObject {
   @objc deinit
@@ -714,9 +769,13 @@ public protocol KlarnaPaymentRequestListener : AnyObject {
   @objc final public let name: KlarnaMobileSDK.KlarnaErrorName
   @objc final public let message: Swift.String
   @objc final public let isFatal: Swift.Bool
+  @objc final public let sessionId: Swift.String?
+  final public let params: [Swift.String : Swift.String?]?
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @available(swift, obsoleted: 1.0)
+  @objc public func getParams() -> [Swift.String : Swift.String]?
   @objc deinit
 }
 public enum KlarnaIdentityResponse {
@@ -795,6 +854,16 @@ public typealias KlarnaPaymentsError = KlarnaMobileSDK.KlarnaPaymentError
 @_hasMissingDesignatedInitializers @objc public class KlarnaPostPurchaseError : KlarnaMobileSDK.KlarnaError {
   @objc final public let status: Swift.String?
   @objc deinit
+}
+public enum KlarnaShippingOptionRejectionReason : Swift.String {
+  case invalidOption
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension KlarnaMobileSDK.KlarnaShippingOptionRejectionReason : Swift.Codable {
 }
 public struct KlarnaShipping : Swift.Equatable {
   public let address: KlarnaMobileSDK.KlarnaAddress?
@@ -1090,6 +1159,20 @@ public protocol KlarnaPaymentViewDelegate : KlarnaMobileSDK.KlarnaEventHandler {
   func klarnaPaymentView(_ paymentView: KlarnaMobileSDK.KlarnaPaymentView, resizedToHeight height: CoreFoundation.CGFloat)
   func klarnaPaymentView(_ paymentView: KlarnaMobileSDK.KlarnaPaymentView, failedWithError error: KlarnaMobileSDK.KlarnaPaymentsError)
 }
+public enum KlarnaShippingAddressRejectionReason : Swift.String {
+  case addressNotSupported
+  case cityNotSupported
+  case countryNotSupported
+  case postalCodeNotSupported
+  case regionNotSupported
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension KlarnaMobileSDK.KlarnaShippingAddressRejectionReason : Swift.Codable {
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor(unsafe) public class KlarnaOSMView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) weak public var hostViewController: UIKit.UIViewController?
   @objc @_Concurrency.MainActor(unsafe) public var styleConfiguration: KlarnaMobileSDK.KlarnaOSMStyleConfiguration?
@@ -1227,6 +1310,22 @@ extension Swift.String {
 }
 @objc public protocol KlarnaDebugEventDelegate {
   @objc func klarnaComponent(_ klarnaComponent: any KlarnaMobileSDK.KlarnaComponent, relayedEvent event: KlarnaMobileSDK.KlarnaDebugEvent)
+}
+public struct KlarnaShippingOptionSelectSuccessResponse : Swift.Equatable {
+  public let lineItems: [KlarnaMobileSDK.KlarnaLineItem]
+  public let paymentAmount: Swift.Int
+  public class Builder {
+    final public let lineItems: [KlarnaMobileSDK.KlarnaLineItem]
+    final public let paymentAmount: Swift.Int
+    public init(lineItems: [KlarnaMobileSDK.KlarnaLineItem], paymentAmount: Swift.Int)
+    public func build() -> KlarnaMobileSDK.KlarnaShippingOptionSelectSuccessResponse
+    @objc deinit
+  }
+  public static func == (a: KlarnaMobileSDK.KlarnaShippingOptionSelectSuccessResponse, b: KlarnaMobileSDK.KlarnaShippingOptionSelectSuccessResponse) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaShippingOptionSelectSuccessResponse : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum KlarnaPaymentRequestStateContext : Swift.Equatable {
   case canceled
@@ -1688,6 +1787,14 @@ extension KlarnaMobileSDK.KlarnaShippingOption : Swift.Codable {
   @objc func sendEvent(_ event: KlarnaMobileSDK.KlarnaProductEvent)
   @objc var productOptions: KlarnaMobileSDK.KlarnaProductOptions { get }
 }
+public struct KlarnaSelectedShippingOption : Swift.Equatable {
+  public let shippingOptionReference: Swift.String
+  public static func == (a: KlarnaMobileSDK.KlarnaSelectedShippingOption, b: KlarnaMobileSDK.KlarnaSelectedShippingOption) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaSelectedShippingOption : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 @objc @_inheritsConvenienceInitializers public class KlarnaCheckoutOptions : ObjectiveC.NSObject {
   public var merchantHandlesEPM: Swift.Bool
   public var merchantHandlesValidationErrors: Swift.Bool
@@ -1935,12 +2042,30 @@ extension KlarnaMobileSDK.KlarnaPaymentRequestData : Swift.Codable {
     get
   }
 }
+public struct KlarnaShippingOptionSelectRejectionResponse : Swift.Equatable {
+  public let rejectionReason: KlarnaMobileSDK.KlarnaShippingOptionRejectionReason
+  public class Builder {
+    final public let rejectionReason: KlarnaMobileSDK.KlarnaShippingOptionRejectionReason
+    public init(rejectionReason: KlarnaMobileSDK.KlarnaShippingOptionRejectionReason)
+    public func build() -> KlarnaMobileSDK.KlarnaShippingOptionSelectRejectionResponse
+    @objc deinit
+  }
+  public static func == (a: KlarnaMobileSDK.KlarnaShippingOptionSelectRejectionResponse, b: KlarnaMobileSDK.KlarnaShippingOptionSelectRejectionResponse) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaShippingOptionSelectRejectionResponse : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 @available(*, deprecated, renamed: "KlarnaError", message: "Use KlarnaError instead.")
 public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class KlarnaPaymentView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didMoveToWindow()
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func willMove(toSuperview newSuperview: UIKit.UIView?)
   @objc deinit
+}
+public enum KlarnaShippingOptionSelectResponse {
+  case failure(KlarnaMobileSDK.KlarnaShippingOptionSelectRejectionResponse)
+  case success(KlarnaMobileSDK.KlarnaShippingOptionSelectSuccessResponse)
 }
 @objc public protocol KlarnaEventHandler {
   @objc func klarnaComponent(_ klarnaComponent: any KlarnaMobileSDK.KlarnaComponent, dispatchedEvent event: KlarnaMobileSDK.KlarnaProductEvent)
@@ -1977,6 +2102,20 @@ public typealias KlarnaMobileSDKError = KlarnaMobileSDK.KlarnaError
 }
 @objc public protocol KlarnaSignInTokenizationDelegate {
   @objc func onTokenization(_ klarnaComponent: any KlarnaMobileSDK.KlarnaComponent, completionHandler: @escaping (Swift.String) -> Swift.Void)
+}
+public struct KlarnaShippingAddressChangeRejectionResponse : Swift.Equatable {
+  public let rejectionReason: KlarnaMobileSDK.KlarnaShippingAddressRejectionReason
+  public class Builder {
+    final public let rejectionReason: KlarnaMobileSDK.KlarnaShippingAddressRejectionReason
+    public init(rejectionReason: KlarnaMobileSDK.KlarnaShippingAddressRejectionReason)
+    public func build() -> KlarnaMobileSDK.KlarnaShippingAddressChangeRejectionResponse
+    @objc deinit
+  }
+  public static func == (a: KlarnaMobileSDK.KlarnaShippingAddressChangeRejectionResponse, b: KlarnaMobileSDK.KlarnaShippingAddressChangeRejectionResponse) -> Swift.Bool
+}
+extension KlarnaMobileSDK.KlarnaShippingAddressChangeRejectionResponse : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct KlarnaConfiguration : Swift.Equatable, Swift.Hashable {
   public let accountId: Swift.String?
@@ -2037,9 +2176,15 @@ extension KlarnaMobileSDK.KlarnaShippingType : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaPaymentRequestStateReason : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaPaymentRequestStateReason : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaPaymentRequestStateReason : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaShippingOptionRejectionReason : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaShippingOptionRejectionReason : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaShippingOptionRejectionReason : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaTheme : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaTheme : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaTheme : Swift.RawRepresentable {}
+extension KlarnaMobileSDK.KlarnaShippingAddressRejectionReason : Swift.Equatable {}
+extension KlarnaMobileSDK.KlarnaShippingAddressRejectionReason : Swift.Hashable {}
+extension KlarnaMobileSDK.KlarnaShippingAddressRejectionReason : Swift.RawRepresentable {}
 extension KlarnaMobileSDK.KlarnaPaymentButtonState : Swift.Equatable {}
 extension KlarnaMobileSDK.KlarnaPaymentButtonState : Swift.Hashable {}
 extension KlarnaMobileSDK.KlarnaPaymentButtonState : Swift.RawRepresentable {}

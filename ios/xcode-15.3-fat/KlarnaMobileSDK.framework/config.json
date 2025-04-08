@@ -1,16 +1,16 @@
 {
     "meta": {
-        "version": "v2.4.12-8b61ba82ae7",
-        "updated": "2025-02-19T12:44:51.334Z",
+        "version": "v2.5.0-1026869d95b",
+        "updated": "2025-03-07T11:55:35.467Z",
         "schema": "v2"
     },
     "config": {
         "sdkVersions": {
             "android": {
-                "versionName": "2.6.25"
+                "versionName": "2.6.26"
             },
             "ios": {
-                "versionName": "2.6.24"
+                "versionName": "2.6.27"
             }
         },
         "assets": [
@@ -1037,6 +1037,8 @@
                     {
                         "default": true,
                         "locale": "default",
+                        "language": "en",
+                        "region": "*",
                         "value": "Hold the front of your card up to the camera"
                     }
                 ],
@@ -1048,6 +1050,8 @@
                     {
                         "default": true,
                         "locale": "default",
+                        "language": "en",
+                        "region": "*",
                         "value": "Scanning card"
                     }
                 ],
@@ -1059,6 +1063,8 @@
                     {
                         "default": true,
                         "locale": "default",
+                        "language": "en",
+                        "region": "*",
                         "value": "%issuer% recognised"
                     }
                 ],
@@ -1072,30 +1078,44 @@
                     {
                         "default": true,
                         "locale": "en-SE",
+                        "language": "en",
+                        "region": "*",
                         "value": "Continue with Klarna"
                     },
                     {
                         "locale": "sv-SE",
+                        "language": "sv",
+                        "region": "*",
                         "value": "Fortsätt med Klarna"
                     },
                     {
                         "locale": "de-DE",
+                        "language": "de",
+                        "region": "*",
                         "value": "Weiter mit Klarna"
                     },
                     {
                         "locale": "de-AT",
+                        "language": "de",
+                        "region": "AT",
                         "value": "Weiter mit Klarna"
                     },
                     {
                         "locale": "fi-FI",
+                        "language": "fi",
+                        "region": "*",
                         "value": "Jatka Klarnallaa"
                     },
                     {
                         "locale": "sv-FI",
+                        "language": "sv",
+                        "region": "FI",
                         "value": "Fortsätt med Klarna"
                     },
                     {
                         "locale": "nb-NO",
+                        "language": "nb",
+                        "region": "*",
                         "value": "Fortsett med Klarna"
                     }
                 ],
@@ -1107,30 +1127,44 @@
                     {
                         "default": true,
                         "locale": "en-SE",
+                        "language": "en",
+                        "region": "*",
                         "value": "Continue with "
                     },
                     {
                         "locale": "sv-SE",
+                        "language": "sv",
+                        "region": "*",
                         "value": "Fortsätt med "
                     },
                     {
                         "locale": "de-DE",
+                        "language": "de",
+                        "region": "*",
                         "value": "Weiter mit "
                     },
                     {
                         "locale": "de-AT",
+                        "language": "de",
+                        "region": "AT",
                         "value": "Weiter mit "
                     },
                     {
                         "locale": "fi-FI",
-                        "value": "Jatka "
+                        "language": "fi",
+                        "region": "*",
+                        "value": "Jatka Klarnallaa "
                     },
                     {
                         "locale": "sv-FI",
+                        "language": "sv",
+                        "region": "FI",
                         "value": "Fortsätt med "
                     },
                     {
                         "locale": "nb-NO",
+                        "language": "nb",
+                        "region": "*",
                         "value": "Fortsett med "
                     }
                 ],
