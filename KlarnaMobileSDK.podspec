@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.6.28"
+    s.version      = "2.6.29"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -13,30 +13,20 @@ Pod::Spec.new do |s|
     s.requires_arc = true
     s.swift_version = "5.0"
 
-    
-    s.subspec 'xcode-15.3-fat' do |sb|
-        sb.source_files = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/xcode-15.3-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
-
-    s.subspec 'xcode-15.3-fat-full' do |sb|
-        sb.source_files = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.public_header_files = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework/Headers/*.h"
-        sb.vendored_frameworks = "ios/full/xcode-15.3-fat/KlarnaMobileSDK.framework"
-        sb.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-        sb.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    end
-    
-
     s.subspec 'full' do |sb|
-        sb.vendored_frameworks = "ios/XCFramework/full/universal/KlarnaMobileSDK.xcframework"
+        sb.vendored_frameworks = "KlarnaMobileSDK.xcframework"
+        sb.source = { 
+            :http => "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/#{s.version}/KlarnaMobileSDK.xcframework.zip",
+            :type => "zip"
+        }
     end
 
     s.subspec 'basic' do |sb|
-        sb.vendored_frameworks = "ios/XCFramework/basic/universal/KlarnaMobileSDK.xcframework"
+        sb.vendored_frameworks = "KlarnaMobileSDK.xcframework"
+        sb.source = { 
+            :http => "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/#{s.version}/KlarnaMobileSDK.xcframework.zip",
+            :type => "zip"
+        }
     end
 
     s.default_subspec = 'basic'
