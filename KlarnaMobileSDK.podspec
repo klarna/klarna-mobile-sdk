@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "KlarnaMobileSDK"
-    s.version      = "2.6.29"
+    s.version      = "2.7.0"
     s.summary      = "Klarna Mobile SDK for iOS"
     s.description  = <<-DESC
     Klarna Mobile SDK for iOS apps.
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     s.license      = { :type => "Apache License, Version 2.0", :text => "https://raw.githubusercontent.com/klarna/klarna-mobile-sdk/refs/heads/master/LICENSE" }
     s.author       = { "Klarna Mobile SDK Team" => "mobile.sdk@klarna.com" }
     s.platform     = :ios, "10.0"
-    s.source       = { :http => "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/2.6.29/KlarnaMobileSDK.xcframework.zip" }
+    s.source       = { :http => "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/2.7.0/KlarnaMobileSDK.xcframework.zip" }
     s.requires_arc = true
     s.swift_version = "5.0"
 
