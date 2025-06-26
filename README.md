@@ -27,8 +27,8 @@ and so much more in a single package!
 
 ### Documentations
 
-* [Overview](https://docs.klarna.com/mobile-sdk/)
-* [Using the Mobile SDK on iOS](https://docs.klarna.com/mobile-sdk/ios/)
+* [Overview](https://docs.klarna.com/payments/mobile-payments/before-you-start/introduction-mobile-integrations/)
+* [Using the Mobile SDK on iOS](https://docs.klarna.com/payments/mobile-payments/integrate-with-mobile-sdk/ios/native-view/)
 
 ### Changelog
 * [iOS Changelog](https://github.com/klarna/klarna-mobile-sdk/blob/master/CHANGELOG.md)
