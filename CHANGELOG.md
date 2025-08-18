@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.7.2] - 2025-08-15
+
+- Fixed in-app browser liquid glass UI when built with XCode 26 for iOS 26.
+- Fixed SFSafariViewController and ASWebAuthenticationSession issues when running on iOS 26 beta simulators.
+- Fixed public ObjC headers from KlarnaCore when used via KlarnaMobileSDK.
+
 ## [2.7.1] - 2025-07-30
 
 - Added transparency to KlarnaPaymentView.
