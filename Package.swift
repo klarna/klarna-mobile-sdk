@@ -14,13 +14,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "KlarnaCore",
-            url: "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaCore/2.7.1/KlarnaCore.xcframework.zip",
-            checksum: "8847c034d84138ccdcc45086a5321b5f3e660581ed17ec7ae9d5c8e21d5169da"
+            url: "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaCore/2.7.2/KlarnaCore.xcframework.zip",
+            checksum: "b734668ec96178dc9867a601a5d7eef4ef8ac0af9b39f9813cae348e332ddcbb"
         ),
         .binaryTarget(
             name: "KlarnaMobileSDK",
-            url: "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/2.7.1/KlarnaMobileSDK.xcframework.zip",
-            checksum: "434daee5ddd6d6a989e08865c00e6e32cc1506f2730292e751edd0903ffe14b9"
+            url: "https://x.klarnacdn.net/mobile-sdk/ios/frameworks/KlarnaMobileSDK/2.7.2/KlarnaMobileSDK.xcframework.zip",
+            checksum: "3b7fc9aed9103f0170e494a08cba8e6c94c16951563ba84ceea9df14e600d627"
         )
     ]
 )
