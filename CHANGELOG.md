@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.8.0] - 2025-09-23
+
+- Added support for Klarna Payment integration as part of Klarna Network.
+- Added Shopping Session integration as part of Klarna Network.
+- Added two new modules `KlarnaNetworkCore` and `KlarnaPayment` to support Klarna Network with least size impact to the integrating applications.
+- Added more secure persistence support, including supporting expiry time for stored data.
+- Added theme property to WebViews to support dark mode in Klarna components.
+- Reverted deprecation of `KlarnaWebView`.
+- Fixed payment wrapper asset loading issue on first use.
+- Internal optimizations and improvements.
+
 ## [2.7.3] - 2025-08-29
 
 - Fixed OSM style not being applied to links in placements.
