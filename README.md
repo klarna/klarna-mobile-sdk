@@ -43,14 +43,6 @@ Standalone integrations are product integrations offered with native API. Most o
 #### WebView Integrations
 WebView integrations are solely based on WebViews and targeted to apps using WebViews in some parts of the app such as using Web checkout solutions in an app. These integrations either let integrator own a WebView or offer a WebView that's customized by the SDK and ready to be used out of the box.
 
-#### Example Apps
-
-##### Standalone Integration
-* [iOS Klarna Payments Example App](https://github.com/klarna/kp-ios-example-app)
-
-##### WebView Integration
-* [iOS Hybrid Example App](https://github.com/klarna/HybridInAppSDKDemo)
-
 ## Support
 
 If you are having any issues using the SDK in your project or if you think that something is wrong with the SDK itself, please follow our [support guide](https://github.com/klarna/klarna-mobile-sdk/blob/master/SUPPORT.md).
