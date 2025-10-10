@@ -4,7 +4,17 @@
 [![License][license-image]][license-url]
 [![Developed at Klarna][klarna-image]][klarna-url]
 
-Klarna Mobile SDK is the best and only official way to integrate Klarna products into your mobile app. 
+## ⚠️ DEPRECATED REPOSITORY
+
+**This repository has been deprecated and is no longer maintained.**
+
+**Please use the new repository: [klarna-mobile-sdk-ios](https://github.com/klarna/klarna-mobile-sdk-ios)**
+
+All future updates, bug fixes, and new features will be available in the new repository. Please migrate your integration to use the new SDK.
+
+---
+
+Klarna Mobile SDK is the best and only official way to integrate Klarna products into your mobile app.
 
 We offer a seamless and straightforward way to 
 
